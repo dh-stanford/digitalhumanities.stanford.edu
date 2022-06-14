@@ -1,0 +1,11 @@
+---
+layout: layouts/page
+---
+
+<article class="article">
+  <h1>{{ title }}</h1>
+  <small>
+    Submitted By: <span>{{ submitted_by }}</span> on <time>{{ submitted_at }}</time>
+  </small>
+  {{ content | safe }}
+</article>
