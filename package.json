@@ -1,0 +1,9 @@
+{
+  "name": "digitalhumanities.stanford.edu",
+  "version": "0.1",
+  "main": "index.html",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1"
+  }
+}
