@@ -3,7 +3,8 @@
   "version": "0.1",
   "main": "index.html",
   "scripts": {
-    "dev": "eleventy --serve"
+    "dev": "eleventy --serve",
+    "debug": "DEBUG=* npx eleventy"
   },
   "license": "MIT",
   "devDependencies": {
