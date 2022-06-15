@@ -5,6 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title + " :: " if title }}Digital Humanities @ Stanford</title>
+
+  {% set css %}
+    {% include "styles/styles.css" %}
+  {% endset %}
+  <style>
+    {{ css | cssmin | safe }}
+  </style>
 </head>
 
 <body>

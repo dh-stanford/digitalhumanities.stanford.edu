@@ -1,0 +1,28 @@
+body {
+  font-family: sans-serif;
+}
+
+a {
+  color: #820000;
+}
+
+header {
+  background-color: #820000;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  font-size: 3em;
+}
+
+.pagination ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1em;
+}
+
+.pagination ol li {
+  outline: 1px solid #820000;
+  padding: 0.25em 0.5em;
+}

@@ -1,3 +1,5 @@
+const CleanCSS = require("clean-css");
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("pages", (collectionApi) => {
     return collectionApi
@@ -5,6 +7,10 @@ module.exports = function (eleventyConfig) {
       .sort(
         (a, b) => new Date(b.data.submitted_at) - new Date(a.data.submitted_at),
       );
+  });
+
+  eleventyConfig.addFilter("cssmin", function (code) {
+    return new CleanCSS({}).minify(code).styles;
   });
 
   return {
