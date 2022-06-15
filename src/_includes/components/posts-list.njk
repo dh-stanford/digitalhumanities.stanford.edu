@@ -1,0 +1,13 @@
+<ul class="page-list">
+  {% for article in articles %}
+  <li>
+    <article>
+      <h2><a href="{{ article.url | url }}">{{ article.data.title }}</a></h2>
+      <small>
+        {{ article.data.submitted_by }} ::
+        <time>{{ article.data.submitted_at }}</time>
+      </small>
+    </article>
+  </li>
+  {% endfor %}
+</ul>

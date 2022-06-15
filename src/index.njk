@@ -1,0 +1,21 @@
+---
+layout: layouts/page
+title: ""
+pagination:
+  data: collections.pages
+  size: 10
+  alias: articles
+---
+
+<h1>{{ title }}</h1>
+{% include "./_includes/components/posts-list.njk" %}
+
+<nav class="pagination" aria-labelledby="posts-pagination">
+  <h2 id="posts-pagination">More Posts:</h2>
+  <ol>
+    {%- for pageEntry in pagination.pages %}
+    <li><a href="{{ pagination.hrefs[ loop.index0 ] }}" {% if page.url==pagination.hrefs[ loop.index0 ] %}
+        aria-current="page" {% endif %}> {{ loop.index }}</a></li>
+    {%- endfor %}
+  </ol>
+</nav>
