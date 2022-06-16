@@ -5,7 +5,8 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2018-12-21T08:29:37-08:00
 ---
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/44967058554_b99f357ee1_k.jpg?itok=EV7DWgyr)The “Academic Technology Specialist” (ATS) role at Stanford follows an unusual model for a DH alt-ac job. These positions are jointly funded by Stanford Libraries and a department, and while ATSes report administratively through the library, they typically have their office in the department, and spend most of their time working with scholars there. As an ATS, your assignment is straightforward but expansive: support your department in whatever way you can. The job description has a laundry list of expertise that one should have, but in practice, what you work on is shaped by your actual expertise and interests.
+![](/post-images/44967058554_b99f357ee1_k.jpg)
+The “Academic Technology Specialist” (ATS) role at Stanford follows an unusual model for a DH alt-ac job. These positions are jointly funded by Stanford Libraries and a department, and while ATSes report administratively through the library, they typically have their office in the department, and spend most of their time working with scholars there. As an ATS, your assignment is straightforward but expansive: support your department in whatever way you can. The job description has a laundry list of expertise that one should have, but in practice, what you work on is shaped by your actual expertise and interests.
 
 
 With an eye towards making the reality of the ATS position more comprehensible to both local colleagues and others who might join the organization in the future (since I didn’t have a clear picture of the job when I started, to say nothing of when I applied for the position), here’s what I’ve ended up doing my first quarter here.
@@ -32,7 +33,7 @@ David Palumbo-Liu’s “Teaching Human Rights” project was intended to be a D
 #### Performing Trobar
 
 
-Prof. Marisa Galvez has used an online environment for publishing her students' digital final projects for her "Performing Trobar" class. It's become a rich collection of audiovisual material as well as maps, timelines, and translations. The site was originally built by my pre-predecessor, Zach Chandler — the first DLCL ATS — and is hosted in Stanford's AFS storage environment, which predates numerous better options. I was able to get an account on the site, but no one involved with it had full admin access, and the admin credentials were lost to time. Over the holidays, I’ll be trying to hack the site: temporarily introducing a horrible bug that elevates the privileges of any logged-in user to admin, before quickly cleaning up after it. Next quarter, I hope to collaborate with the folks with VPTL (Vice Provost for Teaching and Learning) to develop something modern and usable that meets the current needs of the course. 
+Prof. Marisa Galvez has used an online environment for publishing her students' digital final projects for her "Performing Trobar" class. It's become a rich collection of audiovisual material as well as maps, timelines, and translations. The site was originally built by my pre-predecessor, Zach Chandler — the first DLCL ATS — and is hosted in Stanford's AFS storage environment, which predates numerous better options. I was able to get an account on the site, but no one involved with it had full admin access, and the admin credentials were lost to time. Over the holidays, I’ll be trying to hack the site: temporarily introducing a horrible bug that elevates the privileges of any logged-in user to admin, before quickly cleaning up after it. Next quarter, I hope to collaborate with the folks with VPTL (Vice Provost for Teaching and Learning) to develop something modern and usable that meets the current needs of the course.
 
 
 #### French Revolutionary Data Project
@@ -53,7 +54,7 @@ In getting the “Digital Humanities Across Borders" approved as a core course f
 ### New Projects
 
 
-The interests of the scholars I’m working with have pushed me to dig into tools and methods that I’d never spent much time with. Talking with Prof. Yulia Ilchuk about network analyses of characters in novels gave me a reason to brush up on my understanding of networks, as well as models for counting character co-occurrences in literature. 
+The interests of the scholars I’m working with have pushed me to dig into tools and methods that I’d never spent much time with. Talking with Prof. Yulia Ilchuk about network analyses of characters in novels gave me a reason to brush up on my understanding of networks, as well as models for counting character co-occurrences in literature.
 
 
 Masha Gorshkova is exploring the discourse between contemporary Russian authors and their audiences via their Facebook pages — which has led me down the rabbit hole of Facebook app approval to get access to their Graph API. I’ve had no luck finding anyone local who’s tried to get data from Facebook (to my surprise, since their headquarters are right down the road), so it’s broaching new territory in multiple respects.
@@ -92,13 +93,13 @@ At Stanford, the [CMEMS](https://cmems.stanford.edu/) symposium "[Translating Cu
 My Stanford-based re-engagement with the broader DH world began prior to my start date, with the [DARIAH Beyond Europe](https://dbe.hypotheses.org/) workshop in mid-September. Since then, I’ve been following up on connections with the [Medievalist's Sources working group](https://www.dariah.eu/activities/working-groups/meso-mediaevalists-sources-sustainability/) (with an eye towards involving the Global Medieval Sourcebook in some way), the [DH course registry](https://registries.clarin-dariah.eu/courses/) (where I added the DH Minor core courses, which literally put the west coast on the map), and the organizers of the workshop itself. We’ve submitted a poster proposal about DARIAH Beyond Europe to next year’s DH conference in Utrecht, and the [promo video from the workshop](https://www.youtube.com/watch?v=OgCOFxyyYpc) was just published earlier this week.
 
 
-Princeton invited Stanford to join their grassroots [Slavic DH](https://slavic-dh.princeton.edu/) partnership (also including the Herder Institute in Germany), and I’ve been working on helping organize next year’s event, which will bring Stanford scholars to Princeton for a workshop focusing on digitally curating, organizing, analyzing, and presenting images. It’s given me a reason to do some hands-on exploration of [Omeka S](https://omeka.org/s/), as well as various machine learning tools and services for image analysis. 
+Princeton invited Stanford to join their grassroots [Slavic DH](https://slavic-dh.princeton.edu/) partnership (also including the Herder Institute in Germany), and I’ve been working on helping organize next year’s event, which will bring Stanford scholars to Princeton for a workshop focusing on digitally curating, organizing, analyzing, and presenting images. It’s given me a reason to do some hands-on exploration of [Omeka S](https://omeka.org/s/), as well as various machine learning tools and services for image analysis.
 
 
 One of the initiatives I’m most excited about for next quarter comes from a group that’s still coalescing around lived experiences of gender and DH. DH-WOGEM (Women and Gender Minorities) is going to be organizing a series of “conversations” (synchronous, Zoom-based meetings) around specific topics relevant to gender and DH, and developing white papers and other practical resources out of those conversations, with further collaboration and input from colleagues across the world. I’ve got a simple webpage in the works (an excuse to finally try out Jekyll), and I’m grateful to Julia Flanders for hosting a mailing list out of Northeastern. We’re still working out the subscription mechanism, so if you’re interested, email me at qad [at] stanford [dot] edu. The first conversation, which I’m hoping to organize for late January or early February, will be about kids: when people have had them, what parental leave accommodations they’ve arranged, etc.
 
 
-Finally, I’ve revived this website, taking down out-of-date pages, expanding acronyms on the “about” page, and regularly updating this blog. My goal for the new year is to make a concerted effort to get others to join me in this blogging space, to share with the local, national, and international community the DH work going on at Stanford. 
+Finally, I’ve revived this website, taking down out-of-date pages, expanding acronyms on the “about” page, and regularly updating this blog. My goal for the new year is to make a concerted effort to get others to join me in this blogging space, to share with the local, national, and international community the DH work going on at Stanford.
 
 
 ### Looking ahead
@@ -107,7 +108,6 @@ Finally, I’ve revived this website, taking down out-of-date pages, expanding a
 Next quarter, I expect that teaching will take up much of my time and attention, in addition to keeping up with the projects and groups that I’ve gotten involved with this quarter. I’m happy to be working on at least one project with scholars from four out of the five departments in DLCL, but I’ll be keeping an eye out for opportunities to work with Iberian and Latin American Cultures. I’m hoping the Lit Lab project on translations will be an opportunity to connect with people who might not otherwise think of themselves as the sort to do “digital” research.
 
 
-Tomorrow begins Stanford’s two-week year-end shutdown, but I’m already looking forward to the week of January 7th! Stanford’s DH blog will resume then. Happy holidays to all! 
+Tomorrow begins Stanford’s two-week year-end shutdown, but I’m already looking forward to the week of January 7th! Stanford’s DH blog will resume then. Happy holidays to all!
 
 
- 

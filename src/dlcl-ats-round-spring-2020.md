@@ -5,7 +5,8 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2020-06-22T19:59:56-07:00
 ---
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/50012754993_2b84b94d3c_k.jpg?itok=KIlwBc8h)In describing this quarter, it’s hard to avoid the cliches of our time, starting with “unprecedented”. Daycare and public schools in Berkeley shut down at the end of winter quarter, and daycare — for my two youngest children, 4 and just-turned-2 — didn’t reopen for 50 workdays. The 6-year-old has been upgraded to “junior coworker”, and all signs suggest that he’ll be home every day for at least the first half of next school year. Our current “new normal” has no shortage of challenges, but it’s been an interesting space for experimentation.
+![](/post-images/50012754993_2b84b94d3c_k.jpg)
+In describing this quarter, it’s hard to avoid the cliches of our time, starting with “unprecedented”. Daycare and public schools in Berkeley shut down at the end of winter quarter, and daycare — for my two youngest children, 4 and just-turned-2 — didn’t reopen for 50 workdays. The 6-year-old has been upgraded to “junior coworker”, and all signs suggest that he’ll be home every day for at least the first half of next school year. Our current “new normal” has no shortage of challenges, but it’s been an interesting space for experimentation.
 
 
 ### Teaching
@@ -44,10 +45,11 @@ Further progress on the user-facing documentation for the new web interface of t
 The Poetic Media Lab has been very active over the spring. I’ve consulted on the new “[Life in Quarantine: Witnessing Global Pandemic](https://lifeinquarantine.poeticthinking.net/)” project collecting stories from around the world, and discussed technical platform choices for another new project building on student writing. Earlier in the quarter, I ran some Zoom sessions where I shared my screen as I did some WordPress customization work on the [Poetic Thinking](http://poeticthinking.net/) sites, both to help debug a set of issues and talk through the thought process involved in doing this kind of work.
 
 
-On the [Florentine Codex](https://poeticmedia.stanford.edu/florentine-codex-project) project, I trained my first Transkribus model which was able to do downright magical things — even on low-res page images. 
+On the [Florentine Codex](https://poeticmedia.stanford.edu/florentine-codex-project) project, I trained my first Transkribus model which was able to do downright magical things — even on low-res page images.
 
 
 ![](https://pbs.twimg.com/media/EYVdXXDUEAAdGUV?format=jpg&name=large)
+
 
 
 This initial model was trained on only 60-some pages, but it was enough for bootstrapping more pages. I used it to do a first pass on transcribing another 30 pages, which other team members corrected, and we trained a better model on about 90 pages. I let the model loose on the full 700 pages of volume 1 of the codex… only to discover that most of the pages were rotated sideways, rendering them untranscribable. I’m looking forward to trying again once everything has been rotated correctly!
@@ -98,7 +100,7 @@ My CIDR developer colleague Simon Wiles has had some wonderful ideas for reimagi
 #### New projects
 
 
-Other than the new Poetic Media Lab projects, I haven’t had the time for all my existing projects, let alone anything new. Further Russian NLP group developments are on hold. Around DH 2020 is on hold indefinitely. 
+Other than the new Poetic Media Lab projects, I haven’t had the time for all my existing projects, let alone anything new. Further Russian NLP group developments are on hold. Around DH 2020 is on hold indefinitely.
 
 
 ### Writing
@@ -131,7 +133,7 @@ There are a handful of other things I’d committed in the before-times to writi
 Last summer, I’d committed to giving a talk for CMEMS in April, and I ended up being the first in their series of virtual talks. While notionally being about the Old Novgorod birchbark letters, it took a bigger-picture approach, reflecting on the possibilities for expanding the community of participants in events like CMEMS’s lunch talks to welcome, for instance, medievalists who’d left the academy after getting an advanced degree, but who continue to be interested in these topics.
 
 
-I worked with CESTA and DH organizations up and down the West Coast to organize a CESTA lightning talk event and a [West Coast DH meet-up](https://digitalhumanities.stanford.edu/dayofdh2020) as part of the global [Day of DH 2020 event](https://dhcenternet.org/initiatives/day-of-dh/2020) hosted by centerNet. As a special add-on for parents with kids at home, under the auspices of Stanford’s Textile Makerspace, I ran a coloring contest for Day of DH. 
+I worked with CESTA and DH organizations up and down the West Coast to organize a CESTA lightning talk event and a [West Coast DH meet-up](https://digitalhumanities.stanford.edu/dayofdh2020) as part of the global [Day of DH 2020 event](https://dhcenternet.org/initiatives/day-of-dh/2020) hosted by centerNet. As a special add-on for parents with kids at home, under the auspices of Stanford’s Textile Makerspace, I ran a coloring contest for Day of DH.
 
 
 Through a last-minute invite, I ended up giving a [3-minute talk on failure at DARIAH VX](http://quinndombrowski.com/?q=blog/2020/05/28/remarks-dh-methods-and-tools-gone-wrong-discoveries-failures-advice-future) in the early hours of the morning.
@@ -167,4 +169,3 @@ When I wrote my winter quarter round-up, the ACH election was ongoing, and I was
 It’s still hard to know how the summer will go, though I’m trying to make plans as far as it makes sense to. I’ve been encouraging everyone I work with to “attend” DH 2020, since it’s now online and free. I’ll be preparing materials for my fall course, and supporting my division around digital pedagogy as needed. Faculty and grad student research projects have been starting to pick up again, and I’ll be helping to support CESTA’s undergraduate summer intern program. And The Masquaraders will keep sewing until all the library staff have face coverings. The feasibility of any of this is going to depend on the younger kids’ daycare remaining open — not to be taken for granted as COVID-19 case counts in California continue to rise. We’ll see how it all plays out.
 
 
- 

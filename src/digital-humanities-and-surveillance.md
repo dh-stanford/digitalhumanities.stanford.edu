@@ -14,4 +14,3 @@ Is there a chilling effect already in place? Are we afraid to speak out against 
 I won't repost here, so go read it there, if you're interested.
 
 
- 

@@ -20,8 +20,9 @@ The first problem with this plan? The hackathon as conceived was intended to app
 **Finding translations through a nest of metadata**
 
 
-HathiTrust was my first stop, where I quickly discovered that there are two records for Georg Brandes, and each of these author facets has a different set of languages:  
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/htrc-brandes.png)
+HathiTrust was my first stop, where I quickly discovered that there are two records for Georg Brandes, and each of these author facets has a different set of languages:
+![](/post-images/htrc-brandes.png)
+
 
 
 Despite some early musings over working with one of Brandes's other writings (I really wanted to take a look at the Russian and Polish translations of his book on Russia), I realized I'd get the most linguistic overlap sticking to 19th century literature. Tempted as I was by book 5 (French Romanticism, the only volume translated into French), only volumes 1 and 2 of the Russian translation had found their way online, via a moderately blurry PDF that has propagated through all the Russian ebook sites. Add to that the fact that it's the shortest volume at (X) words in the original, and I was sold on "The Emigrant Literature".
@@ -44,8 +45,9 @@ I ended up with seven versions of the text for the hackathon:
 Figuring what text to work with, researching what translations were available, searching for digitized versions, and scanning and OCRing where necessary, probably took in the range of 15-20 hours prior to the hackathon itself.
 
 
-**Text Cleaning**  
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/brandes_hackathon.jpg)The first day of the hackathon was largely dedicated to presentations about the ongoing role Brandes plays in Danish political discourse, the development and state of the Digital Brandes project, an overview of topic modeling for the non-DH attendees from Berkeley's Scandinavian department, and an overview of methods for visualizing and making use of word vectors (e.g. for machine-generation of text) by Peter Leonard, with the caveat that all of Brandes's writings together (under a million words) comprise a small enough corpus that word vectors aren't going to be particularly useful for any kind of analysis.
+**Text Cleaning**
+![](/post-images/brandes_hackathon.jpg)
+The first day of the hackathon was largely dedicated to presentations about the ongoing role Brandes plays in Danish political discourse, the development and state of the Digital Brandes project, an overview of topic modeling for the non-DH attendees from Berkeley's Scandinavian department, and an overview of methods for visualizing and making use of word vectors (e.g. for machine-generation of text) by Peter Leonard, with the caveat that all of Brandes's writings together (under a million words) comprise a small enough corpus that word vectors aren't going to be particularly useful for any kind of analysis.
 
 
 Meanwhile, I was engaged in light multitasking during these presentations. I'd decided to manually clean up the running page headers in my text files, and split volume one in each of the languages into its constituent chapters. In retrospect, the situation was a good litmus test for where one falls on the humanist / technologist spectrum. It could've been automated, with a set of fuzzy regexes to accommodate the dirty OCR, but figuring out what those regexes should look like would've required more attention and focus (and grumbling and swearing) than would be feasible while multitasking during presentations. Worse, it'd impose a binary status on this aspect of data cleaning: for a given language, it'd be done, or not done. If I ran out of time, I'd have to start jettisoning languages, rather than scoping the project down to the first three or four chapters in each language. I knew I could get enough done if I did it manually; automating it introduced too much uncertainty, and this wasn't a project I planned to do more with, where the work put into automation would pay off at scale.
@@ -70,11 +72,11 @@ And my two favorites:
 The data cleaning took about seven hours, with half of that time spent multitasking.
 
 
-**Interlude**  
+**Interlude**
 As luck would have it, the 0-2 program at my kids’ daycare closed early the second day of the hackathon to support teacher professional development, so in the afternoon I brought along my junior collaborator, Eliza, who drank a bottle and fell asleep in her stroller while I wrangled the data extraction. Everyone was very kind towards the hackathon’s youngest participant, who woke up in time to sprawl on my lap while I made the visualization, and give her first academic co-presentation on the eve of her first birthday.
 
 
-**Data extraction**  
+**Data extraction**
 The data cleaning convinced me of the futility of attempting paragraph alignment (or even paragraph-count alignment) between the texts. Paragraph breaks were lost in converting the Polish text from .djvu, and with the other texts, I’d have needed to write a script to try to get every paragraph onto a single line in the text file. Instead, I decided for an even cruder metric: word counts. They’re not directly comparable across languages (e.g. in Russian and Polish, the grammatical cases and lack of articles
 
 
@@ -84,22 +86,22 @@ After cleaning up each text and splitting it into chapters, I started copying an
 It took about 45 minutes — including a little bit of additional text cleaning — to finish this part of the project, the only code I wrote over the two-day hackathon.
 
 
-**Visualization**  
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/quinn_eliza_brandes_hackathon.jpg)Earlier in the week, I'd taught a workshop on Tableau — and just previous week, I'd learned some Tableau myself with help from Miriam Posner's [wonderful](http://miriamposner.com/classes/dh201w19/tutorials-guides/data-visualization/getting-started-with-tableau-public/) [tutorials](http://miriamposner.com/classes/dh201w19/tutorials-guides/mapping/create-a-map-with-tableau/) — so it made an appealing option for doing a visualization of my word count data to use for my final hackathon presentation. Once you've gotten the hang of the major elements of Tableau's visual vocabulary and some UI quirks, putting together new visualizations is quick and easy.
+**Visualization**
+![](/post-images/quinn_eliza_brandes_hackathon.jpg)
+Earlier in the week, I'd taught a workshop on Tableau — and just previous week, I'd learned some Tableau myself with help from Miriam Posner's [wonderful](http://miriamposner.com/classes/dh201w19/tutorials-guides/data-visualization/getting-started-with-tableau-public/) [tutorials](http://miriamposner.com/classes/dh201w19/tutorials-guides/mapping/create-a-map-with-tableau/) — so it made an appealing option for doing a visualization of my word count data to use for my final hackathon presentation. Once you've gotten the hang of the major elements of Tableau's visual vocabulary and some UI quirks, putting together new visualizations is quick and easy.
 
 
 I used the data from the Jupyter notebook to create a [heat map table visualization based on the word counts](https://public.tableau.com/views/multilingual-brandes-viz/Sheet1?:embed=y&:display_count=yes&publish=yes&:origin=viz_share_link). Putting that together took about 10 minutes (even with my wriggly collaborator periodically requiring attention), which took me up until the beginning of the final presentations.
 
 
-**Presentation**  
+**Presentation**
 For somewhere around 24 hours of work, what I had felt modest, particularly when juxtaposed with word vectors, deep-learning based text generator, or the permutations on topic modeling, or the Philologic instance with Brandes running. It was just a word-count visualization, punctuated by a few examples of the best OCR errors. It’s not, by itself, anything particularly interesting — it’s a distant proxy for what I really would want to look at. It only hinting at the promise of potentially meaningful discoveries that could be possible through much more work. But it was striking that the less-technical Scandinavian scholars seemed to get what I was trying to do, even while appearing to struggle somewhat with how topic modeling or word vectors further scholarship as such. As digital humanists, we commonly fall back on minimizing such questions with words like “exploratory”, but I don’t think that’s a satisfactory answer particularly when presenting outside of DH circles. Andrew Piper’s Enumerations deliberately builds a navigable path through some of these methods for scholars without a technical background, but it’s not something you can easily encapsulate in an answer to a question, or a framing device for a lightning talk. At least for myself, I feel like I need a better set of examples of meaningful — and, if possible, surprising — discoveries that build on digital humanities methods, readily on hand for moments like this.
 
 
-**Post-hackathon**  
+**Post-hackathon**
 I recently finished the aspect of my project that I didn’t have time for during the hackathon itself: using Voyant to compare the translations beyond just the word counts. The distinctive word information is particularly useful: we can see that everything seems to line up through chapter 4, after which point Russian and Polish diverge (together? Note the parallel in some of the not-named-entities like babko/бабушка in Ch. 8) from the rest of the translations, and they start running a chapter behind in named entities (e.g. see констанъ in Russian chapter 8 instead of 7 for constant; элеонора in 9 instead of 8 for eleonore, etc.)
 
 
 All of the chapter-separated text files for volume 1 are [up on Github](https://github.com/quinnanya/multilingual-brandes), along with the Voyant stats, Jupyter notebook, and Tableau file for the visualization. I’ve also stuck in various other text files and PDFs of translations of Brandes’s writing that I came across along the way, but didn’t end up using. Until I hear otherwise from a Scandinavian studies scholar in my division, I think my time with Brandes may have come to an end. Nevertheless, I hope this project and the texts I tracked down may be of value someday for someone else with a longer-term commitment to Brandes and his work.
 
 
- 

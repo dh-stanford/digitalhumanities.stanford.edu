@@ -17,4 +17,3 @@ The successful candidate will have a deep understanding of scholarship in the hu
 More details and application instructions at <http://m.rfer.us/STANFORDfjgse>.
 
 
- 

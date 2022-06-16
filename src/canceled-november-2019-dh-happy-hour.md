@@ -6,13 +6,14 @@ submitted_at: 2019-09-19T13:37:00-07:00
 ---
 
 
-Date/Time: Thursday, 21 November 2019 - 4:00pm to 5:00pmLocation: The Treehouse 
+Date/Time: Thursday, 21 November 2019 - 4:00pm to 5:00pmLocation: The Treehouse
 
 The November DH Happy Hour has been canceled due to the special meeting of the Faculty Senate about the future of the Stanford University Press. Please join us in January!
 
 
- 
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/events/33868901248_e9c2374a64_z.jpg) 
+
+![](/post-images/33868901248_e9c2374a64_z.jpg)
+
 
 

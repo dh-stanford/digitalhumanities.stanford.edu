@@ -5,7 +5,8 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2019-06-24T15:42:59-07:00
 ---
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/IMG_20190620_160937.jpg?itok=_YB_vCb3)My first academic year at Stanford has come to a close, ushering in a summer that promises to be surprisingly busy, despite the relatively empty hallways and offices around campus. Working in central IT, I’d forgotten what it’s like to be so directly impacted by the rhythms of the school year, and the way everyone heads overseas as soon as finals wrap up.
+![](/post-images/IMG_20190620_160937.jpg)
+My first academic year at Stanford has come to a close, ushering in a summer that promises to be surprisingly busy, despite the relatively empty hallways and offices around campus. Working in central IT, I’d forgotten what it’s like to be so directly impacted by the rhythms of the school year, and the way everyone heads overseas as soon as finals wrap up.
 
 
 Summer is already underway, with CESTA’s undergraduate interns starting yesterday, and deadlines drawing near for finishing things in time for the international DH conference. But before I get too far into things this summer, here’s what I’ve been up to over the course of the spring.
@@ -74,7 +75,7 @@ This summer we’re going to have a lot of data cleaning and normalization to do
 #### Translation
 
 
-I co-presented some initial findings from the translation project with Yulia Ilchuk, Antonio Lenzo, and J.D. Porter at the "Workshop on Digital Humanities to Preserve Knowledge and Cultural Heritage” ([as described in this previous blog post](https://digitalhumanities.stanford.edu/translating-language-culture-form-workshop-digital-humanities-preserve-knowledge-and-cultural)). We ended up having to simplify our corpus to 20th century short-stories (including, but not limited to, mystery/noir), to be able to get enough unique authors and translators. In the process of working on this project, I also discovered — to my initial chagrin, and then delight — that what we were doing fits squarely in the field of corpus-based translation studies, making the project less novel, but giving it other work to be in dialogue with. 
+I co-presented some initial findings from the translation project with Yulia Ilchuk, Antonio Lenzo, and J.D. Porter at the "Workshop on Digital Humanities to Preserve Knowledge and Cultural Heritage” ([as described in this previous blog post](https://digitalhumanities.stanford.edu/translating-language-culture-form-workshop-digital-humanities-preserve-knowledge-and-cultural)). We ended up having to simplify our corpus to 20th century short-stories (including, but not limited to, mystery/noir), to be able to get enough unique authors and translators. In the process of working on this project, I also discovered — to my initial chagrin, and then delight — that what we were doing fits squarely in the field of corpus-based translation studies, making the project less novel, but giving it other work to be in dialogue with.
 
 
 ### New projects
@@ -101,7 +102,7 @@ Around a year ago, Yulia Ilchuk worked with a student to manually count all inst
 #### Palladio Bricks
 
 
-Did you know that the [DH visualization tool Palladio](http://hdlab.stanford.edu/palladio/) can be embedded in any website, because the visualizations are all generated client-side? For a couple years, there’s been work towards this concept of “Palladio bricks”, but it’s needed a little more work and a lot more documentation before it can really be promoted. I’ve started working on the documentation side, hoping to get something usable done this summer, and my CIDR developer colleagues may be lending a hand with a few specific tasks on the coding end. 
+Did you know that the [DH visualization tool Palladio](http://hdlab.stanford.edu/palladio/) can be embedded in any website, because the visualizations are all generated client-side? For a couple years, there’s been work towards this concept of “Palladio bricks”, but it’s needed a little more work and a lot more documentation before it can really be promoted. I’ve started working on the documentation side, hoping to get something usable done this summer, and my CIDR developer colleagues may be lending a hand with a few specific tasks on the coding end.
 
 
 #### Tools for Japanese text analysis
@@ -137,7 +138,8 @@ I also participated in a [“Digital Brandes” hackathon at UC Berkeley](https:
 Miriam Posner and Chris Johanson invited me to their DH pedagogy course at UCLA, where I gave a talk about doing multilingual digital humanities, or at least supporting students who want to work in other languages. In the process, I developed a list of [multilingual NLP resources](https://github.com/multilingual-dh/nlp-resources) for a wide range of living and dead languages.
 
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/48096102628_cda020b592_z.jpg)I wrapped up the quarter with the Text Technologies [“Women and Gender Minorities in DH” workshop](https://texttechnologies.stanford.edu/news/women-and-gender-minorities-digital-humanities) at CESTA, which I’d been helping organize through the winter and spring. We were able to bring in a wonderful group of guest speakers from around the country (with a few international participants) for a thought-provoking and engaging event. Before the workshop formally started, I ran a special session of the Textile Makerspace with Miriam Posner and her daughter Dora (both sewists), and we continued the joy of making during the workshop with the vinyl cutter that now resides in the Textile Makerspace. On the last day of the workshop, I gave a personal talk called “Bridges”, about identifying as non-binary, and the ways that language, gender, sexuality, and family impose constraints that we have to work within. We’ll be publishing videos from that workshop over the summer.
+![](/post-images/48096102628_cda020b592_z.jpg)
+I wrapped up the quarter with the Text Technologies [“Women and Gender Minorities in DH” workshop](https://texttechnologies.stanford.edu/news/women-and-gender-minorities-digital-humanities) at CESTA, which I’d been helping organize through the winter and spring. We were able to bring in a wonderful group of guest speakers from around the country (with a few international participants) for a thought-provoking and engaging event. Before the workshop formally started, I ran a special session of the Textile Makerspace with Miriam Posner and her daughter Dora (both sewists), and we continued the joy of making during the workshop with the vinyl cutter that now resides in the Textile Makerspace. On the last day of the workshop, I gave a personal talk called “Bridges”, about identifying as non-binary, and the ways that language, gender, sexuality, and family impose constraints that we have to work within. We’ll be publishing videos from that workshop over the summer.
 
 
 ### Working groups
@@ -179,4 +181,3 @@ The Textile Makerspace came into being as something greater than an old computer
 Over the course of the spring, I spoke with a number of potential candidates for the History ATS position we currently have open. We had a robust pool of applicants, and are still currently in the interview process. But I’m looking forward to starting the fall with a colleague in history who I can work closely with on building up a digital humanities community at Stanford, beyond our many individual projects.
 
 
- 

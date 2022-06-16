@@ -5,10 +5,11 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2021-10-19T11:30:00-07:00
 ---
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/color_mask.png)
+![](/post-images/color_mask.png)
 
 
- 
+
+
 
 
 *PI: Katherine Hill Reischl, Slavic Languages and Literatures*
@@ -29,6 +30,7 @@ This Stanford-based extension of the project, begun at [Princeton University](ht
 *Image bottom: Example of a color mask for an image in the journal* 30 dnei
 
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/document_segmentation.png)
+![](/post-images/document_segmentation.png)
+
 
 

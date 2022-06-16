@@ -5,7 +5,8 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2021-01-11T16:19:09-08:00
 ---
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/131687275_10102336237448250_957397634163127735_o.jpg?itok=a9F2i-2r)2020 was the first year I taught in the fall -- and I'm very glad to have arranged teaching that way, so I have the rest of the year to continue supporting DLCL students on their projects.  Teaching either of my classes ([*Digital Humanities Across Borders*](https://github.com/quinnanya/dlcl204) AKA Multilingual DH, or *Project Management and Ethical Collaboration for Humanists* AKA the DH RPG class) has a way of being all-consuming, and having over 20 students  made it even more so! I was excited to explore some new languages with students: Arabic, Latin, Malay, and Vietnamese. The class was held asynchronously, though we started doing Friday hang-outs where I learned some new tricks, too (like changing the UI language in Netflix in order to get access to different sets of subtitles). It was a challenging quarter, with more than one student moving out of the state (or country), multiple hospitalizations, and the stress of the election getting to everyone, myself included. But I'm really proud of everything they managed to do despite it all, and I hope to share some of their work here (with permission) over the next few months.
+![](/post-images/131687275_10102336237448250_957397634163127735_o.jpg)
+2020 was the first year I taught in the fall -- and I'm very glad to have arranged teaching that way, so I have the rest of the year to continue supporting DLCL students on their projects.  Teaching either of my classes ([*Digital Humanities Across Borders*](https://github.com/quinnanya/dlcl204) AKA Multilingual DH, or *Project Management and Ethical Collaboration for Humanists* AKA the DH RPG class) has a way of being all-consuming, and having over 20 students  made it even more so! I was excited to explore some new languages with students: Arabic, Latin, Malay, and Vietnamese. The class was held asynchronously, though we started doing Friday hang-outs where I learned some new tricks, too (like changing the UI language in Netflix in order to get access to different sets of subtitles). It was a challenging quarter, with more than one student moving out of the state (or country), multiple hospitalizations, and the stress of the election getting to everyone, myself included. But I'm really proud of everything they managed to do despite it all, and I hope to share some of their work here (with permission) over the next few months.
 
 
 ### Existing projects
@@ -68,4 +69,3 @@ Finally, with help from a bunch of props (including Dr. Cheese Bones, the skelet
 I'm looking forward to taking a moment to catch my breath after last quarter's teaching, and moving forward with all this work and more in 2021!
 
 
- 

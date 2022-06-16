@@ -5,7 +5,8 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2020-09-13T20:12:27-07:00
 ---
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/Edsb6szXoAYLxkx.png?itok=1uckm4cz)It’s hard to believe that fall is already here. A couple weeks of virtual first grade have given me some time to start preparing for teaching my non-English DH course this fall, but as usual, a lot of it will be worked out in the moment, responding to the students’ own languages, projects, and needs. Before getting too far into the work of fall quarter, here’s the summer 2020 round-up.
+![](/post-images/Edsb6szXoAYLxkx.png)
+It’s hard to believe that fall is already here. A couple weeks of virtual first grade have given me some time to start preparing for teaching my non-English DH course this fall, but as usual, a lot of it will be worked out in the moment, responding to the students’ own languages, projects, and needs. Before getting too far into the work of fall quarter, here’s the summer 2020 round-up.
 
 
 ### Teaching
@@ -29,13 +30,13 @@ Understandably, there’s a lot of interest in DH methods among later-stage grad
 Over the summer, I’ve been working with Danny Smith to add some new texts to the Global Medieval Sourcebook. One of the interesting challenges of this work has involved RTL languages: the Versioning Machine software wasn’t built to handle those. Luckily, I have a generous and brilliant colleague in Simon Wiles at CIDR in the library, and he helped me sort out the CSS necessary for the RTL-languages to be right-justified, and the LTR-languages to be left-justified (for both prose and poetry, which use different encoding).
 
 
-By the end of the year, we’re hoping to retire the current Drupal site for the Global Medieval Sourcebook and replace it with a static, [Wax](https://minicomp.github.io/wax/)-based site. 
+By the end of the year, we’re hoping to retire the current Drupal site for the Global Medieval Sourcebook and replace it with a static, [Wax](https://minicomp.github.io/wax/)-based site.
 
 
 #### Poetic Media Lab projects
 
 
-This quarter, I’ve wrapped up my involvement with the Florentine Codex project, after using Transkribus to develop a model that could transcribe a large amount of the text. Compared to having project PI Obed Lira working with undergrads to transcribe the entire manuscript, Transkribus has provided a hugely impactful technical intervention. 
+This quarter, I’ve wrapped up my involvement with the Florentine Codex project, after using Transkribus to develop a model that could transcribe a large amount of the text. Compared to having project PI Obed Lira working with undergrads to transcribe the entire manuscript, Transkribus has provided a hugely impactful technical intervention.
 
 
 I was happy to support Nelson Endebo's [Life in Quarantine](http://liqproject.org/) project officially launching over the summer, as well. This, along with another project focused on the impact of COVID-19 on international students, have benefited from consultation with Josh Schneier, the Library’s new University Archivist, along with Natalie Marine-Street, who works with the Stanford Oral History Program. For project that are trying to capture the present moment, having the input and the support of people with experience in these areas is a huge help.
@@ -68,10 +69,10 @@ I’ve consulted with professors Marie Hubert and Sarah Prodan about their ideas
 ### Writing
 
 
-As it happens, the summer wasn’t terrible for being able to write up some of the work I’ve done so far, in a format that other people can learn from. Along with a group of current and former high-performance computing (HPC) colleagues, I finished an article for “Debates in DH: Computational Humanities” about the intersection of HPC and DH. 
+As it happens, the summer wasn’t terrible for being able to write up some of the work I’ve done so far, in a format that other people can learn from. Along with a group of current and former high-performance computing (HPC) colleagues, I finished an article for “Debates in DH: Computational Humanities” about the intersection of HPC and DH.
 
 
-In collaboration with three students from my winter course on project management and ethical collaboration, I wrote a chapter for a “Debates in DH: The Digital Futures of Graduate Study in the Humanities” and undertook peer review for other chapters in that volume. 
+In collaboration with three students from my winter course on project management and ethical collaboration, I wrote a chapter for a “Debates in DH: The Digital Futures of Graduate Study in the Humanities” and undertook peer review for other chapters in that volume.
 
 
 I also wrote up a piece on minimal computing, for a special issue of DH Quarterly — mostly critiquing how usable “minimal computing” web development methods actually are, and proposing infrastructural interventions that the DH community could undertake to improve the situation.
@@ -80,7 +81,7 @@ I also wrote up a piece on minimal computing, for a special issue of DH Quarterl
 The peer review process is wrapping up for the “Debates in DH 2021” piece that Patrick Burns and I co-authored about multilingual DH, and I’ll be happy to have it out in the world (relatively) soon. It also benefited from some feedback from colleagues in the library as part of the recently-restarted library reading group.
 
 
-Meanwhile, the tutorial on preparing non-English texts for computational text analysis methods that I wrote last fall has [been published](https://www.modernlanguagesopen.org/articles/10.3828/mlo.v0i0.294/), just in time for me to use it in my class this fall. 
+Meanwhile, the tutorial on preparing non-English texts for computational text analysis methods that I wrote last fall has [been published](https://www.modernlanguagesopen.org/articles/10.3828/mlo.v0i0.294/), just in time for me to use it in my class this fall.
 
 
 ### Talks and Events
@@ -92,7 +93,7 @@ Right after my spring write-up, I attended “Building Legal Literacies for Tex 
 Along with Kalika Bali (from Microsoft Research), I facilitated a weeklong panel as part of the “Disrupting Digital Monolingualism” through “Language Acts and Worldmaking” at University College London. We brought together a group of scholars and industry folks who work with multilingual NLP, and hope to produce a white paper summarizing their perspectives around opportunities and needs for multilingual NLP.
 
 
-The international DH conference is my conference, and I was very sad (though sympathetic) that it didn’t happen this year. I didn’t have the time to organize something for most of the things I’d gotten accepted for the mostly-asynchronous manifestation of the conference. That said, I did manage to put together a simple website with [opinion pieces about DH directories](https://dh2020directoriesforum.hcommons.org/) (in lieu of the “roundtable” panel accepted for the conference). I also live-tweeted the “Demystifying ADHO” roundtable, and [presented at the tool criticism workshop](http://quinndombrowski.com/?q=blog/2020/07/21/it-doesnt-work-failure-and-dh-tools) sponsored by the Digital Literary Stylstics ADHO SIG. 
+The international DH conference is my conference, and I was very sad (though sympathetic) that it didn’t happen this year. I didn’t have the time to organize something for most of the things I’d gotten accepted for the mostly-asynchronous manifestation of the conference. That said, I did manage to put together a simple website with [opinion pieces about DH directories](https://dh2020directoriesforum.hcommons.org/) (in lieu of the “roundtable” panel accepted for the conference). I also live-tweeted the “Demystifying ADHO” roundtable, and [presented at the tool criticism workshop](http://quinndombrowski.com/?q=blog/2020/07/21/it-doesnt-work-failure-and-dh-tools) sponsored by the Digital Literary Stylstics ADHO SIG.
 
 
 But my favorite memory of DH 2020 is something that I didn’t submit as part of the usual process during fall 2019. Along with Artjoms Šela and Shawn Moore, I organized a series of lightning talks in the game “Animal Crossing: New Horizons” on the Friday of the DH conference. It felt amazing to be able to be somewhere “in person” (in some sense) with colleagues during the DH conference. And since there’s reason to expect the COVID-induced world of virtual everything will persist for some time, I’ve recently been talking with Liz Grumbach about imagining a DH reading group that meets via Animal Crossing and streams to Twitch.
@@ -125,4 +126,3 @@ Finally, the thing I’m proudest of having accomplished over the summer is admi
 *Photo credit Houda Lamqa, from the ADHO ACNH lightning talks*
 
 
- 

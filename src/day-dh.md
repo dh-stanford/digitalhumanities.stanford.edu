@@ -26,4 +26,3 @@ Today is the Day of DH, when digital humanities practitioners try to document wh
 If you are at Stanford and think of yourself as doing digital humanities scholarship, let me know and I will happily add you to the list.
 
 
- 

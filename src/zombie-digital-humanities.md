@@ -5,7 +5,8 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2018-10-31T10:24:16-07:00
 ---
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/8043568856_80808299e6_k.jpg?itok=g2p3PLWX)I've been thinking a lot lately about the undead, various forms of afterlife, and how they intersect with digital humanities. As a result, Halloween seemed a fitting occasion to relaunch the blog at Stanford's Digital Humanities website, with further reanimation to come.
+![](/post-images/8043568856_80808299e6_k.jpg)
+I've been thinking a lot lately about the undead, various forms of afterlife, and how they intersect with digital humanities. As a result, Halloween seemed a fitting occasion to relaunch the blog at Stanford's Digital Humanities website, with further reanimation to come.
 
 
 First, by way of introduction, I'm Quinn Dombrowski, the new Academic Technology Specialist in [CIDR (Center for Interdisciplinary Digital Research)](http://library.stanford.edu/research/cidr) and the [DLCL (Division of Literatures, Cultures, and Languages)](https://dlcl.stanford.edu/) at Stanford. Which is to say, I support the "doing" of DH in literature (other than English, East Asian, or Classics), in a position jointly funded by that division and [Stanford Libraries](http://library.stanford.edu/). My background is in Slavic linguistics, and I picked up a Master's in Library and Information Science along the way.
@@ -29,8 +30,7 @@ Especially during this last year, I'm grateful to the DH necromancers who made p
 I’ve been happily undead for the last month now, and I've been reflecting on what's changed in DH in terms of tools and methods. [TEI](http://www.tei-c.org/) isn't going anywhere and [thematic research collections](http://digitalhumanities.org/companion/view?docId=blackwell/9781405103213/9781405103213.xml&chunk.id=ss1-4-5&toc.id=0&brand=9781405103213_brand) are still very much a thing, but it’s heartening to see more thought going towards “[collections as data](https://crln.acrl.org/index.php/crlnews/article/view/17003/18751)”, rather than simply building beautiful websites. I’ve been around long enough to remember the debates about whether blogging about academic topics constituted “digital humanities”. Then came the emergence of Twitter and the decline of blogging as a forum for scholarly discourse. DH dialogue these days seems fragmented across many platforms and channels, but I’ve been heartened to see favorite blogs that had gone dormant (such as [Kathleen Fitzpatrick’s](https://kfitz.info/)) once again light up my feed reader, even as other stalwart blogs have recently met abrupt ends (RIP dear [Library Loon](https://gavialib.com/)).
 
 
-  
+
 Returning to digital humanities, I’ve been struck by the usefulness of old blog posts I’ve re-discovered, even those dating back half a decade or more. [Scott Weingart’s posts](http://www.scottbot.net/HIAL/index.html@tag=networks-demystified.html) about network analysis, spurred by a [post by Elijah Meeks](https://dhs.stanford.edu/visualization/more-networks/), have been a wonderful refresher on a set of tools I barely dabbled with in my previous DH lives. For seeing what others are working on, I find reading blogs to be much more tractable than trying to stay on top of the tweet stream, and I’m grateful to aggregators like [Digital Humanities Now](http://digitalhumanitiesnow.org/) for those times when I need a more concentrated distillation of goings-on in DH. So in the spirit of [Elijah Meeks](https://twitter.com/Elijah_Meeks) (another of Stanford’s DH-departed, now with Netflix), I’ll be blogging here, and inviting others in the Stanford DH community to do the same. I hope you’ll join me for reanimating the Stanford Digital Humanities blog.
 
 
- 

@@ -5,7 +5,8 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2021-07-09T10:51:52-07:00
 ---
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/acndighum-spring.jpg?itok=jeNMXGcS)Spring quarter gave me the first chance in a long while to take some time off. The first week of the quarter was my kids' spring break, which we spent in a cabin in the woods near Mt. Lassen with just the right amount of internet: enough to quietly keep an eye on email, not enough for Zoom. We've taken some other long weekends, and there's been periods when school has been closed for one or more kids. Nonetheless, here's where things stand at the end of spring quarter.
+![](/post-images/acndighum-spring.jpg)
+Spring quarter gave me the first chance in a long while to take some time off. The first week of the quarter was my kids' spring break, which we spent in a cabin in the woods near Mt. Lassen with just the right amount of internet: enough to quietly keep an eye on email, not enough for Zoom. We've taken some other long weekends, and there's been periods when school has been closed for one or more kids. Nonetheless, here's where things stand at the end of spring quarter.
 
 
 ### Existing projects
@@ -80,4 +81,3 @@ Serving on the search committee for a joint CESTA/CIDR position was another majo
 Summer has already begun to disappear quickly, and there's a lot to do to get ready for the fall, between the Slavic DH Research Unit, revising my "Project Management and Ethical Collaboration for Humanists" course materials, preparing the computational reading list for Russian, and working with the large multilingual team on the Data-Sitters Club poster for EADH in September. And especially with the return to campus this fall, I hope to settle back into a more regular routine of blogging here, beyond the quarterly updates. We'll see where it takes me.
 
 
- 

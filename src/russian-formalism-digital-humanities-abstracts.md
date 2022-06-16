@@ -5,7 +5,7 @@ submitted_by: Karim Arsalane
 submitted_at: 2015-03-17T09:49:00-07:00
 ---
 
- 
+
 
 
 
@@ -15,9 +15,9 @@ submitted_at: 2015-03-17T09:49:00-07:00
 | **Monday, April 13, 2015**
 **Stanford Humanities Center**
 
- 
- 
- |
+
+
+|
 | **Opening Remarks (9:30-9:50)****Franco Moretti (Stanford University)**
 
 
@@ -38,7 +38,7 @@ This paper is a Formalist- and DH-inspired comparative analysis of Russian Forma
 
 **Session Two (1:30-3:30): Russian Formalist Theory meets Digital Humanities Tools****Chair: Mike Widner (Stanford University)**
 **Mark Algee-Hewitt (Stanford University)“The Order of Poetry: Information, Aesthetics and Jakobson’s Theory of Literary Communication”**
-In his search for the underlying linguistic principles of literary (and particularly poetic) communication, Roman Jakobson, in a short essay from 1960, entitled “Linguistics and Communication Theory” remarks upon the “striking coincidences and convergences between the latest stages of linguistic analysis and the approach to language in the mathematical theory of communication.” In the essay, Jakobson outlines the ways in which Claude Shannon and Warren Weaver’s  “Mathematical Theory of Communication” can revise our understanding of literary language as a stochastic process that is influenced by hierarchical rules that manifest themselves in the probabilities of word selection. Although promising, his progress stalls because, as he acknowledges, he lacks the computational power to calculate information load at the scale of corpora. In this paper, I return to the questions that Jakobson raises and investigate the work of poetic language through the application of information theory. Here, I move away from the standard uses of information loss as a method to establish abstract distances between individual poems, and instead derive informational metrics as a set of formal characteristics that offer information about the “noisy” process of poetic communication itself. What do metrics like “redundancy” tell us about the ways in which poets communicate information to their audience? Does, as Jakobson argues, the “noise” of poetic language offer a separate method of communication that accompanies, and enhances, the nominal “meaning” of the text? And, taken as a separate linguistic field, does poetry suggest the limits of understanding information transfer mathematically? By calculating a new set of communication-based metrics on a corpus of English poetry, I explore, in this paper, the ways in which contemporary Digital Humanities work can pick up the striking sympathies that Jakobson outlines and offer new ways of understanding aesthetics through information. 
+In his search for the underlying linguistic principles of literary (and particularly poetic) communication, Roman Jakobson, in a short essay from 1960, entitled “Linguistics and Communication Theory” remarks upon the “striking coincidences and convergences between the latest stages of linguistic analysis and the approach to language in the mathematical theory of communication.” In the essay, Jakobson outlines the ways in which Claude Shannon and Warren Weaver’s  “Mathematical Theory of Communication” can revise our understanding of literary language as a stochastic process that is influenced by hierarchical rules that manifest themselves in the probabilities of word selection. Although promising, his progress stalls because, as he acknowledges, he lacks the computational power to calculate information load at the scale of corpora. In this paper, I return to the questions that Jakobson raises and investigate the work of poetic language through the application of information theory. Here, I move away from the standard uses of information loss as a method to establish abstract distances between individual poems, and instead derive informational metrics as a set of formal characteristics that offer information about the “noisy” process of poetic communication itself. What do metrics like “redundancy” tell us about the ways in which poets communicate information to their audience? Does, as Jakobson argues, the “noise” of poetic language offer a separate method of communication that accompanies, and enhances, the nominal “meaning” of the text? And, taken as a separate linguistic field, does poetry suggest the limits of understanding information transfer mathematically? By calculating a new set of communication-based metrics on a corpus of English poetry, I explore, in this paper, the ways in which contemporary Digital Humanities work can pick up the striking sympathies that Jakobson outlines and offer new ways of understanding aesthetics through information.
 **David Birnbaum and Elise Thorsen (University of Pittsburgh)"Enabling the automated identification and analysis of meter and rhyme in Russian verse"**
 The quantitative study of meter and rhyme in Russian syllabotonic verse has been well-established as a research method at least since Kiril Taranovski's 1953 *Ruski dvodelni ritmovi*, and has roots that go back even earlier. Much computer-assisted analysis of Russian meter and rhyme, such as that conducted by J. Thomas Shaw in the latter part of the twentieth century, has used computational tools to manage the data, but the preparation of those data for analysis have traditionally depended on the manual human identification and annotation of the poetic corpus. Manual identification and annotation is not scalable, but machine-assisted alternatives are complicated by the fact that meter and rhyme depend on the place of stress, which is not normally represented in standard Russian orthography. This presentation will discuss the development of new computational tools that overcome those limitations and make it possible to describe and analyze the meter and rhyme of Russian verse on the basis of plain-text input in normal Russian orthography.
 **Matthew Jockers (University of Nebraska)“Latent Plot Analysis Using the Syuzhet Package in R”**
@@ -47,7 +47,7 @@ Jockers will discuss his most recent research charting plot structures in a corp
 
 ---
 
- 
+
 **Session Three (4:00-6:00): Points of Contact - Russian Formalism and the Digital Humanities****Chair: Nariman Skakov (Stanford University)**
 **Igor Pil’shchikov (Tallinn University/Moscow State University)“The Legacy of the Moscow Linguistic Circle and the Digital Humanities Today”**
 The Moscow Linguistic Circle, which has recently started to attract the attention of the researchers, still remains one of the most understudied phenomena in the history of Russian linguistics and poetics. The role that it played in the fields of linguistic poetics, verse studies, exact scientific methods in the humanities, semiotics and philosophy of language has not been investigated properly, because the proceedings and other materials of the MLC still await publication. The Moscow scholars developed a formal statistical approach to the study of literary language which examines all the levels of the poetic text. They concerned themselves with both synchronic and diachronic poetics, as well as literary genesis, evolution and typology. This plan was not implemented in full due to the political difficulties of that time.
@@ -57,14 +57,14 @@ Filling these lacunae leads to recalibration of our contemporary vision of Russi
 Victor Shklovsky’s ties to the Socialist Revolutionary (SR) Party – the Bolsheviks’ strongest enemy on the left – color his memoir, Sentimental Journey, and motivated his flight to Berlin during the 1922 SR show trials. His political and literary-theoretical allegiances are linked not only by his rebellious attitude but also by the Formalists’ and the SRs’ shared commitment to understanding what could make language get readers’ or listeners’ attention. This paper reports on an attempt to use quantitative methodology on a corpus of SR rhetoric to test some of the assertions made about effective political speech by the SR leader Victor Chernov, and it reflects on what this experiment suggests about the possibility of using digital techniques to evaluate the validity of Shklovsky’s ideas.
 **Jessica Merrill (Stanford University)“The Verbal Mass and the Database: Defining the Text in Formalist Literary Analysis”**
 The emergence of large corpora of digitalized literary texts has prompted a return to formalism. Digitalization unbinds books, turning texts into a sea of letters or “bags of words.” Faced with this mass of data, scholars have sought to develop tools to search for patterns within this material. This move can be compared to early Russian formalism, whose adherents described their object of study as the “verbal mass” [slovesnaia massa]. The formalists initially approached this material inductively, often setting aside the categories of the ‘author’ and the ‘text.’ In doing so, they drew on nineteenth-century folklore study, which defined its object as a reservoir of traditional, elemental formal units which evolve, migrate, and wax and wane in popularity. This paper asks us to consider whether this folkloristically inspired model might help bridge the gap between the sea of letters and the individual author/text in digital humanities research.
-  |
-
- 
+|
 
 
- 
 
 
- 
+
+
+
+
 
 

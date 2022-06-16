@@ -5,7 +5,8 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2020-03-23T16:52:51-07:00
 ---
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/dhrpg-lastday.jpg?itok=VyZJ4two)It is a strange time to be writing my quarter-in-review blog post. The quarter is over (according to the calendar we started the year with, it’s spring break right now) but I feel like a normal sense of time is one of the things that’s already started to dissolve, and the shelter-in-place order in the Bay Area has only been in place a week.
+![](/post-images/dhrpg-lastday.jpg)
+It is a strange time to be writing my quarter-in-review blog post. The quarter is over (according to the calendar we started the year with, it’s spring break right now) but I feel like a normal sense of time is one of the things that’s already started to dissolve, and the shelter-in-place order in the Bay Area has only been in place a week.
 
 
 February’s monthly blog post was supposed to be a reflection on the [Russian NLP hackathon that we held on Valentine’s Day at CESTA](https://dlcl.stanford.edu/news/dlcl-hosts-hackathon-computational-criticism-russian-literature). I’d still like to write that reflection, but I need to think it through some more; the conclusions I’d reached assume a level of freedom of time and travel that we might not have back anytime soon.
@@ -47,7 +48,7 @@ The relaunch of FRDA using a combination of a [Spotlight exhibit for images](htt
 This quarter, I worked with some of the Poetic Media Lab student (and recent-graduate) collaborators on applying for postdocs, and was delighted to learn that one of them received a prestigious four-year fellowship that will enable her to continue working on her project and develop parts of it into a book. I’d hoped we could meet in person at this year’s convocation, but it’ll have to wait for another time. Still, I’m grateful to have had a chance to meet another long-distance Poetic Media Lab collaborator in person while she was in town, and show her around the Textile Makerspace.
 
 
-My work on the Poetic Media Lab projects has largely been on hold this quarter, other than corresponding with partners at Bucknell about putting together training data to attempt to train a Transkribus model for the Spanish and Nahuatl hands of the [Florentine Codex](https://poeticmedia.stanford.edu/florentine-codex-project). Thanks to Diane Jakacki’s brilliance with XSLT, I have the data I need — now to just sort through renaming all the files properly, and actually try to train a model. 
+My work on the Poetic Media Lab projects has largely been on hold this quarter, other than corresponding with partners at Bucknell about putting together training data to attempt to train a Transkribus model for the Spanish and Nahuatl hands of the [Florentine Codex](https://poeticmedia.stanford.edu/florentine-codex-project). Thanks to Diane Jakacki’s brilliance with XSLT, I have the data I need — now to just sort through renaming all the files properly, and actually try to train a model.
 
 
 #### Other web-based projects
@@ -71,7 +72,7 @@ This autumnal-vacation Anglophone project has taken a turn towards the multiling
 To my surprise, the Data-Sitters Club was nominated for two [DH Awards](http://dhawards.org/) this year: Best Series of Blog Posts and Best Use of DH for Fun. Figuring we’d have better odds with fun than blog posts, I started posting ads for the project on Twitter, using remixed old book covers, ads, and other retro BSC content. And it seems to have worked! We won Best Use of DH for Fun (in a tie), and got third place (also in a multi-way tie) for Best Series of Blog Posts. You can [check out all the ads here](https://datasittersclub.github.io/site/dhawards2019).
 
 
-Perhaps more satisfying, even, than winning the DH Awards was when Dan Sinykin taught the Data-Sitters club as part of his [Intro to Digital Humanities course](http://www.dansinykin.com/teaching.html) at Emory, and we heard from them on Twitter. Much like with the DH RPG, it’s an incredible feeling to discover that one of your wild, random projects has worked, beyond even what you imagined possible.  
+Perhaps more satisfying, even, than winning the DH Awards was when Dan Sinykin taught the Data-Sitters club as part of his [Intro to Digital Humanities course](http://www.dansinykin.com/teaching.html) at Emory, and we heard from them on Twitter. Much like with the DH RPG, it’s an incredible feeling to discover that one of your wild, random projects has worked, beyond even what you imagined possible.
 
 
 #### JSTOR Data for Research
@@ -95,7 +96,7 @@ I set myself the goal of trying to have some preliminary documentation for Palla
 #### Other projects
 
 
-No new developments of note this quarter on Prof. Yulia Ilchuk’s networked novel project, but the Russian NLP hackathon (more on that below) provided an opportunity to brainstorm some ideas for tools we could develop that might shed new light on this work. Also, nothing of note around tools for Japanese text analysis, though I got to put my childhood katakana skills to the test in locating the “download” button in a Japanese corpus interface as part of a web scraping consult. I also haven’t had any time at all to think about what I’ll present at CMEMS in the spring — if there is CMEMS in the spring given everyone’s remote working conditions? Perhaps my contribution may end up being simply supporting the group meeting online nexts quarter. 
+No new developments of note this quarter on Prof. Yulia Ilchuk’s networked novel project, but the Russian NLP hackathon (more on that below) provided an opportunity to brainstorm some ideas for tools we could develop that might shed new light on this work. Also, nothing of note around tools for Japanese text analysis, though I got to put my childhood katakana skills to the test in locating the “download” button in a Japanese corpus interface as part of a web scraping consult. I also haven’t had any time at all to think about what I’ll present at CMEMS in the spring — if there is CMEMS in the spring given everyone’s remote working conditions? Perhaps my contribution may end up being simply supporting the group meeting online nexts quarter.
 
 
 ### New projects
@@ -161,10 +162,10 @@ I virtually attended and [live-tweeted](https://twitter.com/quinnanya/status/123
 I put in a proposal for giving a talk at Stanford WebCamp, reflecting on the work I’ve been doing to think through sustainable infrastructure for DLCL’s web-based DH projects, and the way that is — and isn’t — compatible with a minimal computing toolset. The proposal was accepted, but my talk is scheduled for this Friday during hours that I can’t work on account of running a kindergarten/preschool at home, and my work hours that day are already filled with online course support, so I’ve had to withdraw.
 
 
-I was delighted to be accepted to the “[Building Legal Literacies for Text and Data Mining](https://buildinglltdm.org/)” NEH-funded institute hosted by UC Berkeley this June. Thorny, multi-national legal questions are a mainstay of the work I’ve been doing, and I’m still very excited to do it, even though it was just announced this morning that it’s going to be held entirely online. 
+I was delighted to be accepted to the “[Building Legal Literacies for Text and Data Mining](https://buildinglltdm.org/)” NEH-funded institute hosted by UC Berkeley this June. Thorny, multi-national legal questions are a mainstay of the work I’ve been doing, and I’m still very excited to do it, even though it was just announced this morning that it’s going to be held entirely online.
 
 
-The [Feminist DH symposium](https://scholarslab.lib.virginia.edu/events/event-2020-02-28-feminist-dh-uva-symposium-3/) at the Scholar’s Lab at the University of Virginia was one of the highlights of the quarter for me: a chance to catch up with old friends and finally, for the first time, see the world-famous Scholar’s Lab right before its renovation. The other speakers, Gabriela Baeza Ventura and Carolina A. Villarroel, are doing amazing work on recovering Spanish-language literature, newspapers, manifestos, and other compelling documents published in the United States, and I wonder what opportunities there might be for students in the DLCL to collaborate with them on a “Spanish NLP” effort modeled after what we’ve done with the Russian NLP research unit this year. 
+The [Feminist DH symposium](https://scholarslab.lib.virginia.edu/events/event-2020-02-28-feminist-dh-uva-symposium-3/) at the Scholar’s Lab at the University of Virginia was one of the highlights of the quarter for me: a chance to catch up with old friends and finally, for the first time, see the world-famous Scholar’s Lab right before its renovation. The other speakers, Gabriela Baeza Ventura and Carolina A. Villarroel, are doing amazing work on recovering Spanish-language literature, newspapers, manifestos, and other compelling documents published in the United States, and I wonder what opportunities there might be for students in the DLCL to collaborate with them on a “Spanish NLP” effort modeled after what we’ve done with the Russian NLP research unit this year.
 
 
 My talk at the symposium, “The 2040 Plan”, was partly an abbreviated version of these write-ups (looking at some of the things I’ve done recently, and whether they worked or not), and partly a reflection on the challenges we’ll see more of between now and 2040 — and what kind of projects and collaborations can help us make it through. Already, it’s a talk that feels prescient, even though at the time — less than a month ago — there was still a solid mental wall between me and how things might change in my own day-to-day life as fall-out from the accelerating number of COVID-19 cases in the Bay Area. It meant a lot to be invited to the symposium, and to be able to make the trip and meet in person with colleagues I usually only see online. It means even more now, knowing that it may have been my only trip outside the Bay Area this year.
@@ -230,4 +231,3 @@ For the next two weeks, at least half my working time will be going towards supp
 After that, we’ll see where people are at, who needs support, what that might look like, and how many kids are still attending my home-preschool. But as we talked about in our “Concierge” presentation in the library, there’s never been a way to describe a typical day in the life of an ATS: every day is something different. So as spring quarter comes, I’ll be sorting through challenges they arise, same as always, even as the number of uncertainties skyrockets.
 
 
- 

@@ -5,10 +5,11 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2019-01-30T22:17:34-08:00
 ---
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/youmanateescomputing.jpg?itok=YKKCyrEB)It’s once again the season for the “[DH Awards](http://dhawards.org/)”, an international DH-themed popularity contest with an award category for “best exploration of DH failure” that [debuted in 2014](http://dhawards.org/dhawards2014/nominations/), the year “[What Ever Happened to Project Bamboo?](https://academic.oup.com/dsh/article-abstract/29/3/326/2938127)” was published. Alas, that year I lost to Melissa Terras’s “[Reuse of Digitized Content](http://melissaterras.blogspot.com/2014/10/reuse-of-digitised-content-4-chasing.html)”, and I haven’t had anything worth nominating in that category since.
+![](/post-images/youmanateescomputing.jpg)
+It’s once again the season for the “[DH Awards](http://dhawards.org/)”, an international DH-themed popularity contest with an award category for “best exploration of DH failure” that [debuted in 2014](http://dhawards.org/dhawards2014/nominations/), the year “[What Ever Happened to Project Bamboo?](https://academic.oup.com/dsh/article-abstract/29/3/326/2938127)” was published. Alas, that year I lost to Melissa Terras’s “[Reuse of Digitized Content](http://melissaterras.blogspot.com/2014/10/reuse-of-digitised-content-4-chasing.html)”, and I haven’t had anything worth nominating in that category since.
 
 
-This year, I decided to revisit and submit my keynote from last year’s [“On the Benefits of Failure” symposium](https://novel-tm.ca/?p=807) at the University of Alberta, [recently made available through their digital repository](https://era-av.library.ualberta.ca/media_objects/avalon:42992). 
+This year, I decided to revisit and submit my keynote from last year’s [“On the Benefits of Failure” symposium](https://novel-tm.ca/?p=807) at the University of Alberta, [recently made available through their digital repository](https://era-av.library.ualberta.ca/media_objects/avalon:42992).
 
 
 Truth be told, I hate watching videos. I also never write out my talks in advance, so I have nothing written to draw upon, beyond my slides. A text version, then, was only possible as a derivative. I ran the video through YouTube’s auto-captioning, cleaned up the transcript, and did a light edit before [posting the text on my website](http://quinndombrowski.com/blog/2019/01/30/towards-taxonomy-failure).
@@ -38,4 +39,3 @@ The fact that YouTube’s transcription performs as well as it does is nothing s
 It’d be easy enough to let this talk disappear quietly, an un-transcribed video hidden in plain sight in an institutional repository. But, despite my sense of strangeness and estrangement looking back on this talk, I think it still has some ideas worth sharing. Nominating it for a DH Award gives it a larger audience than humanities grad students at the University of Alberta in March, and it transforms what was intended as a final statement into a living challenge to myself to fail better in my new role at Stanford.
 
 
- 

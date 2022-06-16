@@ -23,6 +23,6 @@ My favorite example for demonstrating the contingent nature of space in the Roma
 I'm not well-versed in interactive design and I'm a firm believer in general open source principles, which is why ORBIS v2 is being developed publicly. Anyone who wants to sketch up a possible interface, information architecture, user flow, or other design artifact for ORBIS (whether in Balsamiq or by hand or whatever) is welcome to do so, with the very real possibility that it or elements of it will end up in the final site.
 
 
- 
+
 
 

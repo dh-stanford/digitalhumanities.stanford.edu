@@ -6,12 +6,12 @@ submitted_at: 2013-10-24T11:06:00-07:00
 ---
 
 
-Date/Time: Thursday, 24 October 2013 - 4:15pm to 5:00pmLocation: History Building 200, Room 303 
+Date/Time: Thursday, 24 October 2013 - 4:15pm to 5:00pmLocation: History Building 200, Room 303
 
 The History Department and Science Technology and Society Program are pleased to present:
 
 
- 
+
 
 
 "Maps Before and After the Smartphone:
@@ -20,7 +20,7 @@ The History Department and Science Technology and Society Program are pleased to
 A Global History, 1968-2013"
 
 
- 
+
 
 
 Jo Guldi
@@ -29,7 +29,7 @@ Jo Guldi
 Assistant Professor of History, Brown University
 
 
- 
+
 
 
 4:15pm, Thursday, October 24th, 2013
@@ -38,11 +38,12 @@ Assistant Professor of History, Brown University
 History Building 200, Room 303
 
 
- 
 
 
- 
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/events/image002.jpg) 
+
+
+![](/post-images/image002.jpg)
+
 
 

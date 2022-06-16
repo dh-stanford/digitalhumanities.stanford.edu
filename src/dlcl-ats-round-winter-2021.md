@@ -5,7 +5,8 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2021-03-24T16:20:04-07:00
 ---
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/143306752_10102370164493180_1743701058124313097_o%20%281%29.jpg?itok=kU5lcExP)Winter quarter was a time of consolidation and slow progress, without much to share by way of exciting new developments. I worked on a lot of things that I expect will bear fruit down the road, but I can't point to anything concrete yet. Here's where things stand as of spring break 2021.
+![](/post-images/143306752_10102370164493180_1743701058124313097_o%20%281%29.jpg)
+Winter quarter was a time of consolidation and slow progress, without much to share by way of exciting new developments. I worked on a lot of things that I expect will bear fruit down the road, but I can't point to anything concrete yet. Here's where things stand as of spring break 2021.
 
 
 ### Existing Projects
@@ -35,7 +36,7 @@ Sadly, in February we got word that the proposal Cécile Alduy and I submitted o
 Other projects that are still on hold include the Harry Potter fanfic project, text mining JSTOR, and cleaning up the OCR for the *Ostrov* zine (though now we're imagining ways of working with that text without having to break it up into sub-articles). Something to take up in the spring or summer, perhaps?
 
 
- 
+
 
 
 ### New Projects
@@ -50,7 +51,7 @@ I also had the chance to talk with Ben Albritton in Special Collections about wo
 I got to learn something about the TEI Publisher platform by answering some questions from Johannes Ruhland about his digital edition project. Once again, Elisa Beshero-Bondar from Penn State Behrend is a benevolent genie of expertise when it comes to TEI and the quirks of systems that process it.
 
 
- 
+
 
 
 ### Writing
@@ -80,4 +81,3 @@ I presented for the CESTA fellows on data modeling, databases, and alternatives 
 Looking ahead, I put in a proposal for the MSU Global DH conference with a number of students from my non-English DH course last quarter, which we'll be presenting in mid-April. I also gave feedback on multiple students' submissions for the ACH conference this summer. I hope I'll see them there virtually, and also be able to do the collaborative roundtable on tool directories that didn't happen in 2020. Towards the end of the quarter, I had various meetings with potential DLCL grad students. I'm excited to see the level of DH interest among our incoming cohort, as it promises many new and interesting projects down the line. Relatedly, during winter quarter I was involved in the job search for a Digital Scholarship Coordinator (joint CESTA/CIDR position), and I look forward to that wrapping up soon, and having a new colleague to collaborate with before long.
 
 
- 

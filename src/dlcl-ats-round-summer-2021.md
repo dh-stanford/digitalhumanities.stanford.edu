@@ -5,7 +5,8 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2021-09-27T14:30:37-07:00
 ---
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/20210927_113149.jpg?itok=OhqSJZYf)Summer always disappears too quickly, especially when it involves navigating childcare gaps at various points. I spent almost the whole summer at home, but started to go back to campus regularly after Labor Day. It's been a delight to have an office of my own for the Data-Sitters Club art by Claire Chenette, and the werewolf saint by Miles Smith, even if I haven't figured out how to hang them on the walls just yet.
+![](/post-images/20210927_113149.jpg)
+Summer always disappears too quickly, especially when it involves navigating childcare gaps at various points. I spent almost the whole summer at home, but started to go back to campus regularly after Labor Day. It's been a delight to have an office of my own for the Data-Sitters Club art by Claire Chenette, and the werewolf saint by Miles Smith, even if I haven't figured out how to hang them on the walls just yet.
 
 
 ### Existing projects
@@ -62,7 +63,8 @@ In another heroic write-up effort, Matt Warner put together a paper out of the S
 At the beginning of the summer, I gave a keynote at the virtual Digital Humanities Summer Institute (DHSI) with Erica Cavanaugh, on graceful degradation in collaborative relationships. I also attended and livetweeted the other keynotes (which happened daily), [winning a Twitter award from DHSI](https://twitter.com/ETCLatUVic/status/1405933384887681031) in the process.
 
 
-![](https://live.staticflickr.com/65535/51525978395_60ec97dcb1_c.jpg)The major conference of my summer was ACH 2021, which was held online. In addition to moderating a number of panels (including one by Merve Tekgürler from Stanford's History department, about Ottoman Turkish HTR), I was on a panel with Lisa Spiro, Geoffrey Rockwell, Frank Fischer, Edward Gray, and Alex Gil about DH directories. Admittedly, though, my favorite talk was an "other presentation format", where Liz Grumbach, Merve Tekgürler, and I did a "report from the field" where we interviewed people about their DH work while running around in a grassy field in Animal Crossing: New Horizons. I also decorated my Animal Crossing island as a real conference space, with different lunch options each day and a large coffee station.
+![](https://live.staticflickr.com/65535/51525978395_60ec97dcb1_c.jpg)
+The major conference of my summer was ACH 2021, which was held online. In addition to moderating a number of panels (including one by Merve Tekgürler from Stanford's History department, about Ottoman Turkish HTR), I was on a panel with Lisa Spiro, Geoffrey Rockwell, Frank Fischer, Edward Gray, and Alex Gil about DH directories. Admittedly, though, my favorite talk was an "other presentation format", where Liz Grumbach, Merve Tekgürler, and I did a "report from the field" where we interviewed people about their DH work while running around in a grassy field in Animal Crossing: New Horizons. I also decorated my Animal Crossing island as a real conference space, with different lunch options each day and a large coffee station.
 
 
 Continuing in that spirit, we also gave a presentation -- again in Animal Crossing, projected as my Zoom video -- about the "Animal Crossing: New Digital Humanities" talk series for the Japanese Association for Digital Humanities (JADH) conference in September. Those were our only two ACNDigHum events for the summer, but our schedule is [filling up for fall talks](https://digitalhumanities.stanford.edu/acndh).
@@ -86,4 +88,3 @@ Finally, this writeup would be incomplete without mentioning two major losses wi
 I kicked off this fall with having to rethink my major plans, after not getting enough enrollment for my DH RPG project management course. As such, the fall remains very much a work in progress, but one I look forward to sharing here.
 
 
- 

@@ -6,7 +6,7 @@ submitted_at: 2014-01-23T11:23:00-08:00
 ---
 
 
-Date/Time: Friday, 7 February 2014 - 4:30pmLocation: Green Library - Information Center ClassroomEvent Link: [http://library.stanford.edu/news/2014/01/thomas-milo-raising-stakes-arabic-text-…](http://library.stanford.edu/news/2014/01/thomas-milo-raising-stakes-arabic-text-handling) 
+Date/Time: Friday, 7 February 2014 - 4:30pmLocation: Green Library - Information Center ClassroomEvent Link: [http://library.stanford.edu/news/2014/01/thomas-milo-raising-stakes-arabic-text-…](http://library.stanford.edu/news/2014/01/thomas-milo-raising-stakes-arabic-text-handling)
 
 Join the Stanford Libraries for a fascinating talk by noted typographer Thomas Milo who will describe a project initiated by the Sultanate of Oman.
 
@@ -21,6 +21,6 @@ The project aims to display, search and quote Qur'ān text on the web in a typog
 The event is free and open to the public, but seating is limited. Please contact Sonia Lee <sonialee\_at\_stanford.edu> if you would like to attend.
 
 
- 
+
 
 

@@ -5,10 +5,12 @@ submitted_by: Karl Grossner
 submitted_at: 2013-09-08T19:18:37-07:00
 ---
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/geohumsig_logo_502w.png?itok=I_oHNPlm)Today the [Association of Digital Humanities Organizations](http://adho.org) (ADHO) announced the creation of a GeoHumanities Special Interest Group, instigated and co-chaired by yours truly and [Kathy Weimer](http://library.tamu.edu/directory/k-weimer), Curator of Maps and the Map & GIS Coordinator at Texas A&M’s Cushing Memorial Library & Archives. We were simultaneously inspired to get this started at the recent DH2013 conference in Lincoln, after noting that several well-attended sessions featured papers with geographic, spatial-temporal, and what I call “placial” perspectives and related methodologies.
+![](/post-images/geohumsig_logo_502w.png)
+Today the [Association of Digital Humanities Organizations](http://adho.org) (ADHO) announced the creation of a GeoHumanities Special Interest Group, instigated and co-chaired by yours truly and [Kathy Weimer](http://library.tamu.edu/directory/k-weimer), Curator of Maps and the Map & GIS Coordinator at Texas A&M’s Cushing Memorial Library & Archives. We were simultaneously inspired to get this started at the recent DH2013 conference in Lincoln, after noting that several well-attended sessions featured papers with geographic, spatial-temporal, and what I call “placial” perspectives and related methodologies.
 
 
-[![](sites/default/files/geohumsig_logo_502w.png)](http://geohumanities.org) 
+[![](sites/default/files/geohumsig_logo_502w.png)
+](http://geohumanities.org)
 
 
 
@@ -20,12 +22,11 @@ The stated goals of the SIG, as expressed in our proposal to ADHO, are:
 
 
 > “… to create a venue for pooling knowledge and best practices for relevant existing digital tools and methods, to foster the collaborative development of shared resources and new tools and extensions to geospatial software, and to keep humanist scholars at large informed about the possibilities and inherent pitfalls in their use.”
-> 
-> 
-> 
+>
+>
+>
 
 
 I have written more about my personal motivations for helping launch the SIG on my blog, at <http://kgeographer.com>.
 
 
- 

@@ -5,7 +5,8 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2020-02-05T08:18:46-08:00
 ---
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/32678220085_c4c16c80a6_k.jpg?itok=UR_AWzeb)January was a rough month, between the last gasps of a too-long family trip over the holidays, getting ready for teaching a new course on [Project Management and Ethical Collaboration for Humanists](https://github.com/quinnanya/dlcl205), and then being out sick for a whole week. Amidst this new year chaos came a DH Twitter project that shone a thoughtful light on some of the daily decisions that go into the beginning of the quarter.
+![](/post-images/32678220085_c4c16c80a6_k.jpg)
+January was a rough month, between the last gasps of a too-long family trip over the holidays, getting ready for teaching a new course on [Project Management and Ethical Collaboration for Humanists](https://github.com/quinnanya/dlcl205), and then being out sick for a whole week. Amidst this new year chaos came a DH Twitter project that shone a thoughtful light on some of the daily decisions that go into the beginning of the quarter.
 
 
 Hannah Alpert-Abrams, Mimi Winick, and Amanda Henrichs set out the prompt of a month of “Generous Thinking”, in the spirit of Kathleen Fitzpatrick’s book of the same name. What are concrete steps that we can take — especially those of us in various alt-ac and other staff positions — to make the university a more humane place, and meaningfully engage with broader world?
@@ -28,7 +29,6 @@ I didn’t manage to share something in the spirit of generous thinking every da
 * I got to thinking about connecting with people who have moved on entirely from academia, when my husband got an email from Academia.edu that someone in Europe cited two papers he wrote on a really interesting niche topic. As much as he’s not usually a fan of those spammy emails, hearing that someone, somewhere was building on something he’d worked on made him genuinely happy. What can we build into scholarly networks that we can feel better about (e.g. [Humanities Commons](https://hcommons.org/)) to enable those connections in an opt-in way, that won’t compound negative feelings for people who have left academia more recently, and not by choice?
 * This “generous thinking” project made me more attentive to some of the generous practices going on around me. Some new staff members have joined my division, and each of them gets a 3-5 paragraph, thoughtful introduction email that includes things like their background, expertise, places they’ve lived, languages they speak, etc. Charo Robinson, our director of finance and operations, sends these emails out to every single faculty member, lecturer, and student in the department. The inclusion of language, in particular, is a thoughtful touch that provides a point of connection and relatability in a modern languages department.
 
-I’m grateful to everyone who shared their own generous thinking ideas and practices in January — it was one of the best things that happened that month. I hope that this conversation continues (if at a less reliable pace) within the broader DH community; you can follow along with the hashtag #GenerousThinking on Twitter. 
+I’m grateful to everyone who shared their own generous thinking ideas and practices in January — it was one of the best things that happened that month. I hope that this conversation continues (if at a less reliable pace) within the broader DH community; you can follow along with the hashtag #GenerousThinking on Twitter.
 
 
- 

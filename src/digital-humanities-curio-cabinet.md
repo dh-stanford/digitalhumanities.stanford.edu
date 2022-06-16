@@ -17,7 +17,7 @@ Now, I do not have the pedigree that either of these parties holds. I am not the
 Instead, they want to hire a single position, which goes by a few names but *Digital Humanities Specialist* is a good one. Or they want to provide one or two interested librarians with a vague portfolio. Or the support will come as a few generic packages from Central IT, and bring with it the onerous but necessary restrictions Central IT is notorious for. And in every case, these responses fall short of an official library-supported center for three main reasons:
 
 
-1) **Digital humanities support requires long-term investment in the professional staff providing that support.** Cyclical funding, especially grant-funding, does a decent job of immersing graduate students and contract software developers in the exigencies of humanities scholarship, and then sending them back into the world at just the point at which they have developed the domain expertise and core skills that you need to drive forward innovation. Unclear collaborative opportunities for existing library staff are quickly discarded when they’re weighed against very concrete Old Library Duties and Old Library Politics. 
+1) **Digital humanities support requires long-term investment in the professional staff providing that support.** Cyclical funding, especially grant-funding, does a decent job of immersing graduate students and contract software developers in the exigencies of humanities scholarship, and then sending them back into the world at just the point at which they have developed the domain expertise and core skills that you need to drive forward innovation. Unclear collaborative opportunities for existing library staff are quickly discarded when they’re weighed against very concrete Old Library Duties and Old Library Politics.
 
 
 Every project I’ve worked on has provided me more of the necessary methodological and technical skills to provide not only more robust software development and project management to the next faculty member or group I support, but also the capacity to return to the PIs of earlier projects and suggest improvements on or directly extend the work they’ve done. I couldn’t have done that if I’d had to spend half my time with an eye toward grant deadlines or traditional library support profiles.
@@ -35,5 +35,4 @@ Here at Stanford we have no DH center, in the library or outside, though we have
 \* This originally misidentified Bethany Nowviskie as not being a librarian, when the Scholar's Lab is located in the UVa Library. I also misspelled her name, which is absurd given that I know how to spell it.
 
 
- 
- 
+

@@ -5,7 +5,8 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2020-04-24T16:29:00-07:00
 ---
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/field/image/Day_of_DH_Stanford_0.png)CESTA and CIDR are participating in [Day of DH](https://dhcenternet.org/initiatives/day-of-dh/2020), an international celebration of the work that digital humanists do, sponsored by centerNet.
+![](/post-images/Day_of_DH_Stanford_0.png)
+CESTA and CIDR are participating in [Day of DH](https://dhcenternet.org/initiatives/day-of-dh/2020), an international celebration of the work that digital humanists do, sponsored by centerNet.
 
 
 On Tuesday, April 28th at 4 PM Pacific, we'll have the virtual version of our monthly DH lighting talks and meetup. Please [register for the Zoom call for the DH lighting talks and meetup here](https://stanford.zoom.us/meeting/register/tJwldeytpzsrGNCRMbG4J6yB0mJKicqNZEnh).
@@ -17,7 +18,7 @@ On Wednesday, April 29th at 3 PM Pacific, we'll be co-hosting with UC Berkeley, 
 Hope to see you (and any pets, kids, etc. who'd also like to join) there!
 
 
- 
+
 
 
 ### Day of DH coloring/art contest

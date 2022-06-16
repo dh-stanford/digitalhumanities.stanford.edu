@@ -5,7 +5,8 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2019-12-20T08:17:06-08:00
 ---
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/fanfic.jpg?itok=8AB91aKE)It's been an eventful quarter in the Division of Literatures, Cultures, and Languages and Stanford Libraries! Writing it up, it's hard to believe it was packed into just three months.
+![](/post-images/fanfic.jpg)
+It's been an eventful quarter in the Division of Literatures, Cultures, and Languages and Stanford Libraries! Writing it up, it's hard to believe it was packed into just three months.
 
 
 Existing projects
@@ -63,7 +64,7 @@ I’ve continued the conversation with Regan Murphy Kat and others on what bette
 ### Machine learning & medieval
 
 
-I’m still undecided on what I’ll present at CMEMS in the spring — with everything else going on, I haven’t had a chance to explore what I might be able to do with applying machine learning to the Old Novgorod Birchbark Letter corpus (or the watermark catalogs). But I’m hoping that next quarter’s continuation of the “Six Septembers” reading group might give me a more immediate excuse to work on it. 
+I’m still undecided on what I’ll present at CMEMS in the spring — with everything else going on, I haven’t had a chance to explore what I might be able to do with applying machine learning to the Old Novgorod Birchbark Letter corpus (or the watermark catalogs). But I’m hoping that next quarter’s continuation of the “Six Septembers” reading group might give me a more immediate excuse to work on it.
 
 
 New Projects
@@ -103,7 +104,7 @@ The DH project management course that uses a “Dungeons and Dragons” style ta
 ### Helping both my organizations
 
 
-One of the joys of a split appointment (between the DLCL and the Library) is that I can take on small tasks that have a big impact, even when they’re not directly connected to my job. In the DLCL, I held a couple office hours for getting Canvas set up at the start of the quarter, after helping out a couple grad students in passing. I also spent a couple hours using the Stanford Sites Drupal platform to create a DLCL course scheduler web form for instructors to fill out, and reduce the amount of email the department admins have to deal with around course requests. 
+One of the joys of a split appointment (between the DLCL and the Library) is that I can take on small tasks that have a big impact, even when they’re not directly connected to my job. In the DLCL, I held a couple office hours for getting Canvas set up at the start of the quarter, after helping out a couple grad students in passing. I also spent a couple hours using the Stanford Sites Drupal platform to create a DLCL course scheduler web form for instructors to fill out, and reduce the amount of email the department admins have to deal with around course requests.
 
 
 On the Library side, I did some translation work for some requests that subject area librarian colleagues have for the Digital Library Systems & Services (DLSS) group — around adding CJK searching functionality in the exhibits platform, and supporting collection-level bulk download of digital objects accessioned into the repository. There’s been a long history of understandable frustration on both sides with requests like these, but my unusual background (having spent a decade working in central IT, in groups not dissimilar to DLSS) has made it feasible for me to serve as an interpreter and advocate in both directions.
@@ -116,10 +117,10 @@ Workshops
 ---------
 
 
-I started the quarter with a Zotero + Tropy workshop for incoming Art History grad students, at the invitation of Art History librarian Vanessa Kam. Our new History ATS, Marie Saldaña, presented Tropy, while I focused on Zotero. It wasn’t without its technical hitches, but was definitely a reminder that Tropy’s Twitter tech support, thanks to Abby Mullen, is absolutely second to none. Later in the quarter, we ran the workshop again under the CIDR workshop series. 
+I started the quarter with a Zotero + Tropy workshop for incoming Art History grad students, at the invitation of Art History librarian Vanessa Kam. Our new History ATS, Marie Saldaña, presented Tropy, while I focused on Zotero. It wasn’t without its technical hitches, but was definitely a reminder that Tropy’s Twitter tech support, thanks to Abby Mullen, is absolutely second to none. Later in the quarter, we ran the workshop again under the CIDR workshop series.
 
 
-At the “Gear up for Data” event in the Library, I ran a workshop on considerations for non-English natural language processing. Finally, at the end of the quarter, I gave a presentation on the text track of the “Fantastic Futures” Library AI conference, talking about [Transkribus](https://transkribus.eu/) for handwritten text recognition for many languages and different types of materials. 
+At the “Gear up for Data” event in the Library, I ran a workshop on considerations for non-English natural language processing. Finally, at the end of the quarter, I gave a presentation on the text track of the “Fantastic Futures” Library AI conference, talking about [Transkribus](https://transkribus.eu/) for handwritten text recognition for many languages and different types of materials.
 
 
 Writing
@@ -138,7 +139,7 @@ After my non-English DH course last winter, I had a conversation with Adam Crymb
 I co-authored an abstract with Patrick Burns for the Debates in DH 2021 volume, about multilingual DH, and we were both excited to have that accepted.
 
 
-Around Thanksgiving, I submitted a full draft of my piece, “Non-English DH Means Resilience”, about my non-English DH course last winter, to Debates in DH: Pedagogy. I’m really pleased with how this piece came together, though we’ll see if the coda (which includes a gut-punch for anyone teaching DH) makes it through peer review intact. 
+Around Thanksgiving, I submitted a full draft of my piece, “Non-English DH Means Resilience”, about my non-English DH course last winter, to Debates in DH: Pedagogy. I’m really pleased with how this piece came together, though we’ll see if the coda (which includes a gut-punch for anyone teaching DH) makes it through peer review intact.
 
 
 Fall is the time to submit (and review) abstracts for DH 2020. I wrote a [guide to writing an abstract for a DH conference](https://digitalhumanities.stanford.edu/guide-writing-dh-conference-submissions) on this blog, and then wrote five different abstracts on five very different topics — submitting two in my own name (tool directories and DH-WoGeM), serving as an additional collaborator on one (Russian NLP), and helping shape two others that colleagues submitted (Multilingual DH and Demystifying ADHO). In addition, I coordinated with [Global Outlook::DH](http://www.globaloutlookdh.org/) (where I’m on the Exec Board) and the [Multilingual DH](http://multilingualdh.org/) group on planning for a pre-conference workshop / tutorial-writing hackathon at DH 2020. I reviewed three abstracts for DH 2020, and five for the [University of Michigan’s Global DH Symposium](http://www.msuglobaldh.org/).
@@ -228,4 +229,3 @@ Marie Saldaña started in September as the new ATS for History. But shortly ther
 As a closing thought, this entire year — but particularly this last quarter — has reminded me of the many ways in which digital humanities ultimately comes down to people. It's a praxis that, in so many cases, is ultimately centered on people, even though the technology is more likely to get top billing in the discourse. I feel very fortunate to work with many wonderful people on all these projects, at Stanford and beyond, and to have the opportunity to bring students into those communities. I'm looking forward to seeing where it all goes in the new year.
 
 
- 

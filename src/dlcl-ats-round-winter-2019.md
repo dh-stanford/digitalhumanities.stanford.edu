@@ -5,7 +5,8 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2019-04-02T09:49:39-07:00
 ---
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/20190401_124502.jpg?itok=NMYqXdEY)Winter quarter 2019 was almost entirely devoured by the time demands of developing and running “[Digital Humanities Across Borders](https://github.com/quinnanya/dlcl204)”, my non-English textual DH course. I was grateful to be granted the space to do this; fortunately, none of the projects I’ve been supporting had any deadlines at the beginning of the year, and everyone has been very gracious and understanding about delays on my end on account of class prep.
+![](/post-images/20190401_124502.jpg)
+Winter quarter 2019 was almost entirely devoured by the time demands of developing and running “[Digital Humanities Across Borders](https://github.com/quinnanya/dlcl204)”, my non-English textual DH course. I was grateful to be granted the space to do this; fortunately, none of the projects I’ve been supporting had any deadlines at the beginning of the year, and everyone has been very gracious and understanding about delays on my end on account of class prep.
 
 
 There were two aspects of the class that made time-consuming, "just-in-time" class prep an inevitability: first, I initially packed everything I could imagine doing into the draft syllabus, and asked the students to fill out a survey to help prioritize the topics. Not all of my favorites made the cut (I regret not making them spend more time working through technical documentation), but I wasn’t unhappy with the results overall. Thematic research collections (AKA Drupal/WordPress/Omeka sites) were cut from the revised syllabus, as was TEI. The convenient elimination of those two topics leaves me with some suspicions that my attempt to present all the topics impartially before sending out the survey was not entirely successful. Not knowing what we’d actually cover in the class before it was underway meant I couldn’t easily work ahead with my class prep before the quarter started. Now that I’ve run the course once, I have materials to draw from next time, even if there’s incomplete topical overlap.
@@ -136,4 +137,3 @@ Goals
 In my [fall quarterly round-up](https://digitalhumanities.stanford.edu/my-first-quarter-stanford-dlcl-ats-round-fall-2018), I mentioned looking for opportunities to work with folks from Iberian and Latin American Cultures. While I did have two students working on Spanish in my class during winter quarter, I don’t yet have a project going with that department. Here’s hoping spring 2019 will be my opportunity to find one!
 
 
- 

@@ -6,7 +6,7 @@ submitted_at: 2014-02-17T11:39:00-08:00
 ---
 
 
-Date/Time: Monday, 24 February 2014 - 1:00pm to 2:30pmLocation: Graduate School of Business McClelland Bldg, Room M104Event Link: [The Data, Society, and Inference Seminar Series](https://iriss.stanford.edu/css/dsi-seminar) 
+Date/Time: Monday, 24 February 2014 - 1:00pm to 2:30pmLocation: Graduate School of Business McClelland Bldg, Room M104Event Link: [The Data, Society, and Inference Seminar Series](https://iriss.stanford.edu/css/dsi-seminar)
 
 **The****Institute for Research in the Social Sciences****Data, Society, and Inference Seminar Series is pleased to announce a talk by****David Blei, Associate Professor of Computer Science,****Princeton University**
 
@@ -29,12 +29,12 @@ More broadly, topic modeling is a case study in the large field of applied proba
 Lunch is provided and will be served at 12:40 pm. Please RSVP to [kswall@stanford.edu](mailto:kswall@stanford.edu) by Friday, Feb 21.
 
 
- 
 
 
- 
 
 
- 
+
+
+
 
 

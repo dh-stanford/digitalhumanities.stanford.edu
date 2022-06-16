@@ -6,13 +6,14 @@ submitted_at: 2019-01-17T20:05:00-08:00
 ---
 
 
-Date/Time: Thursday, 24 January 2019 - 4:00pm to 5:00pmLocation: Treehouse 
+Date/Time: Thursday, 24 January 2019 - 4:00pm to 5:00pmLocation: Treehouse
 
 Join colleagues from Stanford's digital humanities community for drinks and friendly conversation at The Treehouse!
 
 
- 
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/events/43171396412_aaed7d15e0_k.jpg) 
+
+![](/post-images/43171396412_aaed7d15e0_k.jpg)
+
 
 

@@ -6,13 +6,14 @@ submitted_at: 2018-11-16T20:40:00-08:00
 ---
 
 
-Date/Time: Thursday, 6 December 2018 - 4:00pm to 5:00pmLocation: The Treehouse 
+Date/Time: Thursday, 6 December 2018 - 4:00pm to 5:00pmLocation: The Treehouse
 
 Join colleagues from Stanford's digital humanities community for drinks and friendly conversation at The Treehouse!
 
 
- 
 
-![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/events/28351197577_bbbfbfc27c_k.jpg) 
+
+![](/post-images/28351197577_bbbfbfc27c_k.jpg)
+
 
 

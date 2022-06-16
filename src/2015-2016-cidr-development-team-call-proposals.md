@@ -8,10 +8,10 @@ submitted_at: 2015-09-30T17:24:33-07:00
 **Introduction**
 
 
-The Center for Interdisciplinary Digital Research (CIDR), a division of the Stanford University Libraries, is pleased to announce a Call for Proposals from Stanford faculty members for research collaborations in the digital humanities and computational social sciences.  Projects should focus on the production of digitally enabled scholarship designed to analyze, visualize, or simulate an interesting problem in the humanities or social sciences.  CIDR support in these collaborations will consist of dedicated software development, project planning, and project management efforts. 
+The Center for Interdisciplinary Digital Research (CIDR), a division of the Stanford University Libraries, is pleased to announce a Call for Proposals from Stanford faculty members for research collaborations in the digital humanities and computational social sciences.  Projects should focus on the production of digitally enabled scholarship designed to analyze, visualize, or simulate an interesting problem in the humanities or social sciences.  CIDR support in these collaborations will consist of dedicated software development, project planning, and project management efforts.
 
 
-We expect and encourage proposal submissions that represent the widest range of topics, theories, and disciplines.  We welcome ideas that push the boundaries of conventional research and pedagogical methods and that introduce new and sophisticated modes of analysis and visualization.  Successful projects will make novel contributions to the scholar’s field, will be theoretically and/or methodologically novel, and will be creative and technically innovative.   We will look favorably upon projects that cross disciplines, that engage students, and that produce tools and methods that are generalizable and reusable by others. 
+We expect and encourage proposal submissions that represent the widest range of topics, theories, and disciplines.  We welcome ideas that push the boundaries of conventional research and pedagogical methods and that introduce new and sophisticated modes of analysis and visualization.  Successful projects will make novel contributions to the scholar’s field, will be theoretically and/or methodologically novel, and will be creative and technically innovative.   We will look favorably upon projects that cross disciplines, that engage students, and that produce tools and methods that are generalizable and reusable by others.
 
 
 CIDR has particular expertise in these and related methodologies, and especially welcomes proposals making use of them:
@@ -23,7 +23,7 @@ CIDR has particular expertise in these and related methodologies, and especially
 * advanced data visualization
 * computer gaming and the humanities / social sciences
 
- 
+
 
 
 **Program scope**
@@ -32,13 +32,13 @@ CIDR has particular expertise in these and related methodologies, and especially
 The Stanford University Libraries are committed to collaborations with Stanford faculty on innovative research projects in the digital humanities and computational social sciences.  The Center for Interdisciplinary Digital Research at Stanford includes a team of software developers and digital research specialists who maintain a portfolio of projects that vary in complexity and duration.  The CIDR team works closely with a variety of other SUL units such as the Geospatial Center and IT infrastructure specialists (database analysts, systems administrators, development operations managers), and relies on other Library services such as the Stanford Digital Repository in support of selected projects.
 
 
-Because proposals themselves may vary in complexity and duration, we cannot guarantee award of a specific number of supported projects.  We will select a portfolio of projects in the context of our available resources such that SUL can confidently help carry each one to a successful outcome within a reasonable timeframe.  The selection process will take into consideration current project commitments and staffing resources. 
+Because proposals themselves may vary in complexity and duration, we cannot guarantee award of a specific number of supported projects.  We will select a portfolio of projects in the context of our available resources such that SUL can confidently help carry each one to a successful outcome within a reasonable timeframe.  The selection process will take into consideration current project commitments and staffing resources.
 
 
-The size and composition of the team collaborating on selected projects will be determined during the detailed project planning phase, after successful proposals are selected. 
+The size and composition of the team collaborating on selected projects will be determined during the detailed project planning phase, after successful proposals are selected.
 
 
- 
+
 
 
 **Submission and selection process**
@@ -56,7 +56,7 @@ The Statement of Interest and initial consultation are intended primarily to ass
 Final Proposals will then be evaluated for scholarly appropriateness and recommended for support by members of the CIDR Faculty Advisory Board, for project planning to begin as soon as projects underway now reach conclusion and, therefore, on a rolling basis.
 
 
- 
+
 
 
 **Final Proposals should include the following:**
@@ -73,7 +73,7 @@ Final Proposals will then be evaluated for scholarly appropriateness and recomme
 The Proposal narrative should address the following topics:
 
 
-*Audience*: Please describe the intended audience for the proposed work.  We are seeking rigorous scholarly work that lends itself to peer review and advances the field, so fellow scholars are almost always one audience.  In addition, projects may be intended for the lay public, policy makers, undergraduates, or K-12 education, among others. 
+*Audience*: Please describe the intended audience for the proposed work.  We are seeking rigorous scholarly work that lends itself to peer review and advances the field, so fellow scholars are almost always one audience.  In addition, projects may be intended for the lay public, policy makers, undergraduates, or K-12 education, among others.
 
 
 *Purpose*: What are the main purposes of your project?  Some possible purposes are: scholarly communication, creation of analytical or exploratory environments, collaboration, or pedagogy.  Since a project may have several purposes that may be in competition with one another, we find it helpful to prioritize them.
@@ -101,7 +101,7 @@ Technical requirements need to be clearly defined. If the project is expected to
 *Generalizability and reuse*: One of the goals of this program is to develop new digital methods and tools that not only advance the research in question, but also extend the digital humanities and computational social sciences infrastructure at Stanford.  In this regard we look favorably upon projects that result in tools, methods and platforms that can be reused by students and other scholars at Stanford and beyond, and can be applied to a variety of research and pedagogical questions, possibly in other disciplines.  Please describe known work, or speculate on work by peers or others, that may benefit from the outcomes of the proposed project.
 
 
- 
+
 
 
 **Proposal timeline**
@@ -128,7 +128,7 @@ after 2 December: Decisions announced
 January 2016: Detailed planning begins for selected projects (NB: Projects may be scheduled serially in order to maintain the team’s portfolio)
 
 
- 
+
 
 
 **Contacts**
@@ -140,4 +140,3 @@ Send submissions and questions to [contact-cidr@lists.stanford.edu](mailto:conta
 … or contact a member of the CIDR team directly: Stu Snydman and Glen Worthey (CIDR Co-Leads); Karl Grossner and David McClure (CIDR Developers); Vijoy Abraham, Nicole Coleman, Claudia Engel, Jason Heppler, and Mike Widner (Academic Technology Specialists); and Judy Marsh and Ron Nakao (Social Science Data & Software, SSDS).
 
 
- 
