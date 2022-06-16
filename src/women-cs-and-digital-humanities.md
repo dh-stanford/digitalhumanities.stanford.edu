@@ -3,7 +3,6 @@ layout: layouts/article
 title: "Women in CS (and the Digital Humanities)"
 submitted_by: Hannah Rose Abalos
 submitted_at: 2013-08-21T18:31:41-07:00
-has-comments: False
 ---
 
 According to Dave Winer’s [blog post](http://scripting.com/2013/08/19/whyArentThereMoreWomenProgrammers) on his website a few days ago, women are a minority in programming because they lack certain qualities – namely patience – that allow them to succeed in the profession. He writes that because men have evolved to be more patient than women, and because of specialization, “programming as it exists today is a mostly male thing”.

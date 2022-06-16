@@ -3,7 +3,6 @@ layout: layouts/article
 title: "DLCL ATS round-up, fall 2019"
 submitted_by: Quinn Dombrowski
 submitted_at: 2019-12-20T08:17:06-08:00
-has-comments: False
 ---
 
 ![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/fanfic.jpg?itok=8AB91aKE)It's been an eventful quarter in the Division of Literatures, Cultures, and Languages and Stanford Libraries! Writing it up, it's hard to believe it was packed into just three months.

@@ -3,7 +3,6 @@ layout: layouts/article
 title: "SUL Digital Humanities Project Support - Call for Proposals"
 submitted_by: Elijah Meeks
 submitted_at: 2014-02-03T09:29:37-08:00
-has-comments: False
 ---
 
 The **School of Humanities and Sciences** and **Stanford University Library** invite faculty and graduate students in all areas of the humanities to submit a research project proposal. Projects will be selected on the basis of their significance and contribution to the scholar’s disciplinary field, theoretical and methodological sophistication, creativity of approach and technical innovation. 

@@ -3,7 +3,6 @@ layout: layouts/article
 title: "Job opening: Academic Technology Specialist in Literatures, Cultures, and Languages"
 submitted_by: Glen Worthey
 submitted_at: 2018-05-25T13:45:49-07:00
-has-comments: False
 ---
 
 The Stanford University Libraries’ [Center for Interdisciplinary Research (CIDR)](http://cidr.stanford.edu) the [Division of Literatures, Cultures, and Languages (DLCL)](https://dlcl.stanford.edu/) of Stanford’s School of Humanities and Sciences are seeking an innovative, experienced, team-oriented Academic Technology Specialist to help lead the integration of technology into teaching, learning, and research activities in the digital humanities at Stanford and beyond.  This person will consult and collaborate with members of the Stanford community, as well as analyzing, designing, developing, and implementing computational tools for humanities research and teaching.  Apply at <http://m.rfer.us/STANFORDfjgse>.

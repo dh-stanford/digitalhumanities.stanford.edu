@@ -3,7 +3,6 @@ layout: layouts/article
 title: "Kindred Britain Techniques 1: Permalinks on a Graph"
 submitted_by: Elijah Meeks
 submitted_at: 2013-08-28T10:21:33-07:00
-has-comments: False
 ---
 
 ![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/lee_taylor_kb.png?itok=2HlhRbl0)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/tweet0.PNG?itok=8Bqr0lt6)Kindred Britain has a handful of patterns and functions that are rather novel in their creation or deployment. In this series, I'll be exploring the methodology and motivation for them, as well as go into some technical detail as to how they work. The first feature I'd like to focus on is the use of rich permalinks for sharing Kindred Britain. These direct links to particular states of Kindred Britain mean that when you share a link like this:

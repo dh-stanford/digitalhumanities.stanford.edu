@@ -3,7 +3,6 @@ layout: layouts/article
 title: "ORBIS v2"
 submitted_by: Elijah Meeks
 submitted_at: 2013-08-17T09:52:12-07:00
-has-comments: False
 ---
 
 ![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/clustering.png?itok=YkKn4tvn)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/orbisnew.png?itok=3K4wc28N)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/orbisnew2.png?itok=-dEGST3m)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/orbisnew3.png?itok=GUnWq5zr)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/orbisnew5.png?itok=yGLxm5S8)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/orbisnew4.png?itok=tjbahcuO)![A screenshot of ORBIS v2](/sites/g/files/sbiybj8071/f/orbisnew.png)

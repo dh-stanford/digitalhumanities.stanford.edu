@@ -3,7 +3,48 @@ layout: layouts/article
 title: "Women in Programming (or the Lack Thereof)"
 submitted_by: Emma Honour Mae...
 submitted_at: 2013-08-22T13:45:24-07:00
-has-comments: True
+comments: |-
+
+  ### [Reflecting...](/comment/1#comment-1)
+  
+  
+  
+  Submitted by Dave Winer (not verified) on 23 August 2013 - 11:48am 
+  
+  Like you I had a change to reflect on my post,  and this is what came from it.
+  
+  
+  <http://scripting.com/2013/08/21/programmingLookingForward>
+  
+  
+  I was in a unique position to hear from hundreds of people on this topic. Of course it's a sensitive subject for some people, but it's not just one story. Gender is complex, and it involves both genders and many perspectives.
+  
+  
+  Gender and  programming  adds a whole other dimension.
+  
+  
+  iAnd thanks for these observations, I particularly liked the observation that a lot of \*people\* choose not to be programmers and conclusion that it's better to focus on what we want, as opposed to what's wrong. 
+  
+  
+  Dave
+
+  ### [Re: Programming, looking forward](/comment/33#comment-33)
+  
+  
+  
+  Submitted by [Emma Honour Mae...](/users/emma-honour-mae-townley-smith "View user profile.") on 28 August 2013 - 9:39am 
+  
+  Hi Dave,
+  
+  
+  Thanks for reading and for the updated post. I agree that any discussion of gender has to involve both genders and many perspectives. I really do believe that that conclusion is important -- being pushed into something that you don't enjoy is at least as tragic a result of stereotypes as being pushed away from something that you do. 
+  
+  
+  I would challenge the idea that non-programmers don't listen to programmers, but perhaps that's material for a different discussion altogether.
+  
+  
+  Emma
+
 ---
 
 When I first read Dave Winer’s [blog post](http://scripting.com/2013/08/19/whyArentThereMoreWomenProgrammers) about the lack of women in programming, I braced myself. He suggests that women are not “very patient,” and that this explains why they are not very present in CS. Unsurprisingly, this does not conform to my experiences. 

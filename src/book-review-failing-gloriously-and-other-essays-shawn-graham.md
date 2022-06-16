@@ -3,7 +3,6 @@ layout: layouts/article
 title: "Book Review: \"Failing Gloriously and Other Essays\" by Shawn Graham"
 submitted_by: Quinn Dombrowski
 submitted_at: 2019-11-18T09:30:54-08:00
-has-comments: False
 ---
 
 ![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/2070718497_ecf69d4321_k.jpg?itok=4_hLZh4C)After 15 years of doing DH in some form or another, opportunities to sit in the company of fellow “veterans”, swapping tales of bygone years and campaigns won and lost, are a rare and wonderful treat. “Remember ‘Second Life’?” “Ugh, it made me so angry to have to virtually walk around to access information when we had this great thing called the ‘web browser’ where you could just search.” 

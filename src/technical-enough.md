@@ -3,7 +3,6 @@ layout: layouts/article
 title: "Technical enough"
 submitted_by: Quinn Dombrowski
 submitted_at: 2019-09-03T07:00:18-07:00
-has-comments: False
 ---
 
 ![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/3353063137_f0e01c37b1_b.jpg?itok=FFVgSgXL)One of the most memorable panels at ACH was the one with DH Developers talking about how they got to where they are. Matthew Lincoln, Zoe LeBlanc, Rebecca Sutton Koeser, and Jamie Folsom all came to their careers in different ways, and work under different conditions. Even the largest shop (Scholars' Lab), with enough staff to have "junior" and "senior" developer roles, feels small, and everyone seemed interested in cultivating more of a community that crosses institutional boundaries. Some folks, including Rebecca, have begun to get involved with the emerging Research Software Engineering scene in the US. At the end, they called for more developers to tell their "origin stories", referencing the 2013 "Speaking in Code" workshop. 

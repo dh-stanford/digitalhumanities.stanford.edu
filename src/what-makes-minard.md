@@ -3,7 +3,6 @@ layout: layouts/article
 title: "What Makes a Minard?"
 submitted_by: Elijah Meeks
 submitted_at: 2014-03-26T15:54:09-07:00
-has-comments: False
 ---
 
 ![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/flow_map.png?itok=GNxlD4XV)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/minard_ex6.png?itok=O3R4T6Nd)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/minard_ex5.png?itok=PY8oKwDT)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/minard_ex4.jpg?itok=oATpzQYY)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/minard_ex3.png?itok=o6t61WMn)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/minard_ex2.png?itok=HC21-6y6)The [updated ORBIS](http://orbis.stanford.edu/v2/) is rapidly approaching completion, and with its finishing touches comes the need to describe some of the things that it does. Most of its new functionality, such as the routes or cartograms, are from the earlier version, though with much more control given to the user in their creation. But there’s a new option, which I’ve called a Minard Diagram, that produces an inky, snakey, arterial chart out of the ORBIS network. Here is a Minard Diagram for fastest routes from Athens to the rest of the Roman World.

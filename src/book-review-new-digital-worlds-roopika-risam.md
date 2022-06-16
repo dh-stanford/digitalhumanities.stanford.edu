@@ -3,7 +3,6 @@ layout: layouts/article
 title: "Book review: \"New Digital Worlds\" by Roopika Risam"
 submitted_by: Quinn Dombrowski
 submitted_at: 2018-12-14T09:03:45-08:00
-has-comments: False
 ---
 
 ![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/31311261557_2913fd1e87_k.jpg?itok=b3r1KTRS)Thanks to some swift book-ordering by Glen Worthey, our Digital Humanities Librarian, Stanford became one of the first universities with a copy of [Roopika Risam](http://roopikarisam.com/)’s book [*New Digital Worlds*](http://www.nupress.northwestern.edu/content/new-digital-worlds) last week. It was recalled before I even picked it up, leaving me with only a week to read it. As it turned out, there was no need to be concerned: Risam has accomplished the rare feat of crafting a monograph that is simultaneously scholarly, engaging, and applicable. Last Thursday, I started reading it on my 2-hour morning commute, continued during lunch, resumed on my 2-hour evening commute, and — with a brief hiatus for a rousing bedtime chorus of favorite cartoon theme songs with two small children (of such things are modern folksongs made) — spent the coveted post-bedtime hours finishing it. It was around lunchtime that I realized that I needed my own copy and ordered it on the spot. 

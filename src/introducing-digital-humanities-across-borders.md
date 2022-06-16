@@ -3,7 +3,6 @@ layout: layouts/article
 title: "Introducing \"Digital Humanities Across Borders\""
 submitted_by: Quinn Dombrowski
 submitted_at: 2019-01-15T21:45:19-08:00
-has-comments: False
 ---
 
 ![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/5889720469_f0c7911794_b.jpg?itok=jnexRsAr)“Digital Humanities Across Borders” (DLCL 204, cross-listed with Comp Lit and English) kicked off last week. As of today, there are seven registered students and three intrepid auditors (including two area studies librarian colleagues). 

@@ -3,7 +3,6 @@ layout: layouts/article
 title: "Translating Language, Culture, & Form at \"Workshop on Digital Humanities to Preserve Knowledge and Cultural Heritage\""
 submitted_by: Quinn Dombrowski
 submitted_at: 2019-04-18T17:31:38-07:00
-has-comments: False
 ---
 
 ![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/2019-04-15%2010.42.36.jpg?itok=4G-0YklD)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/2019-04-15%2015.11.26.jpg?itok=kadVNljq)On April 15th, CESTA hosted the Workshop on Digital Humanities to Preserve Knowledge and Cultural Heritage, bringing together scholars working with a wide range of materials and methods. The workshop was convened by the Rosetta Project (ResOurces for Endangered languages Through TranslAted texts), a collaboration between Stanford English professor and Director of American Studies Shelley Fisher Fishkin, and colleagues from the Université de Lille  Ronald Jenn (Professor of Translation Studies and Digital Humanities) and Amel Fraisse (Associate Professor of Information and Computer Science, Digital Humanities and Language Processing), along with Zheng Zhang (PhD student in Natural Language Processing at Université Paris-Saclay). The project builds on the work of an earlier “Global Huck” project (which aimed to collect and examine all the translations of “Huckleberry Finn”) by using that collection as a large parallel corpus for developing NLP resources.

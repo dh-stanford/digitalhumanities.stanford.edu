@@ -3,7 +3,6 @@ layout: layouts/article
 title: "Discovering Regions with ORBIS v2"
 submitted_by: Elijah Meeks
 submitted_at: 2013-08-19T10:46:29-07:00
-has-comments: False
 ---
 
 ![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/borders.gif?itok=hVXw1oIh)[![Animated difference in clusters in ORBIS v2](/sites/g/files/sbiybj8071/f/borders.gif)](/sites/g/files/sbiybj8071/f/borders.gif)

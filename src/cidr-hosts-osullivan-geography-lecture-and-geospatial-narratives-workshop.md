@@ -3,7 +3,6 @@ layout: layouts/article
 title: "CIDR hosts O'Sullivan geography lecture and geospatial narratives workshop"
 submitted_by: Karl Grossner
 submitted_at: 2015-06-08T00:00:00-07:00
-has-comments: False
 ---
 
 ![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/geoblog01.png?itok=ILCAZzoK)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/geoblog02.png?itok=vAuTBxIY)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/geoblog01a.png?itok=u76gmmzU)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/geoblog03.png?itok=ty7YyPp9)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/geoblog04.png?itok=CAmMJI6k)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/geoblog05.png?itok=jTenvNPu)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/geoblog06.png?itok=jYnd5unN)![](/sites/g/files/sbiybj8071/f/geoblog01.png)On May 7th, Stanford University Libraries’ ***Center for Interdisciplinary Digital Research*** (CIDR) welcomed David O’Sullivan, Associate Professor of Geography at the University of California, Berkeley to the Stanford campus for two events: a panel discussion on geospatial narrative and a guest lecture on spatial simulation modeling.

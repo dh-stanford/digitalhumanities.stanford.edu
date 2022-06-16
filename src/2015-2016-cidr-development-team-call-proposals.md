@@ -3,7 +3,6 @@ layout: layouts/article
 title: "2015-2016 CIDR Development Team Call for Proposals"
 submitted_by: Glen Worthey
 submitted_at: 2015-09-30T17:24:33-07:00
-has-comments: False
 ---
 
 **Introduction**

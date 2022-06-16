@@ -3,7 +3,6 @@ layout: layouts/article
 title: "Spreadsheets are Information Visualization"
 submitted_by: Elijah Meeks
 submitted_at: 2014-04-28T09:39:02-07:00
-has-comments: False
 ---
 
 ![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/mor.jpg?itok=Pfj9fTQc)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/ClearOffTheTableMd.gif?itok=Uzx2WMUn)Like most valuable human experiences, this all started on Twitter, when I used a tired meme to deliver what I thought would be considered radical to folks not involved with information visualization but rather pat to those that were.

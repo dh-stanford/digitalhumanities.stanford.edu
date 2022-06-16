@@ -3,7 +3,6 @@ layout: layouts/article
 title: "DLCL ATS round-up, winter 2019"
 submitted_by: Quinn Dombrowski
 submitted_at: 2019-04-02T09:49:39-07:00
-has-comments: False
 ---
 
 ![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/20190401_124502.jpg?itok=NMYqXdEY)Winter quarter 2019 was almost entirely devoured by the time demands of developing and running “[Digital Humanities Across Borders](https://github.com/quinnanya/dlcl204)”, my non-English textual DH course. I was grateful to be granted the space to do this; fortunately, none of the projects I’ve been supporting had any deadlines at the beginning of the year, and everyone has been very gracious and understanding about delays on my end on account of class prep.

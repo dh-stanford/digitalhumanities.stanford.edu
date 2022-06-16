@@ -3,7 +3,6 @@ layout: layouts/article
 title: "DLCL ATS round-up, spring 2019"
 submitted_by: Quinn Dombrowski
 submitted_at: 2019-06-24T15:42:59-07:00
-has-comments: False
 ---
 
 ![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/IMG_20190620_160937.jpg?itok=_YB_vCb3)My first academic year at Stanford has come to a close, ushering in a summer that promises to be surprisingly busy, despite the relatively empty hallways and offices around campus. Working in central IT, I’d forgotten what it’s like to be so directly impacted by the rhythms of the school year, and the way everyone heads overseas as soon as finals wrap up.

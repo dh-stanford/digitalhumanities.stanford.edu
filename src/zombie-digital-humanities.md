@@ -3,7 +3,6 @@ layout: layouts/article
 title: "Zombie digital humanities"
 submitted_by: Quinn Dombrowski
 submitted_at: 2018-10-31T10:24:16-07:00
-has-comments: False
 ---
 
 ![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/8043568856_80808299e6_k.jpg?itok=g2p3PLWX)I've been thinking a lot lately about the undead, various forms of afterlife, and how they intersect with digital humanities. As a result, Halloween seemed a fitting occasion to relaunch the blog at Stanford's Digital Humanities website, with further reanimation to come.

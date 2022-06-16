@@ -3,7 +3,6 @@ layout: layouts/article
 title: "4 Lessons for Digital Humanities Scholars from Donald Rumsfeld"
 submitted_by: Elijah Meeks
 submitted_at: 2014-08-27T12:50:29-07:00
-has-comments: False
 ---
 
 As digital humanities scholarship matures, it behooves us to look to thinkers outside the field for help in crafting our research agenda and planning our projects. One of those thinkers is Donald Rumsfeld, the Socrates of Strategery, whose insightful rhetoric can guide us in our treatment of this young field. Some of you might be thinking, “Who’s Donald Rumsfeld?” If you don’t know who Donald Rumsfeld is, you can skip reading this, since you’re not firmly enough ensconced in the fear, uncertainty and doubt that comes from trying to understand the place of humanities scholarship in relation to new technologies, new media, and new modes of engagement.  

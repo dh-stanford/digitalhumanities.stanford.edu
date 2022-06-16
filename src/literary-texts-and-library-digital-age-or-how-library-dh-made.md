@@ -3,7 +3,16 @@ layout: layouts/article
 title: "Literary texts and the library in the digital age, or, How library DH is made"
 submitted_by: Glen Worthey
 submitted_at: 2014-03-04T14:57:59-08:00
-has-comments: True
+comments: |-
+
+  ### [great DH meme](/comment/342257#comment-342257)
+  
+  
+  
+  Submitted by Ted Underwood (not verified) on 7 March 2014 - 3:53pm 
+  
+  That meme was actually created by Frank Ridgway back in 2012. I credited him on my blog post, but I did so too playfully and vaguely. "H/t" made it sound like I just got it through him, but I actually know that he created it. I'll tell the UCL people.
+
 ---
 
 ![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/knigi.jpg?itok=yftpx-xn)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/brik.jpg?itok=irEP8x-0)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/dostoevsky.jpg?itok=uZ84perx)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/eikhenbaum_gogol.jpg?itok=92twVZlF)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/Jules.jpg?itok=wYBYMBba)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/moretti_conjectures.jpg?itok=BaNnpMSb)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/propp.jpg?itok=xQYsAS86)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/quant_formalism.jpg?itok=42NLDF8w)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/r_stylometry.jpg?itok=kNnBnzXm)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/shklovsky.jpg?itok=WfNSKeLe)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/tynianov.jpg?itok=JqqNSfQs)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/dh_lib.jpg?itok=EjODvc1z)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/j_lib_admin_0.jpg?itok=P4KhWAd7)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/macroanalysis.jpg?itok=mj5fO6SL)![Knigi poster](/sites/g/files/sbiybj8071/f/knigi.jpg)The following is a slightly edited version of an invited paper I gave at the 2013 Annual Conference of the American Library Association in Chicago. A few of the audience members asked whether I might share or post the presentation, which I’m happy to do (as well as flattered… and very tardy). It’s obviously not meant as [another](http://nowviskie.org/2014/asking-for-it/) [response](/digital-humanities-curio-cabinet) to the recent [OCLC report on DH centers in libraries](http://www.oclc.org/research/publications/library/2014/oclcresearch-digital-humanities-center-2014-overview.html) (since it came earlier), but as I reread the talk, I see that, in some senses, it could serve as such. 

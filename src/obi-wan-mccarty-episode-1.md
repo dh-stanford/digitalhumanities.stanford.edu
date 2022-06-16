@@ -3,7 +3,6 @@ layout: layouts/article
 title: "Obi-Wan McCarty: Episode 1"
 submitted_by: Glen Worthey
 submitted_at: 2014-02-19T22:03:56-08:00
-has-comments: False
 ---
 
 ![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/Obi-Wan%20McCarty.png?itok=farxcRz-)At last year’s Digital Humanities conference ([DH2013](http://dh2013.unl.edu/), in Lincoln, Nebraska), Willard McCarty received the sixth [Roberto Busa Prize for Lifetime Achievement in the Digital Humanities](http://adho.org/awards/roberto-busa-prize).  Professor McCarty (henceforth just “Willard”) is Professor of Humanities Computing in the Department of Digital Humanities at King’s College London, and holds a similar faculty post at the University of Western Sydney, Australia; but he is perhaps best known as the founding and long-time editor – since 1987! – of [*Humanist*](http://dhhumanist.org/), an “electronic seminar” of great historical and continuing current importance to the digital humanities profession and community.

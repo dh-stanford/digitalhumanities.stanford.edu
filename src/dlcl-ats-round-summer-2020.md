@@ -3,7 +3,6 @@ layout: layouts/article
 title: "DLCL ATS round-up, summer 2020"
 submitted_by: Quinn Dombrowski
 submitted_at: 2020-09-13T20:12:27-07:00
-has-comments: False
 ---
 
 ![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/Edsb6szXoAYLxkx.png?itok=1uckm4cz)It’s hard to believe that fall is already here. A couple weeks of virtual first grade have given me some time to start preparing for teaching my non-English DH course this fall, but as usual, a lot of it will be worked out in the moment, responding to the students’ own languages, projects, and needs. Before getting too far into the work of fall quarter, here’s the summer 2020 round-up.

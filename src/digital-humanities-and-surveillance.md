@@ -3,7 +3,6 @@ layout: layouts/article
 title: "On Digital Humanities and Surveillance"
 submitted_by: Mike Widner
 submitted_at: 2013-08-20T11:18:31-07:00
-has-comments: False
 ---
 
 Over at my blog, I just [posted a piece](https://people.stanford.edu/widner/content/digital-humanists-lack-response-surveillance-state) about the role digital humanists should play in discussions of government surveillance. Some key questions:

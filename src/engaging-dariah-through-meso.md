@@ -3,7 +3,6 @@ layout: layouts/article
 title: "Engaging with DARIAH through MESO"
 submitted_by: Quinn Dombrowski
 submitted_at: 2018-11-19T07:45:12-08:00
-has-comments: False
 ---
 
 ![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/DARIAH-EU-Logo-ohne-Unterschrift-RGB.png?itok=bm4mn9Hc)The [first DARIAH Beyond Europe workshop](https://dbe.hypotheses.org/workshops/stanford), held at Stanford in mid-September, was for me a reintroduction to both [DARIAH](https://www.dariah.eu/) (the European digital humanities infrastructure organization) and Stanford’s digital humanities scene. I’d had the opportunity to engage with DARIAH in its early days, through my involvement with the ill-fated US cyberinfrastructure initiative [Project Bamboo](http://www.projectbamboo.org/) (and the short-lived [CHAIN: Coalition of Humanities and Arts Infrastructures and Networks](https://mith.umd.edu/chain/)); and again later, in 2014, when looking for an organizational home for the now-defunct DiRT tool directory (which has been incorporated into [TAPoR](http://tapor.ca/home)).

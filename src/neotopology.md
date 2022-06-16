@@ -3,7 +3,6 @@ layout: layouts/article
 title: "Neotopology"
 submitted_by: Elijah Meeks
 submitted_at: 2014-04-14T14:03:31-07:00
-has-comments: False
 ---
 
 ![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/statueofgephi.png?itok=Un2Gs6EE)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/kb_story.png?itok=jKBzr5SZ)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/orbmin.png?itok=T0MPQ8vu)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/reddit.png?itok=hBy2bvWc)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/mapstack_2ODKMRcpGKY.png?itok=bZCw-1fS)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/bostocknyt.png?itok=0iQl9RTA)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/date-with-destiny.png?itok=dWoso3BL)![](https://digitalhumanities.stanford.edu/sites/g/files/sbiybj8071/f/styles/large/public/battletech_legend.png?itok=dk3dIMu4)*This is part of a talk I gave at #txdhc. It leaves out "principles of interloping in network science" which I'll try to put in a later post.*
