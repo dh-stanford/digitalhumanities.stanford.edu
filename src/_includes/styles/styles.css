@@ -31,3 +31,14 @@ header a {
   outline: 1px solid #820000;
   padding: 0.25em 0.5em;
 }
+
+section.comments {
+  border-top: 1px solid #820000;
+  margin-top: 2em;
+  padding-top: 2em;
+}
+
+section.comments header {
+  font-size: 1.4em;
+  font-weight: bold;
+}

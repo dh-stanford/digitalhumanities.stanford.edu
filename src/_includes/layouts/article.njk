@@ -1,5 +1,8 @@
 ---
 layout: layouts/page
+# Ensure content interpolated from frontmatter is not parsed as markdown
+#  https://www.11ty.dev/docs/languages/#special-case-pairing-a-templating-engine-with-md-markdown
+templateEngineOverride: njk,md
 ---
 
 <article class="article">
@@ -8,4 +11,17 @@ layout: layouts/page
     Submitted By: <span>{{ submitted_by }}</span> on <time>{{ submitted_at }}</time>
   </small>
   {{ content | safe }}
+
+  {% if comments %}
+  <section class="comments">
+    <header>Further Discussion:</header>
+      {{ comments }}
+  </section>
+    {% endif %}
+
+  <footer>
+    <small>
+      <a href="{{ url }}">{{ url }}</a>
+    </small>
+  </footer>
 </article>
