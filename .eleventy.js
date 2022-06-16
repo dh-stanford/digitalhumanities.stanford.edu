@@ -1,6 +1,8 @@
 const CleanCSS = require("clean-css");
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("post-images");
+
   eleventyConfig.addCollection("pages", (collectionApi) => {
     return collectionApi
       .getFilteredByGlob("./src/*.md")
