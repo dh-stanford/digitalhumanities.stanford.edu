@@ -10,14 +10,15 @@ templateEngineOverride: njk,md
   <small>
     Submitted By: <span>{{ submitted_by }}</span> on <time>{{ submitted_at }}</time>
   </small>
+
   {{ content | safe }}
 
   {% if comments %}
   <section class="comments">
     <header>Further Discussion:</header>
-      {{ comments }}
+    {{ comments }}
   </section>
-    {% endif %}
+  {% endif %}
 
   <footer>
     <small>
