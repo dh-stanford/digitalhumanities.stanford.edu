@@ -5,7 +5,7 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2018-12-21T08:29:37-08:00
 ---
 
-![](/post-images/44967058554_b99f357ee1_k.jpg)
+![](../post-images/44967058554_b99f357ee1_k.jpg)
 The “Academic Technology Specialist” (ATS) role at Stanford follows an unusual model for a DH alt-ac job. These positions are jointly funded by Stanford Libraries and a department, and while ATSes report administratively through the library, they typically have their office in the department, and spend most of their time working with scholars there. As an ATS, your assignment is straightforward but expansive: support your department in whatever way you can. The job description has a laundry list of expertise that one should have, but in practice, what you work on is shaped by your actual expertise and interests.
 
 

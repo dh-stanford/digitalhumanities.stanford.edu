@@ -5,7 +5,7 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2020-09-13T20:12:27-07:00
 ---
 
-![](/post-images/Edsb6szXoAYLxkx.png)
+![](../post-images/Edsb6szXoAYLxkx.png)
 It’s hard to believe that fall is already here. A couple weeks of virtual first grade have given me some time to start preparing for teaching my non-English DH course this fall, but as usual, a lot of it will be worked out in the moment, responding to the students’ own languages, projects, and needs. Before getting too far into the work of fall quarter, here’s the summer 2020 round-up.
 
 

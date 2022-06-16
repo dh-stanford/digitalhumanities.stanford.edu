@@ -5,7 +5,7 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2019-09-23T11:31:59-07:00
 ---
 
-![](/post-images/48096173597_76ef6dd607_k.jpg)
+![](../post-images/48096173597_76ef6dd607_k.jpg)
 In my first summer as the DLCL ATS, I have concluded that the quarter’s reputation as a “slow” time is crucially overlooking all the conferences and events that get scheduled, precisely because it’s supposed to be “slow”. It’s certainly been quieter around the DLCL, with most faculty and students distributing themselves throughout the globe as soon as spring quarter ends, but distance has little impact on projects. Before the fall quarter gets too far underway, here’s a look back at the summer.
 
 

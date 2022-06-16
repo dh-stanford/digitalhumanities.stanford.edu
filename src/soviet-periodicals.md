@@ -5,7 +5,7 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2021-10-19T11:30:00-07:00
 ---
 
-![](/post-images/color_mask.png)
+![](../post-images/color_mask.png)
 
 
 
@@ -30,7 +30,7 @@ This Stanford-based extension of the project, begun at [Princeton University](ht
 *Image bottom: Example of a color mask for an image in the journal* 30 dnei
 
 
-![](/post-images/document_segmentation.png)
+![](../post-images/document_segmentation.png)
 
 
 

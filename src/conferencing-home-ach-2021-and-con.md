@@ -5,7 +5,7 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2021-07-28T11:21:27-07:00
 ---
 
-![](/post-images/216815349_10102486908003250_1767842729331958496_n%20%281%29.jpg)
+![](../post-images/216815349_10102486908003250_1767842729331958496_n%20%281%29.jpg)
 In 2019, I [wrote a blog post](https://digitalhumanities.stanford.edu/dh-and-ach-skeleton-tow) about the experience of going to the DH conference in Utrecht, followed by the ACH conference in Pittsburgh. Two years later, it's time for another ACH write-up, with a very different point of comparison: [!!Con](https://bangbangcon.com/), a tech conference celebrating "the joy, excitement, and surprise of computing". While I've attended and presented at other virtual events this year (including the [CSDH-SCHN conference](https://csdh-schn.org/canadian-society-for-digital-humanities-csdh-schn-conference-2021/)), as co-VP of ACH I was particularly committed to attending as much of that conference as I could, and volunteering as a chair, online respondent, and livetweeter. !!Con was a more serendipitous discovery thanks to a tweet from Scott Weingart. It was the first non-academic conference I've presented at, and while differences in both scale and nature make it hard to compare directly with ACH, there were some aspects of !!Con that may serve as useful provocations for how to run virtual or hybrid academic conferences.
 
 

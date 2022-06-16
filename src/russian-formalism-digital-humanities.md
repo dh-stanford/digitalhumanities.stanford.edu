@@ -17,7 +17,7 @@ Individual papers consider the place of objectivity in literary theory, the cat
 See also the detailed**[schedule](/schedule)** and**[abstracts](/russian-formalism-digital-humanities-abstracts)** for conference presentations.
 
 
-![](/post-images/ConferencePoster.jpg)
+![](../post-images/ConferencePoster.jpg)
 
 
 

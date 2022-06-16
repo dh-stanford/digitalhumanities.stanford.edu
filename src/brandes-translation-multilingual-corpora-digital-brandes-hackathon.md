@@ -21,7 +21,7 @@ The first problem with this plan? The hackathon as conceived was intended to app
 
 
 HathiTrust was my first stop, where I quickly discovered that there are two records for Georg Brandes, and each of these author facets has a different set of languages:
-![](/post-images/htrc-brandes.png)
+![](../post-images/htrc-brandes.png)
 
 
 
@@ -46,7 +46,7 @@ Figuring what text to work with, researching what translations were available, s
 
 
 **Text Cleaning**
-![](/post-images/brandes_hackathon.jpg)
+![](../post-images/brandes_hackathon.jpg)
 The first day of the hackathon was largely dedicated to presentations about the ongoing role Brandes plays in Danish political discourse, the development and state of the Digital Brandes project, an overview of topic modeling for the non-DH attendees from Berkeley's Scandinavian department, and an overview of methods for visualizing and making use of word vectors (e.g. for machine-generation of text) by Peter Leonard, with the caveat that all of Brandes's writings together (under a million words) comprise a small enough corpus that word vectors aren't going to be particularly useful for any kind of analysis.
 
 
@@ -87,7 +87,7 @@ It took about 45 minutes — including a little bit of additional text cleaning 
 
 
 **Visualization**
-![](/post-images/quinn_eliza_brandes_hackathon.jpg)
+![](../post-images/quinn_eliza_brandes_hackathon.jpg)
 Earlier in the week, I'd taught a workshop on Tableau — and just previous week, I'd learned some Tableau myself with help from Miriam Posner's [wonderful](http://miriamposner.com/classes/dh201w19/tutorials-guides/data-visualization/getting-started-with-tableau-public/) [tutorials](http://miriamposner.com/classes/dh201w19/tutorials-guides/mapping/create-a-map-with-tableau/) — so it made an appealing option for doing a visualization of my word count data to use for my final hackathon presentation. Once you've gotten the hang of the major elements of Tableau's visual vocabulary and some UI quirks, putting together new visualizations is quick and easy.
 
 

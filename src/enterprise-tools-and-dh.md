@@ -5,7 +5,7 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2018-12-05T20:51:54-08:00
 ---
 
-![](/post-images/4780433375_4af57565f0_o.jpg)
+![](../post-images/4780433375_4af57565f0_o.jpg)
 "Can you say something about using enterprise tools for DH?" [Annie Swafford](https://annieswafford.wordpress.com/about/) asked towards the end of a recent meeting. I think she knew that prompt was like pulling out a chocolate advent calendar in front of a 3-year-old, and I managed to show some restraint by limiting myself to the short form of my usual rant, so that everyone could make it to their next meetings on time.
 
 

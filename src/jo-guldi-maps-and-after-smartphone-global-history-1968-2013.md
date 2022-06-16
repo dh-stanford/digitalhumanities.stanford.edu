@@ -43,7 +43,7 @@ History Building 200, Room 303
 
 
 
-![](/post-images/image002.jpg)
+![](../post-images/image002.jpg)
 
 
 

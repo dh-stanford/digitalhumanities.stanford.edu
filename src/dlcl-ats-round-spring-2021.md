@@ -5,7 +5,7 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2021-07-09T10:51:52-07:00
 ---
 
-![](/post-images/acndighum-spring.jpg)
+![](../post-images/acndighum-spring.jpg)
 Spring quarter gave me the first chance in a long while to take some time off. The first week of the quarter was my kids' spring break, which we spent in a cabin in the woods near Mt. Lassen with just the right amount of internet: enough to quietly keep an eye on email, not enough for Zoom. We've taken some other long weekends, and there's been periods when school has been closed for one or more kids. Nonetheless, here's where things stand at the end of spring quarter.
 
 

@@ -5,46 +5,46 @@ submitted_by: Elijah Meeks
 submitted_at: 2014-03-26T15:54:09-07:00
 ---
 
-![](/post-images/flow_map.png)
-![](/post-images/minard_ex6.png)
-![](/post-images/minard_ex5.png)
-![](/post-images/minard_ex4.jpg)
-![](/post-images/minard_ex3.png)
-![](/post-images/minard_ex2.png)
+![](../post-images/flow_map.png)
+![](../post-images/minard_ex6.png)
+![](../post-images/minard_ex5.png)
+![](../post-images/minard_ex4.jpg)
+![](../post-images/minard_ex3.png)
+![](../post-images/minard_ex2.png)
 The [updated ORBIS](http://orbis.stanford.edu/v2/) is rapidly approaching completion, and with its finishing touches comes the need to describe some of the things that it does. Most of its new functionality, such as the routes or cartograms, are from the earlier version, though with much more control given to the user in their creation. But there’s a new option, which I’ve called a Minard Diagram, that produces an inky, snakey, arterial chart out of the ORBIS network. Here is a Minard Diagram for fastest routes from Athens to the rest of the Roman World.
 
 
-![](/post-images/minard_ex6.png)
+![](../post-images/minard_ex6.png)
 
 What you’re seeing is the aggregation of paths from Athens to the rest of the sites in ORBIS based on whatever the priority and other settings were. Because ORBIS is a set of segments (known also as edges or links in network parlance) connecting sites (known as nodes), then we can see when a path from Site A to Site B shares some of the segments as a path from Site A to Site C. The thicker lines indicate more shared segments.
 
 How it works is easier to explain if we deal with a smaller subset, say just the routes from Rome to Antioch, Constantinople, Crete, and Alexandria. Fortunately, ORBIS provides you with the ability to export SVG, which makes it easy enough to export the results of running those four routes and modify them in Inkscape to produce the following diagrams. Each segment is sized by the number of “shared segments” which is to say the pieces of the ORBIS network shared in common by the four routes. This is easier to see if we also encode shared segments with color.
-![](/post-images/minard_ex2.png)
+![](../post-images/minard_ex2.png)
 
 
 
 This is, fundamentally, [betweenness centrality](http://en.wikipedia.org/wiki/Betweenness#Betweenness_centrality) but aggregated by edge instead of by node. Betweenness is used to discover the nodes in a network along the most frequent paths to identify power brokers or particularly influential papers in citation networks. ORBIS already calculates betweenness based on the individual routes you’ve been running, which leads to sites that are along more routes increasing in size, but calculating all the routes simultaneously from a single site to the rest of the network (in the same way that we calculate all the costs simultaneously to create a distance cartogram) provides, in the aggregate, what appears to be flow.
 
 Whether betweenness is a proxy for flow is a question that occurred after the graphical representation of the results and not before. The creation of this diagram follows a well-trod path, repurposing existing ways of representing systems based on old successes. In this case, one of the most famous and lauded information visualization pieces is known as Minard’s Map, created by Charles Minard and focused on showing Napoleon’s march into Russia.
-![](/post-images/minard_ex5.png)
+![](../post-images/minard_ex5.png)
 
 
 
 There are obvious visual cues that led me to referring to the ORBIS function as a Minard diagram. The most straightforward is the variable size of line thickness that implies the difficulty to get to a place, whether that difficulty is measured in **denarri** or, in the case of Minard’s map of Napoleon’s March, **human lives**.
 
 Regardless of whether or not there’s a fundamental similarity in what Minard was representing and what is being represented in ORBIS, I think there’s a case to be made for categorizing visualization methods based on graphical appearance. Minard’s Map is a “flow map” according to the [Wikipedia entry for flow maps](http://en.wikipedia.org/wiki/Flow_map), and therefore if you’re measuring a phenomenon like betweenness, and it’s distinct from flow, then the graphical similarity is not enough to warrant naming it after Minard. But when we try to define information visualization methods based on the type of data they purport to represent, we run into another problem, illustrated with a Google image search of “flow map”:
-![](/post-images/flow_map.png)
+![](../post-images/flow_map.png)
 
 
 
 Which ends up providing us with work that looks like Minard’s Map but also watersheds, simple networks, and org charts. I think, then, that the term Minard Diagram is more appropriate based on the visual similarity between what is being produced by this ORBIS function rather than the more generic flow map. An equivalent argument could be made for referring to this as a Watershed Diagram, given that it indicates a pooling of distant sources into streams and rivers that reach a center.
 
 There’s a strong case to be made that visualization methods should be based on the phenomenon being visualized, rather than the graphical product. In that case, it might seem like the ORBIS Minard Diagram shouldn’t have Minard’s name, since ORBIS does not attempt to correlate temperature or casualties with routes. But Minard made a number of different information visualization pieces that involve maps and line thickness.
-![](/post-images/minard_ex4.jpg)
+![](../post-images/minard_ex4.jpg)
 
 
 
-![](/post-images/minard_ex3.png)
+![](../post-images/minard_ex3.png)
 
 
 

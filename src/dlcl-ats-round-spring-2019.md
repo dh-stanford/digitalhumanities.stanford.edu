@@ -5,7 +5,7 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2019-06-24T15:42:59-07:00
 ---
 
-![](/post-images/IMG_20190620_160937.jpg)
+![](../post-images/IMG_20190620_160937.jpg)
 My first academic year at Stanford has come to a close, ushering in a summer that promises to be surprisingly busy, despite the relatively empty hallways and offices around campus. Working in central IT, I’d forgotten what it’s like to be so directly impacted by the rhythms of the school year, and the way everyone heads overseas as soon as finals wrap up.
 
 
@@ -138,7 +138,7 @@ I also participated in a [“Digital Brandes” hackathon at UC Berkeley](https:
 Miriam Posner and Chris Johanson invited me to their DH pedagogy course at UCLA, where I gave a talk about doing multilingual digital humanities, or at least supporting students who want to work in other languages. In the process, I developed a list of [multilingual NLP resources](https://github.com/multilingual-dh/nlp-resources) for a wide range of living and dead languages.
 
 
-![](/post-images/48096102628_cda020b592_z.jpg)
+![](../post-images/48096102628_cda020b592_z.jpg)
 I wrapped up the quarter with the Text Technologies [“Women and Gender Minorities in DH” workshop](https://texttechnologies.stanford.edu/news/women-and-gender-minorities-digital-humanities) at CESTA, which I’d been helping organize through the winter and spring. We were able to bring in a wonderful group of guest speakers from around the country (with a few international participants) for a thought-provoking and engaging event. Before the workshop formally started, I ran a special session of the Textile Makerspace with Miriam Posner and her daughter Dora (both sewists), and we continued the joy of making during the workshop with the vinyl cutter that now resides in the Textile Makerspace. On the last day of the workshop, I gave a personal talk called “Bridges”, about identifying as non-binary, and the ways that language, gender, sexuality, and family impose constraints that we have to work within. We’ll be publishing videos from that workshop over the summer.
 
 

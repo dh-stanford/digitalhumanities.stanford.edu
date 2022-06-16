@@ -5,7 +5,7 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2019-01-30T22:17:34-08:00
 ---
 
-![](/post-images/youmanateescomputing.jpg)
+![](../post-images/youmanateescomputing.jpg)
 It’s once again the season for the “[DH Awards](http://dhawards.org/)”, an international DH-themed popularity contest with an award category for “best exploration of DH failure” that [debuted in 2014](http://dhawards.org/dhawards2014/nominations/), the year “[What Ever Happened to Project Bamboo?](https://academic.oup.com/dsh/article-abstract/29/3/326/2938127)” was published. Alas, that year I lost to Melissa Terras’s “[Reuse of Digitized Content](http://melissaterras.blogspot.com/2014/10/reuse-of-digitised-content-4-chasing.html)”, and I haven’t had anything worth nominating in that category since.
 
 

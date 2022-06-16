@@ -5,7 +5,7 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2020-06-22T19:59:56-07:00
 ---
 
-![](/post-images/50012754993_2b84b94d3c_k.jpg)
+![](../post-images/50012754993_2b84b94d3c_k.jpg)
 In describing this quarter, it’s hard to avoid the cliches of our time, starting with “unprecedented”. Daycare and public schools in Berkeley shut down at the end of winter quarter, and daycare — for my two youngest children, 4 and just-turned-2 — didn’t reopen for 50 workdays. The 6-year-old has been upgraded to “junior coworker”, and all signs suggest that he’ll be home every day for at least the first half of next school year. Our current “new normal” has no shortage of challenges, but it’s been an interesting space for experimentation.
 
 

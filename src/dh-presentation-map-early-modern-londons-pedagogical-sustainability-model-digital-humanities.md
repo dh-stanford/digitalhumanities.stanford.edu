@@ -32,7 +32,7 @@ This talk by MoEML’s Research Fellow and Assistant Project Director, Kim McLea
 
 
 
-![](/post-images/stanford_moeml_poster.jpg)
+![](../post-images/stanford_moeml_poster.jpg)
 
 
 

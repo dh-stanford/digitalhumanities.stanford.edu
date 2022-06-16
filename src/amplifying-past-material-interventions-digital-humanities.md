@@ -13,7 +13,7 @@ This talk by Whitney Trettien (PhD candidate, Duke University) is sponsored by t
 
 
 
-![](/post-images/TrettienPoster.png)
+![](../post-images/TrettienPoster.png)
 
 
 

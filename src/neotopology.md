@@ -5,14 +5,14 @@ submitted_by: Elijah Meeks
 submitted_at: 2014-04-14T14:03:31-07:00
 ---
 
-![](/post-images/statueofgephi.png)
-![](/post-images/kb_story.png)
-![](/post-images/orbmin.png)
-![](/post-images/reddit.png)
-![](/post-images/mapstack_2ODKMRcpGKY.png)
-![](/post-images/bostocknyt.png)
-![](/post-images/date-with-destiny.png)
-![](/post-images/battletech_legend.png)
+![](../post-images/statueofgephi.png)
+![](../post-images/kb_story.png)
+![](../post-images/orbmin.png)
+![](../post-images/reddit.png)
+![](../post-images/mapstack_2ODKMRcpGKY.png)
+![](../post-images/bostocknyt.png)
+![](../post-images/date-with-destiny.png)
+![](../post-images/battletech_legend.png)
 *This is part of a talk I gave at #txdhc. It leaves out "principles of interloping in network science" which I'll try to put in a later post.*
 
 
@@ -32,14 +32,14 @@ I’ve noticed, in the past, when I’ve given more involved talks or papers dea
 So, sometimes I dodge that position and focus on the use of networks in the publication of research. Networks as a rhetorical device, in tandem with text and maps, especially in the genre of interactive scholarly works, like [Kindred Britain](http://kindred.stanford.edu/), and especially its [Stories](http://kindred.stanford.edu/#/story/half/half/none///tragedy) component, that ties together text, maps, networks, and other data visualization.
 
 
-[![](/post-images/kb_story.png)
+[![](../post-images/kb_story.png)
 ](http://kindred.stanford.edu/#/story/half/half/none///erasmus)
 
 
 But I'm not a publisher, and have never worked for a publisher. So, I fall back on my old standby, [ORBIS](http://orbis.stanford.edu/v2/), and instead focus more on transportation networks and especially historical transportation networks.
 
 
-[![](/post-images/orbmin.png)
+[![](../post-images/orbmin.png)
 ](orbis.stanford.edu/v2/)
 
 
@@ -71,29 +71,29 @@ There are, however, several mitigating factors when it comes to the principles o
 I titled my talk *neotopology* because I believe that this network turn resembles the spatial turn in more ways than one. One of those ways is the presence of a vibrant community of practice growing outside the traditional domains where in one case network analysis/visualization and in the other case spatial analysis/visualization traditionally occurs. *Neogeography*, in short, refers to the use of cartographic and spatial analytic tools and techniques by designers, humanists, software developers and others outside of the traditional domains of GIS, GIScience and cartography. It has, at times, caused some consternation and led to fierce claims both in digital humanities and in the tech industry that the geographic information systems being developed by such interlopers are, "Not GIS". It has also elicited, from time to time, angry responses from these traditional domains directed at flaneurs running amok with ArcGIS and Google Maps API. Which itself has also spurred defensiveness.
 
 
-![](/post-images/reddit.png)
+![](../post-images/reddit.png)
 
 
 
 But neogeography has produced incredible work, including the [amazing Voronoi experiments that Jason Davies has been creating](http://www.jasondavies.com/maps/voronoi/airports/), [satellite projected views of the US/Mexico border by Mike Bostock](http://www.nytimes.com/interactive/2013/03/01/world/americas/border-graphic.html?_r=0), and incredible innovation in the tile space, such as base maps that look like wood inlay, or Stamen's watercolor map here enhanced with semi-transparent satellite imagery for great effect:
 
 
-![](/post-images/mapstack_2ODKMRcpGKY.png)
+![](../post-images/mapstack_2ODKMRcpGKY.png)
 
 
 
 Add to this online mapping applications developed in fan culture, such as that of the [LOTR Project](http://lotrproject.com/map/), and we can see a vibrant community of practice in a world once dominated by GIS Professionals and GIScience academics. While neogeography is a product of broad accessibility of GIS tools and techniques, it is further defined by its strong integration with information visualization. Geospatial information visualization refers to something besides maps and atlases, it refers, I would argue, to the primacy of a system or model for which the geospatial data is just one view into that model. There’s another thing that neogeography has in common with neotopology, and which allows me to end my geography detour: humanists are not the only interlopers in the field. In the same way that journalists, designers and software developers and humanities scholars have flooded into spatial analysis and visualization, the same groups are flooding into network analysis and visualization.
 
 
-![](/post-images/bostocknyt.png)
+![](../post-images/bostocknyt.png)
 
 
 
-![](/post-images/date-with-destiny.png)
+![](../post-images/date-with-destiny.png)
 
 
 
-![](/post-images/battletech_legend.png)
+![](../post-images/battletech_legend.png)
 
 
 

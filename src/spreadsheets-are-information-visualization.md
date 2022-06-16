@@ -5,16 +5,16 @@ submitted_by: Elijah Meeks
 submitted_at: 2014-04-28T09:39:02-07:00
 ---
 
-![](/post-images/mor.jpg)
-![](/post-images/ClearOffTheTableMd.gif)
+![](../post-images/mor.jpg)
+![](../post-images/ClearOffTheTableMd.gif)
 Like most valuable human experiences, this all started on Twitter, when I used a tired meme to deliver what I thought would be considered radical to folks not involved with information visualization but rather pat to those that were.
 
 
-![](/post-images/mor.jpg)
+![](../post-images/mor.jpg)
 
 
 As an example, I tweeted along with it what I thought was uncontroversial, that "Even a spreadsheet is a form of information visualization." The point I was trying to make was that data doesn't exist in a "natural state" that you are trying to best visualize, but rather you process it even when you view data in tabular form, and that the processing transforms it from data into information because that processing of the data is embedded in the final product. I realize this is at odds with some epistemologies of data-information-knowledge, but I'm less interested in this from a theoretical standpoint as I am from a practical standpoint. I think, practically, that spreadsheets are information visualization. This was recently demonstrated by [Dark Horse Analytic's gif](http://darkhorseanalytics.com/blog/clear-off-the-table/) of how to make a spreadsheet more effective visually\*:
-[![](/post-images/ClearOffTheTableMd.gif)
+[![](../post-images/ClearOffTheTableMd.gif)
 ](http://darkhorseanalytics.com/blog/clear-off-the-table/)
 
 It is, fundamentally, a layout, much like the [various infoviz layouts found in D3](https://github.com/mbostock/d3/wiki/Gallery) and which I've been thinking about more lately as I write [D3.js in Action](http://www.manning.com/meeks/). By layout, I mean it's rules or a recipe that, when applied to a dataset, returns settings for graphical channels to improve comprehensibility. In the case of a spreadsheet, though, what graphical channels could possibly be available? More than you think, even when you acknowledge (as I do) that the above GIF is correct when it suggests you should leave color mostly out of spreadsheets. You may not notice it, but a spreadsheet has just as many axes as a bar chart or a scatterplot. How you sort a spreadsheet, like any other decision to present information, does not come "from the data" but is rather a decision. The order of columns and rows, especially in large spreadsheets, determines the view into the data. Likewise, font weight, text justification, formatting are all mechanisms for graphically processing data to represent it (either to an audience or to yourself for exploratory analysis). When you factor in the presentation mechanisms for aggregate statistics that takes place as part of the spreadsheet (summing or averaging row or column values) you end up with an information visualization space that's far more feature rich than your typical histogram.

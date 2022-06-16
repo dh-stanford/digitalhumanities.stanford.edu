@@ -5,7 +5,7 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2021-03-24T16:20:04-07:00
 ---
 
-![](/post-images/143306752_10102370164493180_1743701058124313097_o%20%281%29.jpg)
+![](../post-images/143306752_10102370164493180_1743701058124313097_o%20%281%29.jpg)
 Winter quarter was a time of consolidation and slow progress, without much to share by way of exciting new developments. I worked on a lot of things that I expect will bear fruit down the road, but I can't point to anything concrete yet. Here's where things stand as of spring break 2021.
 
 

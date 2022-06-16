@@ -17,7 +17,7 @@ The concept of creating websites that are properly formatted for various screen 
 
 
 
-![](/post-images/ch12_design1.png)
+![](../post-images/ch12_design1.png)
 
 
 
@@ -42,7 +42,7 @@ Note also that I rely on screen width to detect whether the browser is on a desk
 **Desktop Version**
 
 
-![](/post-images/ch12_desktop1.png)
+![](../post-images/ch12_desktop1.png)
 
 
 
@@ -55,7 +55,7 @@ If you access the site from a desktop browser, you should see a simple scatterpl
 **Tablet Version**
 
 
-![](/post-images/ch12_tablet2.png)
+![](../post-images/ch12_tablet2.png)
 
 
 
@@ -68,7 +68,7 @@ If you access the same site from a tablet-sized screen, you get a very different
 **Phone Version**
 
 
-![](/post-images/ch12_phone1.png)
+![](../post-images/ch12_phone1.png)
 
 
 

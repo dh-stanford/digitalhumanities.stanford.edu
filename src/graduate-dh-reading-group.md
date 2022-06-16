@@ -19,7 +19,7 @@ Email Mae Lyons-Penner ([maelp@stanford.edu](mailto:maelp@stanford.edu)) to RSVP
 
 
 
-![](/post-images/31472675258_3c3de7b926_k%20%281%29.jpg)
+![](../post-images/31472675258_3c3de7b926_k%20%281%29.jpg)
 
 
 

@@ -16,7 +16,7 @@ If you'd like to give a lightning talk, come a few minutes early to sign up!
 
 
 
-![](/post-images/14424657038_84c44d532d_k.jpg)
+![](../post-images/14424657038_84c44d532d_k.jpg)
 
 
 

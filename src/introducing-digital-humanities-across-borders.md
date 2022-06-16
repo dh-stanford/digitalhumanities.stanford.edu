@@ -5,7 +5,7 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2019-01-15T21:45:19-08:00
 ---
 
-![](/post-images/5889720469_f0c7911794_b.jpg)
+![](../post-images/5889720469_f0c7911794_b.jpg)
 “Digital Humanities Across Borders” (DLCL 204, cross-listed with Comp Lit and English) kicked off last week. As of today, there are seven registered students and three intrepid auditors (including two area studies librarian colleagues).
 
 

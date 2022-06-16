@@ -5,17 +5,17 @@ submitted_by: Elijah Meeks
 submitted_at: 2014-01-06T14:30:52-08:00
 ---
 
-![](/post-images/ov2_routeNormalization1.png)
-![](/post-images/ov2_routeNormalization2.png)
-![](/post-images/ov2_routeNormalization3.png)
-![](/post-images/ov2_routeNormalization4.png)
-![](/post-images/ov2_routeNormalization5.png)
-![](/post-images/routes_simp.png)
-![](/post-images/simple.gif)
+![](../post-images/ov2_routeNormalization1.png)
+![](../post-images/ov2_routeNormalization2.png)
+![](../post-images/ov2_routeNormalization3.png)
+![](../post-images/ov2_routeNormalization4.png)
+![](../post-images/ov2_routeNormalization5.png)
+![](../post-images/routes_simp.png)
+![](../post-images/simple.gif)
 [ORBIS](http://orbis.stanford.edu/) is nearly two years old, and the ongoing update to the site has me once again in conversation with a cartographers, geographers, designers, and digital humanists. A new response I get, when describing the growing feature list of [ORBIS v2](http://orbis.stanford.edu/v2/), is some variation of "What do people use this for?" The fact that ORBIS still generates decent traffic\* seems even more remarkable than its appearance in gaming forums, college essays and high school courses. The ultimate answer to the question is that most people play with it, running routes and contrasting the results with their own experience or intuition of travel in the regions where they run their routes. But, as has been noted in earlier essays about the project, ORBIS was built for the purpose of displaying dynamic distance cartograms, and the Google Maps interface was just an affordance that came along from developing that functionality. And so one of my major goals in updating ORBIS is to dramatically improve the cartogram functionality, as well as provide mechanisms to improve the use and understanding of what is a very abstract concept. This is as much a design challenge as a coding challenge, especially when it comes to properly distorting the routes that make up the network along with the sites. This post will get into quite a bit of technical detail as far as how that was done, and also touch on the growing integration of graphics and geography in the web mapping world.
 
 
-![](/post-images/ov2_routeNormalization1.png)
+![](../post-images/ov2_routeNormalization1.png)
 
 
 
@@ -50,7 +50,7 @@ d.cartoD = cartoPath(d.coordinates);
 Each path element is selected and instantiates its own [d3.svg.line()](https://github.com/mbostock/d3/wiki/SVG-Shapes#wiki-line) constructor to create the new, distorted line. This constructor operates on a set of x/y coordinates, but in the case of the lines we're working with, those x/y coordinates cannot be passed as simple values but instead need to be interpolated based on the distortion of the system that we're representing with the cartogram. A simple polyline, like the kind we're using for the routes in ORBIS, is a collection of coordinate pairs, and each coordinate pair needs to be positions relative to the distortion of the two sites that the line connects. So, we build a linear ramp using [d3.scale.linear()](https://github.com/mbostock/d3/wiki/Quantitative-Scales#linear-scales) from the cost to reach Site A to the cost to reach Site B and map it to the number of points that makes up the line. We use this linear ramp to determine the interpolated cost at each point in the polyline to create a distortion of the route that distorts the points near Site A more like Site A and the points on the route near Site B more like Site B and the points in the middle as some mix based on the order they appear in the line.
 
 But this method has a problem. It assumes that the points that make up the polyline are equidistant. As a result, if you have a route that is significantly more complex on one end or the other (such as switchbacks or other changes in course), then it will have more points to represent that complexity which may not map to actual length of the route.
-![](/post-images/routes_simp.png)
+![](../post-images/routes_simp.png)
 
 
 
@@ -75,7 +75,7 @@ routeG.selectAll(".routes")
 
 
 Notice that for this to work, we need to have already created the graphical objects that represent the geographic data for the routes. This requires us to project the data and draw it in the DOM. Once we have SVG paths that represent each route, we can take advantage of the built-in SVG functionality to segment the lines equidistantly relying not on their geographic length but on their graphical length. D3's handy projection.invert() function allows us to create the projected coordinates from the graphical coordinates returned by getPointAtLength. The underlying data used to determine route cost and shape is unchanged, and even with dramatic simplification the appearance of the line maintains most of its integrity.
-![](/post-images/simple.gif)
+![](../post-images/simple.gif)
 
 
 
@@ -85,7 +85,7 @@ This gif cycles between no simplification of the routes, a simplification to 10 
 The result of simplifying the routes in this manner is not some massive change. As I noted earlier, there weren't any routes troublesome enough to create significant distortion. Compare the initial cartogram at the beginning of this post with the cartogram drawn with lines that have been normalized in this manner and you'll be hard-pressed to spot the differences:
 
 
-![](/post-images/ov2_routeNormalization2.png)
+![](../post-images/ov2_routeNormalization2.png)
 
 
 
@@ -95,21 +95,21 @@ One of the places where you can see a correction in route distortion happens wit
 
 
 
-![](/post-images/ov2_routeNormalization5.png)
+![](../post-images/ov2_routeNormalization5.png)
 
 
 
 In both cases, the points are spread unevenly across the polylines. When we distort the network with the center at Rome (with the same settings as with all the cartograms shown in this post) it seems like the path from Poetovio, rather than converging with the route from Siscia as it approaches Mursa (as we would expect) instead crosses and changes position relative to the center, implying that the road from Siscia to Mursa slows down and then speeds up as it approaches Mursa.
 
 
-![](/post-images/ov2_routeNormalization3.png)
+![](../post-images/ov2_routeNormalization3.png)
 
 
 
 This kind of behavior is also visible in the doglegs evident on the Danube to the right of Mursa. We can see these are artifacts of the polyline segmentation when we compare the distortion with the normalized routes:
 
 
-![](/post-images/ov2_routeNormalization4.png)
+![](../post-images/ov2_routeNormalization4.png)
 
 
 

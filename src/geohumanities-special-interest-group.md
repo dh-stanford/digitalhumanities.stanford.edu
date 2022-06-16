@@ -5,7 +5,7 @@ submitted_by: Karl Grossner
 submitted_at: 2013-09-08T19:18:37-07:00
 ---
 
-![](/post-images/geohumsig_logo_502w.png)
+![](../post-images/geohumsig_logo_502w.png)
 Today the [Association of Digital Humanities Organizations](http://adho.org) (ADHO) announced the creation of a GeoHumanities Special Interest Group, instigated and co-chaired by yours truly and [Kathy Weimer](http://library.tamu.edu/directory/k-weimer), Curator of Maps and the Map & GIS Coordinator at Texas A&M’s Cushing Memorial Library & Archives. We were simultaneously inspired to get this started at the recent DH2013 conference in Lincoln, after noting that several well-attended sessions featured papers with geographic, spatial-temporal, and what I call “placial” perspectives and related methodologies.
 
 

@@ -5,7 +5,7 @@ submitted_by: Quinn Dombrowski
 submitted_at: 2019-12-20T08:17:06-08:00
 ---
 
-![](/post-images/fanfic.jpg)
+![](../post-images/fanfic.jpg)
 It's been an eventful quarter in the Division of Literatures, Cultures, and Languages and Stanford Libraries! Writing it up, it's hard to believe it was packed into just three months.
 
 
