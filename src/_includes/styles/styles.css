@@ -6,12 +6,17 @@ a {
   color: #820000;
 }
 
-header {
+body > header {
   background-color: #820000;
   color: #fff;
   padding: 1rem;
   text-align: center;
   font-size: 3em;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
 }
 
 .pagination ol {
