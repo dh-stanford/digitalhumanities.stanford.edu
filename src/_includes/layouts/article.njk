@@ -8,6 +8,14 @@ layout: layouts/page
     Submitted By: <span>{{ submitted_by }}</span> on <time>{{ submitted_at }}</time>
   </small>
 
+  {% if post_images %}
+  <ul class="post-images">
+    {% for url in post_images %}
+    <li><img src="{{ url }}"></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
   {{ content | safe }}
 
   {% if comments %}
