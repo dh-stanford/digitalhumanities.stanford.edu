@@ -3,10 +3,11 @@ layout: layouts/article
 title: "To DH and ACH with a Skeleton in Tow"
 submitted_by: Quinn Dombrowski
 submitted_at: 2019-07-29T22:01:12-07:00
+post_images:
+  - ../post-images/48397551156_143b63558f_k.jpg
+  - ../post-images/EAVbEIOXYAAoPMR.jpg
 ---
 
-![](../post-images/48397551156_143b63558f_k.jpg)
-![](../post-images/EAVbEIOXYAAoPMR.jpg)
 July was the month of digital humanities conferences, with DH 2019 in Utrecht, closely followed by ACH 2019 in Pittsburgh. I was fortunate enough to attend both, and the experience has left me reflecting on the different shapes that community takes within digital humanities.
 
 

@@ -3,14 +3,15 @@ layout: layouts/article
 title: "ORBIS v2"
 submitted_by: Elijah Meeks
 submitted_at: 2013-08-17T09:52:12-07:00
+post_images:
+  - ../post-images/clustering.png
+  - ../post-images/orbisnew.png
+  - ../post-images/orbisnew2.png
+  - ../post-images/orbisnew3.png
+  - ../post-images/orbisnew5.png
+  - ../post-images/orbisnew4.png
 ---
 
-![](../post-images/clustering.png)
-![](../post-images/orbisnew.png)
-![](../post-images/orbisnew2.png)
-![](../post-images/orbisnew3.png)
-![](../post-images/orbisnew5.png)
-![](../post-images/orbisnew4.png)
 ![A screenshot of ORBIS v2](../post-images/orbisnew.png)
 
 

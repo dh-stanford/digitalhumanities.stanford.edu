@@ -3,9 +3,10 @@ layout: layouts/article
 title: "Digital Humanities and Data Science"
 submitted_by: Elijah Meeks
 submitted_at: 2014-05-05T08:39:54-07:00
+post_images:
+  - ../post-images/VennDiagram2.png
 ---
 
-![](../post-images/VennDiagram2.png)
 I'm proud to announce that Stanford University Library will be bringing on **[Scott Weingart](http://www.scottbot.net/HIAL/?page_id=22226)** as a data scientist to help support digital humanities scholarship here at Stanford. Scott is well-known in the digital humanities community for his work on [information visualization MOOCs](http://ivmooc.cns.iu.edu/), [courses on network analysis](http://dhsi.org/courses.php), [editing the Journal of Digital Humanities issue focused on topic modeling](http://journalofdigitalhumanities.org/2-1/dh-contribution-to-topic-modeling/), and work alongside other DH scholars to create [The Historian's Macroscope](http://www.themacroscope.org/), an online text that provides an exhaustive introduction to the particular flavor of digital humanities that involves bringing a computational lens to traditional humanities research questions. Regardless of the name of the position anyone gave to Scott, it's obvious that his support would be welcomed by digital humanities scholars. So, why data science, and not something a bit less science-sounding than, say, "digital humanities specialist"?
 
 

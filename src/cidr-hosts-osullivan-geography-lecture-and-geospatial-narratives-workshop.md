@@ -3,15 +3,16 @@ layout: layouts/article
 title: "CIDR hosts O'Sullivan geography lecture and geospatial narratives workshop"
 submitted_by: Karl Grossner
 submitted_at: 2015-06-08T00:00:00-07:00
+post_images:
+  - ../post-images/geoblog01.png
+  - ../post-images/geoblog02.png
+  - ../post-images/geoblog01a.png
+  - ../post-images/geoblog03.png
+  - ../post-images/geoblog04.png
+  - ../post-images/geoblog05.png
+  - ../post-images/geoblog06.png
 ---
 
-![](../post-images/geoblog01.png)
-![](../post-images/geoblog02.png)
-![](../post-images/geoblog01a.png)
-![](../post-images/geoblog03.png)
-![](../post-images/geoblog04.png)
-![](../post-images/geoblog05.png)
-![](../post-images/geoblog06.png)
 ![](../post-images/geoblog01.png)
 On May 7th, Stanford University Libraries’ ***Center for Interdisciplinary Digital Research*** (CIDR) welcomed David O’Sullivan, Associate Professor of Geography at the University of California, Berkeley to the Stanford campus for two events: a panel discussion on geospatial narrative and a guest lecture on spatial simulation modeling.
 

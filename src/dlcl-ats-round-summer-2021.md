@@ -3,9 +3,10 @@ layout: layouts/article
 title: "DLCL ATS round-up, summer 2021"
 submitted_by: Quinn Dombrowski
 submitted_at: 2021-09-27T14:30:37-07:00
+post_images:
+  - ../post-images/20210927_113149.jpg
 ---
 
-![](../post-images/20210927_113149.jpg)
 Summer always disappears too quickly, especially when it involves navigating childcare gaps at various points. I spent almost the whole summer at home, but started to go back to campus regularly after Labor Day. It's been a delight to have an office of my own for the Data-Sitters Club art by Claire Chenette, and the werewolf saint by Miles Smith, even if I haven't figured out how to hang them on the walls just yet.
 
 

@@ -3,6 +3,21 @@ layout: layouts/article
 title: "Literary texts and the library in the digital age, or, How library DH is made"
 submitted_by: Glen Worthey
 submitted_at: 2014-03-04T14:57:59-08:00
+post_images:
+  - ../post-images/knigi.jpg
+  - ../post-images/brik.jpg
+  - ../post-images/dostoevsky.jpg
+  - ../post-images/eikhenbaum_gogol.jpg
+  - ../post-images/Jules.jpg
+  - ../post-images/moretti_conjectures.jpg
+  - ../post-images/propp.jpg
+  - ../post-images/quant_formalism.jpg
+  - ../post-images/r_stylometry.jpg
+  - ../post-images/shklovsky.jpg
+  - ../post-images/tynianov.jpg
+  - ../post-images/dh_lib.jpg
+  - ../post-images/j_lib_admin_0.jpg
+  - ../post-images/macroanalysis.jpg
 comments: |-
 
   ### great DH meme
@@ -15,20 +30,6 @@ comments: |-
 
 ---
 
-![](../post-images/knigi.jpg)
-![](../post-images/brik.jpg)
-![](../post-images/dostoevsky.jpg)
-![](../post-images/eikhenbaum_gogol.jpg)
-![](../post-images/Jules.jpg)
-![](../post-images/moretti_conjectures.jpg)
-![](../post-images/propp.jpg)
-![](../post-images/quant_formalism.jpg)
-![](../post-images/r_stylometry.jpg)
-![](../post-images/shklovsky.jpg)
-![](../post-images/tynianov.jpg)
-![](../post-images/dh_lib.jpg)
-![](../post-images/j_lib_admin_0.jpg)
-![](../post-images/macroanalysis.jpg)
 ![Knigi poster](../post-images/knigi.jpg)
 The following is a slightly edited version of an invited paper I gave at the 2013 Annual Conference of the American Library Association in Chicago. A few of the audience members asked whether I might share or post the presentation, which I’m happy to do (as well as flattered… and very tardy). It’s obviously not meant as [another](http://nowviskie.org/2014/asking-for-it/) [response](/digital-humanities-curio-cabinet) to the recent [OCLC report on DH centers in libraries](http://www.oclc.org/research/publications/library/2014/oclcresearch-digital-humanities-center-2014-overview.html) (since it came earlier), but as I reread the talk, I see that, in some senses, it could serve as such.
 

@@ -3,9 +3,10 @@ layout: layouts/article
 title: "Generous Thinking January"
 submitted_by: Quinn Dombrowski
 submitted_at: 2020-02-05T08:18:46-08:00
+post_images:
+  - ../post-images/32678220085_c4c16c80a6_k.jpg
 ---
 
-![](../post-images/32678220085_c4c16c80a6_k.jpg)
 January was a rough month, between the last gasps of a too-long family trip over the holidays, getting ready for teaching a new course on [Project Management and Ethical Collaboration for Humanists](https://github.com/quinnanya/dlcl205), and then being out sick for a whole week. Amidst this new year chaos came a DH Twitter project that shone a thoughtful light on some of the daily decisions that go into the beginning of the quarter.
 
 

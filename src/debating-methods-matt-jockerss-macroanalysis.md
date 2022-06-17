@@ -3,6 +3,8 @@ layout: layouts/article
 title: "Debating the Methods in Matt Jockers's Macroanalysis"
 submitted_by: Mike Widner
 submitted_at: 2013-09-05T11:43:02-07:00
+post_images:
+  - ../post-images/genderNet.png
 comments: |-
 
   ### great discussion
@@ -100,7 +102,6 @@ comments: |-
 
 ---
 
-![](../post-images/genderNet.png)
 On September 3rd we had our second meeting of the Stanford Digital Humanities Reading Group, in which we discussed Matt Jockers’s new book, [Macroanalysis: Digital Methods & Literary History](http://www.amazon.com/Macroanalysis-Digital-Methods-Literary-Humanities/dp/0252079078). Because Jockers is a former colleague, a co-founder of Stanford’s Literary Lab, and a friend to several people in the reading group, I went into this meeting anxious that we might all be too happy with his book to sustain ninety minutes of conversation. I was very wrong. Jacqueline Hettel, whose Ph.D. research focused on text analysis of domain-specific language using corpus linguistics, prompted a vigorous debate about the methods Jockers uses in Macroanalysis. Hettel’s primary critique is that the statistical methods behind topic modeling, word frequencies, and other methods that undergird the book’s chapters are heavily dependent upon a set of assumptions common to NLP, Chomsky, and other primarily American approaches to understanding language.
 
 

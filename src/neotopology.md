@@ -3,16 +3,17 @@ layout: layouts/article
 title: "Neotopology"
 submitted_by: Elijah Meeks
 submitted_at: 2014-04-14T14:03:31-07:00
+post_images:
+  - ../post-images/statueofgephi.png
+  - ../post-images/kb_story.png
+  - ../post-images/orbmin.png
+  - ../post-images/reddit.png
+  - ../post-images/mapstack_2ODKMRcpGKY.png
+  - ../post-images/bostocknyt.png
+  - ../post-images/date-with-destiny.png
+  - ../post-images/battletech_legend.png
 ---
 
-![](../post-images/statueofgephi.png)
-![](../post-images/kb_story.png)
-![](../post-images/orbmin.png)
-![](../post-images/reddit.png)
-![](../post-images/mapstack_2ODKMRcpGKY.png)
-![](../post-images/bostocknyt.png)
-![](../post-images/date-with-destiny.png)
-![](../post-images/battletech_legend.png)
 *This is part of a talk I gave at #txdhc. It leaves out "principles of interloping in network science" which I'll try to put in a later post.*
 
 

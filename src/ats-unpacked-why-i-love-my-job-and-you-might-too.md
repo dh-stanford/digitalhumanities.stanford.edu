@@ -3,9 +3,10 @@ layout: layouts/article
 title: "ATS Unpacked: Why I love my job and you might, too"
 submitted_by: Quinn Dombrowski
 submitted_at: 2019-03-11T23:03:17-07:00
+post_images:
+  - ../post-images/7744258278_39b9d8328b_k.jpg
 ---
 
-![](../post-images/7744258278_39b9d8328b_k.jpg)
 “Academic Technology Specialist” is one of the most generic titles I’ve ever held — it’s hard to guess whether the position answers LMS help tickets, digitizes media, updates webpages, runs workshops, or any of a hundred other things that fall broadly under “academic technology”. It’s easy for such a position to escape attention — especially from people who aren’t actively looking for jobs (as I wasn’t a year ago). After nearly six months in this role, I’d like to unpack what being an “ATS” has meant for me, and why the [currently-listed History ATS position](https://careersearch.stanford.edu/jobs/academic-technology-specialist-5692) might be worth considering even if you’re not otherwise looking for a new job.
 
 

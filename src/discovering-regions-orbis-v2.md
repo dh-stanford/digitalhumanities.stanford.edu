@@ -3,9 +3,10 @@ layout: layouts/article
 title: "Discovering Regions with ORBIS v2"
 submitted_by: Elijah Meeks
 submitted_at: 2013-08-19T10:46:29-07:00
+post_images:
+  - ../post-images/borders.gif
 ---
 
-![](../post-images/borders.gif)
 [![Animated difference in clusters in ORBIS v2](../post-images/borders.gif)
 ](/sites/g/files/sbiybj8071/f/borders.gif)
 

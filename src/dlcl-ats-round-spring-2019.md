@@ -3,9 +3,10 @@ layout: layouts/article
 title: "DLCL ATS round-up, spring 2019"
 submitted_by: Quinn Dombrowski
 submitted_at: 2019-06-24T15:42:59-07:00
+post_images:
+  - ../post-images/IMG_20190620_160937.jpg
 ---
 
-![](../post-images/IMG_20190620_160937.jpg)
 My first academic year at Stanford has come to a close, ushering in a summer that promises to be surprisingly busy, despite the relatively empty hallways and offices around campus. Working in central IT, I’d forgotten what it’s like to be so directly impacted by the rhythms of the school year, and the way everyone heads overseas as soon as finals wrap up.
 
 

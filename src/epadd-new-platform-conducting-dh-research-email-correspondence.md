@@ -3,13 +3,14 @@ layout: layouts/article
 title: "ePADD: A New Platform for Conducting DH Research on Email Correspondence"
 submitted_by: Josh Schneider
 submitted_at: 2015-07-31T08:28:52-07:00
+post_images:
+  - ../post-images/epadd%20logo%20box.png
+  - ../post-images/ePADD%20-%20Installed%20on%20laptop.png
+  - ../post-images/ePADD%20-%20screenshot%20showing%20visualization%20of%20volume%20from%20particular%20correspondents%20over%20time.png
+  - ../post-images/Collection%20Detail.PNG
+  - ../post-images/ePADD%20-%20screenshot%20showing%20the%20interface%20for%20browsing%20image%20attachments.png
 ---
 
-![](../post-images/epadd%20logo%20box.png)
-![](../post-images/ePADD%20-%20Installed%20on%20laptop.png)
-![](../post-images/ePADD%20-%20screenshot%20showing%20visualization%20of%20volume%20from%20particular%20correspondents%20over%20time.png)
-![](../post-images/Collection%20Detail.PNG)
-![](../post-images/ePADD%20-%20screenshot%20showing%20the%20interface%20for%20browsing%20image%20attachments.png)
 ![](../post-images/epadd%20logo%20box.png)
 *Email has become a dominant instrument of modern communication -- its content illuminating people's lives, activities, and transactions. Even email headers reveal deep social networks. The archival email collections of recent authors and public figures can thus provide unique windows into contemporary society. ePADD, a new software tool developed by Stanford University Libraries, relies on natural language processing and other computational analytic methods to provide DH researchers with unprecedented access to these important collections.*
 

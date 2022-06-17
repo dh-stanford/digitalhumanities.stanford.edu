@@ -3,9 +3,10 @@ layout: layouts/article
 title: "DLCL ATS round-up, winter 2020"
 submitted_by: Quinn Dombrowski
 submitted_at: 2020-03-23T16:52:51-07:00
+post_images:
+  - ../post-images/dhrpg-lastday.jpg
 ---
 
-![](../post-images/dhrpg-lastday.jpg)
 It is a strange time to be writing my quarter-in-review blog post. The quarter is over (according to the calendar we started the year with, it’s spring break right now) but I feel like a normal sense of time is one of the things that’s already started to dissolve, and the shelter-in-place order in the Bay Area has only been in place a week.
 
 
