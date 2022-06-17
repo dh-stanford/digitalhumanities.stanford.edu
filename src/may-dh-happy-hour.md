@@ -16,4 +16,3 @@ Join colleagues from Stanford's digital humanities community for drinks and frie
 ![](../post-images/43221214591_5125b12c26_z.jpg)
 
 
-

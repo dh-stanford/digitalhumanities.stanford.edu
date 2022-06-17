@@ -24,7 +24,6 @@ HathiTrust was my first stop, where I quickly discovered that there are two reco
 ![](../post-images/htrc-brandes.png)
 
 
-
 Despite some early musings over working with one of Brandes's other writings (I really wanted to take a look at the Russian and Polish translations of his book on Russia), I realized I'd get the most linguistic overlap sticking to 19th century literature. Tempted as I was by book 5 (French Romanticism, the only volume translated into French), only volumes 1 and 2 of the Russian translation had found their way online, via a moderately blurry PDF that has propagated through all the Russian ebook sites. Add to that the fact that it's the shortest volume at (X) words in the original, and I was sold on "The Emigrant Literature".
 
 
@@ -46,8 +45,7 @@ Figuring what text to work with, researching what translations were available, s
 
 
 **Text Cleaning**
-![](../post-images/brandes_hackathon.jpg)
-The first day of the hackathon was largely dedicated to presentations about the ongoing role Brandes plays in Danish political discourse, the development and state of the Digital Brandes project, an overview of topic modeling for the non-DH attendees from Berkeley's Scandinavian department, and an overview of methods for visualizing and making use of word vectors (e.g. for machine-generation of text) by Peter Leonard, with the caveat that all of Brandes's writings together (under a million words) comprise a small enough corpus that word vectors aren't going to be particularly useful for any kind of analysis.
+![](../post-images/brandes_hackathon.jpg)The first day of the hackathon was largely dedicated to presentations about the ongoing role Brandes plays in Danish political discourse, the development and state of the Digital Brandes project, an overview of topic modeling for the non-DH attendees from Berkeley's Scandinavian department, and an overview of methods for visualizing and making use of word vectors (e.g. for machine-generation of text) by Peter Leonard, with the caveat that all of Brandes's writings together (under a million words) comprise a small enough corpus that word vectors aren't going to be particularly useful for any kind of analysis.
 
 
 Meanwhile, I was engaged in light multitasking during these presentations. I'd decided to manually clean up the running page headers in my text files, and split volume one in each of the languages into its constituent chapters. In retrospect, the situation was a good litmus test for where one falls on the humanist / technologist spectrum. It could've been automated, with a set of fuzzy regexes to accommodate the dirty OCR, but figuring out what those regexes should look like would've required more attention and focus (and grumbling and swearing) than would be feasible while multitasking during presentations. Worse, it'd impose a binary status on this aspect of data cleaning: for a given language, it'd be done, or not done. If I ran out of time, I'd have to start jettisoning languages, rather than scoping the project down to the first three or four chapters in each language. I knew I could get enough done if I did it manually; automating it introduced too much uncertainty, and this wasn't a project I planned to do more with, where the work put into automation would pay off at scale.
@@ -87,8 +85,7 @@ It took about 45 minutes — including a little bit of additional text cleaning 
 
 
 **Visualization**
-![](../post-images/quinn_eliza_brandes_hackathon.jpg)
-Earlier in the week, I'd taught a workshop on Tableau — and just previous week, I'd learned some Tableau myself with help from Miriam Posner's [wonderful](http://miriamposner.com/classes/dh201w19/tutorials-guides/data-visualization/getting-started-with-tableau-public/) [tutorials](http://miriamposner.com/classes/dh201w19/tutorials-guides/mapping/create-a-map-with-tableau/) — so it made an appealing option for doing a visualization of my word count data to use for my final hackathon presentation. Once you've gotten the hang of the major elements of Tableau's visual vocabulary and some UI quirks, putting together new visualizations is quick and easy.
+![](../post-images/quinn_eliza_brandes_hackathon.jpg)Earlier in the week, I'd taught a workshop on Tableau — and just previous week, I'd learned some Tableau myself with help from Miriam Posner's [wonderful](http://miriamposner.com/classes/dh201w19/tutorials-guides/data-visualization/getting-started-with-tableau-public/) [tutorials](http://miriamposner.com/classes/dh201w19/tutorials-guides/mapping/create-a-map-with-tableau/) — so it made an appealing option for doing a visualization of my word count data to use for my final hackathon presentation. Once you've gotten the hang of the major elements of Tableau's visual vocabulary and some UI quirks, putting together new visualizations is quick and easy.
 
 
 I used the data from the Jupyter notebook to create a [heat map table visualization based on the word counts](https://public.tableau.com/views/multilingual-brandes-viz/Sheet1?:embed=y&:display_count=yes&publish=yes&:origin=viz_share_link). Putting that together took about 10 minutes (even with my wriggly collaborator periodically requiring attention), which took me up until the beginning of the final presentations.

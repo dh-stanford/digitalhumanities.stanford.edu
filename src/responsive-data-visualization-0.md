@@ -23,7 +23,6 @@ The concept of creating websites that are properly formatted for various screen 
 
 
 
-
 The problem with this approach is that, unlike text, different types of data visualization--and any graphical display of information more generally--are more or less suitable for different sized canvases. Charts that are perfectly legible on a 15” screen can end up being useless on the screen of a 4” phone.
 
 
@@ -45,7 +44,6 @@ Note also that I rely on screen width to detect whether the browser is on a desk
 ![](../post-images/ch12_desktop1.png)
 
 
-
 If you access the site from a desktop browser, you should see a simple scatterplot and a list of the various datapoints represented on the scatterplot. This view maximizes the fine control and large screen of a desktop browser, allowing you to mouseover elements on the scatterplot and see their name on the list and vice versa, or click on the symbols to get more information. Obviously, the axes are rudimentary and in a final version they, along with the aforementioned more general elements, would be improved.
 
 
@@ -58,7 +56,6 @@ If you access the site from a desktop browser, you should see a simple scatterpl
 ![](../post-images/ch12_tablet2.png)
 
 
-
 If you access the same site from a tablet-sized screen, you get a very different view of the data. The list is gone because it would take up too much room on an already small canvas size. Instead of a scatterplot, which would be hard to read and difficult to interact with, you get a grid of all the datapoints and two brushes, allowing you to cross-brush by the same attributes that ordered the scatterplot: value and size. Because D3 brushes have built-in touch support, this is relatively easy to implement. What’s missing here is on-touch functionality for the symbols (which have increased in size to be touchable) that would bring up the same details as the modal window in the desktop version. An interesting aspect of this particular implementation is that the cross-brushing is fundamentally a simple implementation of [parallel coordinates](http://exposedata.com/parallel/), and could serve as a gentle introduction to that powerful information visualization method.
 
 
@@ -69,7 +66,6 @@ If you access the same site from a tablet-sized screen, you get a very different
 
 
 ![](../post-images/ch12_phone1.png)
-
 
 
 

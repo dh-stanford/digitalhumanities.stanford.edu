@@ -32,4 +32,3 @@ The event is free, but space is limited; RSVP to <[mikewidner@stanford.edu](mail
 ![](../post-images/0301-historicalnetworks.jpg)
 
 
-

@@ -52,7 +52,6 @@ On the [Florentine Codex](https://poeticmedia.stanford.edu/florentine-codex-proj
 ![](https://pbs.twimg.com/media/EYVdXXDUEAAdGUV?format=jpg&name=large)
 
 
-
 This initial model was trained on only 60-some pages, but it was enough for bootstrapping more pages. I used it to do a first pass on transcribing another 30 pages, which other team members corrected, and we trained a better model on about 90 pages. I let the model loose on the full 700 pages of volume 1 of the codex… only to discover that most of the pages were rotated sideways, rendering them untranscribable. I’m looking forward to trying again once everything has been rotated correctly!
 
 

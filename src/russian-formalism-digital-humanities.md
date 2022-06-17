@@ -23,4 +23,3 @@ See also the detailed**[schedule](/schedule)** and**[abstracts](/russian-formali
 
 
 
-

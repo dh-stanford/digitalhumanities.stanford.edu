@@ -10,8 +10,7 @@ post_images:
 At last year’s Digital Humanities conference ([DH2013](http://dh2013.unl.edu/), in Lincoln, Nebraska), Willard McCarty received the sixth [Roberto Busa Prize for Lifetime Achievement in the Digital Humanities](http://adho.org/awards/roberto-busa-prize).  Professor McCarty (henceforth just “Willard”) is Professor of Humanities Computing in the Department of Digital Humanities at King’s College London, and holds a similar faculty post at the University of Western Sydney, Australia; but he is perhaps best known as the founding and long-time editor – since 1987! – of [*Humanist*](http://dhhumanist.org/), an “electronic seminar” of great historical and continuing current importance to the digital humanities profession and community.
 
 
-![Obi-Wan McCarty](../post-images/Obi-Wan%20McCarty.png)
-In his introduction to the award and its accompanying prize lecture, U. Nebraska’s Matt Jockers offered a warm, and true, anecdote characterizing Willard as something like the Obi-Wan Kenobi of the digital humanities, and citing a long-ago conversation with me as the source of this metaphor.
+![Obi-Wan McCarty](../post-images/Obi-Wan%20McCarty.png)In his introduction to the award and its accompanying prize lecture, U. Nebraska’s Matt Jockers offered a warm, and true, anecdote characterizing Willard as something like the Obi-Wan Kenobi of the digital humanities, and citing a long-ago conversation with me as the source of this metaphor.
 
 
 Willard is now preparing his Busa Prize address for publication, and his editors have asked whether there is some citable source for his claim to this esteemed sobriquet. This is my attempt to provide such a source, to add one small brushstroke to the canvas of DH history, and to offer a note of personal gratitude not only to Willard, but to the spirit of the community to which he’s made such important contributions.

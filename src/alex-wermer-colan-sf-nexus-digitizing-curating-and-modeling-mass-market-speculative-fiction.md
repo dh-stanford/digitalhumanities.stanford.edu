@@ -25,4 +25,3 @@ If you cannot join us in person, please consider watching the broadcast of this 
 ![](../post-images/7246589462_f76b4a467b_c.jpg)
 
 
-

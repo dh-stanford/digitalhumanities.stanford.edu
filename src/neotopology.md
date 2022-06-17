@@ -23,8 +23,7 @@ When I was invited to give a talk at [The Texas Digital Humanities Consortium's 
 Similarly, how can I give a talk about networks when I don't have a degree in network science? Obviously, I have some experience with networks, such as my work representing topic models as a network.
 
 
-[![](https://dhs.stanford.edu/wp-content/uploads/2012/05/community_legend-901x1024.png)
-](https://dhs.stanford.edu/comprehending-the-digital-humanities/)
+[![](https://dhs.stanford.edu/wp-content/uploads/2012/05/community_legend-901x1024.png)](https://dhs.stanford.edu/comprehending-the-digital-humanities/)
 
 
 I’ve noticed, in the past, when I’ve given more involved talks or papers dealing with networks, that I find both my audience and myself more comfortable with focusing on network representation, commonly referred to as network visualization. The network visualization of the results of a topic model is rather effective and sophisticated, I think, but I also don't have a degree in design or information science, so once again I'm outside of my domain of credentialed expertise.
@@ -33,15 +32,13 @@ I’ve noticed, in the past, when I’ve given more involved talks or papers dea
 So, sometimes I dodge that position and focus on the use of networks in the publication of research. Networks as a rhetorical device, in tandem with text and maps, especially in the genre of interactive scholarly works, like [Kindred Britain](http://kindred.stanford.edu/), and especially its [Stories](http://kindred.stanford.edu/#/story/half/half/none///tragedy) component, that ties together text, maps, networks, and other data visualization.
 
 
-[![](../post-images/kb_story.png)
-](http://kindred.stanford.edu/#/story/half/half/none///erasmus)
+[![](../post-images/kb_story.png)](http://kindred.stanford.edu/#/story/half/half/none///erasmus)
 
 
 But I'm not a publisher, and have never worked for a publisher. So, I fall back on my old standby, [ORBIS](http://orbis.stanford.edu/v2/), and instead focus more on transportation networks and especially historical transportation networks.
 
 
-[![](../post-images/orbmin.png)
-](orbis.stanford.edu/v2/)
+[![](../post-images/orbmin.png)](orbis.stanford.edu/v2/)
 
 
 But I also don't have a degree in geography or in classics. Like many people who shift away from their original domain of expertise into a well-defined field with its own journals and conferences, I begin to feel like there’s really only one subject with which I might treat as an expert: **Imposter Syndrome.**
@@ -75,12 +72,10 @@ I titled my talk *neotopology* because I believe that this network turn resemble
 ![](../post-images/reddit.png)
 
 
-
 But neogeography has produced incredible work, including the [amazing Voronoi experiments that Jason Davies has been creating](http://www.jasondavies.com/maps/voronoi/airports/), [satellite projected views of the US/Mexico border by Mike Bostock](http://www.nytimes.com/interactive/2013/03/01/world/americas/border-graphic.html?_r=0), and incredible innovation in the tile space, such as base maps that look like wood inlay, or Stamen's watercolor map here enhanced with semi-transparent satellite imagery for great effect:
 
 
 ![](../post-images/mapstack_2ODKMRcpGKY.png)
-
 
 
 Add to this online mapping applications developed in fan culture, such as that of the [LOTR Project](http://lotrproject.com/map/), and we can see a vibrant community of practice in a world once dominated by GIS Professionals and GIScience academics. While neogeography is a product of broad accessibility of GIS tools and techniques, it is further defined by its strong integration with information visualization. Geospatial information visualization refers to something besides maps and atlases, it refers, I would argue, to the primacy of a system or model for which the geospatial data is just one view into that model. There’s another thing that neogeography has in common with neotopology, and which allows me to end my geography detour: humanists are not the only interlopers in the field. In the same way that journalists, designers and software developers and humanities scholars have flooded into spatial analysis and visualization, the same groups are flooding into network analysis and visualization.
@@ -89,13 +84,10 @@ Add to this online mapping applications developed in fan culture, such as that o
 ![](../post-images/bostocknyt.png)
 
 
-
 ![](../post-images/date-with-destiny.png)
 
 
-
 ![](../post-images/battletech_legend.png)
-
 
 
 Here we see three examples among many. The first is Mike Bostock, creator of the D3.js information visualization library and award-winning journalist at the New York Times, taking [a network perspective on the Oscars](http://www.nytimes.com/interactive/2013/02/20/movies/among-the-oscar-contenders-a-host-of-connections.html?_r=0). The second is designer Christian Swinehart's amazing [exploration of Choose-Your-Own-Adventure novels](http://samizdat.cc/cyoa/), where the network connects passages in the novel based on the decision points at the ends of those passages, with gruesome endings in vivid color. The last is the result of [my own look into the way in which TV Tropes works are connected by shared tropes](https://dhs.stanford.edu/social-media-literacy/tvtropes-pt-1-the-weird-geometry-of-the-internet/), and what it might mean to bridge the disparate genres explored by that community.

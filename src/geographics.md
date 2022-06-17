@@ -19,7 +19,6 @@ post_images:
 ![](../post-images/ov2_routeNormalization1.png)
 
 
-
 First, a quick definition of a dynamic distance cartogram. The image above is a distortion of the geography of the ORBIS network to reflect the amount of time it would take to travel from Rome to the various other 700+ sites in the ORBIS network. This kind of distortion is available from any site in ORBIS v2 by clicking on the site and selecting Cartogram. The terrain map has faded because what we are no longer looking at traditional geographic information, instead we're seeing the combination of geographic position of sites relative to Rome (in that their angle from Rome is maintained) but with the distance from Rome set to represent the relative distance as it would take to navigate to that site along the network. So, Britannia is still up and to the left, while Egypt is still down and to the right, but the individual sites, if you measured their distance from Rome, correspond to the cost it would take to get there. In this case, the cost is time, but that cost may be the expense to ship grain or passengers, or the total length of the routes (which, as you'd expect, produces much less distortion).
 
 
@@ -54,7 +53,6 @@ But this method has a problem. It assumes that the points that make up the polyl
 ![](../post-images/routes_simp.png)
 
 
-
 This happens with the ORBIS route data because the line simplification it uses to create lightweight geodata comes from a GIS focus on resolution and maintaining details given a particular scale, which can result in polygons and polylines maintaining uneven complexity across their surface. There are two ways to resolve this. The first would be to factor the actual length of the line at the point we're distorting and with a cost ramp that was mapped to the length of the route instead of the number of points in the route, then we would see proper distortion. The other way to solve this is to normalize the displayed routes by pairing D3's projection() function with the built-in SVG getPointAtLength function to normalize the routes. I chose this direction because it would also reduce the number of vertices, overall, in the routes and should improve performance. The code to do that:
 
 simplifiedGeoms = [];
@@ -79,7 +77,6 @@ Notice that for this to work, we need to have already created the graphical obje
 ![](../post-images/simple.gif)
 
 
-
 This gif cycles between no simplification of the routes, a simplification to 10 equidistant points along the polyline, and a simplification to 4 equidistant points along the polyline.
 
 
@@ -87,7 +84,6 @@ The result of simplifying the routes in this manner is not some massive change. 
 
 
 ![](../post-images/ov2_routeNormalization2.png)
-
 
 
 One of the places where you can see a correction in route distortion happens with the routes to Mursa (now Osijek, Croatia) from Siscia (Sisak, Croatia) and from Poetovio (now Ptuj, Slovenia). You can may think that the path from Poetovio to Mursa is less complex than the path from Siscia to Mursa, but the former consists of 56 points, while the later consists of 37 (in two segments).
@@ -99,19 +95,16 @@ One of the places where you can see a correction in route distortion happens wit
 ![](../post-images/ov2_routeNormalization5.png)
 
 
-
 In both cases, the points are spread unevenly across the polylines. When we distort the network with the center at Rome (with the same settings as with all the cartograms shown in this post) it seems like the path from Poetovio, rather than converging with the route from Siscia as it approaches Mursa (as we would expect) instead crosses and changes position relative to the center, implying that the road from Siscia to Mursa slows down and then speeds up as it approaches Mursa.
 
 
 ![](../post-images/ov2_routeNormalization3.png)
 
 
-
 This kind of behavior is also visible in the doglegs evident on the Danube to the right of Mursa. We can see these are artifacts of the polyline segmentation when we compare the distortion with the normalized routes:
 
 
 ![](../post-images/ov2_routeNormalization4.png)
-
 
 
 While the change is minor, and it was my intuition before effecting this normalization that it would be, in the aggregate this kind of error is visually jarring and interrupts an attempt to understand what is already a very abstract spatial representation. What intrigued me more than the technical details was that the first half of this code (the cartogram itself) needed to happen in the browser, since the transformation is dynamic and interactive and subject to the same variety of permutations available for calculating routes. But the second half (the line simplification) could have happened on the backend to produce a static data file. Instead, rather than being some kind of pre-processing technique, the negligible cost to recalculate the simplified routes affords the opportunity to provide level of detail controls that allow the reader to determine, say, the number of points per line if they want. More than that, I found it quicker to address this through dealing with the graphical structures rather than the geodata structures, which suprised me. While we live in an age of readily accessible and robust tools and libraries for geospatial manipulation, we also have simple and effective methods for manipulating graphical data. I'm sure much of my motivation for addressing this with D3 and SVG rather than [PostGIS](http://postgis.net/) (or [Shapely](https://pypi.python.org/pypi/Shapely), for you Pythonistas out there) is because I use D3 a lot these days, but the capacity to do line simplification like this (or raster calculations with canvas or other traditional backend GIS) in the browser is revolutionary. What's more exciting than the growing capability to do this kind of thing in the browser is the necessity when delivering dynamic, interactive content like this.

@@ -110,4 +110,3 @@ Topotime (“topological time”) is a software development project aimed at exp
 ![](../post-images/orbis2.png)
 
 
-

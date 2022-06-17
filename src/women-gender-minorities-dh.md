@@ -22,4 +22,3 @@ This is the fifth Text Technologies Collegium at Stanford, and this year it is c
 ![](../post-images/Women%20Gender%20Minorities%20in%20DH%20Flyer.jpg)
 
 
-

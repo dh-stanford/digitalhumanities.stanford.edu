@@ -11,8 +11,7 @@ post_images:
   - ../post-images/ePADD%20-%20screenshot%20showing%20the%20interface%20for%20browsing%20image%20attachments.png
 ---
 
-![](../post-images/epadd%20logo%20box.png)
-*Email has become a dominant instrument of modern communication -- its content illuminating people's lives, activities, and transactions. Even email headers reveal deep social networks. The archival email collections of recent authors and public figures can thus provide unique windows into contemporary society. ePADD, a new software tool developed by Stanford University Libraries, relies on natural language processing and other computational analytic methods to provide DH researchers with unprecedented access to these important collections.*
+![](../post-images/epadd%20logo%20box.png)*Email has become a dominant instrument of modern communication -- its content illuminating people's lives, activities, and transactions. Even email headers reveal deep social networks. The archival email collections of recent authors and public figures can thus provide unique windows into contemporary society. ePADD, a new software tool developed by Stanford University Libraries, relies on natural language processing and other computational analytic methods to provide DH researchers with unprecedented access to these important collections.*
 
 
 
@@ -21,7 +20,6 @@ Many digital humanities (DH) portals and digital environments (e.g. TAPoR and Vo
 
 
 ![](../post-images/ePADD%20-%20Installed%20on%20laptop.png)
-
 
 
 To date, however, performing DH research on email collections has run from inconvenient to impractical to impossible for two main reasons. First, due to the challenges inherent in reviewing hundreds of thousands of messages to screen for privacy and confidentiality issues, many repositories are simply unable to open up email archives for research. Second, the contextually rich and networked quality of email has made it difficult to harness with existing tools, which are unable to provide for dedicated browsing and visualization of correspondents and named entities mentioned within messages, or promote researcher interaction with the material (such as through annotation or comparative entity analysis). For these reasons, scholars of modern and contemporary history often turn to other sources to support their research, even when the email archive might make methodological sense to include.
@@ -42,12 +40,10 @@ ePADD’s custom NLP also powers a “query generator,” which supports a compa
 ![](../post-images/ePADD%20-%20screenshot%20showing%20visualization%20of%20volume%20from%20particular%20correspondents%20over%20time.png)
 
 
-
 ePADD also embeds functionality for archivists to enact donor restrictions and manage privacy issues when making email archives available to researchers. Often, email archives may only be fully accessible in a special collections reading room due to donor agreement limitations, or third-party privacy and copyright concerns. To support making collection materials discoverable online, ePADD is able to automatically redact contextual information, including email addresses, message headers, message attachments, and non-entities contained within the message. Archivists can then generate a [redacted copy of the corpus](http://epadd.stanford.edu/epadd/collections) for search, browsing, and visualization on a public discovery website. This means a researcher at home or in her office can still search extracted named entities within a collection, even if the underlying message content is not online—allowing her to determine whether a trip to a reading room to view the full email corpus is warranted.
 
 
 ![](../post-images/Collection%20Detail.PNG)
-
 
 
 These automated research features provide a far more robust and interactive way for researchers to discover collection content than using traditional online finding aids, the familiar research guides. Typically these guides provide minimal description for email correspondence, e.g. “Box 5: Email correspondence on hard drive.” At a time when most archival repositories are moving away from providing detailed description of materials due to staffing and budgetary shortages, incorporating natural language processing into the processing and delivery workflows allows for message-level retrieval.
@@ -65,8 +61,7 @@ Researchers can then add the annotated email messages to a cart, which can be re
 ePADD’s initial release provides broad support for new scholarship using email archives, but there is plenty of room to grow. Future developments may include support for the customizable export of message metadata to enable better integration with other analysis and visualization tools, such as NodeXL or Gephi.
 
 
-![](../post-images/ePADD%20-%20screenshot%20showing%20the%20interface%20for%20browsing%20image%20attachments.png)
-Also under consideration: the creation of a discovery site uniting all email collections that have been processed worldwide using ePADD. This would means lexicons that researchers create could be saved for reuse across institutions. The query generator in this context would enable a bulk search across all available collections. Imagine if, instead of uploading an article or monograph in the query generator for a single collection, you simply subscribed to a service that notified you with an alert anytime a new archival collection matched your parameters. Think Google Alerts for archival email corpuses. Of course, these tools can also be used for other born-digital or digitized documents. Which means ePADD brings us one step closer to an integrated knowledgebase for all text-based archival materials.
+![](../post-images/ePADD%20-%20screenshot%20showing%20the%20interface%20for%20browsing%20image%20attachments.png)            Also under consideration: the creation of a discovery site uniting all email collections that have been processed worldwide using ePADD. This would means lexicons that researchers create could be saved for reuse across institutions. The query generator in this context would enable a bulk search across all available collections. Imagine if, instead of uploading an article or monograph in the query generator for a single collection, you simply subscribed to a service that notified you with an alert anytime a new archival collection matched your parameters. Think Google Alerts for archival email corpuses. Of course, these tools can also be used for other born-digital or digitized documents. Which means ePADD brings us one step closer to an integrated knowledgebase for all text-based archival materials.
 
 
 While these build-outs look forward quite a bit, ePADD helps advance DH research toward a new horizon of scholarship about contemporary history and literature, and is now [freely available](https://library.stanford.edu/projects/epadd) and customizable for those eager to explore how it can assist with research.

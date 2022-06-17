@@ -30,8 +30,7 @@ comments: |-
 
 ---
 
-![Knigi poster](../post-images/knigi.jpg)
-The following is a slightly edited version of an invited paper I gave at the 2013 Annual Conference of the American Library Association in Chicago. A few of the audience members asked whether I might share or post the presentation, which I’m happy to do (as well as flattered… and very tardy). It’s obviously not meant as [another](http://nowviskie.org/2014/asking-for-it/) [response](/digital-humanities-curio-cabinet) to the recent [OCLC report on DH centers in libraries](http://www.oclc.org/research/publications/library/2014/oclcresearch-digital-humanities-center-2014-overview.html) (since it came earlier), but as I reread the talk, I see that, in some senses, it could serve as such.
+![Knigi poster](../post-images/knigi.jpg)The following is a slightly edited version of an invited paper I gave at the 2013 Annual Conference of the American Library Association in Chicago. A few of the audience members asked whether I might share or post the presentation, which I’m happy to do (as well as flattered… and very tardy). It’s obviously not meant as [another](http://nowviskie.org/2014/asking-for-it/) [response](/digital-humanities-curio-cabinet) to the recent [OCLC report on DH centers in libraries](http://www.oclc.org/research/publications/library/2014/oclcresearch-digital-humanities-center-2014-overview.html) (since it came earlier), but as I reread the talk, I see that, in some senses, it could serve as such.
 
 
 It’s pretty long, so here’s the nutshell version: the digital humanities can and should make a happy home in the library, and this has been true for decades. What? – I hear some ask. – You mean to say that DH has been around for *decades*? Yes, – I say – and not only that, but DH has some very serious theoretical and practical forebears from almost a hundred years ago: the Russian Formalists, who even today have some important things to teach us not only about DH in general, but also about DH in the library. Oh, and (spoiler alert): Samuel L. Jackson (as Jules Winnfield) puts in a brief appearance as well.
@@ -55,7 +54,6 @@ I’m going to try a “slow burn” approach, and not reveal the actual title o
 Does this reticence actually to name the topic come from a sort of DH fatigue? Or a DH phobia?[[1]](#_ftn1) ![Say "digital humanities" one more goddamn time...](../post-images/Jules.jpg)
 
 
-
 I sincerely hope that it’s neither fatigue nor phobia.  I certainly see in our panel description all the signs of contemporary digital humanities and digital library discourse: phrases like “digital technologies” and “opening up new possibilities”; loaded terms like “changing,” “reconfiguring,” “emerging,” and “virtual” speak to a current fascination with (or, some may say, even fetishization of) the affordances of technology as they apply to literature and the library.
 
 
@@ -67,8 +65,7 @@ As I’ve thought about what I might present to an audience of librarians, I dec
 
 
 
-![dh+lib blog](../post-images/dh_lib.jpg)
-The other collection, *Make It New?*, is a set of responses to that same journal issue, edited by Sarah Potvin, Roxanne Shirazi, and Zach Coble, in the outstanding new [dh+lib](http://acrl.ala.org/dh/) group blog, sponsored by Associaton of College & Researcy Libraries.  This collection was originally published as a [mini-series of blog posts](http://acrl.ala.org/dh/2013/06/19/make-it-new-a-dhlib-mini-series/), and was later compiled, together with the original *JLA* articles that inspired it, into a [very slick ebook](http://acrl.ala.org/dh/2013/06/28/make-it-new-a-dhlib-mini-series-the-ebook/).
+![dh+lib blog](../post-images/dh_lib.jpg)The other collection, *Make It New?*, is a set of responses to that same journal issue, edited by Sarah Potvin, Roxanne Shirazi, and Zach Coble, in the outstanding new [dh+lib](http://acrl.ala.org/dh/) group blog, sponsored by Associaton of College & Researcy Libraries.  This collection was originally published as a [mini-series of blog posts](http://acrl.ala.org/dh/2013/06/19/make-it-new-a-dhlib-mini-series/), and was later compiled, together with the original *JLA* articles that inspired it, into a [very slick ebook](http://acrl.ala.org/dh/2013/06/28/make-it-new-a-dhlib-mini-series-the-ebook/).
 
 
 I can’t recommend these readings, or the thoughtful group of library workers who contributed to both of them, highly enough: for me, the highlight of the dh+lib collection is Trevor Muñoz’s piece on , which he rightly calls a “provocation.”  I don’t want to name too many more names, lest I leave somebody out – but the contributors to both of these collections, and to the dh+lib blog in general, are people you should pay attention to if you’re interested in the challenges and rewards of doing (or supporting, or “making”) DH in your library.
@@ -92,7 +89,6 @@ After these over-long preliminaries, here’s the real title of my talk: “How 
 My title, and the real inspiration for my talk, both come from an essay that’s nearly a hundred years old: “How Gogol’s ‘Overcoat’ is made,” by Boris Eikhenbaum, which itself was obviously inspired by a novella that’s seventy-five years older than that. ![How library DH is made: Eikhenbaum and Gogol](../post-images/eikhenbaum_gogol.jpg)
 
 
-
 Like my title itself, this choice of inspiration – a century-old Russian Formalist essay about an even older comic novella – may appear to be far-fetched for a digital humanities paper at a library conference.  In fact, I hope it *also* sounds a little strange to you.  (Believe me, it’s far from the oddest metaphor I’ve relied on in similar situations.)  I’ll of course try to convince you that it’s a good inspiration, a good metaphor for what we do in the digital humanities.  But even if I don’t succeed, at the very least I will have reminded you of an outstanding short work of comic fiction, illuminated by an outstanding short piece of literary criticism, and I hope you’ll remember them next time you’re looking for something to read.  (All false modesty aside, it should go without saying that these two literary texts will surely give you more of lasting value than I ever could!)
 
 
@@ -111,7 +107,6 @@ For some time after, the ghost of Akakii Akakievich haunts the St. Petersburg st
 It wouldn’t be hard to do an on-the-spot undergraduate interpretation of Gogol’s ghost story.  A symbolic reading of Akakii Akakievich’s expulsion from the furry, enveloping warmth of the overcoat into a cold, inhospitable world is one obvious tack.  Although it would of course be anachronistic to call this interpretation “Freudian” in the 19th century, Dostoevsky’s famous aphorism, “We all came out of Gogol’s overcoat,” points in precisely this direction, as he assigns the very birth of 19th-century Russian literature to the womb of Gogol’s “Overcoat.” ![Dostoevsky on Gogol](../post-images/dostoevsky.jpg)
 
 
-
 But most professional readers of the later 19th and early 20th centuries focused on the story as a social critique of poverty and alienation, on the dehumanization of bureaucracy, and so forth – focusing on the very few sentimental and pathos-filled lines bleated by Akakii Akakievich in the midst of his many deprivations.
 
 
@@ -124,12 +119,10 @@ Eikhenbaum argues that Gogol’s “Overcoat” is made not of events, or plot, 
 ![Osip Brik](../post-images/brik.jpg)
 
 
-
 Eikhenbaum’s great essay is one of the foundational texts of what became known as Russian Formalism.  But of course there were other well-known Formalists expositing other Formalist ideas.  There was also Osip Brik, a poet and critic who focused even more tightly than Eikhenbaum on the stuff of literary language as he carried out quantitative studies of phonetics in poetry.
 
 
 ![Viktor Shklovsky](../post-images/shklovsky.jpg)
-
 
 
 And there was Viktor Shklovsky, founder of the most important of the Formalist institutions, the Society for the Study of Poetic Language, who went further than Eikhenbaum in declaring that art is really just “device,” “artifice” – nothing more.  In this same 1919 essay, “Art as device,” Shklovsky proposed the idea of “defamiliarization,” or “ostranenie” – making the common appear strange in order to enhance our perception of it.  In one particularly pithy 1923 monograph, *Knight’s Move*, he took the extreme artificiality and non-linearity of the chess knight’s move as a symbol for the peripatetic and defamiliarizing ways devices are deployed as art.
@@ -138,12 +131,10 @@ And there was Viktor Shklovsky, founder of the most important of the Formalist i
 ![Vladimir Propp](../post-images/propp.jpg)
 
 
-
 And there was Vladimir Propp, perhaps the best known of the Russian Formalists (at least in the contemporary West) for his 1928 *Morphology of the Folktale*, focusing on folk-literary systems and relations.   I’m especially fond of Propp’s style of network analysis and data visualization.
 
 
-![Iurii Tynianov](../post-images/tynianov.jpg)
-And we have Iurii Tynianov, who wrote in his long 1927 essay “On Literary Evolution” that that what passed for the study of “literature” before the Formalists was actually only “the study of the *generals* of literature,” thus advocating for a much broader consideration of the vast sweeps of non-canonical.
+![Iurii Tynianov](../post-images/tynianov.jpg)And we have Iurii Tynianov, who wrote in his long 1927 essay “On Literary Evolution” that that what passed for the study of “literature” before the Formalists was actually only “the study of the *generals* of literature,” thus advocating for a much broader consideration of the vast sweeps of non-canonical.
 
 
 
@@ -153,16 +144,13 @@ And we have Iurii Tynianov, who wrote in his long 1927 essay “On Literary Evol
 Now is the time to fasten your seatbelts as we zoom from 1920s Leningrad to our day. Tynianov’s quip about the scholarly error of allowing only “the generals” to pass for all of literature is precisely the point of Franco Moretti, made anew for our times in in his own foundational essay “[Conjectures on World Literature](http://newleftreview.org/II/1/franco-moretti-conjectures-on-world-literature)” (*New Left Review*, Jan./Feb. 2000), which practically inaugurated the 21st-century DH practice of “distant reading” (Moretti coined that term here) of what he called “the great unread” in world literary history.![Franco Moretti](../post-images/moretti_conjectures.jpg)
 
 
-
-[![Macroanalysis book cover](../post-images/macroanalysis.jpg)
-](http://www.press.uillinois.edu/books/catalog/88wba3wn9780252037528.html)And when Matt Jockers, in his 2013 monograph *Macroanalysis*, produces massive network graphs representing his quantitative studies of literary history (such as we see on his book’s stunning dust jacket), his focus is precisely that of the Russian Formalists: namely, *form*, *system*, and *language*.   When he presents textual work as a data visualization, as so many contemporary digital humanists do, he is defamiliarizing those texts, making them strange, precisely as Shklovsky advised.
+[![Macroanalysis book cover](../post-images/macroanalysis.jpg)](http://www.press.uillinois.edu/books/catalog/88wba3wn9780252037528.html)And when Matt Jockers, in his 2013 monograph *Macroanalysis*, produces massive network graphs representing his quantitative studies of literary history (such as we see on his book’s stunning dust jacket), his focus is precisely that of the Russian Formalists: namely, *form*, *system*, and *language*.   When he presents textual work as a data visualization, as so many contemporary digital humanists do, he is defamiliarizing those texts, making them strange, precisely as Shklovsky advised.
 
 
 And when the productive and dedicated DH community of stylistics and authorship attribution scholars uses statistical packages to algorithmically cluster digital texts according to style and authorship, they’re just extending Eikhenbaum’s *skaz* onto a more quantitative and computational footing.
 
 
 And when the [Stanford Literary Lab](http://litlab.stanford.edu/) produced its [first research pamphlet](http://litlab.stanford.edu/LiteraryLabPamphlet1.pdf) a few years ago, it was very clear to them what they were doing, and in whose footsteps they were following: their title was "Quantitative Formalism."![Stanford Literary Lab: Quantitative Formalism](../post-images/quant_formalism.jpg)
-
 
 
 I’m here to proclaim that the digital humanities are a 21st-century version of Russian Formalism of a hundred years ago.   Just as Dostoevsky, Tolstoy, and Turgenev all came out of Gogol’s “Overcoat,” my claim is that we digital humanists – including us digital humanities librarians – in some sense have all come out of Eikhenbaum’s great essay, and out of the foundational writings, approaches, and ideas from Eikhenbaum’s fellow Formalists.

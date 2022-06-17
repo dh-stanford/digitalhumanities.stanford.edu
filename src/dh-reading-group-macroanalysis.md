@@ -19,4 +19,3 @@ Join the DH Reading Group mailing list at <https://mailman.stanford.edu/mailman/
 ![](../post-images/Macroanalysis.jpg)
 
 
-

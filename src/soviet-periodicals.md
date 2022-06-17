@@ -11,7 +11,6 @@ submitted_at: 2021-10-19T11:30:00-07:00
 
 
 
-
 *PI: Katherine Hill Reischl, Slavic Languages and Literatures*
 
 
@@ -31,6 +30,5 @@ This Stanford-based extension of the project, begun at [Princeton University](ht
 
 
 ![](../post-images/document_segmentation.png)
-
 
 

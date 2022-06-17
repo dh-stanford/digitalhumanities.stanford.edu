@@ -16,4 +16,3 @@ This talk by Mark Algee-Hewitt (Associate Co-director for Research, Stanford Lit
 ![](../post-images/Algee-HewittPoster.png)
 
 
-

@@ -16,4 +16,3 @@ Debbie Anderson of the [Script Encoding Initiative](http://www.linguistics.berke
 ![](../post-images/4301169963_8d428d86cf_b.jpg)
 
 
-

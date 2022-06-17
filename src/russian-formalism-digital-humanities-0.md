@@ -25,4 +25,3 @@ Featured speakers include Galin Tihanov, Ilya Kliger, Peter Steiner, Glen Worthe
 ![](../post-images/Russian-Formalism-final-1-screen.png)
 
 
-

@@ -16,4 +16,3 @@ Join members of the Stanford DH community, as well as guests visiting for the DL
 ![](../post-images/48735098102_61dc44ee03_c.jpg)
 
 
-

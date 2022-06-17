@@ -24,14 +24,11 @@ Past events
 ![ACNDigHum November](https://live.staticflickr.com/65535/51467565925_50f36cde7d_b.jpg)
 
 
-
 ![ACNDigHum October](https://live.staticflickr.com/65535/51467565890_a712592482_b.jpg)
 
 
 
-
 ![Custom Digital Scriptorium](https://live.staticflickr.com/65535/51247978855_c1493bab04_b.jpg)
-
 
 
 ###
@@ -40,9 +37,7 @@ Past events
 ![ACNDH Beyond Hashtags](https://live.staticflickr.com/65535/51170917626_b0c42317ee_b.jpg)
 
 
-
 ![ACNDH_Books](https://live.staticflickr.com/65535/50935890436_de615fd103_b.jpg)
-
 
 
 ###
@@ -54,9 +49,7 @@ Past events
 
 
 
-
 ![](https://live.staticflickr.com/65535/50845252753_bfca881d69_b.jpg)
-
 
 
 January 21st ACNDH event at 2 Eastern / 11 Pacific if you have a Nintendo Switch and the Animal Crossing: New Horizons game. We'll toast with champagne, eat oranges, and light fireworks if things go well on 1/20... or hang out together and process what happened otherwise. Or anyone can [watch on Twitch](https://www.twitch.tv/acndighum)!
@@ -68,7 +61,6 @@ January 21st ACNDH event at 2 Eastern / 11 Pacific if you have a Nintendo Switch
 ![](https://live.staticflickr.com/65535/50691772893_0c3a5fb6c5_b.jpg)
 
 
-
 Join us Wednesday, December 16th at noon Eastern / 9 AM Pacific for Paul Vierthaler, Assistant Professor of Chinese Studies in the Modern Languages and Literatures department at the College of William & Mary, speaking about his new article "East Asian Studies and the Digital Humanities in 2020," which appeared in History Compass in early November. It is a quick survey of the current state of East Asian Digital Humanities with a focus on broad trends.
 
 
@@ -78,7 +70,6 @@ Join us Wednesday, December 16th at noon Eastern / 9 AM Pacific for Paul Viertha
 ![Ottoman Transkribus](https://live.staticflickr.com/65535/50625597441_e7f7c9ba40_b.jpg)
 
 
-
 Merve Tekgürler, PhD student in History at Stanford, discussed "Ottoman [Transkribus](https://transkribus.eu/): Reflections on the Initial Results of HTR+ Model Training for 18th Century Ottoman Turkish Paleography"! [Sign up here to attend "in person"](https://forms.gle/qGi9cxNqr8Y9LYLQ8) if you play ACNH, or anyone can [watch on Twitch](https://www.twitch.tv/acndighum)!
 
 
@@ -86,6 +77,5 @@ Dr. Andie Silva, Assistant Professor of English at York College and Assistant P
 
 
 ![](https://live.staticflickr.com/65535/50433345736_40fb2160ce_b.jpg)
-
 
 

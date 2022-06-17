@@ -13,8 +13,7 @@ post_images:
   - ../post-images/geoblog06.png
 ---
 
-![](../post-images/geoblog01.png)
-On May 7th, Stanford University Libraries’ ***Center for Interdisciplinary Digital Research*** (CIDR) welcomed David O’Sullivan, Associate Professor of Geography at the University of California, Berkeley to the Stanford campus for two events: a panel discussion on geospatial narrative and a guest lecture on spatial simulation modeling.
+![](../post-images/geoblog01.png)On May 7th, Stanford University Libraries’ ***Center for Interdisciplinary Digital Research*** (CIDR) welcomed David O’Sullivan, Associate Professor of Geography at the University of California, Berkeley to the Stanford campus for two events: a panel discussion on geospatial narrative and a guest lecture on spatial simulation modeling.
 
 
 The slides and audio from David’s lecture: “[**Simple spatial models: Building blocks for process-based GIS?**](https://vimeo.com/129989592)"
@@ -38,8 +37,7 @@ In order of presentation, the panelists were **Karl Grossner** (Stanford, CIDR),
 [commented slides: “[Geospatial narrative: Perspectives from the humanities, cartography and geographic information science](http://dh.stanford.edu/docs/grossner_narrative.pdf)”]
 
 
-[![](../post-images/geoblog01a.png)
-](http://dh.stanford.edu/docs/grossner_narrative.pdf)The nature of the data—often sparse, indeterminate, uncertain—and the kinds of questions being asked—qualitative and quantitative in some combination—are considerably different than those for which GIS and spatial analytic software has been developed over the years. For example, representing temporality with a series of snapshots has proven adequate for many applications but dynamic processes are more problematic and in historical studies, space and time (place and period) are often inextricably intertwined. Discussions  between humanities scholars and GIScientists concerning new representational and computing requirements does occur, but is sporadic and unfocused. This panel was organized as one effort to make such discussion directed and explicit.
+[![](../post-images/geoblog01a.png)](http://dh.stanford.edu/docs/grossner_narrative.pdf)The nature of the data—often sparse, indeterminate, uncertain—and the kinds of questions being asked—qualitative and quantitative in some combination—are considerably different than those for which GIS and spatial analytic software has been developed over the years. For example, representing temporality with a series of snapshots has proven adequate for many applications but dynamic processes are more problematic and in historical studies, space and time (place and period) are often inextricably intertwined. Discussions  between humanities scholars and GIScientists concerning new representational and computing requirements does occur, but is sporadic and unfocused. This panel was organized as one effort to make such discussion directed and explicit.
 
 
 The questions we asked ourselves were:
@@ -54,8 +52,7 @@ The questions we asked ourselves were:
 ***Anne Knowles*** and her student collaborator, ***Levi Westerveld*** presented work‑in‑progress taking a new and extraordinary approach to historical narrative as part of the ongoing and long-standing [*Geographies of the Holocaust*](http://www.ushmm.org/learn/mapping-initiatives/geographies-of-the-holocaust) project. It deliberately departs from many traditional cartographic conventions, but retains distinctive spatial dimensions that foregrounds topology and scale, is “unhinged” from any typical base map, retains geographic orientation and is presented as an animation. They have generously shared an [early short video](http://www.youtube.com/watch?v=MZ-IJ3w1Ndw) product of the work, and discussed the distinctive design process for it.
 
 
-[![](../post-images/geoblog02.png)
-](http://www.youtube.com/watch?v=MZ-IJ3w1Ndw)
+[![](../post-images/geoblog02.png)](http://www.youtube.com/watch?v=MZ-IJ3w1Ndw)
 
 
 In the video, holocaust survivor Paul Schneiderman describes aspects of his family’s activity as an audio overlay to an evocative and artistic animation of spatial elements within the story. Quoting Anne,
@@ -71,15 +68,13 @@ In the video, holocaust survivor Paul Schneiderman describes aspects of his fami
 ***Erik Steiner*** presented some of his own work on *Geographies of the Holocaust* that breaks from cartographic norms in a couple of ways. One piece, “[Mapping Mobility in the Budapest Ghetto](http://web.stanford.edu/group/spatialhistory/cgi-bin/site/viz.php%3Fid=411),” a collaboration with Tim Cole and Alberto Giordano, uses a simulation model and interactive animated mapping application to analyze the spatial constraints and implications of temporal restrictions on Jews free movement throughout the city.
 
 
-[![](../post-images/geoblog03.png)
-](http://web.stanford.edu/group/spatialhistory/cgi-bin/site/viz.php%3Fid=411)
+[![](../post-images/geoblog03.png)](http://web.stanford.edu/group/spatialhistory/cgi-bin/site/viz.php%3Fid=411)
 
 
 ***David O’Sullivan*** presented his recent research using complex spatial simulation models of human and ecological characteristics and behaviors (~30 parameters) leading to de-forestation, resource exploitation and species extinction for an island. He and collaborator George Perry used clustering analysis to extract six typical 'narrative arcs,' each of which is associated with a distinctive 'history' of the island. Using principal component analysis (PCA) they were able to identify those parameters most relevant to each cluster/arc.
 
 
-[![](../post-images/geoblog04.png)
-](http://southosullivan.com/talks/stanford-panel/%23/)
+[![](../post-images/geoblog04.png)](http://southosullivan.com/talks/stanford-panel/%23/)
 
 
 David characterized their preliminary findings as demonstrating “radical contingency;” namely that any story is possible on any island, and that both environmental and human factors are only weakly determinative of the outcomes.
@@ -91,8 +86,7 @@ David characterized their preliminary findings as demonstrating “radical conti
 ***Nicole Coleman****’s*  presentation, titled “Reading and Writing History through Graphs” first addressed the way aesthetically pleasing, even artistic, representations can be instrumental in effectively representing places, then segued to discussing the early stages in development of a new visual analytic tool being developed by her Humanities+Design group, [Idiographic](http://idiographic.designhumanities.org). Idiographic is not geographic, but decidedly spatial and temporal, and involves narrative on two levels. First, it allows a force-directed graph representations of relations between people (which could in cases be co-location), and enables researchers to add new nodes (individuals) and links (relations) joining the network over time, and visualize how their introduction impacts the organization of clusters in the existing graph.
 
 
-[![](../post-images/geoblog05.png)
-](http://dh.stanford.edu/docs/Nicole 20150507_Geography-Narrative.key)
+[![](../post-images/geoblog05.png)](http://dh.stanford.edu/docs/Nicole 20150507_Geography-Narrative.key)
 
 
 Nicole related a real-world narrative of knowledge-production: the engagement of a particular researcher with a particular historical dataset and the Idiographic tool, describing the way it enables exploring hypotheses about the nature and impact of dynamic connections between people—for example by introducing new classifications of people according to profession or groups of professions.
@@ -104,8 +98,7 @@ Nicole related a real-world narrative of knowledge-production: the engagement of
 ***Nick Bauch*** presented “Digital Spatial Narrative and the Production of Photographic Space at the Grand Canyon,” discussing work [*Enchanting the Desert*](https://web.stanford.edu/group/spatialhistory/cgi-bin/site/project.php?id=1061), his “born-digital, peer-reviewed, book-length project that offers spatial analysis and historical interpretation of the 40 landscape photographs included in Henry Peabody’s circa 1905 slideshow of the Grand Canyon.” The interactive web publication nearing completion surrounds each photograph with contextualizing material—a labeled version, a viewshed terrain map indicating in the area depicted, and links to those essays in the project relating to the photo. The means for navigating the collection, both freely and in an author‑guided order are provided, the distinctive digital capability “allowing the spatial narrative.”
 
 
-[![](../post-images/geoblog06.png)
-](http://dh.stanford.edu/docs/Bauch_5-7-15.pdf)
+[![](../post-images/geoblog06.png)](http://dh.stanford.edu/docs/Bauch_5-7-15.pdf)
 
 
 *Enchanting the Desert* will be the first in a series of experimental digital interactive monographs to be published by Stanford University Press.

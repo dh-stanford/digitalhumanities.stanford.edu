@@ -19,4 +19,3 @@ We're rescheduling this event. Sorry!
 ![](../post-images/Screen%20Shot%202013-09-05%20at%2011.39.51%20AM.png)
 
 
-
