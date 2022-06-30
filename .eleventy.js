@@ -5,6 +5,7 @@ const md = markdownIt();
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("post-images");
+  eleventyConfig.addPassthroughCopy("assets");
 
   eleventyConfig.addCollection("pages", (collectionApi) => {
     return collectionApi
