@@ -3,12 +3,9 @@ layout: layouts/article
 title: "Russian Computational Periodicals"
 submitted_by: Quinn Dombrowski
 submitted_at: 2021-10-19T11:30:00-07:00
+post_images:
+  - ../post-images/color_mask.png
 ---
-
-![](../post-images/color_mask.png)
-
-
-
 
 
 *PI: Katherine Hill Reischl, Slavic Languages and Literatures*
@@ -30,5 +27,4 @@ This Stanford-based extension of the project, begun at [Princeton University](ht
 
 
 ![](../post-images/document_segmentation.png)
-
 
