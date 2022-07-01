@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>{{ title + " :: " if title }}Digital Humanities @ Stanford</title>
+
+  {# {% seo %} #}
+
+  <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/{{site.favicon}}">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}" ">
+
+    <!-- Theme Stylesheet -->
+    <link rel=" stylesheet" href="{{ '/assets/css/theme.css' | url }}" ">
+
+    <!-- Jquery on header to make sure everything works, the rest of the scripts in footer for fast loading -->
+    <script crossorigin=" anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    src=" https://code.jquery.com/jquery-3.3.1.min.js">
+    </script>
+
+
+</head>
+
+<body class="{% if page.url == " /" %} homefirstpage {% endif %}">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="{{ '/' | url }}">
+        <strong>{{ "Digital Humanities @ Stanford" }}</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">{# <ul
+          class="navbar-nav mr-auto d-flex align-items-center">
+          {% include menu-header.html %}
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          {% include search-lunr.html %}
+        </ul> #}
+      </div>
+    </div>
+  </nav>
+
+  <!-- Search Results -->
+  <div id="lunrsearchresults">
+    <ul class="mb-0"></ul>
+  </div>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    {{ content | safe }}
+  </main>
+
+
+  <!-- Scripts: popper, bootstrap, theme, lunr -->
+  <script crossorigin="anonymous" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+  <script crossorigin="anonymous" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+  <script src="{{ '/assets/js/theme.js' | url }}" "></script>
+
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>

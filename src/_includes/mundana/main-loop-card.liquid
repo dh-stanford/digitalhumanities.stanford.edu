@@ -1,0 +1,27 @@
+<div class="mb-5 d-flex justify-content-between main-loop-card">
+  <div class="pr-3">
+    <h2 class="mb-1 h4 font-weight-bold">
+      <a class="text-dark" href="{{ article.url | url }}">{{ article.data.title }}</a>
+    </h2>
+    <p class="excerpt">
+      {% excerpt article %}
+    </p>
+    {%- comment -%} <small class="d-block text-muted">
+      In <span class="catlist">
+        {% for category in post.categories %}
+        <a class="text-capitalize text-muted smoothscroll"
+          href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a>
+        <span class="sep">,</span>
+        {% endfor %}
+      </span>
+    </small> {%- endcomment -%}
+    <small class="text-muted">{{ article.data.submitted_at }}</small>
+  </div>
+  {% if article.data.post_images %}
+  <div class="col-md-3 pr-0 text-right">
+    <a href="{{ article.url | url }}">
+      <img class="w-100" src="{{ article.data.post_images[0] | url  }}" alt="{{ article.data.title }}">
+    </a>
+  </div>
+  {% endif %}
+</div>
