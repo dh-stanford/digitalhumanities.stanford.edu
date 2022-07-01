@@ -1,36 +1,121 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shakespeare Goes to the Opera Part 1: Scraping Query Results from Opening Night! :: Digital Humanities @ Stanford</title>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <title> | </title>
 
   
-  <style>
-    body{font-family:sans-serif}a{color:#820000}body>header{background-color:#820000;color:#fff;padding:1rem;text-align:center;font-size:3em}header a{color:#fff;text-decoration:none}.pagination ol{list-style:none;margin:0;padding:0;display:flex;gap:1em}.pagination ol li{outline:1px solid #820000;padding:.25em .5em}main img{display:block;max-width:80%}section.comments{border-top:1px solid #820000;margin-top:2em;padding-top:2em}section.comments header{font-size:1.4em;font-weight:700}
-  </style>
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+    <!-- Theme Stylesheet -->
+    <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+    <!-- Jquery on header to make sure everything works, the rest of the scripts in footer for fast loading -->
+    <script crossorigin=" anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    src=" https://code.jquery.com/jquery-3.3.1.min.js">
+    </script>
+
+
 </head>
 
-<body>
-  <header><a href="/">Digital Humanities @ Stanford</a></header>
-  <main role="main">
-    
-<article class="article">
-  <h1>Shakespeare Goes to the Opera Part 1: Scraping Query Results from Opening Night!</h1>
-  <small>
-    Submitted By: <span>Jacqueline Hettel</span> on <time>Tue Sep 24 2013 12:09:25 GMT-0700 (Pacific Daylight Time)</time>
-  </small>
+<body class="">
 
-  
-  <ul class="post-images">
-    
-    <li><img src="../post-images/Screen%20Shot%202013-09-24%20at%202.51.32%20PM.png"></li>
-    
-  </ul>
-  
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+      </div>
+    </div>
+  </nav>
 
-  <p>A little over a week ago, the Stanford University Library <a href="http://library.stanford.edu/news/2013/09/introducing-opening-night">announced the launch of a new collection/tool</a> that was created in collaboration between <em><strong>h</strong></em>Text Services and the Music Library: <a href="http://operadata.stanford.edu/">Opening Night! Opera and Oratorio Premieres</a>. It is a <a href="http://projectblacklight.org/">Blacklight</a> gem web application (Ruby on Rails application powered by a SOLR index) of the metadata for 38,000 different operas and oratorios when they were first performed between 1589 and 2001. And while I could go on ad nauseum about how amazing <a href="http://projectblacklight.org/">Blacklight</a> is as a discovery tool for digital humanities metadata and objects, and that it's not just for the creation of library catalogs like <a href="http://searchworks.stanford.edu/">Searchworks</a>, I will save that spiel for another day. This two part blog post series titled &quot;Shakespeare Goes to the Opera&quot; focuses on three things: sharing a methodology for unlocking metadata from query results in an application like Opening Night! via web scraping; sharing how to use Google Fusion tables to create interesting visualizations and analyses; and demonstrating Opening Night! has metadata that is of interest even to those of us without formal training in Music, or more specifically the history of operatic performances.</p>
+  <!-- Search Results -->
+  <div id="lunrsearchresults">
+    <ul class="mb-0"></ul>
+  </div>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-between ">
+        <div
+          class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">Shakespeare Goes to the Opera Part 1: Scraping Query Results from Opening Night!</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3"> Jacqueline Hettel <span><a target="_blank" href=""
+                  class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
+              <span class="text-muted d-block mt-1">Sep 24, 2013</span>
+            </small>
+          </div>
+        </div>
+        
+        <div class="col-md-6 pr-0 align-self-center">
+          <img class="rounded" src="../post-images/Screen%20Shot%202013-09-24%20at%202.51.32%20PM.png" alt="Shakespeare Goes to the Opera Part 1: Scraping Query Results from Opening Night!">
+        </div>
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+
+
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          Share this
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+            <a class="a2a_button_facebook"></a>
+            <a class="a2a_button_twitter"></a>
+          </div>
+          <script async src="https://static.addtoany.com/menu/page.js"></script>
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-12 col-lg-8">
+
+      <!-- Article -->
+      <article class="article-post">
+        <p>A little over a week ago, the Stanford University Library <a href="http://library.stanford.edu/news/2013/09/introducing-opening-night">announced the launch of a new collection/tool</a> that was created in collaboration between <em><strong>h</strong></em>Text Services and the Music Library: <a href="http://operadata.stanford.edu/">Opening Night! Opera and Oratorio Premieres</a>. It is a <a href="http://projectblacklight.org/">Blacklight</a> gem web application (Ruby on Rails application powered by a SOLR index) of the metadata for 38,000 different operas and oratorios when they were first performed between 1589 and 2001. And while I could go on ad nauseum about how amazing <a href="http://projectblacklight.org/">Blacklight</a> is as a discovery tool for digital humanities metadata and objects, and that it's not just for the creation of library catalogs like <a href="http://searchworks.stanford.edu/">Searchworks</a>, I will save that spiel for another day. This two part blog post series titled &quot;Shakespeare Goes to the Opera&quot; focuses on three things: sharing a methodology for unlocking metadata from query results in an application like Opening Night! via web scraping; sharing how to use Google Fusion tables to create interesting visualizations and analyses; and demonstrating Opening Night! has metadata that is of interest even to those of us without formal training in Music, or more specifically the history of operatic performances.</p>
 <p><img src="../post-images/Screen%20Shot%202013-09-24%20at%202.51.32%20PM.png" alt=""></p>
 <p>The first thing I would like to touch on is that the web scraper discussed in this blog post is not the only one. There are many options for web scraping (and many of them are described in detail <a href="http://stackoverflow.com/questions/2861/options-for-html-scraping">here</a>). Since I am writing this post with library folks in mind who may or may not have a programming background, I have decided to demonstrate web scraping using a Google Chrome add-on that not only has an easy-to-use UI, but it has a function to export the results as a spreadsheet to your Google Drive account--making it that much easier to share data for collaboration. If you are interested in learning how to do web scraping directly, via a programming language, I can direct you to two pretty good tutorials:</p>
 <ol>
@@ -85,17 +170,48 @@
 <li><strong>Country:  ./dl/dd[@class=&quot;blacklight-country&quot;]</strong></li>
 </ol>
 
+      </article>
 
-  
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
 
-  <footer>
-    <small>
-      <a href=""></a>
-    </small>
-  </footer>
-</article>
 
+<!-- Aletbar Prev/Next -->
   </main>
-</body>
+
+
+  <!-- Scripts: popper, bootstrap, theme, lunr -->
+  <script crossorigin="anonymous" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+  <script crossorigin="anonymous" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+  <script src="/assets/js/theme.js" "></script>
+
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
 
 </html>
