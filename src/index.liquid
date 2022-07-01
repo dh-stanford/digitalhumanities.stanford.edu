@@ -6,11 +6,9 @@ pagination:
   alias: articles
 ---
 
-
 <div class="container">
 
   {%- comment -%} {% if page.url == "/" %} {%- endcomment -%}
-
 
   <!-- Begin post excerpts, let's highlight the first 4 posts on top -->
   <div class="row remove-site-content-margin">
@@ -20,8 +18,9 @@ pagination:
     <div class="col-md-6">
       <div class="card border-0 mb-4 box-shadow">
         <a href="{{ article.url | url }}">
-          <div class="topfirstimage" style="background-image: url({{ article.data.post_images[0] | url }}); height: 200px;
-            background-size: cover; background-repeat: no-repeat;"></div>
+          <div class="topfirstimage" style="background-image: url({{ article.data.post_images[0] | url }});
+                      height: 200px; background-size: cover; background-repeat: no-repeat;">
+          </div>
         </a>
         <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
           <h2 class="h4 font-weight-bold">
@@ -79,8 +78,8 @@ pagination:
 
     </div>
 
-  </div> 
-  
+  </div>
+
   <!-- Sticky - add sticky tag to the post you want to highlight here - tags: [sticky] -->
   {% for article in articles %}
   {% if post.tags contains "sticky" %}
@@ -95,15 +94,12 @@ pagination:
           <a href="{{site.baseurl}}{{post.url}}" class="btn btn-dark">Read More</a>
         </div>
         <div class="col-md-6 d-none d-md-block pr-0"
-          style="background-size:cover;background-image:url({{site.baseurl}}/{{ post.image }});">
-        </div>
+          style="background-size:cover;background-image:url({{site.baseurl}}/{{ post.image }});"></div>
       </div>
     </div>
   </div>
   {% endif %}
   {% endfor %}
-
-
 
 
   {%- comment -%} {% endif %} {%- endcomment -%}
@@ -114,15 +110,13 @@ pagination:
   <!-- Now the rest of the posts with the usual loop but with an offset:4 on the first page so we can skeep the first 4 posts displayed above -->
 
   <div class="row mt-3">
-
     <div class="col-md-8 main-loop">
-
-      <h4 class="font-weight-bold spanborder"><span>All Stories</span></h4>
+      <h4 class="font-weight-bold spanborder">
+        <span>All Stories</span>
+      </h4>
 
       {% for article in articles offset:4 %}
-
       {% include "./_includes/mundana/main-loop-card.liquid" %}
-
       {% endfor %}
 
       <div class="mt-5">
@@ -130,35 +124,44 @@ pagination:
         {% if pagination.pages.length > 1 %}
         <ul class="pagination">
           {% if pagination.page.previous %}
-          <li class="page-item"><a class="page-link"
-              href="{{ pagination.href.previous | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+          <li class="page-item">
+            <a class="page-link" href="{{ pagination.href.previous | url }}">&laquo; Prev</a>
           </li>
           {% else %}
-          <li class="page-item disabled"><span class="prev page-link">&laquo;</span></li>
+          <li class="page-item disabled">
+            <span class="prev page-link">&laquo;</span>
+          </li>
           {% endif %}
 
           {% for page in (1..pagination.pages.length) %}
-          {% if page == pagination.pageNumber %}
-          <li class="page-item disabled"><span class="webjeda page-link">{{ page }}</span></li>
+          {% assign page0 = page | minus: 1 %}
+          {% if page0 == pagination.pageNumber %}
+          <li class="page-item disabled">
+            <span class="webjeda page-link">{{ page }}</span>
+          </li>
           {% elsif page == 1 %}
-          <li class="page-item"><a class="page-link" href="{{site.baseurl}}/">{{ page }}</a></li>
+          <li class="page-item">
+            <a class="page-link" href="{{ '/' | url }}">{{ page }}</a>
+          </li>
           {% else %}
-          <li class="page-item"><a class="page-link"
-              href="{{ pagination.hrefs[ loop.index0 ] | url }}">{{
-              page }}</a></li>
+          <li class="page-item">
+            <a class="page-link" href="{{ pagination.hrefs[ page0 ] | url }}">{{ page }}</a>
+          </li>
           {% endif %}
           {% endfor %}
 
           {% if pagination.page.next %}
-          <li class="page-item"><a class="page-link"
-              href="{{ pagination.href.next | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a></li>
+          <li class="page-item">
+            <a class="page-link" href="{{ pagination.href.next | url }}">Next &raquo;</a>
+          </li>
           {% else %}
-          <li class="page-item disabled"><span class="next page-link">&raquo;</span></li>
+          <li class="page-item disabled">
+            <span class="next page-link">&raquo;</span>
+          </li>
           {% endif %}
         </ul>
         {% endif %}
       </div>
-
     </div>
 
     {%- comment -%} <div class="col-md-4">
@@ -166,7 +169,6 @@ pagination:
     </div> {%- endcomment -%}
 
   </div>
-
 
 
 </div>
