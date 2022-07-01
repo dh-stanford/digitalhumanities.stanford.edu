@@ -4,7 +4,7 @@
       <a class="text-dark" href="{{ article.url | url }}">{{ article.data.title }}</a>
     </h2>
     <p class="excerpt">
-      {{ post.excerpt | strip_html | strip_newlines | truncate: 186}}
+      {% excerpt article %}
     </p>
     {%- comment -%} <small class="d-block text-muted">
       In <span class="catlist">
