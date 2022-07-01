@@ -15,7 +15,9 @@
         {% endfor %}
       </span>
     </small> {%- endcomment -%}
-    <small class="text-muted">{{ article.data.submitted_at }}</small>
+    <small class="text-muted">
+      {{ article.data.submitted_by }} · {{ article.data.submitted_at  | date: '%b %d, %Y' }}
+    </small>
   </div>
   {% if article.data.post_images %}
   <div class="col-md-3 pr-0 text-right">
