@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ORBIS v2 :: Digital Humanities @ Stanford</title>
+
+  
+  <style>
+    body{font-family:sans-serif}a{color:#820000}body>header{background-color:#820000;color:#fff;padding:1rem;text-align:center;font-size:3em}header a{color:#fff;text-decoration:none}.pagination ol{list-style:none;margin:0;padding:0;display:flex;gap:1em}.pagination ol li{outline:1px solid #820000;padding:.25em .5em}main img{display:block;max-width:80%}section.comments{border-top:1px solid #820000;margin-top:2em;padding-top:2em}section.comments header{font-size:1.4em;font-weight:700}
+  </style>
+</head>
+
+<body>
+  <header><a href="/">Digital Humanities @ Stanford</a></header>
+  <main role="main">
+    
+<article class="article">
+  <h1>ORBIS v2</h1>
+  <small>
+    Submitted By: <span>Elijah Meeks</span> on <time>Sat Aug 17 2013 09:52:12 GMT-0700 (Pacific Daylight Time)</time>
+  </small>
+
+  
+  <ul class="post-images">
+    
+    <li><img src="../post-images/clustering.png"></li>
+    
+    <li><img src="../post-images/orbisnew.png"></li>
+    
+    <li><img src="../post-images/orbisnew2.png"></li>
+    
+    <li><img src="../post-images/orbisnew3.png"></li>
+    
+    <li><img src="../post-images/orbisnew5.png"></li>
+    
+    <li><img src="../post-images/orbisnew4.png"></li>
+    
+  </ul>
+  
+
+  <p><img src="../post-images/orbisnew.png" alt="A screenshot of ORBIS v2"></p>
+<p>Over the coming months, I'll be spending some time integrating new features, data, and base layers to <a href="http://orbis.stanford.edu">ORBIS: The Stanford Geospatial Transportation Network of the Roman Empire</a>. While ORBIS was tremendously successful both in its <a href="http://orbis.stanford.edu/#media">public appeal</a> and its <a href="http://orbis.stanford.edu/#news">use in scholarship</a>, there has been a growing list of small and not-so-small features that could improve the model or the user experience of it. Some of these have already been implemented in a prototype version seen in the screenshot above. Rather than wait for the new version to be finished, though, ORBIS v2 will be developed publicly, with the code available on Github. This way, ORBIS will benefit from the user feedback and feature requests of the larger digital humanities and software development community. There are still a few systems administration and database steps that need to occur before this can happen, but when the code and new site are available, the link will be posted here and on <a href="https://twitter.com/ORBIS_Stanford">@ORBIS_Stanford</a> on Twitter.</p>
+<p>But it would be a shame to wait to talk about some of these new features, given that they've already been implemented and allow for fundamental changes in the way you can use ORBIS. A few are purely technical. The ORBIS v2 map is entirely built in <a href="http://d3js.org">D3.js</a>, using the stable but still-in-development <a href="https://gist.github.com/mbostock/4132797">geo.tile</a> functionality to serve a <a href="http://www.mapbox.com">MapBox</a> terrain map with a much higher resolution than the locally hosted Natural Earth tiles used in the current version of ORBIS. The additional geospatial capabilities of D3 allow this version of ORBIS to have an SVG layer of 1600 route segments that can be colored by speed, expense, or type (colored by type, above, so that you can see where ORBIS simulates overseas, coastal, river, and road connections) as well as clickable sites allow the user to turn on or off labels or perform other site functionality.</p>
+<p><img src="../post-images/orbisnew2.png" alt="Alternate routes in ORBIS v2 based on removing sites"></p>
+<p>One such piece of site functionality is the ability to remove sites from the ORBIS network and see how the removal of that site changes the route from one place to another. Here you can see the route from Carthage to London, and how it changes with the removal first of Lutetia, then Lugdunum, then Genua and finally Luna. Along with the vehicle and mode constraints of the original ORBIS route-finding, the ability to remove sites can simulate more accurately particular scenarios.</p>
+<p><img src="../post-images/orbisnew3.png" alt="Route variance in ORBIS v2 based on transfer costs"></p>
+<p>Further variation to routes can occur as a result of the new transfer cost functionality. ORBIS v2 allows the user to set a transfer cost in days to switch from one mode of transport to another, so that any switch from road to coastal, coastal to overseas, overseas to river, or any variation thereof, will cost an additional amount of time. Here the route from Alexandria to Rome takes a direct route through the Straits of Messina with no transfer cost, continues up the western coast of the Italian peninsula with a 2 day transfer cost (thereby making it inefficient to take the &quot;overseas&quot; route from Messina to Portus) and foregoes any overseas travel at all with a grossly inflated 10 day transfer cost. The current development version of ORBIS v2 has a single generic transfer cost, but the final version will have a specific cost for each transfer to a certain type of travel, so that a user could set a 3 day cost to switch to overseas, a 5 day cost to switch to river, and a 1 day cost to switch to coastal.</p>
+<p><img src="../post-images/orbisnew4.png" alt="Cartogram from Sarmizegethusa in ORBIS v2"></p>
+<p>All these new modifications to the routing function factor into the v2 cartogram, which is now integrated into the route-finding map (making it scrollable and zoomable) and capable of being run from any center with any settings. Here Sarmizegethusa is the center of the cartogram, with 5 day transfer costs and coastal routes disabled in February.</p>
+<p><a href="/sites/g/files/sbiybj8071/f/orbisnew5.png"><img src="../post-images/orbisnew5.png" alt="ORBIS v2 showing sites colored by time to travel from Sarmizegethusa"></a></p>
+<p>As with the original cartogram, the sites can be seen on the map colored by the cartogram settings. One exciting new feature that becomes available with the capacity to run these dynamic distance cartograms from any site in the ORBIS model is the use of clustering to show which sites are closest to each of these user-defined centers. This clustering can show not only regions within the Roman world around key sites, but also regions around a single site as defined by different transport modes or media.</p>
+<p><a href="/sites/g/files/sbiybj8071/f/clustering.png"><img src="../post-images/clustering.png" alt="Clusters around cartogram centers in ORBIS v2"></a></p>
+<p>The cartogram centers, shown in cyan, are surrounded by the sites closest to them, splitting the Roman world into distinct and, critically, user-defined areas. There are other features slated for v2 of ORBIS, as well as the integration of more detailed routes and route information, but hopefully those will be visible in the public development site and not in simple static screenshots like these.</p>
+
+
+  
+
+  <footer>
+    <small>
+      <a href=""></a>
+    </small>
+  </footer>
+</article>
+
+  </main>
+</body>
+
+</html>

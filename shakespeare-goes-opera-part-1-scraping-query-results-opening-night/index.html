@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shakespeare Goes to the Opera Part 1: Scraping Query Results from Opening Night! :: Digital Humanities @ Stanford</title>
+
+  
+  <style>
+    body{font-family:sans-serif}a{color:#820000}body>header{background-color:#820000;color:#fff;padding:1rem;text-align:center;font-size:3em}header a{color:#fff;text-decoration:none}.pagination ol{list-style:none;margin:0;padding:0;display:flex;gap:1em}.pagination ol li{outline:1px solid #820000;padding:.25em .5em}main img{display:block;max-width:80%}section.comments{border-top:1px solid #820000;margin-top:2em;padding-top:2em}section.comments header{font-size:1.4em;font-weight:700}
+  </style>
+</head>
+
+<body>
+  <header><a href="/">Digital Humanities @ Stanford</a></header>
+  <main role="main">
+    
+<article class="article">
+  <h1>Shakespeare Goes to the Opera Part 1: Scraping Query Results from Opening Night!</h1>
+  <small>
+    Submitted By: <span>Jacqueline Hettel</span> on <time>Tue Sep 24 2013 12:09:25 GMT-0700 (Pacific Daylight Time)</time>
+  </small>
+
+  
+  <ul class="post-images">
+    
+    <li><img src="../post-images/Screen%20Shot%202013-09-24%20at%202.51.32%20PM.png"></li>
+    
+  </ul>
+  
+
+  <p>A little over a week ago, the Stanford University Library <a href="http://library.stanford.edu/news/2013/09/introducing-opening-night">announced the launch of a new collection/tool</a> that was created in collaboration between <em><strong>h</strong></em>Text Services and the Music Library: <a href="http://operadata.stanford.edu/">Opening Night! Opera and Oratorio Premieres</a>. It is a <a href="http://projectblacklight.org/">Blacklight</a> gem web application (Ruby on Rails application powered by a SOLR index) of the metadata for 38,000 different operas and oratorios when they were first performed between 1589 and 2001. And while I could go on ad nauseum about how amazing <a href="http://projectblacklight.org/">Blacklight</a> is as a discovery tool for digital humanities metadata and objects, and that it's not just for the creation of library catalogs like <a href="http://searchworks.stanford.edu/">Searchworks</a>, I will save that spiel for another day. This two part blog post series titled &quot;Shakespeare Goes to the Opera&quot; focuses on three things: sharing a methodology for unlocking metadata from query results in an application like Opening Night! via web scraping; sharing how to use Google Fusion tables to create interesting visualizations and analyses; and demonstrating Opening Night! has metadata that is of interest even to those of us without formal training in Music, or more specifically the history of operatic performances.</p>
+<p><img src="../post-images/Screen%20Shot%202013-09-24%20at%202.51.32%20PM.png" alt=""></p>
+<p>The first thing I would like to touch on is that the web scraper discussed in this blog post is not the only one. There are many options for web scraping (and many of them are described in detail <a href="http://stackoverflow.com/questions/2861/options-for-html-scraping">here</a>). Since I am writing this post with library folks in mind who may or may not have a programming background, I have decided to demonstrate web scraping using a Google Chrome add-on that not only has an easy-to-use UI, but it has a function to export the results as a spreadsheet to your Google Drive account--making it that much easier to share data for collaboration. If you are interested in learning how to do web scraping directly, via a programming language, I can direct you to two pretty good tutorials:</p>
+<ol>
+<li>If Ruby is your thing, you can check out Stanford DH'er <a href="http://jasonheppler.org/2012/10/12/better-web-scraping-with-nokogiri.html">Jason Heppler's blog post on using Nokogiri for scraping</a>, or</li>
+<li>There is as an extremely thorough tutorial on Beautiful Soup, a Python based web scraping suit, <a href="http://www.pythonforbeginners.com/python-on-the-web/web-scraping-with-beautifulsoup/">at Python for Beginners</a>.</li>
+</ol>
+<p>Now, if you haven't already done so, go ahead and download Google Chrome (<a href="https://www.google.com/intl/en/chrome/browser/">click here to download it for your operating system</a>) and the Google Chrome Scraper from the Google Store (<a href="https://chrome.google.com/webstore/detail/scraper/mbigbapnjcgaffohmbkdlecaccepngjd?hl=en">click here</a> and follow the directions for getting it installed). Once you have this add-on installed, we can begin the <em><strong>really</strong></em>easy task of unleashing data from Opening Night!</p>
+<p>Transforming Opening Night! from an obsolete, stand-alone database into a dynamic web application was the first project tasked to me when I joined the Stanford University Libraries team  back in February. I will admit that up until right before launching this application I honestly thought the only thing of interest to me (as a PhD in English who specialized in DH and Corpus Linguistics) in this project was the technology, coding, and methodology for wrangling the data, and not the data itself. However, I soon learned that there are aspects of this dataset that are of interest to those of us who are not Music scholars. In particular, literary types will find it interesting that there is a facet on the right-hand side of the application labeled Librettist/Literary Sources. And when you expand this facet, there is a friendly face waiting for English Literature scholars: Mr. William Shakespeare.</p>
+<p>After faceting on William Shakespeare, we will notice many familiar titles (Romeo and Juliet, Amleto (Hamlet), Antonio e Cleopatra, etc.), and these titles span multiple countries over 1300 years. Wouldn't it be interesting to take these results and plot them on a google map to see how they Shakespeare's proliferation spread over time? Since there isn't an export function in Opening Night! to do such a task, we turn to web scraping to help us unlock this data and prepare it for our visualizations and analysis.</p>
+<p>Before we commence with scraping, let's make this task that much easier on yourself by modifying the search results settings in Opening Night! so that you have fewer pages to scrape. On the right side of your results screen, you will see a drop-down menu that says 10 per Page. Change that to 100 per Page.</p>
+<p><a href="http://www.linguabrarian.com/wp-content/uploads/2013/10/Screen-Shot-2013-09-24-at-2.51.32-PM.png"><img src="http://www.linguabrarian.com/wp-content/uploads/2013/10/Screen-Shot-2013-09-24-at-2.51.32-PM-1024x545.png" alt="Screen Shot 2013-09-24 at 2.51.32 PM"></a></p>
+<p>What we will want to do first is to right-click anywhere on the first page of our query results and select &quot;Scrape similar....&quot; What this will do is launch the Google Chrome Scraper.</p>
+<p><a href="http://www.linguabrarian.com/wp-content/uploads/2013/10/Screen-Shot-2013-09-24-at-2.55.54-PM.png"><img src="http://www.linguabrarian.com/wp-content/uploads/2013/10/Screen-Shot-2013-09-24-at-2.55.54-PM-1024x709.png" alt="Screen Shot 2013-09-24 at 2.55.54 PM"></a></p>
+<p>Once you have clicked &quot;Scrape similar...&quot;, you should see the Scraper interface.</p>
+<p><a href="http://www.linguabrarian.com/wp-content/uploads/2013/10/Screen-Shot-2013-09-24-at-2.57.38-PM.png"><img src="http://www.linguabrarian.com/wp-content/uploads/2013/10/Screen-Shot-2013-09-24-at-2.57.38-PM-300x145.png" alt="Screen Shot 2013-09-24 at 2.57.38 PM"></a></p>
+<p>The first thing you will want to do is make sure that you have selected XPath. We will not be doing any of our scraping with jQuery today. All of the web scraping in this tutorial will be done using XPath expressions. However, you have that option if you ever want to harvest data from a website using this tool in the future.</p>
+<p><a href="http://www.linguabrarian.com/wp-content/uploads/2013/10/Screen-Shot-2013-09-24-at-2.57.38-PM1.png"><img src="http://www.linguabrarian.com/wp-content/uploads/2013/10/Screen-Shot-2013-09-24-at-2.57.38-PM1-300x159.png" alt="Screen Shot 2013-09-24 at 2.57.38 PM"></a></p>
+<p>Once you have confirmed that the Selector is set to XPath, you should copy/paste the following reference into the XPath Reference box:</p>
+<p><strong>//div[3]/div[2]/div[3]/div</strong></p>
+<p>What this expression does is tell the scraper exactly where to go on the query results page. I won't go into every single aspect of this declaration, but what I will say is that it points directly to each and every one of our Opening Night! results.</p>
+<p>Now, we need to identify each piece of information that we want to harvest from the query results page. For the purposes of our study, we obviously wanted the title of each opera/oratorio. Since I have already pointed the scraper to the div container that holds the metadata for each Opening Night! entry, it is really easy for me to extract the individual pieces of information for each book as an array (which the Google Chrome Scraper does automagically and will be really important when we go to export the data).  For our study, we wanted to harvest the title, composer, librettist/literary source (for individuals in addition to Shakespeare), genre, year, and the country of the premiere (basically all of the information provided in the short view).</p>
+<p>And here are those specific XPath expressions in a format that you can copy/paste into your Scraper:</p>
+<ol>
+<li><strong>Title:  ./dl/dd[@class=&quot;blacklight-title]</strong></li>
+<li><strong>Composer:  ./dl/dd[@class=&quot;blacklight-composer]</strong></li>
+<li><strong>Librettist/Literary Source:  ./dl/dd[@class=&quot;blacklight-librettist]</strong></li>
+<li><strong>Genre:  ./dl/dd[@class=&quot;blacklight-genre]</strong></li>
+<li><strong>Year:****./dl/dd[@class=&quot;blacklight-year]</strong></li>
+<li><strong>Country:  ./dl/dd[@class=&quot;blacklight-country]</strong></li>
+<li><strong>URL:  ..//h5/a/@href</strong></li>
+</ol>
+<p>The first thing I would like to point out about these XPath expressions for those of you not already familiar with XPath is that they all begin with a period [.]. The Title, Author, Year, Description, and Link XPath expressions are all what we call predicates. And what the period does is tell the scraper that the information we put in the XPath Reference Expression box at the top is the current element to which we would like to append the predicates. Basically, the period [.] saves us more typing. On the other hand, I want to point out that the XPath expression for URL has two periods [..]. This has a slightly different function: the double period points to the parent of the reference expression being that which the predicate should be appended to. Finally, you will notice that the link for URL is relative to the webpage. So if you are going to use the URL for any sort of reference, you will need to do a find/replace to append &quot;<a href="http://operadata.stanford.edu">http://operadata.stanford.edu</a>&quot;.</p>
+<p>Once you have copied/pasted all of the XPath expressions into the Scraper for the data you would like to harvest from the query page, go ahead and click the <strong>Scrape</strong> button to view your data harvest in the preview window.</p>
+<p><a href="http://www.linguabrarian.com/wp-content/uploads/2013/10/Screen-Shot-2013-09-24-at-3.13.04-PM.png"><img src="http://www.linguabrarian.com/wp-content/uploads/2013/10/Screen-Shot-2013-09-24-at-3.13.04-PM-1024x355.png" alt="Screen Shot 2013-09-24 at 3.13.04 PM"></a></p>
+<p>After verifying that you are harvesting the data you actually want, make sure to save this series of expressions as a preset for you to use later. THis way, you don't have to come back and re-copy/paste everything back into the Scraper. You can do this by clicking the <strong>Presets</strong> button, assigning a name to this setting, and then hitting <strong>Save.</strong></p>
+<p>Finally, go ahead and click the **Export to Google Docs...**button on the bottom-right side of the Scraper window to see your query data transformed into a beautiful spreadsheet in Google Drive. From here, you can begin processing your data: confirming if each book actually contains an acknowledgement for your library, or any other transformation of the data that you desire. You can interact with a spreadsheet created from the result of this scraping <a href="https://docs.google.com/spreadsheet/ccc?key=0Av5EVcQFto7MdC1oNERaMDRleWtnM3duZUN4LXo3YWc&amp;usp=sharing">here</a>.</p>
+<p>By using the Google Chrome Scraper with its built-in function of exporting to Google Docs, we have the ability to work with others on this dataset in a collaborative manner, as well as transform our results into dynamic visualizations and maps using Google Fusion Tables and Google Maps or manipulate your data with Google Refine. This topic will be discussed further in Part 2 of &quot;Shakespeare Goes to the Opera.&quot;</p>
+<p><strong>Update September 25, 2013: Here is the web scraping information for those of you wanting to harvest data from the long records:</strong></p>
+<p><strong>XPath Reference Path:****//div</strong></p>
+<ol>
+<li><strong>Title:  ./dl/dd[@class=&quot;blacklight-title&quot;]</strong></li>
+<li><strong>Composer:  ./dl/dd[@class=&quot;blacklight-composer&quot;]</strong></li>
+<li><strong>Librettist/Literary Source:  ./dl/dd[@class=&quot;blacklight-librettist&quot;]</strong></li>
+<li><strong>Genre:  ./dl/dd[@class=&quot;blacklight-genre&quot;]</strong></li>
+<li><strong>Opera Subgenre:  ./dl/dd[@class=&quot;blacklight-subgenre&quot;]</strong></li>
+<li><strong>Oratorio Subject:  ./dl/dd[@class=&quot;blacklight-subject&quot;]</strong></li>
+<li><strong>Oratorio Feast Date:  ./dl/dd[@class=&quot;blacklight-feastdate&quot;]</strong></li>
+<li><strong>Premiere Date:  ./dl/dd[@class=&quot;blacklight-date&quot;]</strong></li>
+<li><strong>Theater:  ./dl/dd[@class=&quot;blacklight-theater&quot;]</strong></li>
+<li><strong>City:  ./dl/dd[@class=&quot;blacklight-city&quot;]</strong></li>
+<li><strong>State/Region:  ./dl/dd[@class=&quot;blacklight-region&quot;]</strong></li>
+<li><strong>Country:  ./dl/dd[@class=&quot;blacklight-country&quot;]</strong></li>
+</ol>
+
+
+  
+
+  <footer>
+    <small>
+      <a href=""></a>
+    </small>
+  </footer>
+</article>
+
+  </main>
+</body>
+
+</html>
