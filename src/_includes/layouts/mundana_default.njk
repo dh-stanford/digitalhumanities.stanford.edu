@@ -20,11 +20,11 @@
   <!-- Bootstrap Modified -->
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}" ">
 
-    <!-- Theme Stylesheet -->
-    <link rel=" stylesheet" href="{{ '/assets/css/theme.css' | url }}" ">
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="{{ '/assets/css/theme.css' | url }}" ">
 
-    <!-- Jquery on header to make sure everything works, the rest of the scripts in footer for fast loading -->
-    <script crossorigin=" anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  <!-- Jquery on header to make sure everything works, the rest of the scripts in footer for fast loading -->
+  <script crossorigin=" anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     src=" https://code.jquery.com/jquery-3.3.1.min.js">
     </script>
 
@@ -43,11 +43,11 @@
         class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="navbar-collapse collapse" id="navbarColor02" style="">{# <ul
-          class="navbar-nav mr-auto d-flex align-items-center">
-          {% include menu-header.html %}
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          {% include "../mundana/menu-header.liquid" %}
         </ul>
-        <ul class="navbar-nav ml-auto d-flex align-items-center">
+        {# <ul class="navbar-nav ml-auto d-flex align-items-center">
           {% include search-lunr.html %}
         </ul> #}
       </div>
