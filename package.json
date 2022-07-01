@@ -5,7 +5,8 @@
   "scripts": {
     "build": "eleventy",
     "debug": "DEBUG=* npx eleventy",
-    "dev": "eleventy --serve"
+    "dev": "eleventy --serve",
+    "gh-deploy": "bin/gh-deploy.sh"
   },
   "license": "MIT",
   "devDependencies": {
