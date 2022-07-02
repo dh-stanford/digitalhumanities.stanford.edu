@@ -1,0 +1,14 @@
+---
+layout: "layouts/mundana_default"
+title: "Projects"
+---
+<div class="container">
+<h1>{{ title }}</h1>
+
+
+{% for project in projects %}
+ <h2>{{ project.data.title }}</h2>
+ <img src="{{ project.data.image | url }}" alt="{{ project.data.title }}">
+ <p>{{ project.content | markdown | safe }}</p>
+{% endfor %}
+</div>
