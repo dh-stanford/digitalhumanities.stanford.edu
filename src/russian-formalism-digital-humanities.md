@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Russian Formalism & the Digital Humanities"
 submitted_by: Karim Arsalane
 submitted_at: 2015-03-13T09:08:00-07:00

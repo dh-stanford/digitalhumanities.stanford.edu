@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "A GeoHumanities Special Interest Group"
 submitted_by: Karl Grossner
 submitted_at: 2013-09-08T19:18:37-07:00

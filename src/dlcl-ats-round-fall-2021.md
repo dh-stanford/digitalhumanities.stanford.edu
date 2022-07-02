@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "DLCL ATS round-up, fall 2021"
 submitted_by: Quinn Dombrowski
 submitted_at: 2021-12-16T11:23:01-08:00

@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "My Alt-Ac Life"
 submitted_by: Jason A. Heppler
 submitted_at: 2013-10-02T12:15:13-07:00

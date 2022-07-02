@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Introducing \"Digital Humanities Across Borders\""
 submitted_by: Quinn Dombrowski
 submitted_at: 2019-01-15T21:45:19-08:00

@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Enterprise tools and DH"
 submitted_by: Quinn Dombrowski
 submitted_at: 2018-12-05T20:51:54-08:00

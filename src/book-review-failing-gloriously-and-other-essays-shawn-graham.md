@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Book Review: \"Failing Gloriously and Other Essays\" by Shawn Graham"
 submitted_by: Quinn Dombrowski
 submitted_at: 2019-11-18T09:30:54-08:00

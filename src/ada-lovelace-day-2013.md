@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Ada Lovelace Day 2013"
 submitted_by: Cameron Blevins
 submitted_at: 2013-10-17T12:04:07-07:00

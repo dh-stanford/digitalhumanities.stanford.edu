@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Spreadsheets are Information Visualization"
 submitted_by: Elijah Meeks
 submitted_at: 2014-04-28T09:39:02-07:00

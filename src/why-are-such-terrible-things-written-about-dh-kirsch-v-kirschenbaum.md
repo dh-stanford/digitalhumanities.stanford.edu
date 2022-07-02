@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Why are such terrible things written about DH? Kirsch v. Kirschenbaum"
 submitted_by: Glen Worthey
 submitted_at: 2014-05-07T12:01:08-07:00

@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "CIDR hosts O'Sullivan geography lecture and geospatial narratives workshop"
 submitted_by: Karl Grossner
 submitted_at: 2015-06-08T00:00:00-07:00

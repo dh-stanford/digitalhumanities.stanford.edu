@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "About DH at Stanford"
 submitted_by: Jacqueline Hettel
 submitted_at: 2013-07-03T11:36:00-07:00

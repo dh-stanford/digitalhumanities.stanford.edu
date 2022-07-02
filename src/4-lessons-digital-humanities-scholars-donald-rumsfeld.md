@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "4 Lessons for Digital Humanities Scholars from Donald Rumsfeld"
 submitted_by: Elijah Meeks
 submitted_at: 2014-08-27T12:50:29-07:00

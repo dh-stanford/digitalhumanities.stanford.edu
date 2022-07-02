@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Shakespeare Goes to the Opera Part 1: Scraping Query Results from Opening Night!"
 submitted_by: Jacqueline Hettel
 submitted_at: 2013-09-24T12:09:25-07:00

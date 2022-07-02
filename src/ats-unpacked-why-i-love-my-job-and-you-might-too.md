@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "ATS Unpacked: Why I love my job and you might, too"
 submitted_by: Quinn Dombrowski
 submitted_at: 2019-03-11T23:03:17-07:00

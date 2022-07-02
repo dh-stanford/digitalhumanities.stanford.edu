@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "What Makes a Minard?"
 submitted_by: Elijah Meeks
 submitted_at: 2014-03-26T15:54:09-07:00

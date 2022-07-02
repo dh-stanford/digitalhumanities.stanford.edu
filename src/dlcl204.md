@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Digital Humanities Across Borders (DLCL 204)"
 submitted_by: Quinn Dombrowski
 submitted_at: 2019-03-03T21:26:00-08:00

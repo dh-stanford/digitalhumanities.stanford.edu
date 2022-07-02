@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Job opening: Academic Technology Specialist in Literatures, Cultures, and Languages"
 submitted_by: Glen Worthey
 submitted_at: 2018-05-25T13:45:49-07:00

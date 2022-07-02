@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "DLCL ATS round-up, spring 2019"
 submitted_by: Quinn Dombrowski
 submitted_at: 2019-06-24T15:42:59-07:00

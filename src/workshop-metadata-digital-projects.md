@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "<digiPrep> Workshop: Metadata for Digital Projects"
 submitted_by: Glen Worthey
 submitted_at: 2014-02-17T11:34:00-08:00

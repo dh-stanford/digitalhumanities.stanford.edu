@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Generous Thinking January"
 submitted_by: Quinn Dombrowski
 submitted_at: 2020-02-05T08:18:46-08:00

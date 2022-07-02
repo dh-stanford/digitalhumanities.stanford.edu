@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Members of the Center for Interdisciplinary Digital Research central in many Digital Humanities projects"
 submitted_by: Mike Widner
 submitted_at: 2015-04-28T09:34:15-07:00

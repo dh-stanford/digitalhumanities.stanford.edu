@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Habemus websitum!"
 submitted_by: Glen Worthey
 submitted_at: 2013-08-14T10:11:37-07:00

@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Book review: \"New Digital Worlds\" by Roopika Risam"
 submitted_by: Quinn Dombrowski
 submitted_at: 2018-12-14T09:03:45-08:00

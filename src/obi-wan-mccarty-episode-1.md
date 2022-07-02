@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Obi-Wan McCarty: Episode 1"
 submitted_by: Glen Worthey
 submitted_at: 2014-02-19T22:03:56-08:00

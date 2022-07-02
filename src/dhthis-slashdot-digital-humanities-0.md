@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "On DHThis, a Slashdot for the Digital Humanities"
 submitted_by: Mike Widner
 submitted_at: 2013-09-11T11:36:21-07:00

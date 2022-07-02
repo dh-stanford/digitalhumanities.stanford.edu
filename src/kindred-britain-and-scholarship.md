@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Kindred Britain and Scholarship"
 submitted_by: Emma Honour Mae...
 submitted_at: 2013-08-26T15:00:52-07:00

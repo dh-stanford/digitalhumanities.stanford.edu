@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Brandes in translation: multilingual corpora at the Digital Brandes Hackathon"
 submitted_by: Quinn Dombrowski
 submitted_at: 2019-05-23T21:40:57-07:00

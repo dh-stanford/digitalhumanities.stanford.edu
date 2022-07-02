@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Raising the Stakes in Arabic Text Handling (Thomas Milo lecture)"
 submitted_by: Glen Worthey
 submitted_at: 2014-01-23T11:23:00-08:00

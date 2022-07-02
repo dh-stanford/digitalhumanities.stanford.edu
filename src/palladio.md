@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Palladio"
 submitted_by: Quinn Dombrowski
 submitted_at: 2020-03-19T06:27:00-07:00

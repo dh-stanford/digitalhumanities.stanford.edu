@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Geographics"
 submitted_by: Elijah Meeks
 submitted_at: 2014-01-06T14:30:52-08:00

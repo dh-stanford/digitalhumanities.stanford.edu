@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Text Analysis IN the Library, FOR the Library"
 submitted_by: Jacqueline Hettel
 submitted_at: 2013-08-23T16:05:27-07:00

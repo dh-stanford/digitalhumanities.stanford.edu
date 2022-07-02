@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Neotopology"
 submitted_by: Elijah Meeks
 submitted_at: 2014-04-14T14:03:31-07:00

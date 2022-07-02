@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Women in CS (and the Digital Humanities)"
 submitted_by: Hannah Rose Abalos
 submitted_at: 2013-08-21T18:31:41-07:00

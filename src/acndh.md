@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Animal Crossing: New Digital Humanities"
 submitted_by: Quinn Dombrowski
 submitted_at: 2020-10-06T22:06:00-07:00

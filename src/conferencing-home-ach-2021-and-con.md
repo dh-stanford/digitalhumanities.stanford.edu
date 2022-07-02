@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Conferencing from Home: ACH 2021 and !!Con"
 submitted_by: Quinn Dombrowski
 submitted_at: 2021-07-28T11:21:27-07:00

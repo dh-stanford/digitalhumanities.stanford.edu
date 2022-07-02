@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "A guide to writing DH conference submissions"
 submitted_by: Quinn Dombrowski
 submitted_at: 2019-10-16T16:36:55-07:00

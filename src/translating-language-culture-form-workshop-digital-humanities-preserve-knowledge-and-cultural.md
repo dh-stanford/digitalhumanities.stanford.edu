@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Translating Language, Culture, & Form at \"Workshop on Digital Humanities to Preserve Knowledge and Cultural Heritage\""
 submitted_by: Quinn Dombrowski
 submitted_at: 2019-04-18T17:31:38-07:00

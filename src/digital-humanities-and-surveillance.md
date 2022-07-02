@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "On Digital Humanities and Surveillance"
 submitted_by: Mike Widner
 submitted_at: 2013-08-20T11:18:31-07:00

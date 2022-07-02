@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Responsive Data Visualization"
 submitted_by: Elijah Meeks
 submitted_at: 2014-08-19T12:13:32-07:00

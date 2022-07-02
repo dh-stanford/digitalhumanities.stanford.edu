@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "DH Reading Group: \"Macroanalysis\""
 submitted_by: Glen Worthey
 submitted_at: 2013-08-14T11:05:00-07:00

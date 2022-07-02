@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Day of DH 2020 at Stanford"
 submitted_by: Quinn Dombrowski
 submitted_at: 2020-04-24T16:29:00-07:00

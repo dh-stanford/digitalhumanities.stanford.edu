@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Kindred Britain: A sign of our times"
 submitted_by: Elijah Meeks
 submitted_at: 2013-08-26T13:18:53-07:00

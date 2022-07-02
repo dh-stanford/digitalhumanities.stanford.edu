@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Digital Humanities Curio Cabinet"
 submitted_by: Elijah Meeks
 submitted_at: 2014-02-09T18:44:08-08:00

@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "To DH and ACH with a Skeleton in Tow"
 submitted_by: Quinn Dombrowski
 submitted_at: 2019-07-29T22:01:12-07:00

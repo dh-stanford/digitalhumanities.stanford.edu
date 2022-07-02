@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "October 2019 DH Happy Hour"
 submitted_by: Quinn Dombrowski
 submitted_at: 2019-09-19T13:34:00-07:00

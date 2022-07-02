@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Zombie digital humanities"
 submitted_by: Quinn Dombrowski
 submitted_at: 2018-10-31T10:24:16-07:00

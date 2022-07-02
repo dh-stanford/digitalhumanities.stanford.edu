@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "My first quarter at Stanford (DLCL ATS round-up, fall 2018)"
 submitted_by: Quinn Dombrowski
 submitted_at: 2018-12-21T08:29:37-08:00

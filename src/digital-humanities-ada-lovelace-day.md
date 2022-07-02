@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "The Digital Humanities on Ada Lovelace Day"
 submitted_by: Glen Worthey
 submitted_at: 2013-10-15T11:37:21-07:00

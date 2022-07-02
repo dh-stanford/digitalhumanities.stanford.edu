@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "Digital History at Stanford"
 submitted_by: Jason A. Heppler
 submitted_at: 2013-10-23T09:47:00-07:00

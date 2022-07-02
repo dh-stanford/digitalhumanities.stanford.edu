@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "The Day of DH"
 submitted_by: Elijah Meeks
 submitted_at: 2014-04-08T08:30:30-07:00

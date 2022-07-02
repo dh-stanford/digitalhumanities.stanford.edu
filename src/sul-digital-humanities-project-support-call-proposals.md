@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "SUL Digital Humanities Project Support - Call for Proposals"
 submitted_by: Elijah Meeks
 submitted_at: 2014-02-03T09:29:37-08:00

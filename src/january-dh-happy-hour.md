@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "January DH Happy Hour"
 submitted_by: Quinn Dombrowski
 submitted_at: 2019-01-17T20:05:00-08:00

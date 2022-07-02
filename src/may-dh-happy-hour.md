@@ -1,5 +1,5 @@
 ---
-layout: layouts/article
+layout: templates/article
 title: "May DH Happy Hour"
 submitted_by: Quinn Dombrowski
 submitted_at: 2019-04-17T16:18:00-07:00
