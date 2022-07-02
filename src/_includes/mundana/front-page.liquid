@@ -1,5 +1,5 @@
 ---
-layout: layouts/mundana_default
+layout: mundana/base-layout
 pagination:
   data: collections.pages
   size: 10
@@ -40,7 +40,7 @@ pagination:
               </span>
             </small> {%- endcomment -%}
             <small class="text-muted">
-              {{ article.data.submitted_by }} · {{ article.data.submitted_at  | date: '%b %d, %Y' }}
+              {{ article.data.submitted_by }} · {{ article.data.submitted_at | date: '%b %d, %Y' }}
             </small>
           </div>
         </div>
