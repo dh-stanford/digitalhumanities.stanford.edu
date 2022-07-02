@@ -3,12 +3,19 @@ layout: "layouts/mundana_default"
 title: "Projects"
 ---
 <div class="container">
-<h1>{{ title }}</h1>
-
-
-{% for project in projects %}
- <h2>{{ project.data.title }}</h2>
- <img src="{{ project.data.image | url }}" alt="{{ project.data.title }}">
- <p>{{ project.content | markdown | safe }}</p>
-{% endfor %}
+  <div class="card-columns">
+    {% for project in projects %}
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          {{ project.data.title }}
+        </div>
+        <img class="card-img-top" src="{{ project.data.image | url }}" alt="{{ project.data.title }}">
+        <div class="card-body">
+          <p class="card-text">{{ project.content | markdown | safe }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
 </div>
