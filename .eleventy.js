@@ -30,6 +30,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("post-images");
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("projects/images");
+  eleventyConfig.addPassthroughCopy({
+    "node_modules/lunr/lunr.min.js": "assets/js/lunr.min.js",
+  });
 
   eleventyConfig.addCollection("pages", (collectionApi) => {
     return collectionApi
