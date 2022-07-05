@@ -10,8 +10,13 @@
             {% if author.avatar %}
             <img class="rounded-circle" src="{{site.baseurl}}/{{author.avatar}}" alt="{{author.name}}" width="70" />
             {% endif %}
-            <small class="ml-3"> {{ submitted_by }} <span><a target="_blank" href="{{ author.twitter }}"
-                  class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
+            <small class="ml-3">
+              {{ submitted_by }}
+              {%- comment -%} <span>
+                <a target="_blank" href="{{ author.twitter }}" class="btn btn-outline-success btn-sm btn-round ml-1">
+                  Follow
+                </a>
+              </span> {%- endcomment -%}
               <span class="text-muted d-block mt-1">{{ submitted_at | date: '%b %d, %Y' }}</span>
             </small>
           </div>
@@ -20,7 +25,6 @@
         <div class="col-md-6 pr-0 align-self-center">
           <img class="rounded" src="{{ post_images[0] | url }}" alt="{{ title }}">
         </div>
-
         {% endif %}
       </div>
     </div>
