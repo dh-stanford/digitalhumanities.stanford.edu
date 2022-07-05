@@ -1,4 +1,6 @@
-var lunr = require("lunr");
+const lunr = require("lunr");
+
+const { extractExcerpt } = require("../lib/utils");
 
 class LunrIndex {
   data() {
@@ -16,6 +18,7 @@ class LunrIndex {
       title: page.data.title,
       url: page.url,
       body: page.templateContent,
+      excerpt: extractExcerpt(page),
     }));
 
     const index = lunr(function () {
@@ -25,7 +28,10 @@ class LunrIndex {
       documents.forEach((doc) => this.add(doc));
     });
 
-    return JSON.stringify({ index, documents });
+    return JSON.stringify({
+      index,
+      documents: documents.map(({ body, ...doc }) => doc),
+    });
   }
 }
 
