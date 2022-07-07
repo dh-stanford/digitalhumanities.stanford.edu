@@ -35,19 +35,11 @@
       margin-right: 0;
       overflow-x: hidden;
     }
-
     .navbar { left: calc(100vw - 100%); }
   </style>
-
-  <!-- Jquery on header to make sure everything works, the rest of the scripts in footer for fast loading -->
-  <script crossorigin=" anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    src=" https://code.jquery.com/jquery-3.3.1.min.js">
-    </script>
-
-
 </head>
 
-<body class="{% if page.url == " /" %} homefirstpage {% endif %}">
+<body class=" {% if page.url==" /" %} homefirstpage {% endif %}">
 
   <!-- Navbar -->
   <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
