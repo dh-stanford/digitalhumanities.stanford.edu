@@ -40,7 +40,7 @@ pagination:
               </span>
             </small> {%- endcomment -%}
             <small class="text-muted">
-              {{ article.data.submitted_by }} · {{ article.data.submitted_at | date: '%b %d, %Y' }}
+              {{ article.data.submitted_by }} · {{ article.data.submitted_at | formatDate }}
             </small>
           </div>
         </div>
@@ -73,7 +73,7 @@ pagination:
             {{ article.data.submitted_by }}
           </small>
           <small class="text-muted">
-            {{ article.data.submitted_at | date: '%b %d, %Y' }}
+            {{ article.data.submitted_at | formatDate }}
           </small>
         </div>
       </div>
