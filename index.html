@@ -35,19 +35,11 @@
       margin-right: 0;
       overflow-x: hidden;
     }
-
     .navbar { left: calc(100vw - 100%); }
   </style>
-
-  <!-- Jquery on header to make sure everything works, the rest of the scripts in footer for fast loading -->
-  <script crossorigin=" anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    src=" https://code.jquery.com/jquery-3.3.1.min.js">
-    </script>
-
-
 </head>
 
-<body class="">
+<body class=" ">
 
   <!-- Navbar -->
   <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
@@ -81,49 +73,84 @@
         <ul class="navbar-nav ml-auto d-flex align-items-center">
           <script src="/assets/js/lunr.min.js"></script>
 
-<script>
-  $(function () {
-    $("#lunrsearchresults").on('click', '#btnx', function () {
-      $('#lunrsearchresults').hide(1000);
-      $("body").removeClass("modal-open");
-    });
-  });
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
 
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
   let idx;
   let docs;
 
-  fetch("/lunr-index.json").then(
-    (response) => response.json()
-  ).then(
-    (data) => {
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
       idx = lunr.Index.load(data.index);
       documents = data.documents;
-    }
-  );
+    });
 
-  function lunr_search(term) {
-    $('#lunrsearchresults').show(1000);
-    $("body").addClass("modal-open");
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
 
-    document.getElementById('lunrsearchresults').innerHTML = '<div id="resultsmodal" class="modal fade show d-block"  tabindex="-1" role="dialog" aria-labelledby="resultsmodal"> <div class="modal-dialog shadow-lg" role="document"> <div class="modal-content"> <div class="modal-header" id="modtit"> <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button> </div> <div class="modal-body"> <ul class="mb-0"> </ul>    </div> <div class="modal-footer"><button id="btnx" type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button></div></div> </div></div>';
-    if (term) {
-      document.getElementById('modtit').innerHTML = "<h5 class='modal-title'>Search results for '" + term + "'</h5>" + document.getElementById('modtit').innerHTML;
-      //put results on the screen.
-      var results = idx.search(term);
-      if (results.length > 0) {
-        //console.log(idx.search(term));
-        //if results
-        for (var i = 0; i < results.length; i++) {
-          // more statements
-          var ref = results[i]['ref'];
-          var url = documents[ref]['url'];
-          var title = documents[ref]['title'];
-          var body = documents[ref]['excerpt'] + '...';
-          document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML + "<li class='lunrsearchresult'><a href='" + url + "'><span class='title'>" + title + "</span><br /><small><span class='body'>" + body + "</span><br /><span class='url'>" + url + "</span></small></a></li>";
-        }
-      } else {
-        document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = "<li class='lunrsearchresult'>Sorry, no results found. Close & try a different search!</li>";
-      }
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
     }
     return false;
   }
@@ -171,23 +198,10 @@
   }
 </style>
 
-
-
-
-<form class="bd-search hidden-sm-down" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
-  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
-    placeholder="Type keyword and enter...">
-</form>
-
         </ul>
       </div>
     </div>
   </nav>
-
-  <!-- Search Results -->
-  <div id="lunrsearchresults">
-    <ul class="mb-0"></ul>
-  </div>
 
   <!-- Content -->
   <main class="site-content" role="main">
@@ -216,7 +230,7 @@
             The Department of History and the Center for Interdisciplinary Digital Research (CIDR), part of Research Data Services at the Stanford Libraries, are excited to announce that Anne Ladyem McDivitt will...
           </p>
           <div><small class="text-muted">
-              Quinn Dombrowski · Jul 06, 2022
+              Quinn Dombrowski · July 6, 2022
             </small>
           </div>
         </div>
@@ -237,7 +251,7 @@
             Quinn Dombrowski
           </small>
           <small class="text-muted">
-            Jun 15, 2022
+            June 15, 2022
           </small>
         </div>
       </div>
@@ -254,7 +268,7 @@
             Quinn Dombrowski
           </small>
           <small class="text-muted">
-            Dec 16, 2021
+            December 16, 2021
           </small>
         </div>
       </div>
@@ -271,7 +285,7 @@
             Quinn Dombrowski
           </small>
           <small class="text-muted">
-            Oct 19, 2021
+            October 19, 2021
           </small>
         </div>
       </div>
@@ -282,10 +296,6 @@
   </div>
 
   <!-- Sticky - add sticky tag to the post you want to highlight here - tags: [sticky] -->
-  
-  
-  
-  
   
   
   <div class="jumbotron jumbotron-fluid jumbotron-home pt-0 pb-0 mt-3 mb-2rem bg-lightblue position-relative">
@@ -304,6 +314,10 @@ Stanford has been involved in the Digital Humanities (under that and other...
       </div>
     </div>
   </div>
+  
+  
+  
+  
   
   
   
@@ -546,7 +560,7 @@ Stanford has been involved in the Digital Humanities (under that and other...
     <p class="excerpt">
       Summer always disappears too quickly, especially when it involves navigating childcare gaps at various points. I spent almost the whole summer at home, but started to go back to campus regularly after...
     </p><small class="text-muted">
-      Quinn Dombrowski · Sep 27, 2021
+      Quinn Dombrowski · September 27, 2021
     </small>
   </div>
   
@@ -567,7 +581,7 @@ Stanford has been involved in the Digital Humanities (under that and other...
     <p class="excerpt">
       In 2019, I wrote a blog post about the experience of going to the DH conference in Utrecht, followed by the ACH conference in Pittsburgh. Two years later, it's time for another ACH write-up, with a ve...
     </p><small class="text-muted">
-      Quinn Dombrowski · Jul 28, 2021
+      Quinn Dombrowski · July 28, 2021
     </small>
   </div>
   
@@ -588,7 +602,7 @@ Stanford has been involved in the Digital Humanities (under that and other...
     <p class="excerpt">
       Spring quarter gave me the first chance in a long while to take some time off. The first week of the quarter was my kids' spring break, which we spent in a cabin in the woods near Mt. Lassen with just...
     </p><small class="text-muted">
-      Quinn Dombrowski · Jul 09, 2021
+      Quinn Dombrowski · July 9, 2021
     </small>
   </div>
   
@@ -609,7 +623,7 @@ Stanford has been involved in the Digital Humanities (under that and other...
     <p class="excerpt">
       Winter quarter was a time of consolidation and slow progress, without much to share by way of exciting new developments. I worked on a lot of things that I expect will bear fruit down the road, but I...
     </p><small class="text-muted">
-      Quinn Dombrowski · Mar 24, 2021
+      Quinn Dombrowski · March 24, 2021
     </small>
   </div>
   
@@ -630,7 +644,7 @@ Stanford has been involved in the Digital Humanities (under that and other...
     <p class="excerpt">
       2020 was the first year I taught in the fall -- and I'm very glad to have arranged teaching that way, so I have the rest of the year to continue supporting DLCL students on their projects. Teaching e...
     </p><small class="text-muted">
-      Quinn Dombrowski · Jan 11, 2021
+      Quinn Dombrowski · January 11, 2021
     </small>
   </div>
   
@@ -651,7 +665,7 @@ Stanford has been involved in the Digital Humanities (under that and other...
     <p class="excerpt">
       This talk series hosted by Quinn Dombrowski (DLCL ATS at Stanford) and Liz Grumbach (Arizona State University) brings together DH scholars from around the world in the virtual space of Animal Crossing...
     </p><small class="text-muted">
-      Quinn Dombrowski · Oct 06, 2020
+      Quinn Dombrowski · October 6, 2020
     </small>
   </div>
   
@@ -763,16 +777,7 @@ Stanford has been involved in the Digital Humanities (under that and other...
 
   </main>
 
-
-  <!-- Scripts: popper, bootstrap, theme, lunr -->
-  <script crossorigin="anonymous" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-
-  <script crossorigin="anonymous" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-    src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-
   <script src="/assets/js/theme.js" "></script>
-
 
     <!-- Footer -->
     <footer class=" bg-white border-top p-3 text-muted small">

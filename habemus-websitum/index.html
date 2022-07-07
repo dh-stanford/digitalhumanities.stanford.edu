@@ -35,19 +35,11 @@
       margin-right: 0;
       overflow-x: hidden;
     }
-
     .navbar { left: calc(100vw - 100%); }
   </style>
-
-  <!-- Jquery on header to make sure everything works, the rest of the scripts in footer for fast loading -->
-  <script crossorigin=" anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    src=" https://code.jquery.com/jquery-3.3.1.min.js">
-    </script>
-
-
 </head>
 
-<body class="">
+<body class=" ">
 
   <!-- Navbar -->
   <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
@@ -81,49 +73,84 @@
         <ul class="navbar-nav ml-auto d-flex align-items-center">
           <script src="/assets/js/lunr.min.js"></script>
 
-<script>
-  $(function () {
-    $("#lunrsearchresults").on('click', '#btnx', function () {
-      $('#lunrsearchresults').hide(1000);
-      $("body").removeClass("modal-open");
-    });
-  });
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
 
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
   let idx;
   let docs;
 
-  fetch("/lunr-index.json").then(
-    (response) => response.json()
-  ).then(
-    (data) => {
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
       idx = lunr.Index.load(data.index);
       documents = data.documents;
-    }
-  );
+    });
 
-  function lunr_search(term) {
-    $('#lunrsearchresults').show(1000);
-    $("body").addClass("modal-open");
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
 
-    document.getElementById('lunrsearchresults').innerHTML = '<div id="resultsmodal" class="modal fade show d-block"  tabindex="-1" role="dialog" aria-labelledby="resultsmodal"> <div class="modal-dialog shadow-lg" role="document"> <div class="modal-content"> <div class="modal-header" id="modtit"> <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button> </div> <div class="modal-body"> <ul class="mb-0"> </ul>    </div> <div class="modal-footer"><button id="btnx" type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button></div></div> </div></div>';
-    if (term) {
-      document.getElementById('modtit').innerHTML = "<h5 class='modal-title'>Search results for '" + term + "'</h5>" + document.getElementById('modtit').innerHTML;
-      //put results on the screen.
-      var results = idx.search(term);
-      if (results.length > 0) {
-        //console.log(idx.search(term));
-        //if results
-        for (var i = 0; i < results.length; i++) {
-          // more statements
-          var ref = results[i]['ref'];
-          var url = documents[ref]['url'];
-          var title = documents[ref]['title'];
-          var body = documents[ref]['excerpt'] + '...';
-          document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML + "<li class='lunrsearchresult'><a href='" + url + "'><span class='title'>" + title + "</span><br /><small><span class='body'>" + body + "</span><br /><span class='url'>" + url + "</span></small></a></li>";
-        }
-      } else {
-        document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = "<li class='lunrsearchresult'>Sorry, no results found. Close & try a different search!</li>";
-      }
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
     }
     return false;
   }
@@ -171,23 +198,10 @@
   }
 </style>
 
-
-
-
-<form class="bd-search hidden-sm-down" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
-  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
-    placeholder="Type keyword and enter...">
-</form>
-
         </ul>
       </div>
     </div>
   </nav>
-
-  <!-- Search Results -->
-  <div id="lunrsearchresults">
-    <ul class="mb-0"></ul>
-  </div>
 
   <!-- Content -->
   <main class="site-content" role="main">
@@ -202,7 +216,7 @@
           <div class="d-flex align-items-center">
             
             <small class="ml-3">
-              Glen Worthey<span class="text-muted d-block mt-1">Aug 14, 2013</span>
+              Glen Worthey<span class="text-muted d-block mt-1">August 14, 2013</span>
             </small>
           </div>
         </div>
@@ -247,20 +261,9 @@
 </div>
 
 
-<!-- Aletbar Prev/Next -->
-
   </main>
 
-
-  <!-- Scripts: popper, bootstrap, theme, lunr -->
-  <script crossorigin="anonymous" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-
-  <script crossorigin="anonymous" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-    src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-
   <script src="/assets/js/theme.js" "></script>
-
 
     <!-- Footer -->
     <footer class=" bg-white border-top p-3 text-muted small">
