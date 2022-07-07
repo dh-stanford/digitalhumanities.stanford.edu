@@ -2,7 +2,7 @@
 layout: templates/article
 title: "Generous Thinking January"
 submitted_by: Quinn Dombrowski
-submitted_at: 2020-02-05T08:18:46-08:00
+submitted_at: 2020-02-05
 post_images:
   - ../post-images/32678220085_c4c16c80a6_k.jpg
 ---

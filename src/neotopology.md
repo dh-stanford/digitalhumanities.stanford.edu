@@ -2,7 +2,7 @@
 layout: templates/article
 title: "Neotopology"
 submitted_by: Elijah Meeks
-submitted_at: 2014-04-14T14:03:31-07:00
+submitted_at: 2014-04-14
 post_images:
   - ../post-images/statueofgephi.png
   - ../post-images/kb_story.png

@@ -2,7 +2,7 @@
 layout: templates/article
 title: "Brandes in translation: multilingual corpora at the Digital Brandes Hackathon"
 submitted_by: Quinn Dombrowski
-submitted_at: 2019-05-23T21:40:57-07:00
+submitted_at: 2019-05-23
 ---
 
 What do you do when you're invited to a hackathon around a text in a language you can't read? In keeping with my tendency to navigate difficulty by means of additional complications, I added more languages!

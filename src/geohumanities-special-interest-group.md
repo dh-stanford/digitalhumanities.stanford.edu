@@ -2,7 +2,7 @@
 layout: templates/article
 title: "A GeoHumanities Special Interest Group"
 submitted_by: Karl Grossner
-submitted_at: 2013-09-08T19:18:37-07:00
+submitted_at: 2013-09-08
 post_images:
   - ../post-images/geohumsig_logo_502w.png
 ---

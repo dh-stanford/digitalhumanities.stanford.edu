@@ -2,7 +2,7 @@
 layout: templates/article
 title: "Digital Humanities Across Borders (DLCL 204)"
 submitted_by: Quinn Dombrowski
-submitted_at: 2019-03-03T21:26:00-08:00
+submitted_at: 2019-03-03
 ---
 
 The 2019 "Digital Humanities Across Borders" class would like to invite you to a poster session featuring their final projects, tutorials, and ongoing work.

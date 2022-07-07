@@ -2,7 +2,7 @@
 layout: templates/article
 title: "Text Analysis IN the Library, FOR the Library"
 submitted_by: Jacqueline Hettel
-submitted_at: 2013-08-23T16:05:27-07:00
+submitted_at: 2013-08-23
 ---
 
 For those of you who don't know, I'm still fairly new to Stanford (as well as being new to what I lovingly refer to as "library land"). When I initially started my PhD in English, specializing in Text and Corpus Linguistics and Digital Humanities, I never really thought about how text mining (and more specifically corpus linguistics) could be useful and impactful to the university research library. It also has been extremely refreshing that SUL goes another step beyond just supporting digital humanities research to actually encouraging it to occur within the library. For example, a few months ago, [Chris Bourg](http://library.stanford.edu/people/mchris), the Stanford University Libraries AUL for Public Service, approached me about developing a methodology for [text mining acknowledgements as an alternative metric for measuring library impact](http://chrisbourg.wordpress.com/2013/05/19/beyond-measure-valuing-libraries/).

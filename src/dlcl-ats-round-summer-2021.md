@@ -2,7 +2,7 @@
 layout: templates/article
 title: "DLCL ATS round-up, summer 2021"
 submitted_by: Quinn Dombrowski
-submitted_at: 2021-09-27T14:30:37-07:00
+submitted_at: 2021-09-27
 post_images:
   - ../post-images/20210927_113149.jpg
 ---

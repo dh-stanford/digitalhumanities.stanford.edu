@@ -2,7 +2,7 @@
 layout: templates/page
 title: "About DH at Stanford"
 submitted_by: Jacqueline Hettel
-submitted_at: 2013-07-03T11:36:00-07:00
+submitted_at: 2013-07-03
 post_images:
   - ../post-images/Stanford_University_Main_Quad_May_2011_005.jpg
 ---

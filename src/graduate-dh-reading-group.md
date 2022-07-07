@@ -2,7 +2,7 @@
 layout: templates/article
 title: "Graduate DH reading group"
 submitted_by: Quinn Dombrowski
-submitted_at: 2019-05-16T13:34:00-07:00
+submitted_at: 2019-05-16
 ---
 
 

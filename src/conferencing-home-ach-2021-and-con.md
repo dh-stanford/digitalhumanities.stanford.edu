@@ -2,7 +2,7 @@
 layout: templates/article
 title: "Conferencing from Home: ACH 2021 and !!Con"
 submitted_by: Quinn Dombrowski
-submitted_at: 2021-07-28T11:21:27-07:00
+submitted_at: 2021-07-28
 post_images:
   - ../post-images/216815349_10102486908003250_1767842729331958496_n%20%281%29.jpg
 ---

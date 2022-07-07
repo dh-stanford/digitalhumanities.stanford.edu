@@ -2,7 +2,7 @@
 layout: templates/article
 title: "Palladio"
 submitted_by: Quinn Dombrowski
-submitted_at: 2020-03-19T06:27:00-07:00
+submitted_at: 2020-03-19
 ---
 
 Developed at CESTA's [Humanities + Design Lab](http://hdlab.stanford.edu/), [Palladio](http://hdlab.stanford.edu/palladio/) is a widely-used web-based tool for visualizing data using networks and maps. You can save your work by downloading a file that you can upload to the Palladio interface when you return to it. While there is currently no easy way to embed Palladio visualizations in websites, CIDR staff are working on the documentation for how to use Palladio's visualizations in a stand-alone way. If you have time to help, please email Quinn at [qad@stanford.edu](mailto:qad@stanford.edu)!

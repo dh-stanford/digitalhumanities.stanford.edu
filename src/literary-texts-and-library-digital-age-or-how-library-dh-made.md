@@ -2,7 +2,7 @@
 layout: templates/article
 title: "Literary texts and the library in the digital age, or, How library DH is made"
 submitted_by: Glen Worthey
-submitted_at: 2014-03-04T14:57:59-08:00
+submitted_at: 2014-03-04
 post_images:
   - ../post-images/knigi.jpg
   - ../post-images/brik.jpg

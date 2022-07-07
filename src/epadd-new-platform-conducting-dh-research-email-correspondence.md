@@ -2,7 +2,7 @@
 layout: templates/article
 title: "ePADD: A New Platform for Conducting DH Research on Email Correspondence"
 submitted_by: Josh Schneider
-submitted_at: 2015-07-31T08:28:52-07:00
+submitted_at: 2015-07-31
 post_images:
   - ../post-images/epadd%20logo%20box.png
   - ../post-images/ePADD%20-%20Installed%20on%20laptop.png

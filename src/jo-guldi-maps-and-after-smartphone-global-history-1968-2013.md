@@ -2,7 +2,7 @@
 layout: templates/article
 title: "Jo Guldi: \"Maps Before and After the Smartphone: A Global History, 1968-2013\""
 submitted_by: Jason A. Heppler
-submitted_at: 2013-10-24T11:06:00-07:00
+submitted_at: 2013-10-24
 ---
 
 

@@ -2,7 +2,7 @@
 layout: templates/article
 title: "[CANCELED] November 2019 DH Happy Hour"
 submitted_by: Quinn Dombrowski
-submitted_at: 2019-09-19T13:37:00-07:00
+submitted_at: 2019-09-19
 ---
 
 

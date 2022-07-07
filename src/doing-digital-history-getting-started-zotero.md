@@ -2,7 +2,7 @@
 layout: templates/article
 title: "Doing Digital History: Getting Started with Zotero"
 submitted_by: Jason A. Heppler
-submitted_at: 2013-09-17T09:36:00-07:00
+submitted_at: 2013-09-17
 ---
 
 

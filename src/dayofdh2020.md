@@ -2,7 +2,7 @@
 layout: templates/article
 title: "Day of DH 2020 at Stanford"
 submitted_by: Quinn Dombrowski
-submitted_at: 2020-04-24T16:29:00-07:00
+submitted_at: 2020-04-24
 ---
 
 ![](../post-images/Day_of_DH_Stanford_0.png)CESTA and CIDR are participating in [Day of DH](https://dhcenternet.org/initiatives/day-of-dh/2020), an international celebration of the work that digital humanists do, sponsored by centerNet.

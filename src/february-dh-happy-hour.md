@@ -2,7 +2,7 @@
 layout: templates/article
 title: "February DH Happy Hour"
 submitted_by: Quinn Dombrowski
-submitted_at: 2019-01-17T20:06:00-08:00
+submitted_at: 2019-01-17
 ---
 
 

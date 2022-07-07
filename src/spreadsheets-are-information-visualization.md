@@ -2,7 +2,7 @@
 layout: templates/article
 title: "Spreadsheets are Information Visualization"
 submitted_by: Elijah Meeks
-submitted_at: 2014-04-28T09:39:02-07:00
+submitted_at: 2014-04-28
 post_images:
   - ../post-images/mor.jpg
   - ../post-images/ClearOffTheTableMd.gif

@@ -2,7 +2,7 @@
 layout: templates/article
 title: "June DH Happy Hour"
 submitted_by: Quinn Dombrowski
-submitted_at: 2019-04-17T16:19:00-07:00
+submitted_at: 2019-04-17
 ---
 
 

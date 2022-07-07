@@ -2,7 +2,7 @@
 layout: templates/article
 title: "Debating the Methods in Matt Jockers's Macroanalysis"
 submitted_by: Mike Widner
-submitted_at: 2013-09-05T11:43:02-07:00
+submitted_at: 2013-09-05
 post_images:
   - ../post-images/genderNet.png
 comments: |-

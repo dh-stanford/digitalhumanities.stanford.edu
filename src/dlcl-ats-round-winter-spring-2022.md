@@ -2,7 +2,7 @@
 layout: templates/article
 title: "DLCL ATS round-up, winter & spring 2022"
 submitted_by: Quinn Dombrowski
-submitted_at: 2022-06-15T10:19:04-07:00
+submitted_at: 2022-06-15
 post_images:
   - ../post-images/sucho-fabric.jpg
 ---

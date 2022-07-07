@@ -2,7 +2,7 @@
 layout: templates/article
 title: "Animal Crossing: New Digital Humanities"
 submitted_by: Quinn Dombrowski
-submitted_at: 2020-10-06T22:06:00-07:00
+submitted_at: 2020-10-06
 ---
 
 This talk series hosted by Quinn Dombrowski (DLCL ATS at Stanford) and Liz Grumbach (Arizona State University) brings together DH scholars from around the world in the virtual space of Animal Crossing, in order to discuss something new: a new article, a new project, a new book, or another new undertaking.

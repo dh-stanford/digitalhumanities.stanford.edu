@@ -2,7 +2,7 @@
 layout: templates/article
 title: "DLCL ATS round-up, fall 2019"
 submitted_by: Quinn Dombrowski
-submitted_at: 2019-12-20T08:17:06-08:00
+submitted_at: 2019-12-20
 post_images:
   - ../post-images/fanfic.jpg
 ---

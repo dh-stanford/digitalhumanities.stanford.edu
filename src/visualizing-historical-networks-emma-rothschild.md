@@ -2,7 +2,7 @@
 layout: templates/article
 title: "Visualizing Historical Networks, by Emma Rothschild"
 submitted_by: Glen Worthey
-submitted_at: 2014-03-07T12:05:00-08:00
+submitted_at: 2014-03-07
 ---
 
 

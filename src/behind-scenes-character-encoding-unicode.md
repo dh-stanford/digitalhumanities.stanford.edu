@@ -2,7 +2,7 @@
 layout: templates/article
 title: "Behind the Scenes of Character Encoding with Unicode"
 submitted_by: Quinn Dombrowski
-submitted_at: 2019-01-17T20:00:00-08:00
+submitted_at: 2019-01-17
 ---
 
 

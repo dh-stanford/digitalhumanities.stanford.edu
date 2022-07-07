@@ -2,7 +2,7 @@
 layout: templates/article
 title: "Welcome Anne Ladyem McDivitt, New History ATS"
 submitted_by: Quinn Dombrowski
-submitted_at: 2022-07-06T22:24:16-07:00
+submitted_at: 2022-07-06
 post_images:
   - ../post-images/anneladyem_controllers.jpg
 ---

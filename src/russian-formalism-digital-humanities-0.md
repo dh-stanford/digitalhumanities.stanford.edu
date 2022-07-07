@@ -2,7 +2,7 @@
 layout: templates/article
 title: "Russian Formalism & the Digital Humanities"
 submitted_by: Glen Worthey
-submitted_at: 2015-03-31T14:41:00-07:00
+submitted_at: 2015-03-31
 ---
 
 

@@ -2,7 +2,7 @@
 layout: templates/article
 title: "Discovering Regions with ORBIS v2"
 submitted_by: Elijah Meeks
-submitted_at: 2013-08-19T10:46:29-07:00
+submitted_at: 2013-08-19
 post_images:
   - ../post-images/borders.gif
 ---
