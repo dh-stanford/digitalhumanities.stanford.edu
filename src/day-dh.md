@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "The Day of DH"
-submitted_by: Elijah Meeks
-submitted_at: 2014-04-08
+author: Elijah Meeks
+date: 2014-04-08
 ---
 
 Today is the Day of DH, when digital humanities practitioners try to document what a "typical day" looks like in their engagement with digital humanities. There is an [official site that hosts blogs from self-identified community members](http://dayofdh2014.matrix.msu.edu/) and which, due to technical difficulties, I can't currently contribute to. But that gives me a moment to list the various Stanford folks who are taking part in Day of DH and highlight their blogs:

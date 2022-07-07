@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Doing Digital History: Paper Machines, a Talk by Jo Guldi"
-submitted_by: Jason A. Heppler
-submitted_at: 2013-09-17
+author: Jason A. Heppler
+date: 2013-09-17
 ---
 
 

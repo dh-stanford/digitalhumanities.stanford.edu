@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Enterprise tools and DH"
-submitted_by: Quinn Dombrowski
-submitted_at: 2018-12-05
+author: Quinn Dombrowski
+date: 2018-12-05
 post_images:
   - ../post-images/4780433375_4af57565f0_o.jpg
 ---

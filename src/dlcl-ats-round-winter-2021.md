@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "DLCL ATS round-up, winter 2021"
-submitted_by: Quinn Dombrowski
-submitted_at: 2021-03-24
+author: Quinn Dombrowski
+date: 2021-03-24
 post_images:
   - ../post-images/143306752_10102370164493180_1743701058124313097_o%20%281%29.jpg
 ---

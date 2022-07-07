@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Kindred Britain and Scholarship"
-submitted_by: Emma Honour Mae...
-submitted_at: 2013-08-26
+author: Emma Honour Mae...
+date: 2013-08-26
 ---
 
 Redundant as it may seem to say, Kindred Britain is a project that spans generations. Not only the generations of the database’s inhabitants, spread over the last thousand or so years as they are, but the more recent and less distinctly segregated generations of scholars. As an undergraduate research assistant, I was fortunate enough to be one of two people to work on Kindred Britain who was born after the Internet.

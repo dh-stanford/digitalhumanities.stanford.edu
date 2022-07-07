@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Schedule"
-submitted_by: Karim Arsalane
-submitted_at: 2015-03-17
+author: Karim Arsalane
+date: 2015-03-17
 ---
 
 **Russian Formalism & The Digital Humanities**

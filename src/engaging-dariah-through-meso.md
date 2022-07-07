@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Engaging with DARIAH through MESO"
-submitted_by: Quinn Dombrowski
-submitted_at: 2018-11-19
+author: Quinn Dombrowski
+date: 2018-11-19
 post_images:
   - ../post-images/DARIAH-EU-Logo-ohne-Unterschrift-RGB.png
 ---

@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Women in Programming (or the Lack Thereof)"
-submitted_by: Emma Honour Mae...
-submitted_at: 2013-08-22
+author: Emma Honour Mae...
+date: 2013-08-22
 comments: |-
 
   ### Reflecting...

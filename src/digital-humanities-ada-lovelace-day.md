@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "The Digital Humanities on Ada Lovelace Day"
-submitted_by: Glen Worthey
-submitted_at: 2013-10-15
+author: Glen Worthey
+date: 2013-10-15
 ---
 
 Today, October 15, is [Ada Lovelace Day](http://findingada.com/about/), a day to celebrate the contributions of women in computing (and in other science and technology fields); a time to remember the nineteenth-century's fascinating and brilliant "first computer programmer" [Ada Gordon Lovelace](http://findingada.com/about/who-was-ada/); and an excellent opportunity to praise and encourage the Adas of our day.

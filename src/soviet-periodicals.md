@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Russian Computational Periodicals"
-submitted_by: Quinn Dombrowski
-submitted_at: 2021-10-19
+author: Quinn Dombrowski
+date: 2021-10-19
 post_images:
   - ../post-images/color_mask.png
 ---

@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Geographics"
-submitted_by: Elijah Meeks
-submitted_at: 2014-01-06
+author: Elijah Meeks
+date: 2014-01-06
 post_images:
   - ../post-images/ov2_routeNormalization1.png
   - ../post-images/ov2_routeNormalization2.png

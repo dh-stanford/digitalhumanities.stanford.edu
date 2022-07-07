@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Hestia2@Stanford: Visualizing Complex Networks"
-submitted_by: Nicole Coleman
-submitted_at: 2013-10-24
+author: Nicole Coleman
+date: 2013-10-24
 ---
 
 

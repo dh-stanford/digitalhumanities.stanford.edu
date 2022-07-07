@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Introducing \"Digital Humanities Across Borders\""
-submitted_by: Quinn Dombrowski
-submitted_at: 2019-01-15
+author: Quinn Dombrowski
+date: 2019-01-15
 post_images:
   - ../post-images/5889720469_f0c7911794_b.jpg
 ---

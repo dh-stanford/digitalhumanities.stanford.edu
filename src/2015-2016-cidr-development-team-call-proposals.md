@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "2015-2016 CIDR Development Team Call for Proposals"
-submitted_by: Glen Worthey
-submitted_at: 2015-09-30
+author: Glen Worthey
+date: 2015-09-30
 ---
 
 **Introduction**

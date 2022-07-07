@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Behind the Scenes of Character Encoding with Unicode"
-submitted_by: Quinn Dombrowski
-submitted_at: 2019-01-17
+author: Quinn Dombrowski
+date: 2019-01-17
 ---
 
 

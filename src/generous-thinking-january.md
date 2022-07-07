@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Generous Thinking January"
-submitted_by: Quinn Dombrowski
-submitted_at: 2020-02-05
+author: Quinn Dombrowski
+date: 2020-02-05
 post_images:
   - ../post-images/32678220085_c4c16c80a6_k.jpg
 ---

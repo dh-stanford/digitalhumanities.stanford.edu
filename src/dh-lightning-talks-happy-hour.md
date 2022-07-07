@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "DH lightning talks + happy hour"
-submitted_by: Quinn Dombrowski
-submitted_at: 2020-01-28
+author: Quinn Dombrowski
+date: 2020-01-28
 ---
 
 

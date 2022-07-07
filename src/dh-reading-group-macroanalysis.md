@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "DH Reading Group: \"Macroanalysis\""
-submitted_by: Glen Worthey
-submitted_at: 2013-08-14
+author: Glen Worthey
+date: 2013-08-14
 ---
 
 

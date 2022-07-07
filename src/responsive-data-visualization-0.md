@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Responsive Data Visualization"
-submitted_by: Elijah Meeks
-submitted_at: 2014-08-19
+author: Elijah Meeks
+date: 2014-08-19
 ---
 
 The final chapter of my book, [D3.js in Action](http://manning.com/meeks/), is focused on explaining using the [D3 data visualization library](http://d3js.org) for mobile development. It was a bit of a stretch for me, since I hadn’t done very much mobile development, and I expected to write a short chapter outlining the functions like [d3.touches](https://github.com/mbostock/d3/wiki/Selections#d3_touches) that exist to handle touch interface.

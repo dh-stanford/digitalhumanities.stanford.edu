@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "What Makes a Minard?"
-submitted_by: Elijah Meeks
-submitted_at: 2014-03-26
+author: Elijah Meeks
+date: 2014-03-26
 post_images:
   - ../post-images/flow_map.png
   - ../post-images/minard_ex6.png

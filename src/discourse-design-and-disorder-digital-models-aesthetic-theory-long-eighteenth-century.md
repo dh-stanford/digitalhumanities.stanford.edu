@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Discourse, Design and Disorder: Digital Models for Aesthetic Theory in the Long Eighteenth Century"
-submitted_by: Glen Worthey
-submitted_at: 2014-01-30
+author: Glen Worthey
+date: 2014-01-30
 ---
 
 

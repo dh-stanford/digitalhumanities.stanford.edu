@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Digital History at Stanford"
-submitted_by: Jason A. Heppler
-submitted_at: 2013-10-23
+author: Jason A. Heppler
+date: 2013-10-23
 ---
 
 Digital History at Stanford

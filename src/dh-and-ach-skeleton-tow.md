@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "To DH and ACH with a Skeleton in Tow"
-submitted_by: Quinn Dombrowski
-submitted_at: 2019-07-29
+author: Quinn Dombrowski
+date: 2019-07-29
 post_images:
   - ../post-images/48397551156_143b63558f_k.jpg
   - ../post-images/EAVbEIOXYAAoPMR.jpg

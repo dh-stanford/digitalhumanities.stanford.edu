@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "DLCL ATS round-up, winter 2020"
-submitted_by: Quinn Dombrowski
-submitted_at: 2020-03-23
+author: Quinn Dombrowski
+date: 2020-03-23
 post_images:
   - ../post-images/dhrpg-lastday.jpg
 ---

@@ -14,9 +14,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("pages", (collectionApi) => {
     return collectionApi
       .getFilteredByGlob("./src/*.md")
-      .sort(
-        (a, b) => new Date(b.data.submitted_at) - new Date(a.data.submitted_at),
-      );
+      .sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
   });
 
   eleventyConfig.addFilter(

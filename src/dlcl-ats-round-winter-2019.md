@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "DLCL ATS round-up, winter 2019"
-submitted_by: Quinn Dombrowski
-submitted_at: 2019-04-02
+author: Quinn Dombrowski
+date: 2019-04-02
 post_images:
   - ../post-images/20190401_124502.jpg
 ---

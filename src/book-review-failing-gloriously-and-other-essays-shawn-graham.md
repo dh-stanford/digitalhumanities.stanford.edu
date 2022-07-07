@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Book Review: \"Failing Gloriously and Other Essays\" by Shawn Graham"
-submitted_by: Quinn Dombrowski
-submitted_at: 2019-11-18
+author: Quinn Dombrowski
+date: 2019-11-18
 post_images:
   - ../post-images/2070718497_ecf69d4321_k.jpg
 ---

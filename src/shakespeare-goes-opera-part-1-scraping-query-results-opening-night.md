@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Shakespeare Goes to the Opera Part 1: Scraping Query Results from Opening Night!"
-submitted_by: Jacqueline Hettel
-submitted_at: 2013-09-24
+author: Jacqueline Hettel
+date: 2013-09-24
 post_images:
   - ../post-images/Screen%20Shot%202013-09-24%20at%202.51.32%20PM.png
 ---
