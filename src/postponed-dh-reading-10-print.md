@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "POSTPONED: DH Reading: 10 PRINT"
-submitted_by: Mike Widner
-submitted_at: 2013-09-05T11:40:00-07:00
+author: Mike Widner
+date: 2013-09-05
 ---
 
 

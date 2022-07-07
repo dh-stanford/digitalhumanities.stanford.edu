@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "DH lightning talks w/ Russian NLP group + happy hour"
-submitted_by: Quinn Dombrowski
-submitted_at: 2020-02-06T19:24:00-08:00
+author: Quinn Dombrowski
+date: 2020-02-06
 ---
 
 

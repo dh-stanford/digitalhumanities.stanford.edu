@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Digital Humanities and Data Science"
-submitted_by: Elijah Meeks
-submitted_at: 2014-05-05T08:39:54-07:00
+author: Elijah Meeks
+date: 2014-05-05
 post_images:
   - ../post-images/VennDiagram2.png
 ---

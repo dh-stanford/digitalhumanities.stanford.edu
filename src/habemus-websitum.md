@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Habemus websitum!"
-submitted_by: Glen Worthey
-submitted_at: 2013-08-14T10:11:37-07:00
+author: Glen Worthey
+date: 2013-08-14
 ---
 
 We Stanford Digital Humanists (a.k.a. DHers), scattered as we are [across campus](/about-dh-stanford), have long talked about uniting under the banner of a collective website.  Now we have: here it is, and [here we are](/people).

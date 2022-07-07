@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Why are such terrible things written about DH? Kirsch v. Kirschenbaum"
-submitted_by: Glen Worthey
-submitted_at: 2014-05-07T12:01:08-07:00
+author: Glen Worthey
+date: 2014-05-07
 ---
 
 Last week I read one of the latest and loudest salvos in a sad and very silly war on the digital humanities: Adam Kirsch, in *The New Republic*, chose to put his pugnacious piece out under not one, but two inflammatory titles: "[Technology is Taking Over English Departments: The false promise of the digital humanities](http://www.newrepublic.com/article/117428/limits-digital-humanities-adam-kirsch)."  Oh, please.

@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Digital Humanities at Stanford"
-submitted_by: Mike Widner
-submitted_at: 2013-09-05T11:48:00-07:00
+author: Mike Widner
+date: 2013-09-05
 ---
 
 

@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Russian Formalism & the Digital Humanities: Abstracts"
-submitted_by: Karim Arsalane
-submitted_at: 2015-03-17T09:49:00-07:00
+author: Karim Arsalane
+date: 2015-03-17
 ---
 
 

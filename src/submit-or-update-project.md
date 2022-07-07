@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Submit or update a project"
-submitted_by: Sharon Krossa
-submitted_at: 2015-10-01T14:37:20-07:00
+author: Sharon Krossa
+date: 2015-10-01
 ---
 
 

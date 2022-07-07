@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "ORBIS v2"
-submitted_by: Elijah Meeks
-submitted_at: 2013-08-17T09:52:12-07:00
+author: Elijah Meeks
+date: 2013-08-17
 post_images:
   - ../post-images/clustering.png
   - ../post-images/orbisnew.png

@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "DH Presentation - The Map of Early Modern London's Pedagogical Sustainability Model for the Digital Humanities"
-submitted_by: Jacqueline Hettel
-submitted_at: 2014-03-07T01:14:00-08:00
+author: Jacqueline Hettel
+date: 2014-03-07
 ---
 
 

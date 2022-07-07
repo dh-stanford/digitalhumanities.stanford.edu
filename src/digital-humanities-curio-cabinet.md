@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Digital Humanities Curio Cabinet"
-submitted_by: Elijah Meeks
-submitted_at: 2014-02-09T18:44:08-08:00
+author: Elijah Meeks
+date: 2014-02-09
 ---
 
 The Online Computer Library Center, or OCLC, submitted the latest in a genre of self-reflection by library leadership focused on where and whether digital humanities intersects with the library. Conveniently, Bethany Nowviskie, head of one of the major alt-ac powerhouses\* in digital humanities--the [**Scholar’s Lab**](http://www.scholarslab.org/) at the University of Virginia--[responded with a pointed critique](http://nowviskie.org/2014/asking-for-it/). The OCLC titled their report, [“Does every research library need a digital humanities center?”](http://www.oclc.org/research/publications/library/2014/oclcresearch-digital-humanities-center-2014-overview.html) a point to which Nowviskie responds substantially in agreement with OCLC: “where the perception lies that ‘nothing exists’ to support digital humanities scholarship at a particular institution, the whole-cloth creation of a center is never the only — or likely the best — response.”

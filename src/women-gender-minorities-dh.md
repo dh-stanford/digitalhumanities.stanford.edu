@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Women & Gender Minorities in DH"
-submitted_by: Quinn Dombrowski
-submitted_at: 2019-04-17T16:27:00-07:00
+author: Quinn Dombrowski
+date: 2019-04-17
 ---
 
 

@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Russian Formalism & the Digital Humanities"
-submitted_by: Karim Arsalane
-submitted_at: 2015-03-13T09:08:00-07:00
+author: Karim Arsalane
+date: 2015-03-13
 ---
 
 You are invited to attend “Russian Formalism and the Digital Humanities,” an all-day conference to be held Monday, April 13, 2015, at the Stanford Humanities Center.

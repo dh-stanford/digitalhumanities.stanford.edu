@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "David Blei: Probabilistic Topic Models of Text and Users"
-submitted_by: Glen Worthey
-submitted_at: 2014-02-17T11:39:00-08:00
+author: Glen Worthey
+date: 2014-02-17
 ---
 
 

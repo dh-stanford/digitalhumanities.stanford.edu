@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "ORBIS Design Challenge"
-submitted_by: Elijah Meeks
-submitted_at: 2013-09-03T09:23:00-07:00
+author: Elijah Meeks
+date: 2013-09-03
 ---
 
 ORBIS Design Challenge

@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "A House Divided"
-submitted_by: Jacqueline Hettel
-submitted_at: 2013-10-04T13:02:15-07:00
+author: Jacqueline Hettel
+date: 2013-10-04
 post_images:
   - ../post-images/Screen%20Shot%202013-10-04%20at%201.01.36%20PM.png
 ---

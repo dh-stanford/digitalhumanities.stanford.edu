@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Book review: \"New Digital Worlds\" by Roopika Risam"
-submitted_by: Quinn Dombrowski
-submitted_at: 2018-12-14T09:03:45-08:00
+author: Quinn Dombrowski
+date: 2018-12-14
 post_images:
   - ../post-images/31311261557_2913fd1e87_k.jpg
 ---

@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Alex Wermer-Colan on \"The SF Nexus: Digitizing, Curating, and Modeling Mass-Market Speculative Fiction\""
-submitted_by: Quinn Dombrowski
-submitted_at: 2020-01-30T09:00:00-08:00
+author: Quinn Dombrowski
+date: 2020-01-30
 ---
 
 

@@ -11,13 +11,13 @@
             <img class="rounded-circle" src="{{site.baseurl}}/{{author.avatar}}" alt="{{author.name}}" width="70" />
             {% endif %}
             <small class="ml-3">
-              {{ submitted_by }}
+              {{ author }}
               {%- comment -%} <span>
                 <a target="_blank" href="{{ author.twitter }}" class="btn btn-outline-success btn-sm btn-round ml-1">
                   Follow
                 </a>
               </span> {%- endcomment -%}
-              <span class="text-muted d-block mt-1">{{ submitted_at | date: '%b %d, %Y' }}</span>
+              <span class="text-muted d-block mt-1">{{ date | formatDate }}</span>
             </small>
           </div>
         </div>

@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Technical enough"
-submitted_by: Quinn Dombrowski
-submitted_at: 2019-09-03T07:00:18-07:00
+author: Quinn Dombrowski
+date: 2019-09-03
 post_images:
   - ../post-images/3353063137_f0e01c37b1_b.jpg
 ---

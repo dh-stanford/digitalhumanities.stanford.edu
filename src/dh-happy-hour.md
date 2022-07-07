@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "DH Happy Hour"
-submitted_by: Quinn Dombrowski
-submitted_at: 2018-11-16T20:40:00-08:00
+author: Quinn Dombrowski
+date: 2018-11-16
 ---
 
 

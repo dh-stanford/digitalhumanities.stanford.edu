@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "March DH Happy Hour"
-submitted_by: Quinn Dombrowski
-submitted_at: 2019-01-17T20:08:00-08:00
+author: Quinn Dombrowski
+date: 2019-01-17
 ---
 
 

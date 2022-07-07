@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "DLCL ATS round-up, summer 2019"
-submitted_by: Quinn Dombrowski
-submitted_at: 2019-09-23T11:31:59-07:00
+author: Quinn Dombrowski
+date: 2019-09-23
 post_images:
   - ../post-images/48096173597_76ef6dd607_k.jpg
 ---

@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "\"Difficulty manatees\" after the swan song"
-submitted_by: Quinn Dombrowski
-submitted_at: 2019-01-30T22:17:34-08:00
+author: Quinn Dombrowski
+date: 2019-01-30
 post_images:
   - ../post-images/youmanateescomputing.jpg
 ---

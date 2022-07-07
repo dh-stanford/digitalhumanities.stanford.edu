@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Kindred Britain Techniques 1: Permalinks on a Graph"
-submitted_by: Elijah Meeks
-submitted_at: 2013-08-28T10:21:33-07:00
+author: Elijah Meeks
+date: 2013-08-28
 post_images:
   - ../post-images/lee_taylor_kb.png
   - ../post-images/tweet0.PNG

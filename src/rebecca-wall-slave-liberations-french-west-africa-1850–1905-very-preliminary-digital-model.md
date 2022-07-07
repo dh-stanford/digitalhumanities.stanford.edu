@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Rebecca Wall on \"Slave Liberations in French West Africa, 1850–1905: A (Very) Preliminary Digital Model\""
-submitted_by: Quinn Dombrowski
-submitted_at: 2020-02-06T19:21:00-08:00
+author: Quinn Dombrowski
+date: 2020-02-06
 ---
 
 

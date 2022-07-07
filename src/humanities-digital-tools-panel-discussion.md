@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Humanities + Digital Tools Panel Discussion"
-submitted_by: Glen Worthey
-submitted_at: 2015-03-31T16:45:00-07:00
+author: Glen Worthey
+date: 2015-03-31
 ---
 
 

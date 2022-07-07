@@ -1,8 +1,8 @@
 ---
 layout: templates/article
 title: "Amplifying the Past: Material Interventions in the Digital Humanities"
-submitted_by: Glen Worthey
-submitted_at: 2014-01-24T11:43:00-08:00
+author: Glen Worthey
+date: 2014-01-24
 ---
 
 
