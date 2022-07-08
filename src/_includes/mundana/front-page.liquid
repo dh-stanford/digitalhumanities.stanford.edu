@@ -19,7 +19,7 @@ pagination:
       <div class="card border-0 mb-4 box-shadow">
         <a href="{{ article.url | url }}">
           <div class="topfirstimage" style="background-image: url({{ article.data.post_images[0] | url }});
-                      height: 200px; background-size: cover; background-repeat: no-repeat;">
+                      min-height: 200px; aspect-ratio: 1.65; background-size: cover; background-repeat: no-repeat;">
           </div>
         </a>
         <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
