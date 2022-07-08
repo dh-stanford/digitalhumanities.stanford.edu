@@ -1,5 +1,6 @@
 const CleanCSS = require("clean-css");
 const { DateTime } = require("luxon");
+const rssPlugin = require("@11ty/eleventy-plugin-rss");
 
 const { renderMarkdown, extractExcerpt } = require("./lib/utils");
 
@@ -10,6 +11,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "node_modules/lunr/lunr.min.js": "assets/js/lunr.min.js",
   });
+
+  eleventyConfig.addPlugin(rssPlugin);
 
   eleventyConfig.addCollection("pages", (collectionApi) => {
     return collectionApi
