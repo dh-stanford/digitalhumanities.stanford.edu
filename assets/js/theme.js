@@ -26,3 +26,10 @@ document.addEventListener("scroll", () => {
     ticking = true;
   }
 });
+
+// nav toggle
+document.querySelectorAll("[data-toggle='collapse']").forEach((el) => {
+  el.addEventListener("click", () =>
+    document.querySelector(el.dataset.target).classList.toggle("show"),
+  );
+});
