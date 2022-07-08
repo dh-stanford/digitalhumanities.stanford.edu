@@ -42,6 +42,7 @@ case $diff in
      ;;
   1) git --work-tree "$BUILD_FOLDER" commit -m "$COMMIT_MESSAGE";
      git push origin "$DEPLOY_BRANCH";
+     sleep 1;
      git checkout --force "$MAIN_BRANCH";
      ;;
   *)
