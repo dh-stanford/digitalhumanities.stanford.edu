@@ -27,7 +27,7 @@ Content in **markdown** goes here :)
 
 1. Checkout the repo using
 
-   ```
+   ```sh
    git clone git@github.com:dh-stanford/ digitalhumanities.stanford.edu.git
    ```
 
@@ -35,16 +35,16 @@ Content in **markdown** goes here :)
 
 2. Install node dependencies
 
-   ```
-   cd  digitalhumanities.stanford.edu
+   ```sh
+   cd digitalhumanities.stanford.edu
    yarn install --frozen-lockfile
    ```
 
-4. Edit, commit, and push changes as appropriate.
+3. Edit, commit, and push changes as appropriate.
 
-5. Anyone with write privileges on the repo can deploy the site to GitHub Pages using
+4. Anyone with write privileges on the repo can deploy the site to GitHub Pages using
 
-   ```
+   ```sh
    yarn gh-deploy
    ```
 
