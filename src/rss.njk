@@ -1,0 +1,39 @@
+---json
+{
+"permalink": "rss.xml",
+"eleventyExcludeFromCollections": true,
+"metadata": {
+  "title": "Digital Humanities @ Stanford",
+  "subtitle": "Articles and events from the Digital Humanities community at Stanford University",
+  "url": "https://digitalhumanities.stanford.edu/"
+  }
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="{{ metadata.url }}">
+  <channel>
+    <title>{{ metadata.title }}</title>
+    <link>{{ metadata.url }}</link>
+    <description>{{ metadata.subtitle }}</description>
+    <language>en</language>
+    {%- for article in collections.pages %}
+    {% set absolutePostUrl %}{{ article.url | url | absoluteUrl(metadata.url) }}{% endset %}
+    <item>
+      <title>{{ article.data.title }}</title>
+      <link>{{ absolutePostUrl }}</link>
+      <description>
+      {{
+        (
+        '<p><small>' + article.data.author + ' · ' + article.data.date | formatDate + '</small></p>' +
+        '<img src="' + article.data.post_images[0] + '" alt="' + article.data.title + '">' +
+        article.templateContent
+        ) | htmlToAbsoluteUrls(absolutePostUrl) 
+      }}
+      </description>
+      <pubDate>{{ article.date | dateToRfc822 }}</pubDate>
+      <dc:creator>{{ article.data.author }}</dc:creator>
+      <guid>{{ absolutePostUrl }}</guid>
+    </item>
+    {%- endfor %}
+  </channel>
+</rss>
