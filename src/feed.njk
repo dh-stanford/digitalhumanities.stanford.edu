@@ -33,7 +33,9 @@
     <id>{{ absolutePostUrl }}</id>
     <content type="html">{{
       (
-      '<img src="' + article.data.post_images[0] + '" alt="' + article.data.title + '">' + article.templateContent
+      '<p><small>' + article.data.author + ' · ' + article.data.date | formatDate + '</small></p>' +
+      '<img src="' + article.data.post_images[0] + '" alt="' + article.data.title + '">' +
+      article.templateContent
       ) | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
   </entry>
   {%- endfor %}
