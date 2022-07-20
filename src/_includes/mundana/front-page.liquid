@@ -4,6 +4,10 @@ pagination:
   data: collections.pages
   size: 10
   alias: articles
+img_widths:
+  - 80
+  - 138
+  - 173
 ---
 
 <div class="container">
@@ -53,7 +57,8 @@ pagination:
       <div class="mb-3 d-flex align-items-center">
         <div class="col-md-4">
           <a href="{{ article.url | url }}">
-            <img class="w-100" src="{{ article.data.post_images[0] | url }}" alt="{{ article.data.title }}">
+            {% assign img = article.data.post_images[0] %}
+            {% image img, article.data.title, "w-100", img_widths %}
           </a>
         </div>
         <div>
