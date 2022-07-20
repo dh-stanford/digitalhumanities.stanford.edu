@@ -2,7 +2,11 @@ const CleanCSS = require("clean-css");
 const { DateTime } = require("luxon");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 
-const { renderMarkdown, extractExcerpt } = require("./lib/utils");
+const {
+  renderMarkdown,
+  extractExcerpt,
+  imageShortcode,
+} = require("./lib/utils");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("post-images");
@@ -40,6 +44,10 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("markdown", renderMarkdown);
   eleventyConfig.addPairedShortcode("markdown", renderMarkdown);
+
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addLiquidShortcode("image", imageShortcode);
+  eleventyConfig.addJavaScriptFunction("image", imageShortcode);
 
   return {
     dir: {
