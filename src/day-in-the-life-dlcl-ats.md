@@ -2,7 +2,7 @@
 layout: templates/article
 title: "A Day in the Life of a DLCL ATS"
 author: Quinn Dombrowski
-date: 2022-09-31
+date: 2022-08-30
 post_images:
   - ../post-images/fras_interface.jpg
   - ../post-images/writing_hammock.jpg
