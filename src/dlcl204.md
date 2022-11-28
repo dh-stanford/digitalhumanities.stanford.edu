@@ -3,6 +3,8 @@ layout: templates/article
 title: "Digital Humanities Across Borders (DLCL 204)"
 author: Quinn Dombrowski
 date: 2022-11-28
+post_images:
+  - ../post-images/dlcl204.jpg
 ---
 
 *Digital Humanities Across Borders* (DLCL 204, CompLit 204A) will be offered winter 2023, Mon/Wed 1:30-2:50. If you're interested in exploring computational methods for humanities research -- anything from digitizing text and turning it into data, to transcribing manuscripts, to searching for phrases across text corpora, to using different metrics for text similarity, to visualizing networks of people or places -- and you work with a language other than English, this class will give you the skills you need to use these methods with *your* language.
