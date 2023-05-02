@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Spring AI and Pedagogy Workshop :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-between ">
+        <div
+          class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">Spring AI and Pedagogy Workshop</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Quinn Dombrowski<span class="text-muted d-block mt-1">May 1, 2023</span>
+            </small>
+          </div>
+        </div>
+        
+        <div class="col-md-6 pr-0 align-self-center">
+          <img class="rounded" src="../post-images/ai-pedagogy.jpg" alt="Spring AI and Pedagogy Workshop">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <p>At the beginning of spring quarter, Laura Wittman and I organized a three-part workshop on AI and pedagogy. Workshop 1 (<a href="https://docs.google.com/presentation/d/1hZ8oeqeyxlgs76OkgnBfyJvoKX1i0H72liwm2-zA1vI/edit?usp=sharing">slides available here</a>) began with an explanation of what large language models like ChatGPT are, how they're made, and how they actually work. While machine-generated text has only recently reached mainstream public awareness with the release of these large language models, the idea of algorithmic text generation is over 100 years old, with the mathematical theory behind another approach, Markov chains, dating to the early 20th century.</p>
+<p>The training data commonly used to create these models poses a challenge for scholars working in languages other than English.  Furthermore, the fact that the latest models (GPT 3.5 and 4) have mysteriously come leaps and bounds in their ability to competently produce text in non-English languages -- just as OpenAI has stopped talking about what has gone into their training data for recent models -- is particularly frustrating for scholars working multilingually.</p>
+<p>The first workshop also addressed common myths and misunderstandings about large language models: it doesn't (currently) have internet access, so if you put in a URL and ask it to summarize, it might draw on its training data if it's an old link, or it might make things up based on the URL title. All it can do is generate plausible-sounding text; there's no filter for it to check if what's plausible and what's true are in alignment. The reason it &quot;doubles down&quot; when challenged on a false statement is because getting into an argument is a more plausible response based on a giant corpus of human-generated text than &quot;I'm an algorithm with no concept of truth.&quot; The models do well with &quot;languages&quot; they have seen a lot of (the most common human languages on the internet, computer code, etc.) than ones they have seen less of (e.g. indigenous languages, the language of crochet patterns, etc.) And finally, considering that a sizable chunk of its training data includes speculative fiction, fan fiction, and similar writing, it's not difficult to get large language models to say sci-fi things that make it sound sentient. It doesn't mean that it is, just that's the most plausible text based on its training data.</p>
+<p>The second workshop (<a href="https://docs.google.com/presentation/d/1sStPzch7WJWvbm7iFF1aY9-RpsjIs-aYxDZaxdjCSWo/edit?usp=sharing">slides available here</a>) looked at how people are already using large language models in the classroom and in their research, including using it to <a href="https://markcmarino.medium.com/can-chatgpt-copy-your-writing-style-fe0236fa247f">describe and imitate writing style</a> (Mark Marino), using it as a first draft of a final paper (Alex Gil), and <a href="https://tedunderwood.com/2023/03/19/using-gpt-4-to-measure-the-passage-of-time-in-fiction/">using it as a research assistant to reason about the passage of time in literature</a>. In the second workshop, we played with it for reformatting references in different bibliographic style, including going to and from more &quot;lossy&quot; formats (e.g. Harvard, which only has a first initial -- it was surprisingly accurate at going from a Harvard citation to an MLA citation with the correct first name.)</p>
+<p>The third workshop invited participants to actually try coming up with their own assignment that would use large language models, which we then tried out together during the workshop. Assignments ranged from comparing human and machine translations of less-well-known texts (including some with unusual loanwords or other tricky lexicon), to using ChatGPT as a conversation partner. However, even with a plausible concept, actually creating a prompt that gets the kind of result you're looking for is more difficult than everyone in the workshop expected.</p>
+<p>We spent some time working with the idea of ChatGPT as a conversation practice partner, beginning with the prompt:</p>
+<blockquote>
+<p>Pretend you are a native French speaker who is having a conversation with a first-year student of the French language about her eating habits. Ask her what she usually eats for breakfast, lunch, and dinner, and then ask relevant follow-up questions, and talk about your own habits to model correct language use.</p>
+</blockquote>
+<p>This instruction led to paragraphs of response at a difficulty level too high for a beginner, with many different questions mixed in:</p>
+<blockquote>
+<p>Bonjour, comment ça va? Je m'appelle ChatGPT, et je suis un locuteur natif de français. Comment se passe l'apprentissage de la langue française jusqu'à présent?</p>
+</blockquote>
+<blockquote>
+<p>Je suis curieux de savoir, que mangez-vous habituellement pour le petit-déjeuner, le déjeuner et le dîner? Pour le petit déjeuner, est-ce que vous préférez des céréales ou des œufs? Pour le déjeuner, est-ce que vous aimez manger des sandwiches ou des salades? Et pour le dîner, préférez-vous les pâtes ou le poisson?</p>
+</blockquote>
+<blockquote>
+<p>Personnellement, pour le petit déjeuner, j'aime manger des tartines de pain grillé avec du beurre et de la confiture, accompagnées d'un café noir. Pour le déjeuner, j'aime généralement manger une salade avec des légumes frais et du poulet grillé. Et pour le dîner, j'aime manger des plats plus copieux comme du bœuf bourguignon ou du gratin dauphinois.</p>
+</blockquote>
+<blockquote>
+<p>Et vous, avez-vous des plats préférés pour chaque repas? Et est-ce que vous avez des habitudes alimentaires particulières, comme manger végétarien ou éviter les aliments sucrés?</p>
+</blockquote>
+<p>We tried another variation on the prompt:</p>
+<blockquote>
+<p>Pretend you are a native French speaker. You are talking with a beginner French student who does not know very much French. Ask her what she usually eats for breakfast, lunch, and dinner, and then ask relevant follow-up questions, and talk about your own habits to model correct language use.</p>
+</blockquote>
+<p>While the language level was more suitable this time, the nature of the exchange still wasn't what we were looking for:</p>
+<blockquote>
+<p>Bonjour! Comment ça va? Je suis ravi(e) de parler avec vous aujourd'hui. Comment s'appelle-t-il/elle?</p>
+</blockquote>
+<blockquote>
+<p>Qu'est-ce que vous mangez habituellement pour le petit déjeuner, le déjeuner et le dîner?</p>
+</blockquote>
+<blockquote>
+<p>Pour le petit déjeuner, est-ce que vous mangez du pain et de la confiture? Ou préférez-vous les céréales avec du lait? Peut-être un croissant avec du café?</p>
+</blockquote>
+<blockquote>
+<p>Pour le déjeuner, mangez-vous souvent des sandwichs ou préférez-vous un repas plus substantiel comme une salade ou un plat chaud?</p>
+</blockquote>
+<blockquote>
+<p>Et pour le dîner, est-ce que vous aimez les pâtes, le riz ou les pommes de terre avec une source de protéines comme le poulet ou le poisson? Ou peut-être vous préférez la cuisine végétarienne?</p>
+</blockquote>
+<blockquote>
+<p>Personnellement, pour le petit déjeuner, j'aime prendre un café et manger un croissant. Pour le déjeuner, j'aime manger une salade avec des légumes frais et du poulet grillé. Pour le dîner, j'aime préparer des plats de pâtes maison avec une sauce tomate fraîche et des herbes. Et bien sûr, j'aime boire du vin avec mon dîner!</p>
+</blockquote>
+<blockquote>
+<p>Et vous, quelle est votre nourriture préférée pour chaque repas?</p>
+</blockquote>
+<p>We tried to correct the structure with a new prompt:</p>
+<blockquote>
+<p>Pretend you are a native French speaker. You are talking with a beginner French student who does not know very much French. Start a conversation about food with the student and only ask one question at a time.</p>
+</blockquote>
+<p>And what we got back was... a list of questions.</p>
+<blockquote>
+<p>Bonjour ! Comment ça va ?
+Est-ce que tu aimes la cuisine française ?
+Quels sont tes plats préférés ?
+As-tu déjà goûté les escargots ou le foie gras ?
+Qu'est-ce que tu aimes manger pour le petit-déjeuner ?
+Est-ce que tu préfères les plats salés ou sucrés ?
+As-tu déjà mangé une baguette ?
+Qu'est-ce que tu penses du fromage français ?
+Est-ce que tu aimes boire du vin ?
+Quel est ton vin préféré ?</p>
+</blockquote>
+<p>We tried again:</p>
+<blockquote>
+<p>Pretend you are a native French speaker. You are talking with a beginner French student who does not know very much French. Start a conversation about food with the student and only ask one question at a time. Wait for the student to answer before asking the next question.</p>
+</blockquote>
+<p>This time, ChatGPT just made up both sides of the conversation:</p>
+<blockquote>
+<p>Bonjour! Comment ça va aujourd'hui?
+Student: Ça va bien, merci. Et toi?
+Je vais bien, merci. Est-ce que tu aimes la nourriture française?
+Student: Je ne sais pas, je n'ai jamais essayé de nourriture française. Quels sont les plats français populaires?
+Il y a beaucoup de plats français populaires, comme les croissants, les crêpes, les escargots, le fromage, le vin, le coq au vin, le boeuf bourguignon et la ratatouille. As-tu déjà entendu parler de ces plats avant?
+Student: Oui, j'ai entendu parler de quelques-uns d'entre eux. Quel plat recommanderais-tu à quelqu'un qui n'a jamais essayé la cuisine française?
+Si vous n'avez jamais essayé la cuisine française, je recommanderais d'essayer des croissants frais au beurre et une tarte Tatin aux pommes pour le dessert. Ce sont des classiques français qui sont délicieux! Qu'en penses-tu?</p>
+</blockquote>
+<p>Our efforts to come up with a starting prompt that would orchestrate the kind of conversation we were looking for eventually switched into French after a round where ChatGPT printed both its French responses and a translation in English in parentheses. When we grew tired of fruitlessly coming up with variations on this prompt, we tried to get ChatGPT to talk about art and artists using probable and less-probable combinations of language. Whether we asked about the Russian band DDT in a relatively common (and computationally well-resourced) language like Russian or Italian, or a less-common language like Albanian or Persian, we got fairly similar text back: a flat, Wikipedia-style description of the band, its style (broadly correct), its singers (often wrong, sometimes confused with real singers from other Russian bands), and its major hits (usually wrong). Grammatically, the model made very few mistakes across all these languages.</p>
+<p>Participants imagined what research and pedagogy uses of large language models might be possible with models developed by scholars, without the X-factor of unknown training data. Laura Wittman and I have proposed a DLCL research unit around AI for the fall, along with an undergraduate course exploring AI models and languages, literatures, and cultures. We also anticipate exploring the possibilities of data gathering and model training to have a point of contrast with ChatGPT and similar models from OpenAI.</p>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>
