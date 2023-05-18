@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>SUCHO week :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-between ">
+        <div
+          class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">SUCHO week</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Quinn Dombrowski<span class="text-muted d-block mt-1">May 18, 2023</span>
+            </small>
+          </div>
+        </div>
+        
+        <div class="col-md-6 pr-0 align-self-center">
+          <img class="rounded" src="../post-images/sucho_week_header.jpg" alt="SUCHO week">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <p>The week of May 8th was the culmination of this year's DLCL &quot;Cultural Heritage at War&quot; research unit, bringing the co-founders and several volunteers from Saving Ukrainian Cultural Heritage Online (SUCHO) together for several events throughout the Bay Area. Co-founders Anna Kijas and Sebastian Majstorovic attended from Boston and Berlin, respectively; long-time volunteer Andreas Segerberg came from Gothenburg; and Ulia Gosart joined the group from Los Angeles. The events were generously co-sponsored by Stanford Libraries and the Division of Literatures, Cultures, and Languages.</p>
+<p><img src="../post-images/sucho_week_groupphoto.jpg" alt="Left to right: Quinn Dombrowski, Andreas Segerberg, Anna Kijas, Sebastian Majstorovic, and Ulia Gosart at Stanford University."></p>
+<p><em>(Left to right: Quinn Dombrowski, Andreas Segerberg, Anna Kijas, Sebastian Majstorovic, and Ulia Gosart at Stanford University.)</em></p>
+<p>On Monday, members of the group engaged in public humanities work by giving a presentation at Malcolm X Elementary in Berkeley, where the PTA hosted a web archiving workshop for families last year shortly after SUCHO started. The group taught the children in Jennifer Adcock's first grade class how to write their names in Ukrainian Cyrillic, and about geography and the war using Ukrainian children's drawings from an art contest at the Cherkasy Regional Library. Scans of the drawings will soon be available in the <a href="https://gallery.sucho.org">SUCHO gallery</a>, and will be on display in Hohbach Hall.</p>
+<p><img src="../post-images/sucho_week_mxart.jpg" alt="Andreas Segerberg at Malcolm X Elementary school displaying children's drawings from the Cherkasy Regional Library."></p>
+<p><em>Andreas Segerberg at Malcolm X Elementary school displaying children's drawings from the Cherkasy Regional Library.</em></p>
+<p>On Tuesday, the team gave a talk at CESTA, joined virtually by Erica Peaslee from College Station, TX. In this talk, &quot;<a href="https://cesta.stanford.edu/events/saving-ukrainian-cultural-heritage-online-socially-engaged-digital-humanities">Saving Ukrainian Cultural Heritage Online: Socially-Engaged Digital Humanities</a>&quot;, the group covered the work SUCHO has done to date, the importance of open culture for facilitating data rescue work, and the need for ongoing support for cultural heritage workers in Ukraine, including digitization equipment and batteries that can not only power digitization equipment and charge patrons' phones, but also ensure that security systems remain functional to prevent looting. As part of the Humanities and Area Studies special collections pop-up event in the Library with the theme of &quot;Travel&quot;, the Textile Makerspace hosted a special DIY Ukrainian embroidery session. The day ended with a DH happy hour with DLCL grad students and CIDR staff.</p>
+<p><img src="../post-images/sucho_week_sebquinn.jpg" alt="Sebastian Majstorovic presenting at CESTA and Quinn Dombrowski with children's drawings from Cherkasy"></p>
+<p><em>Sebastian Majstorovic presenting at CESTA and Quinn Dombrowski with children's drawings from Cherkasy</em></p>
+<p><img src="../post-images/sucho_week_embroidery_happyhour.jpg" alt="HannahZoe Chua-Reyes and Alyssa Virker at the embroidery pop-up, and SUCHO team and CIDR staff and DLCL grad students at the DH happy hour event"></p>
+<p><em>HannahZoe Chua-Reyes and Alyssa Virker at the embroidery pop-up, and SUCHO team and CIDR staff and DLCL grad students at the DH happy hour event</em></p>
+<p>Wednesday featured planning meetings between the SUCHO visitors and members of the DLCL who are involved in different facets of the project, including PhD student Alyssa Virker who is documenting Ukrainian poetry TikTok videos as part of her DH project. Alyssa also joined the team for organizing a workshop on website and social media archiving in Hohbach Hall. The group wrapped up their time on campus with lunch with Slavic grad students, including Georgii Korotkov who was deeply involved in scraping library catalogs using the IRBIS system, as well as Prof. Yuliya Ilchuk and visiting artist in residence Andrii Kurkov.</p>
+<p><img src="../post-images/sucho_week_workshop.jpg" alt="SUCHO team with the opening slide for the web and social media archiving workshop"></p>
+<p><em>SUCHO team with the opening slide for the web and social media archiving workshop</em></p>
+<p><img src="../post-images/sucho_week_kurkov.jpg" alt="Ulia Gosart shows Cherkasy children's artwork to Yuliya Ilchuk and Andrii Kurkov"></p>
+<p><em>Ulia Gosart shows Cherkasy children's artwork to Yuliya Ilchuk and Andrii Kurkov</em></p>
+<p>On Thursday, the SUCHO visitors were joined by a large group of grad students, librarians, and DH staff for a trip to the Internet Archive (IA). Founder Brewster Kahle gave the group a personal tour of the impressive space, including the real servers with Internet Archive data in the sanctuary, several art exhibits, playable vintage video games, and 78 RPM records. After lunch, Mark Graham demonstrated some recent developments, including automated transcription, transliteration, and summarization of TV news from several countries including Ukraine, Russia, and China. This led into an open-ended discussion about how the Internet Archive can further support efforts like SUCHO, as well as other digital projects at Stanford and beyond. Enhancing the metadata for uploaded Ukrainian books came up as one priority for SUCHO. Partnering with the IA on developing or enhancing large language models for non-English languages was another promising area of mutual interest.</p>
+<p><img src="../post-images/sucho_week_iatour.jpg" alt="Brewster Kahle gives a tour of the Internet Archive"></p>
+<p><em>Brewster Kahle gives a tour of the Internet Archive</em></p>
+<p><img src="../post-images/sucho_week_iaconvo.jpg" alt="A conversation with Mark Graham and visitors from Stanford plus the SUCHO team"></p>
+<p><em>A conversation with Mark Graham and visitors from Stanford and the SUCHO team</em></p>
+<p><img src="../post-images/sucho_week_iagroupphoto.jpg" alt="A group photo at the Internet Archive"></p>
+<p>On the final day of the trip, the team developed a list of follow-up tasks after the Internet Archive meeting, and discussed scaling the museum-oriented &quot;Memory Savers&quot; program -- which will put Ukrainian students into museums to assist with digitization and digital projects -- to include libraries as well. The group also discussed the possibility of aggregating metadata about the digital books in the Internet Archive's collections, and offering it as a digital data source that can be added to Ukrainian libraries' digital catalogs.</p>
+<p>This summer, SUCHO team members will be presenting their work at the international Digital Humanities conference in Graz. Numerous projects in the DLCL connected with SUCHO will be continuing their work into next year; an application to revive the Slavic Digital Humanities research unit in order to support those projects is currently under consideration.</p>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>
