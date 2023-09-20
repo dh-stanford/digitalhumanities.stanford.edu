@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Deformance and the Library Strategic Directions :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-between ">
+        <div
+          class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">Deformance and the Library Strategic Directions</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Quinn Dombrowski<span class="text-muted d-block mt-1">September 20, 2023</span>
+            </small>
+          </div>
+        </div>
+        
+        <div class="col-md-6 pr-0 align-self-center">
+          <img class="rounded" src="../post-images/deformance.jpg" alt="Deformance and the Library Strategic Directions">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <p>The Library Strategic Directions arrived shortly before last week's all-staff meeting: a single slide formatted into four columns, each offering a big-picture statement, a couple sentences of italicized context, and a series of bullet points. It was the kind of document where you can either let your eyes glaze over after the first few sentences, or scrutinize every turn of phrase looking for clues about what it suggests about where the organization is actually going.</p>
+<p>My upcoming fall course <em>Future Text: AI and Literatures, Cultures, and Languages</em> was on my mind when this email arrived, and I was struck by a different idea: a world of algorithms that are hit or miss on facts but excellent at <em>vibes</em> opens up some delightful possibilities for &quot;deformance&quot;, in ways Jerome McGann and Lisa Samuels could hardly have imagined in 1999.</p>
+<p>What if you recast a document like this as a series of haiku? For starters, the syllable count will be regularly off because of the words at play (&quot;accessibility&quot; is 6 syllables just by itself), and you can forget about the traditional seasonal reference, but precision in form isn't the point: we're looking for short poetry with some clever or cute twist. And the algorithm delivers. A few examples from the 18-poem cycle:</p>
+<blockquote>
+<p>Research lifecycle's guide,<br/>Data services expanding wide,<br/>Fulfilling needs with pride.</p>
+</blockquote>
+<blockquote>
+<p>Operations transform,<br/>Responsive services take form,<br/>Innovation's the norm.</p>
+</blockquote>
+<blockquote>
+<p>Accessibility,<br/>Campus partnerships we see,<br />Promote equity's plea.</p>
+</blockquote>
+<blockquote>
+<p>Expectations clear,<br />Roles and processes sincere,<br />Thriving staff we cheer.</p>
+</blockquote>
+<p>I shared this around to colleagues in a range of roles in the library, ultimately posting the whole cycle in the library's general Slack channel during the meeting. And it occurred to me through the conversations that followed that this kind of vibe-check for the strategic direction could actually make for a good management exercise when developing a document like this. Which dry bullet points become poems that you could, in good humor, print out and put up in your office? Which poems can your staff only read sarcastically? The latter point to areas that need work.</p>
+<p>There were other reframings that shed different light on the document. What if it were an ad for a video game?</p>
+<blockquote>
+<p>Are you ready to embark on an epic quest for knowledge, innovation, and equity? Introducing &quot;Library Innovator: Chronicles of Knowledge,&quot; the thrilling video game inspired by Stanford Libraries' visionary strategic plan!<br /><br/>🔍 Explore the Changing Scholarly Landscape: As the Library Innovator, your mission is to support Stanford researchers in navigating the shifting sands of scholarly communication. Uncover hidden resources, forge strong campus partnerships, and lead the charge in redefining the future of academia.<br /><br/>📊 Master the Research Lifecycle: Dive headfirst into the world of data services! Expand your capabilities across the entire research lifecycle, from data acquisition to analysis. Conquer challenges, unlock new tools, and become the ultimate data maestro!<br /><br/>📚 Build the Ultimate Collection: Your quest isn't complete without the perfect collection! Strategically curate resources that advance Stanford's research mission. Balance acquisition, processing, and discovery as you assemble a legendary library that stands the test of time.<br /><br/>🚀 Innovate in Library Operations: Transform library operations and create new, responsive information services. Think outside the book, harness cutting-edge technologies, and lead the charge in shaping the future of libraries!<br /><br/>🧙‍♂️ Strengthen Your Team: As the Library Innovator, you're not alone! Strengthen staff diversity, collaboration, and well-being. Build a diverse, motivated team that's ready to take on any challenge. Invest in their training, support their growth, and promote inclusivity and belonging.</p>
+</blockquote>
+<p>...and on it went in that manner.</p>
+<p>Is this, perhaps, a little dramatic? I'm not sure our jobs would actually make a particularly thrilling video game. But the focus on <em>action</em> in the prose made me reflect more about what the strategic directions would have us <em>do</em> than the bullet points in the original document.</p>
+<p>I'll close with two of the &quot;Buddhist sutras&quot; derived from the slides, which also take the form of bullet points, albeit with a very different style.</p>
+<p><strong>Sutra of Innovation for Scholarly Wisdom</strong></p>
+<p>In the ever-changing tapestry of knowledge, Innovation is the path to meet evolving needs. By creating new services and enhancing the old, We nurture teaching, research, and strong partnerships.</p>
+<ul>
+<li>We guide Stanford researchers through shifting tides of knowledge.</li>
+<li>We weave data services into the fabric of research life.</li>
+<li>We prepare the campus to share wisdom openly with all.</li>
+<li>We partner to support growing knowledge disciplines.</li>
+<li>In library operations, we innovate to serve with wisdom anew.</li>
+</ul>
+<p><strong>Sutra of Collections for Future Insight</strong></p>
+<p>In the scrolls of information, both digital and physical, We seek the wisdom to address the scholars of today and tomorrow.</p>
+<ul>
+<li>Distinctive collections we shall build to serve our mission.</li>
+<li>In the dance of acquisition and discovery, balance shall we maintain.</li>
+<li>Digitize we must, to meet the needs of seekers.</li>
+<li>Through repositories and light, we shine upon the wisdom gathered.</li>
+<li>Spaces and events we create for seekers' intellectual journey.</li>
+</ul>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>
