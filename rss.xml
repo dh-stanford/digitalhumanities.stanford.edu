@@ -7,6 +7,48 @@
     <language>en</language>
     
     <item>
+      <title>DLCL ATS round-up, summer 2023</title>
+      <link>https://digitalhumanities.stanford.edu/dlcl-ats-roundup-summer-2023/</link>
+      <description>
+      &lt;p&gt;&lt;small&gt;Quinn Dombrowski · September 26, 2023&lt;/small&gt;&lt;/p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/quinn-ach2023.jpg&quot; alt=&quot;DLCL ATS round-up, summer 2023&quot; /&gt;&lt;p&gt;I&#39;ve never needed summer as badly as I did after this spring, and this summer&#39;s conferences, family time, and relatively quiet lulls were just what I was looking for.&lt;/p&gt;
+&lt;h2&gt;Textile Makerspace&lt;/h2&gt;
+&lt;p&gt;Summer brought a few quiet days that allowed me the time to clean up the Makerspace, organize a few things, and spend time with new equipment that I couldn&#39;t quite make sense of at first. I&#39;ve decided this will be the year of the loom at the Textile Makerspace, and we&#39;ve picked up an inkle loom and a knitter&#39;s loom (a folding variation on the rigid heddle), in addition to getting serious about dressing the floor loom that&#39;s been in my office since last spring.&lt;/p&gt;
+&lt;p&gt;Thanks to &lt;a href=&quot;https://making.stanford.edu/&quot;&gt;Making@Stanford&lt;/a&gt;, I&#39;ve got funding for students this whole upcoming year, as well as funding for some basic supplies like thread and needles that we go through a lot of. Eric Kim also got funding for a Makerspace component to his winter course, &lt;em&gt;## SLAVIC 149: Tails from the Russian Empire: Animals in Russian and Yiddish Literatures&lt;/em&gt;, and we have one in our AI course as well. I&#39;m really looking forward to thinking about how to support those courses in the Makerspace, in addition to what we do week by week.&lt;/p&gt;
+&lt;h2&gt;Classes&lt;/h2&gt;
+&lt;p&gt;While I wasn&#39;t teaching during the summer, I did spend months tracking the news and discourse around AI in anticipation of the fall class I&#39;m teaching with Laura Wittman and Eric Kim, &lt;em&gt;DLCL 103: Future Text: AI and Literatures, Cultures, and Languages&lt;/em&gt;. We&#39;d prepared a syllabus for WAYS approval in the spring (which became an interesting fight about the relationship of AI-generated creations to the humanities), but recognized we&#39;d need to revise it before the start of fall, and probably during the quarter in response to any breaking news. So that course was never far from my mind as I spent time online in the summer. I expected a large turnout but was not prepared to have to look for new discussion section rooms when we raised the cap overall to 60 students, then hit that limit. (Hats off to Judy Nugent for her room-hunting prowess!)&lt;/p&gt;
+&lt;h2&gt;Existing Projects&lt;/h2&gt;
+&lt;p&gt;Over the summer, we finally published the next &lt;strong&gt;Data-Sitters Club&lt;/strong&gt; book, about &lt;a href=&quot;https://datasittersclub.github.io/site/dsc19.html&quot;&gt;how to think through building corpora&lt;/a&gt; and the implications of those choices. We&#39;ve got a couple more books waiting in the wings, including the &lt;em&gt;DSC Super Special&lt;/em&gt;, the book with Xanda Schofield about topic modeling, and another book in progress about environments.&lt;/p&gt;
+&lt;p&gt;We were able to launch a basic version of the &lt;strong&gt;Senegalese Countercultural Movement&lt;/strong&gt; website over the summer as a proof-of-concept, with the materials from the Front Culturel Sénégalais accessioned to the Stanford Digital Repository, but for the moment we&#39;re holding off on a splashy launch until a few more things are in place.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;Multilingual Harry Potter fanfic&lt;/strong&gt; project was on hold for the summer, but I expect we&#39;ll wrap it up this fall.&lt;/p&gt;
+&lt;p&gt;There were some delays with the new &lt;strong&gt;Global Medieval Sourcebook&lt;/strong&gt; launch, but we have a plan in place for this fall once all the data is ready.&lt;/p&gt;
+&lt;p&gt;I still have several things on my to-do list related to the &lt;strong&gt;Multilingual DH working group&lt;/strong&gt;, led by Merve Tekgürler from Stanford and Till Grallert. But the DH 2023 conference included an in-person meeting of many interested folks who had made it to the conference, and it was an inspiring reminder of both how large this community is, and how much work remains to be done.&lt;/p&gt;
+&lt;p&gt;In my role as &lt;strong&gt;ACH representative to ADHO&lt;/strong&gt;, I attended something like 20 hours of (un-air-conditioned in the heat of summer) meetings at the DH 2023 conference, which included the joyous task of welcoming two new constituent organizations, the Korean Association of DH and DHARTI (based in India). I was talked into serving as Secretary of the Constituent Organization Board, so I have more early morning meetings in my future for this upcoming year as we continue to try different angles on the question of what and who ADHO is for.&lt;/p&gt;
+&lt;p&gt;This summer, I sorted out a workflow for going from scanned&lt;strong&gt;Jewish cookbooks&lt;/strong&gt; to OCR&#39;d text, and a student assistant has helped make it happen. Once we have a few more plain text files, I&#39;ll be working on Python scripts for parsing the data into a &lt;strong&gt;Django database&lt;/strong&gt;. Likewise, the historic TAPS costume collection is going to be a December effort, due to how the summer has gone for the TAPS folks.&lt;/p&gt;
+&lt;p&gt;This fall I&#39;ll be returning to the &lt;strong&gt;DLCL dissertation&lt;/strong&gt; project, which will be enriched by some data about career outcomes gathered by Phoebus Cotsapas.&lt;/p&gt;
+&lt;p&gt;Towards the end of the summer, we presented the work of the Web Archiving working group to library leadership, which decided that it would make the most sense for us to each continue our own work separately, rather than trying to fit it all into a single cohesive program. After consulting with my fellow Academic Technology Specialists, we&#39;ve put forward a proposal for continuing the &lt;strong&gt;Browsertrix Cloud pilot&lt;/strong&gt;with a focus on digital scholarship.&lt;/p&gt;
+&lt;p&gt;This summer, a new exhibit at Hohbach Hall about &amp;quot;&lt;strong&gt;Making Global Computing&lt;/strong&gt;&amp;quot; was installed, and it was delightful to see the work Simon Wiles and I had done on the exhibit text manifest itself in signage and reading material. The exhibit will receive its due recognition and celebration at the &lt;em&gt;Encode/Include&lt;/em&gt; event on October 27th, part of the new &lt;strong&gt;&lt;a href=&quot;https://silicon.stanford.edu/&quot;&gt;SILICON (Stanford Initiative on Language Inclusion and Conservation in Old and New media)&lt;/a&gt; initiative&lt;/strong&gt; created by Kathryn Starkey, Tom Mullaney, and Elaine Treharne. Launching SILICON has been no small part of what I&#39;ve been up to this summer, and I&#39;m really excited about where this project is going as a way to support digitally-disadvantaged languages through font and keyboard development, working on OCR algorithms for newly-encoded scripts, corpus-building, as well as pathways into tech for humanists and general advocacy for language as an important factor for tomorrow&#39;s tech leaders to be thinking about.&lt;/p&gt;
+&lt;h2&gt;New projects&lt;/h2&gt;
+&lt;p&gt;Other than SILICON, there haven&#39;t been many new projects over the summer, though I&#39;ve been advising Ty Davidian on his project &lt;em&gt;The Futurist Archive&lt;/em&gt;, which is likely to become a Wax 2.0 site once the data is compiled.&lt;/p&gt;
+&lt;h2&gt;Writing&lt;/h2&gt;
+&lt;p&gt;A few longstanding papers have come together over the summer, including a write-up of a talk I gave with Lauren Tilton in 2022 about our work to expand the DMCA exemption, where we dealt with a few requested edits. The &lt;em&gt;Debates in DH&lt;/em&gt; volumes on pedagogy, graduate education, and computation are moving along at their respective paces, and I have pieces coming out in each of them. And finally, a piece with Nichole Nomura for &lt;em&gt;Vectors&lt;/em&gt; about &amp;quot;The Librarian, The Computer, The Android, and Big Data&amp;quot; (or, the depiction of data-work in a corpus of &lt;em&gt;Star Trek&lt;/em&gt; novels) will be published soon.&lt;/p&gt;
+&lt;p&gt;Thanks to Brandon Walsh from the UVA Scholars Lab, I&#39;ve been inspired to try to take up a more regular blogging practice, though it may be spread across the &lt;a href=&quot;https://digitalhumanities.stanford.edu/&quot;&gt;DH at Stanford blog&lt;/a&gt;, the &lt;a href=&quot;https://textilemakerspace.stanford.edu/blog/&quot;&gt;Textile Makerspace blog&lt;/a&gt;, and my personal blog. Over the summer, I&#39;ve written about &lt;a href=&quot;https://quinndombrowski.com/blog/2023/06/21/missing-threads-dh-origin-story/&quot;&gt;Missing Threads in a DH Origin Story&lt;/a&gt;, &lt;a href=&quot;https://textilemakerspace.stanford.edu/blog/dhmakes-at-ach2023/&quot;&gt;#DHMakes&lt;/a&gt;, &lt;a href=&quot;https://quinndombrowski.com/blog/2023/07/04/what-if/&quot;&gt;grief, regret and distance&lt;/a&gt;, &lt;a href=&quot;https://digitalhumanities.stanford.edu/coming-to-terms-with-ides/&quot;&gt;coming to terms with IDEs&lt;/a&gt;, &lt;a href=&quot;https://digitalhumanities.stanford.edu/finding-close-enough-text/&quot;&gt;finding &#39;close enough&#39; text&lt;/a&gt; and &lt;a href=&quot;https://digitalhumanities.stanford.edu/deformance-library-strategic-directions/&quot;&gt;deformance and the library strategic directions&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Talks and Events&lt;/h2&gt;
+&lt;p&gt;Over the summer I attended both the virtual ACH 2023 conference, and the international DH conference in Graz, Austria. As in 2019, the differences between the two conferences were striking, but it&#39;s a topic for its own blog post. At ACH 2023, I did the &amp;quot;#DHMakes Alternate Format Presentation&amp;quot; with Claudia Berger, Alix Keener, Jojo Karlin, Anne Ladyem McDivitt, Amanda Visconti, and Jacque Wernimont -- basically, we hung out in a surprisingly-enjoyable virtual space, talking crafting with people who came by and showing off the long-distance collaborative-making artifact we made together, each contributing a piece. We also curated social media posts with the #DHMakes hashtag across multiple social media platforms during the conference. I also presented as part of the &lt;em&gt;Digital (Humanities) Trace Data: Critical Approaches to Platforms, APIs, and Metrics for Studying DH Communities&lt;/em&gt; panel, where Nickoal Eichmann-Kalwara and I talked about the database of DH abstracts and what it tells us about the US DH community&#39;s engagement with the international conference. (Take-away point: there&#39;s about 20% of ACH that regularly presents at the ADHO DH conference.)&lt;/p&gt;
+&lt;p&gt;Being part of that 20% (and, in fact, the only person to have presented at every ACH and DH conferences since 2019), I had several things going on at the DH conference. There was a workshop on the TaDiRAH taxonomy organized by Luise Borek that felt like a family reunion, with many people who had worked on the project over the last decade. (I was there at its beginning when I was working on the DiRT tool directory, but left it in good hands and moved on.) I gave a short presentation as part of the roundtable &lt;em&gt;Exploring the Borderlands: A Revolutionary Potential for DH&lt;/em&gt;, organized by Luise Borek and Sarah Lang, and my 5-year-old&#39;s stuffed elephant Ellie (who she sent with me to &amp;quot;see the world&amp;quot;) filled in for Melissa Terras, reading her remarks as she got caught in travel delays. I brought my small e-spinner with me up on stage for that panel, engaging in another kind of &amp;quot;revolution&amp;quot; (that produces yarn) until the drive band broke.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/dh2023-revolution.jpg&quot; alt=&quot;Quinn&#39;s e-spinner with a broken drive band, during the presentation at DH 2023&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Alex Wingate and I presented a poster about &lt;a href=&quot;https://www.sucho.org/&quot;&gt;SUCHO&lt;/a&gt;, while Lauren Tilton and I presented on the 2021 DMCA exemption as part of a panel on &lt;em&gt;Legal Issues in Digital Humanities&lt;/em&gt;, which touched on several interesting developing challenges around AI in addition to those issues with text and data mining. Finally, I presented as part of a panel I organized on &lt;em&gt;Readers, Tropes, and Translations: Directions for Digital Research into Youth Literature&lt;/em&gt;, with Agnieszka Backman, Joanna Byszuk, Anouk Lang, and Nichole Nomura. My own presentation felt a bit like a bad joke that my fall 2022 self had played on my summer 2023 self: can we use computational methods to identify Shakespeare-derivative YA books (which usually make a big deal of being Shakespeare-adjacent, as it helps with acceptability by adults)? I tried several methods, focusing on &lt;em&gt;Romeo and Juliet&lt;/em&gt;, which (I thought) would be the &amp;quot;easiest&amp;quot; Shakespeare to identify. In the end, nothing worked to tell self-proclaimed &lt;em&gt;Romeo and Juliet&lt;/em&gt; derivatives from any other romance YA, but in the discussion someone had what felt like a promising suggestion to try network analysis. Perhaps in another paper. Finally, I unofficially brought the #DHMakes to the DH conference, carrying around different colors of yarn as well as plastic mesh, asking people to share with me their favorite slide, and re-interpreting those slides in micro-projects I would make while listening in conference sessions, before gifting them to the source of the inspiration. That effort also deserves its own blog post, so I&#39;ll leave it at that.&lt;/p&gt;
+&lt;p&gt;My last major event of the summer was the iPres digital preservation conference, where I was the closing keynote. It was the first time I&#39;d had the chance to spend much time with digital preservation folks, whose work feels like a cousin to digital humanities. My conclusion was that I&#39;m grateful that people are thinking through these issues in depth, but it&#39;s not quite my thing. But also, so many digital preservation people are wonderfully crafty, and I want to be making-friends with all of them. It was also my first chance to meet new but non-local Stanford library colleague Snowden Becker, and hang out with Dorothea Salo in person, being a big online fan of hers for years. The conference was at UIUC, where I did library school almost 15 years ago now, and since then they&#39;ve also hired several DH friends into or adjacent to the I-School. Visiting with them was the best way to wrap up the summer.&lt;/p&gt;
+&lt;h2&gt;Other Things&lt;/h2&gt;
+&lt;p&gt;The DH migration to Mastodon seems like it never quite worked. There&#39;s a few people who found a good home there, and I have more than a little fondness for it, where the vibes are &amp;quot;secret coffee shop behind the last bookshelf on the left at the quirky local bookstore&amp;quot;. But it never became a replacement for DH Twitter.&lt;/p&gt;
+&lt;p&gt;I was a relatively early Bluesky adopter late in the spring, but I didn&#39;t use it much at the beginning because my feed was all chatty celebrities. Once there were more librarians and DH people, Bluesky started feeling more like DH Twitter of the 2010&#39;s. As things have continued to get worse on Twitter, Brandon Walsh and I got together to run a form for sharing and requesting invite codes, to try to get more Twitter hold-outs over to what is at least for now a better place. As of today, we&#39;ve helped over 400 people join Bluesky, and the generosity of the DH community is a beautiful thing to see. (Want to check it out? &lt;a href=&quot;https://bit.ly/dh-bluesky&quot;&gt;We&#39;ve got you covered with invite codes.&lt;/a&gt;)&lt;/p&gt;
+
+      </description>
+      <pubDate>Mon, 25 Sep 2023 17:00:00 +0000</pubDate>
+      <dc:creator>Quinn Dombrowski</dc:creator>
+      <guid>https://digitalhumanities.stanford.edu/dlcl-ats-roundup-summer-2023/</guid>
+    </item>
+    
+    <item>
       <title>Deformance and the Library Strategic Directions</title>
       <link>https://digitalhumanities.stanford.edu/deformance-library-strategic-directions/</link>
       <description>
@@ -53,7 +95,7 @@
 &lt;/ul&gt;
 
       </description>
-      <pubDate>Tue, 19 Sep 2023 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 19 Sep 2023 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/deformance-library-strategic-directions/</guid>
     </item>
@@ -69,7 +111,7 @@
 &lt;p&gt;*Cross-posted to &lt;a href=&quot;https://quinndombrowski.com/blog/2023/09/07/finding-close-enough-text/&quot;&gt;Quinn Dombrowski&#39;s blog&lt;/a&gt;.&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 06 Sep 2023 19:00:00 +0000</pubDate>
+      <pubDate>Wed, 06 Sep 2023 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/finding-close-enough-text/</guid>
     </item>
@@ -95,7 +137,7 @@
 &lt;p&gt;&lt;em&gt;Cross-posted to &lt;a href=&quot;https://quinndombrowski.com/blog/2023/08/23/coming-to-terms-with-ides/&quot;&gt;Quinn Dombrowski&#39;s blog&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 22 Aug 2023 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 22 Aug 2023 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/coming-to-terms-with-ides/</guid>
     </item>
@@ -149,7 +191,7 @@
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/dlcl-graduation-2023.jpg&quot; alt=&quot;Faculty and graduating students wearing academic robes before the graduation&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 20 Jun 2023 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 20 Jun 2023 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dlcl-ats-roundup-spring-2023/</guid>
     </item>
@@ -175,7 +217,7 @@
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/hk-night.jpg&quot; alt=&quot;Leaving Hong Kong at night, with a cloudy sky and lights shining through&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 13 Jun 2023 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 13 Jun 2023 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/new-horizons-dh-cultural-data-science/</guid>
     </item>
@@ -210,7 +252,7 @@
 &lt;p&gt;This summer, SUCHO team members will be presenting their work at the international Digital Humanities conference in Graz. Numerous projects in the DLCL connected with SUCHO will be continuing their work into next year; an application to revive the Slavic Digital Humanities research unit in order to support those projects is currently under consideration.&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 17 May 2023 19:00:00 +0000</pubDate>
+      <pubDate>Wed, 17 May 2023 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/sucho-week/</guid>
     </item>
@@ -302,7 +344,7 @@ Si vous n&#39;avez jamais essayé la cuisine française, je recommanderais d&#39
 &lt;p&gt;Participants imagined what research and pedagogy uses of large language models might be possible with models developed by scholars, without the X-factor of unknown training data. Laura Wittman and I have proposed a DLCL research unit around AI for the fall, along with an undergraduate course exploring AI models and languages, literatures, and cultures. We also anticipate exploring the possibilities of data gathering and model training to have a point of contrast with ChatGPT and similar models from OpenAI.&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 30 Apr 2023 19:00:00 +0000</pubDate>
+      <pubDate>Sun, 30 Apr 2023 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/ai-and-pedagogy-workshop/</guid>
     </item>
@@ -354,7 +396,7 @@ Si vous n&#39;avez jamais essayé la cuisine française, je recommanderais d&#39
 &lt;p&gt;Spring is going to be busy, between the DH Practicum and Data Visualization with Textiles courses, several projects re-activating, some travel, and preparations for the summer&#39;s conferences. I&#39;m looking forward to seeing how it all works out.&lt;/p&gt;
 
       </description>
-      <pubDate>Thu, 30 Mar 2023 19:00:00 +0000</pubDate>
+      <pubDate>Thu, 30 Mar 2023 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dlcl-ats-roundup-winter-2023/</guid>
     </item>
@@ -409,7 +451,7 @@ Si vous n&#39;avez jamais essayé la cuisine française, je recommanderais d&#39
 &lt;p&gt;It&#39;s been two months since people responded to this survey — life very much got in the way of my intended turnaround with the results! No doubt the situation for each of these servers has evolved somewhat in that time. It&#39;s hard to guess what the academic Mastodon landscape will look like this November; in my own field of digital humanities, I&#39;ll be very curious about social media platform use during this summer&#39;s conferences. There are several opportunities for academic servers to work together, even as there is also the potential for competition around user base. Realistically, I&#39;m not in a position to try to facilitate academic Mastodon collaboration, but I hope servers take the initiative to reach out to one another and make some of that work happen. Perhaps I&#39;ll repeat the survey in the fall to see how things are going?&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 29 Jan 2023 18:00:00 +0000</pubDate>
+      <pubDate>Sun, 29 Jan 2023 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/academic-mastodon-survey-nov2022/</guid>
     </item>
@@ -462,7 +504,7 @@ Si vous n&#39;avez jamais essayé la cuisine française, je recommanderais d&#39
 &lt;p&gt;In late November, I put together a survey of academic-oriented servers, and I&#39;m hoping to write about the results over the holidays. I am hopeful about a path forward for what was the DH Twitter community, but digital communities don&#39;t create or sustain themselves. I imagine the landscape will become clearer over the next 4-6 months, but I&#39;d like to do my part to try to nudge it in a direction so that the networks I valued and tried to bring interested grad students into (e.g. via social media workshops and the like) continue to exist, if transformed in some way.&lt;/p&gt;
 
       </description>
-      <pubDate>Mon, 19 Dec 2022 18:00:00 +0000</pubDate>
+      <pubDate>Mon, 19 Dec 2022 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dlcl-ats-roundup-fall-2022/</guid>
     </item>
@@ -509,7 +551,7 @@ Si vous n&#39;avez jamais essayé la cuisine française, je recommanderais d&#39
 &lt;p&gt;Tones are such an integral element of the Chinese language, and although they seem to melt into the flow of the music when the words are sung, I have been curious about how they might indirectly affect the flow itself. Therefore, I have run a tone analyzer on a couple of Taiwanese lyrics texts to identify patterns with more than two consecutive words in the same tone, in hopes that I can detect some noticeable correlation between the tone-patterns of the lyrics and the pitches in which the words are sung. Throughout the process, I have found that rap music offers more flexibility than other forms of music for singers to play around with the tones, and that the rap artist 熊仔 really takes advantage of this linguistic feature. In his songs, he would often adjust his flow to the tone groupings of his lyrics, not essentially to mimic the tones with musical pitches, but to build upon the musicality of the Chinese language. These findings have opened my eyes to a novel aspect of Chinese-language music that I hope to continue examining.&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 27 Nov 2022 18:00:00 +0000</pubDate>
+      <pubDate>Sun, 27 Nov 2022 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dlcl204/</guid>
     </item>
@@ -532,7 +574,7 @@ Si vous n&#39;avez jamais essayé la cuisine française, je recommanderais d&#39
 &lt;p&gt;It can actually feel a bit intimidating if you’re coming into DH for the first time. It’s such a broad topic, and that can make it overwhelming. Luckily, Stanford has a lot of support for people who might be interested in getting started with DH! If you’re in the Department of History, I have open office hours on Wednesdays (9-10am/2-3pm), you can email me any time, and I also have a QR code on my office door (Lane History Corner, Room 316) with a resource list for getting started. I am always happy to try and point you in the right direction. There are also many opportunities for learning through workshops and events through &lt;a href=&quot;https://cidr.stanford.edu/&quot;&gt;CIDR&lt;/a&gt; and &lt;a href=&quot;https://cesta.stanford.edu/&quot;&gt;CESTA&lt;/a&gt;.&lt;/p&gt;
 
       </description>
-      <pubDate>Mon, 10 Oct 2022 19:00:00 +0000</pubDate>
+      <pubDate>Mon, 10 Oct 2022 17:00:00 +0000</pubDate>
       <dc:creator>Anne Ladyem McDivitt</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/ALinterview/</guid>
     </item>
@@ -581,7 +623,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;This summer, CIDR welcomed a &lt;a href=&quot;https://digitalhumanities.stanford.edu/welcome-anne-ladyem-mcdivitt-new-history-ats/&quot;&gt;new History ATS, Anne Ladyem McDivitt&lt;/a&gt;. It is a joy to have someone in the &amp;quot;history version&amp;quot; of my job, and it&#39;s been a fun challenge to expand all the acronyms and explain all the organizational context in the library Zoom meetings. I&#39;m looking forward to working with her in the months and years ahead!&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 18 Sep 2022 19:00:00 +0000</pubDate>
+      <pubDate>Sun, 18 Sep 2022 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dlcl-ats-roundup-summer-2022/</guid>
     </item>
@@ -618,7 +660,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;I didn&#39;t finish any of those things before it was time to go pick up the kids. But they&#39;ll be waiting for me tomorrow, along with the unfinished writing, the websites that need migrating, the summer projects and grad students who have been quiet lately and maybe could use some checking-in-on, the 200 emails in my inbox that need to be responded to or filed away, the new Slack messages that will come in overnight from SUCHO, and probably ten other things that aren&#39;t at the front of my mind but will, undoubtedly, show up in my inbox or Slack workspaces or DMs or text messages. Such is the nature of the job.&lt;/p&gt;
 
       </description>
-      <pubDate>Mon, 29 Aug 2022 19:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/day-in-the-life-dlcl-ats/</guid>
     </item>
@@ -631,7 +673,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;The ATS position brings Anne Ladyem back to History, after serving as the Digital Humanities Librarian at the University of Alabama, where she advised and managed digital projects spanning a wide range of disciplines since 2018. Anne Ladyem received her PhD in History from George Mason University in 2018, with a focus on US history and a minor in digital history. As a graduate student, Anne Ladyem worked as a Digital History Fellow at the Roy Rosenzweig Center for History and New Media. Her interests span from video game history to digital pedagogy to digital storytelling and public history. Anne Ladyem’s office will be in History Corner (Bldg. 200, Rm. 246)  Please keep an eye out for further information regarding events to welcome her to campus.&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 05 Jul 2022 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 05 Jul 2022 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/welcome-anne-ladyem-mcdivitt-new-history-ats/</guid>
     </item>
@@ -674,7 +716,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;There&#39;s a lot in flux right now: a new DLCL chair, new faculty member in Slavic, new AUL for Research Data Services, and numerous other departures, arrivals, and reorganizations. Perhaps by the fall some of the larger context for what I&#39;m doing here will be clearer. In the meantime, there&#39;s work to be done.&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 14 Jun 2022 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 14 Jun 2022 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dlcl-ats-round-winter-spring-2022/</guid>
     </item>
@@ -712,7 +754,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;I&#39;m surveying my office before I leave today, hoping we&#39;ll all be back at the beginning of January as planned, but not wanting to leave behind anything I couldn&#39;t stand not having access to for a while. We&#39;ll see what the new year brings.&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 15 Dec 2021 18:00:00 +0000</pubDate>
+      <pubDate>Wed, 15 Dec 2021 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dlcl-ats-round-fall-2021/</guid>
     </item>
@@ -730,7 +772,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/document_segmentation.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Mon, 18 Oct 2021 19:00:00 +0000</pubDate>
+      <pubDate>Mon, 18 Oct 2021 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/soviet-periodicals/</guid>
     </item>
@@ -768,7 +810,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;I kicked off this fall with having to rethink my major plans, after not getting enough enrollment for my DH RPG project management course. As such, the fall remains very much a work in progress, but one I look forward to sharing here.&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 26 Sep 2021 19:00:00 +0000</pubDate>
+      <pubDate>Sun, 26 Sep 2021 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dlcl-ats-round-summer-2021/</guid>
     </item>
@@ -804,7 +846,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;All of this depends on volunteer labor, which can already be a strain to find enough of when running a conference. But those of us who have established professional networks thanks to DH conferences owe it to the next cohorts to invest in creating spaces where they can do the same, whether or not it’s feasible for them to fly across the country.&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 27 Jul 2021 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 27 Jul 2021 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/conferencing-home-ach-2021-and-con/</guid>
     </item>
@@ -840,7 +882,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;Summer has already begun to disappear quickly, and there&#39;s a lot to do to get ready for the fall, between the Slavic DH Research Unit, revising my &amp;quot;Project Management and Ethical Collaboration for Humanists&amp;quot; course materials, preparing the computational reading list for Russian, and working with the large multilingual team on the Data-Sitters Club poster for EADH in September. And especially with the return to campus this fall, I hope to settle back into a more regular routine of blogging here, beyond the quarterly updates. We&#39;ll see where it takes me.&lt;/p&gt;
 
       </description>
-      <pubDate>Thu, 08 Jul 2021 19:00:00 +0000</pubDate>
+      <pubDate>Thu, 08 Jul 2021 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dlcl-ats-round-spring-2021/</guid>
     </item>
@@ -874,7 +916,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;Looking ahead, I put in a proposal for the MSU Global DH conference with a number of students from my non-English DH course last quarter, which we&#39;ll be presenting in mid-April. I also gave feedback on multiple students&#39; submissions for the ACH conference this summer. I hope I&#39;ll see them there virtually, and also be able to do the collaborative roundtable on tool directories that didn&#39;t happen in 2020. Towards the end of the quarter, I had various meetings with potential DLCL grad students. I&#39;m excited to see the level of DH interest among our incoming cohort, as it promises many new and interesting projects down the line. Relatedly, during winter quarter I was involved in the job search for a Digital Scholarship Coordinator (joint CESTA/CIDR position), and I look forward to that wrapping up soon, and having a new colleague to collaborate with before long.&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 23 Mar 2021 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 23 Mar 2021 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dlcl-ats-round-winter-2021/</guid>
     </item>
@@ -906,7 +948,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;I&#39;m looking forward to taking a moment to catch my breath after last quarter&#39;s teaching, and moving forward with all this work and more in 2021!&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 10 Jan 2021 18:00:00 +0000</pubDate>
+      <pubDate>Sun, 10 Jan 2021 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dlcl-ats-round-fall-2020/</guid>
     </item>
@@ -938,7 +980,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/65535/50433345736_40fb2160ce_b.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Mon, 05 Oct 2020 19:00:00 +0000</pubDate>
+      <pubDate>Mon, 05 Oct 2020 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/acndh/</guid>
     </item>
@@ -989,7 +1031,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;&lt;em&gt;Photo credit Houda Lamqa, from the ADHO ACNH lightning talks&lt;/em&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Sat, 12 Sep 2020 19:00:00 +0000</pubDate>
+      <pubDate>Sat, 12 Sep 2020 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dlcl-ats-round-summer-2020/</guid>
     </item>
@@ -1054,7 +1096,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;It’s still hard to know how the summer will go, though I’m trying to make plans as far as it makes sense to. I’ve been encouraging everyone I work with to “attend” DH 2020, since it’s now online and free. I’ll be preparing materials for my fall course, and supporting my division around digital pedagogy as needed. Faculty and grad student research projects have been starting to pick up again, and I’ll be helping to support CESTA’s undergraduate summer intern program. And The Masquaraders will keep sewing until all the library staff have face coverings. The feasibility of any of this is going to depend on the younger kids’ daycare remaining open — not to be taken for granted as COVID-19 case counts in California continue to rise. We’ll see how it all plays out.&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 21 Jun 2020 19:00:00 +0000</pubDate>
+      <pubDate>Sun, 21 Jun 2020 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dlcl-ats-round-spring-2020/</guid>
     </item>
@@ -1075,7 +1117,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;/ul&gt;
 
       </description>
-      <pubDate>Thu, 23 Apr 2020 19:00:00 +0000</pubDate>
+      <pubDate>Thu, 23 Apr 2020 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dayofdh2020/</guid>
     </item>
@@ -1161,7 +1203,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;After that, we’ll see where people are at, who needs support, what that might look like, and how many kids are still attending my home-preschool. But as we talked about in our “Concierge” presentation in the library, there’s never been a way to describe a typical day in the life of an ATS: every day is something different. So as spring quarter comes, I’ll be sorting through challenges they arise, same as always, even as the number of uncertainties skyrockets.&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 22 Mar 2020 19:00:00 +0000</pubDate>
+      <pubDate>Sun, 22 Mar 2020 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dlcl-ats-round-winter-2020/</guid>
     </item>
@@ -1183,7 +1225,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;/ul&gt;
 
       </description>
-      <pubDate>Wed, 18 Mar 2020 19:00:00 +0000</pubDate>
+      <pubDate>Wed, 18 Mar 2020 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/palladio/</guid>
     </item>
@@ -1197,7 +1239,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/48735098102_61dc44ee03_c.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 05 Feb 2020 18:00:00 +0000</pubDate>
+      <pubDate>Wed, 05 Feb 2020 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dh-lightning-talks-w-russian-nlp-group-happy-hour/</guid>
     </item>
@@ -1211,7 +1253,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;Rebecca Wall is a Ph.D. Candidate in History at Stanford University and a 2019-2020 Geballe Dissertation Prize Fellow at the Stanford Humanities Center. She was a 2018-2019 Digital Humanities Graduate Research Fellow at CESTA. Rebecca studies how West African nations grapple with the fact that key environmental resources, like water, often traverse political frontiers, focusing on the case of the Senegal River basin. She is also interested in interdisciplinary research and has worked with colleagues in public health, engineering, hydrology, environmental planning, and economics.&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 05 Feb 2020 18:00:00 +0000</pubDate>
+      <pubDate>Wed, 05 Feb 2020 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/rebecca-wall-slave-liberations-french-west-africa-1850%E2%80%931905-very-preliminary-digital-model/</guid>
     </item>
@@ -1239,7 +1281,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;I’m grateful to everyone who shared their own generous thinking ideas and practices in January — it was one of the best things that happened that month. I hope that this conversation continues (if at a less reliable pace) within the broader DH community; you can follow along with the hashtag #GenerousThinking on Twitter.&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 04 Feb 2020 18:00:00 +0000</pubDate>
+      <pubDate>Tue, 04 Feb 2020 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/generous-thinking-january/</guid>
     </item>
@@ -1256,7 +1298,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/7246589462_f76b4a467b_c.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 29 Jan 2020 18:00:00 +0000</pubDate>
+      <pubDate>Wed, 29 Jan 2020 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/alex-wermer-colan-sf-nexus-digitizing-curating-and-modeling-mass-market-speculative-fiction/</guid>
     </item>
@@ -1271,7 +1313,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/14424657038_84c44d532d_k.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Mon, 27 Jan 2020 18:00:00 +0000</pubDate>
+      <pubDate>Mon, 27 Jan 2020 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dh-lightning-talks-happy-hour/</guid>
     </item>
@@ -1354,7 +1396,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;As a closing thought, this entire year — but particularly this last quarter — has reminded me of the many ways in which digital humanities ultimately comes down to people. It&#39;s a praxis that, in so many cases, is ultimately centered on people, even though the technology is more likely to get top billing in the discourse. I feel very fortunate to work with many wonderful people on all these projects, at Stanford and beyond, and to have the opportunity to bring students into those communities. I&#39;m looking forward to seeing where it all goes in the new year.&lt;/p&gt;
 
       </description>
-      <pubDate>Thu, 19 Dec 2019 18:00:00 +0000</pubDate>
+      <pubDate>Thu, 19 Dec 2019 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dlcl-ats-round-fall-2019/</guid>
     </item>
@@ -1378,7 +1420,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;As Eric Kansa notes in the introduction, openly talking about failure will not, by itself, make survivable failure more inclusive. But at the same time, the aversion to openly addressing failure in digital humanities is pervasive and longstanding: &lt;a href=&quot;https://academic.oup.com/dsh/article-abstract/29/3/326/2938127&quot;&gt;my article on the failure of Project Bamboo&lt;/a&gt; has largely gotten cited in the absence of much anything else focused on digital humanities failure. Brett Bobley, the Director of the Office of Digital Humanities at the National Endowment for the Humanities, once recounted how he wasn’t able to find a single volunteer willing to accept a free trip to Florida in March in exchange for talking about DH failure at the 2008 IMLS Webwise conference — and I don’t think he’d have much more luck in 2019. There is much more work that needs to be done, on many fronts, to encourage, support, and reduce the personal risk associated with thoughtful analyses of failure, for everyone. But it’s hard to start working towards this goal if failure remains such a strong taboo in digital humanities. Shawn Graham’s Failing Gloriously and Other Essays is one step towards that better future. It’ll be released on December 1st; &lt;a href=&quot;https://thedigitalpress.org/failing-gloriously/&quot;&gt;go check it out&lt;/a&gt;.&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 17 Nov 2019 18:00:00 +0000</pubDate>
+      <pubDate>Sun, 17 Nov 2019 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/book-review-failing-gloriously-and-other-essays-shawn-graham/</guid>
     </item>
@@ -1412,7 +1454,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;If you’re at all interested in the “how” of digital humanities, the international DH conference is a wonderful place to geek out on those aspects of your work that would get you yawns or glazed-over stares at your disciplinary conference. There’s a number of formats that are particularly well-suited for work in progress, for graduate students, and for folks new to digital humanities. If you’re in North America, this is the closest the international conference will be until at least 2022, and the organizers of DH 2020 are working hard to make it more affordable than some previous (and future) years. There’s still plenty of time to write up 500 words (one page) before Tuesday, October 22nd — so give it a try!&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 15 Oct 2019 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 15 Oct 2019 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/guide-writing-dh-conference-submissions/</guid>
     </item>
@@ -1475,7 +1517,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;It’s wonderful to be starting the year with all the ATS positions filled: Josh Quan joined CIDR as the &lt;a href=&quot;https://iriss.stanford.edu/&quot;&gt;IRISS&lt;/a&gt; (social science) ATS at the beginning of the summer, and Marie Saldaña started her new role as History ATS at the beginning of September. I’m really looking forward to having another DH ATS to work with on helping to build up the DH community at Stanford.&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 22 Sep 2019 19:00:00 +0000</pubDate>
+      <pubDate>Sun, 22 Sep 2019 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dlcl-ats-round-summer-2019/</guid>
     </item>
@@ -1489,7 +1531,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/33868901248_e9c2374a64_z.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 18 Sep 2019 19:00:00 +0000</pubDate>
+      <pubDate>Wed, 18 Sep 2019 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/canceled-november-2019-dh-happy-hour/</guid>
     </item>
@@ -1503,7 +1545,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/43221223371_2e9da21707_z_0.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 18 Sep 2019 19:00:00 +0000</pubDate>
+      <pubDate>Wed, 18 Sep 2019 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/october-2019-dh-happy-hour/</guid>
     </item>
@@ -1527,7 +1569,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;&lt;em&gt;(Thanks to Rebecca Sutton Koeser for her post last week, &amp;quot;&lt;a href=&quot;https://cdh.princeton.edu/updates/2019/08/23/still-speaking-code/&quot;&gt;Still Speaking in Code&lt;/a&gt;&amp;quot;, for nudging me to write this.)&lt;/em&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Mon, 02 Sep 2019 19:00:00 +0000</pubDate>
+      <pubDate>Mon, 02 Sep 2019 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/technical-enough/</guid>
     </item>
@@ -1550,7 +1592,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;The deadline for proposals for the DH 2020 conference is in mid-October — just a couple weeks after the start of the academic year at Stanford. Attending both DH and ACH has been a good reminder of how valuable and meaningful it is to engage with the DH community at large, beyond any particular institution or academic discipline. I’m looking forward to attending DH 2020 in Ottawa — and, with any luck, bringing more of my faculty and grad student colleagues into these conversations and communities as well. And for the larger pool of DH folks at Stanford — including undergrads — I&#39;m looking forward to raising awareness about ACH 2021 as details emerge.&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 28 Jul 2019 19:00:00 +0000</pubDate>
+      <pubDate>Sun, 28 Jul 2019 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dh-and-ach-skeleton-tow/</guid>
     </item>
@@ -1619,7 +1661,7 @@ Greg Weaver from &lt;a href=&quot;https://thehardmodes.com/&quot;&gt;The Hard Mo
 &lt;p&gt;Over the course of the spring, I spoke with a number of potential candidates for the History ATS position we currently have open. We had a robust pool of applicants, and are still currently in the interview process. But I’m looking forward to starting the fall with a colleague in history who I can work closely with on building up a digital humanities community at Stanford, beyond our many individual projects.&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 23 Jun 2019 19:00:00 +0000</pubDate>
+      <pubDate>Sun, 23 Jun 2019 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dlcl-ats-round-spring-2019/</guid>
     </item>
@@ -1682,7 +1724,7 @@ I recently finished the aspect of my project that I didn’t have time for durin
 &lt;p&gt;All of the chapter-separated text files for volume 1 are &lt;a href=&quot;https://github.com/quinnanya/multilingual-brandes&quot;&gt;up on Github&lt;/a&gt;, along with the Voyant stats, Jupyter notebook, and Tableau file for the visualization. I’ve also stuck in various other text files and PDFs of translations of Brandes’s writing that I came across along the way, but didn’t end up using. Until I hear otherwise from a Scandinavian studies scholar in my division, I think my time with Brandes may have come to an end. Nevertheless, I hope this project and the texts I tracked down may be of value someday for someone else with a longer-term commitment to Brandes and his work.&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 22 May 2019 19:00:00 +0000</pubDate>
+      <pubDate>Wed, 22 May 2019 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/brandes-translation-multilingual-corpora-digital-brandes-hackathon/</guid>
     </item>
@@ -1698,7 +1740,7 @@ I recently finished the aspect of my project that I didn’t have time for durin
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/31472675258_3c3de7b926_k%20%281%29.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 15 May 2019 19:00:00 +0000</pubDate>
+      <pubDate>Wed, 15 May 2019 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/graduate-dh-reading-group/</guid>
     </item>
@@ -1719,7 +1761,7 @@ I recently finished the aspect of my project that I didn’t have time for durin
 &lt;p&gt;On a personal note, this workshop was only the second time in my adult life that I didn’t skip work / school on my birthday — the first time being for a class in college on endangered languages. The organizers and attendees did not fall short in effecting the ritualistic embarrassment of a group rendition of “Happy Birthday to You”, but perhaps the greatest birthday present of all was the opportunity to find new collaborators and new projects. Zheng Zhang will be spending the next month at an internship at CESTA, and I look forward to working with him on sorting through the Slavic-language translations of “Huck Finn” as a step towards better discovery tools for translation studies scholars.&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 17 Apr 2019 19:00:00 +0000</pubDate>
+      <pubDate>Wed, 17 Apr 2019 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/translating-language-culture-form-workshop-digital-humanities-preserve-knowledge-and-cultural/</guid>
     </item>
@@ -1733,7 +1775,7 @@ I recently finished the aspect of my project that I didn’t have time for durin
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/43221223371_2e9da21707_z.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 16 Apr 2019 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 16 Apr 2019 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/june-dh-happy-hour/</guid>
     </item>
@@ -1747,7 +1789,7 @@ I recently finished the aspect of my project that I didn’t have time for durin
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/43221214591_5125b12c26_z.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 16 Apr 2019 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 16 Apr 2019 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/may-dh-happy-hour/</guid>
     </item>
@@ -1763,7 +1805,7 @@ I recently finished the aspect of my project that I didn’t have time for durin
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/Women%20Gender%20Minorities%20in%20DH%20Flyer.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 16 Apr 2019 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 16 Apr 2019 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/women-gender-minorities-dh/</guid>
     </item>
@@ -1815,7 +1857,7 @@ I recently finished the aspect of my project that I didn’t have time for durin
 &lt;p&gt;In my &lt;a href=&quot;https://digitalhumanities.stanford.edu/my-first-quarter-stanford-dlcl-ats-round-fall-2018&quot;&gt;fall quarterly round-up&lt;/a&gt;, I mentioned looking for opportunities to work with folks from Iberian and Latin American Cultures. While I did have two students working on Spanish in my class during winter quarter, I don’t yet have a project going with that department. Here’s hoping spring 2019 will be my opportunity to find one!&lt;/p&gt;
 
       </description>
-      <pubDate>Mon, 01 Apr 2019 19:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Apr 2019 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dlcl-ats-round-winter-2019/</guid>
     </item>
@@ -1857,7 +1899,7 @@ I recently finished the aspect of my project that I didn’t have time for durin
 &lt;p&gt;One note on timing: while we&#39;ll be conducting the job search over the next 6 months or so, we anticipate that this position will have a September start date.&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 10 Mar 2019 19:00:00 +0000</pubDate>
+      <pubDate>Sun, 10 Mar 2019 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/ats-unpacked-why-i-love-my-job-and-you-might-too/</guid>
     </item>
@@ -1888,7 +1930,7 @@ I recently finished the aspect of my project that I didn’t have time for durin
 &lt;p&gt;It’d be easy enough to let this talk disappear quietly, an un-transcribed video hidden in plain sight in an institutional repository. But, despite my sense of strangeness and estrangement looking back on this talk, I think it still has some ideas worth sharing. Nominating it for a DH Award gives it a larger audience than humanities grad students at the University of Alberta in March, and it transforms what was intended as a final statement into a living challenge to myself to fail better in my new role at Stanford.&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 29 Jan 2019 18:00:00 +0000</pubDate>
+      <pubDate>Tue, 29 Jan 2019 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/difficulty-manatees-after-swan-song/</guid>
     </item>
@@ -1902,7 +1944,7 @@ I recently finished the aspect of my project that I didn’t have time for durin
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/4301169963_8d428d86cf_b.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 16 Jan 2019 18:00:00 +0000</pubDate>
+      <pubDate>Wed, 16 Jan 2019 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/behind-scenes-character-encoding-unicode/</guid>
     </item>
@@ -1916,7 +1958,7 @@ I recently finished the aspect of my project that I didn’t have time for durin
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/35808689401_95afa2ee93_k.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 16 Jan 2019 18:00:00 +0000</pubDate>
+      <pubDate>Wed, 16 Jan 2019 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/february-dh-happy-hour/</guid>
     </item>
@@ -1930,7 +1972,7 @@ I recently finished the aspect of my project that I didn’t have time for durin
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/43171396412_aaed7d15e0_k.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 16 Jan 2019 18:00:00 +0000</pubDate>
+      <pubDate>Wed, 16 Jan 2019 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/january-dh-happy-hour/</guid>
     </item>
@@ -1944,7 +1986,7 @@ I recently finished the aspect of my project that I didn’t have time for durin
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/33946634044_d39edaf203_k.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 16 Jan 2019 18:00:00 +0000</pubDate>
+      <pubDate>Wed, 16 Jan 2019 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/march-dh-happy-hour/</guid>
     </item>
@@ -1967,7 +2009,7 @@ I recently finished the aspect of my project that I didn’t have time for durin
 &lt;p&gt;Today I learned that ₩ (the won sign) is used to represent the path separator () on Korean Windows in the command prompt. With some help from Google and the Internet Archive, I was able to find out &lt;a href=&quot;https://web.archive.org/web/20060110022833/http://blogs.msdn.com:80/michkap/archive/2004/12/14/284838.aspx&quot;&gt;some&lt;/a&gt;&lt;a href=&quot;https://web.archive.org/web/20051026085918/http://blogs.msdn.com:80/michkap/archive/2005/10/12/479561.aspx&quot;&gt;more&lt;/a&gt; about the history of that convention, and it all comes down to Unicode, which we’ll be covering with a special guest lecture by Debbie Anderson from the &lt;a href=&quot;http://linguistics.berkeley.edu/sei/about-us.html&quot;&gt;Script Encoding Initiative at UC Berkeley&lt;/a&gt; next week. I can’t wait to see what else I learn this quarter.&lt;/p&gt;
 
       </description>
-      <pubDate>Mon, 14 Jan 2019 18:00:00 +0000</pubDate>
+      <pubDate>Mon, 14 Jan 2019 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/introducing-digital-humanities-across-borders/</guid>
     </item>
@@ -2013,7 +2055,7 @@ I recently finished the aspect of my project that I didn’t have time for durin
 &lt;p&gt;Tomorrow begins Stanford’s two-week year-end shutdown, but I’m already looking forward to the week of January 7th! Stanford’s DH blog will resume then. Happy holidays to all!&lt;/p&gt;
 
       </description>
-      <pubDate>Thu, 20 Dec 2018 18:00:00 +0000</pubDate>
+      <pubDate>Thu, 20 Dec 2018 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/my-first-quarter-stanford-dlcl-ats-round-fall-2018/</guid>
     </item>
@@ -2037,7 +2079,7 @@ I recently finished the aspect of my project that I didn’t have time for durin
 &lt;p&gt;&lt;em&gt;New Digital Worlds&lt;/em&gt; has a thoughtful and refreshingly different read on, and criticism of, digital humanities. There’s something to consider for people in a wide variety of roles, from librarians who develop (or purchase) corpora, to museum and archives folks who directly grapple with issues around cultural heritage materials, to developers who build digital humanities tools and projects, to scholars and instructors engaged with research and/or teaching, to students who are trying to choose a focus for their own scholarship. Even if you don’t agree with everything in it, it is very much a worthwhile read. Now that I have my own copy, I’m looking forward to revisiting it with sticky notes and highlighter, and keeping it close at hand next quarter.&lt;/p&gt;
 
       </description>
-      <pubDate>Thu, 13 Dec 2018 18:00:00 +0000</pubDate>
+      <pubDate>Thu, 13 Dec 2018 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/book-review-new-digital-worlds-roopika-risam/</guid>
     </item>
@@ -2059,7 +2101,7 @@ I recently finished the aspect of my project that I didn’t have time for durin
 &lt;p&gt;DH projects aren’t &amp;quot;enterprise&amp;quot;. Our goals are different, our audiences are different, our staffing models are different — in substantive ways that can cause friction when we adopt enterprise tools. DH isn’t unique in its divergence from &amp;quot;enterprise&amp;quot; (as I learned during my time working in research and high-performance computing), but it&#39;s an aspect of our work that we can&#39;t forget about when evaluating tools.&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 04 Dec 2018 18:00:00 +0000</pubDate>
+      <pubDate>Tue, 04 Dec 2018 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/enterprise-tools-and-dh/</guid>
     </item>
@@ -2073,7 +2115,7 @@ I recently finished the aspect of my project that I didn’t have time for durin
 &lt;p&gt;At the time, I &lt;a href=&quot;https://dbe.hypotheses.org/1479&quot;&gt;wrote a blog post about being a “cowboy” and taking the next steps after the workshop&lt;/a&gt;, and creating a mailing list on the spot for people who want to try to use DARIAH resources in their research and/or teaching. In the meantime, I’ve been trying to make time to engage with DARIAH, even as I acclimate to this new job, and plan for my digital humanities course next quarter (called “Digital Humanities Across Borders”, which will focus on non-English textual DH). One of the major projects I’ve been working on since I started at Stanford has been Prof. Kathryn Starkey’s “&lt;a href=&quot;http://sourcebook.stanford.edu/&quot;&gt;Global Medieval Sourcebook&lt;/a&gt;”, which will soon be relaunching. As such, it feels felicitous that the first DARIAH working group that responded to my inquiries was &lt;a href=&quot;https://www.dariah.eu/activities/working-groups/meso-mediaevalists-sources-sustainability/&quot;&gt;Mediaevalist’s Sources (MESO)&lt;/a&gt;. Emiliano Degl’Innocenti, the National Coordinator of &lt;a href=&quot;http://it.dariah.eu/&quot;&gt;DARIAH Italy&lt;/a&gt; and co-lead of this working group, happened to be attending &lt;a href=&quot;http://www.digitalheritage2018.org/&quot;&gt;DigitalHERITAGE 2018&lt;/a&gt; in San Francisco, and I met up with him at a coffee break (where I told him I’d be the one wearing a &lt;a href=&quot;https://en.wikipedia.org/wiki/Codex_Assemanius&quot;&gt;Glagolitic manuscript&lt;/a&gt;) to learn more about the working group, and what we might be able to do together. I &lt;a href=&quot;https://dbe.hypotheses.org/1899&quot;&gt;wrote it up for the DARIAH Beyond Europe blog&lt;/a&gt;; see there for details.&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 18 Nov 2018 18:00:00 +0000</pubDate>
+      <pubDate>Sun, 18 Nov 2018 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/engaging-dariah-through-meso/</guid>
     </item>
@@ -2087,7 +2129,7 @@ I recently finished the aspect of my project that I didn’t have time for durin
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/28351197577_bbbfbfc27c_k.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Thu, 15 Nov 2018 18:00:00 +0000</pubDate>
+      <pubDate>Thu, 15 Nov 2018 16:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dh-happy-hour/</guid>
     </item>
@@ -2107,7 +2149,7 @@ I recently finished the aspect of my project that I didn’t have time for durin
 &lt;p&gt;Returning to digital humanities, I’ve been struck by the usefulness of old blog posts I’ve re-discovered, even those dating back half a decade or more. &lt;a href=&quot;http://www.scottbot.net/HIAL/index.html@tag=networks-demystified.html&quot;&gt;Scott Weingart’s posts&lt;/a&gt; about network analysis, spurred by a &lt;a href=&quot;https://dhs.stanford.edu/visualization/more-networks/&quot;&gt;post by Elijah Meeks&lt;/a&gt;, have been a wonderful refresher on a set of tools I barely dabbled with in my previous DH lives. For seeing what others are working on, I find reading blogs to be much more tractable than trying to stay on top of the tweet stream, and I’m grateful to aggregators like &lt;a href=&quot;http://digitalhumanitiesnow.org/&quot;&gt;Digital Humanities Now&lt;/a&gt; for those times when I need a more concentrated distillation of goings-on in DH. So in the spirit of &lt;a href=&quot;https://twitter.com/Elijah_Meeks&quot;&gt;Elijah Meeks&lt;/a&gt; (another of Stanford’s DH-departed, now with Netflix), I’ll be blogging here, and inviting others in the Stanford DH community to do the same. I hope you’ll join me for reanimating the Stanford Digital Humanities blog.&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 30 Oct 2018 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 30 Oct 2018 17:00:00 +0000</pubDate>
       <dc:creator>Quinn Dombrowski</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/zombie-digital-humanities/</guid>
     </item>
@@ -2122,7 +2164,7 @@ I recently finished the aspect of my project that I didn’t have time for durin
 &lt;p&gt;More details and application instructions at &lt;a href=&quot;http://m.rfer.us/STANFORDfjgse&quot;&gt;http://m.rfer.us/STANFORDfjgse&lt;/a&gt;.&lt;/p&gt;
 
       </description>
-      <pubDate>Thu, 24 May 2018 19:00:00 +0000</pubDate>
+      <pubDate>Thu, 24 May 2018 17:00:00 +0000</pubDate>
       <dc:creator>Glen Worthey</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/job-opening-academic-technology-specialist-literatures-cultures-and-languages/</guid>
     </item>
@@ -2147,7 +2189,7 @@ Name&lt;/p&gt;
 &lt;p&gt;Leave this field blank&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 30 Sep 2015 19:00:00 +0000</pubDate>
+      <pubDate>Wed, 30 Sep 2015 17:00:00 +0000</pubDate>
       <dc:creator>Sharon Krossa</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/submit-or-update-project/</guid>
     </item>
@@ -2211,7 +2253,7 @@ Name&lt;/p&gt;
 &lt;p&gt;… or contact a member of the CIDR team directly: Stu Snydman and Glen Worthey (CIDR Co-Leads); Karl Grossner and David McClure (CIDR Developers); Vijoy Abraham, Nicole Coleman, Claudia Engel, Jason Heppler, and Mike Widner (Academic Technology Specialists); and Judy Marsh and Ron Nakao (Social Science Data &amp;amp; Software, SSDS).&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 29 Sep 2015 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 29 Sep 2015 17:00:00 +0000</pubDate>
       <dc:creator>Glen Worthey</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/2015-2016-cidr-development-team-call-proposals/</guid>
     </item>
@@ -2240,7 +2282,7 @@ Name&lt;/p&gt;
 &lt;p&gt;While these build-outs look forward quite a bit, ePADD helps advance DH research toward a new horizon of scholarship about contemporary history and literature, and is now &lt;a href=&quot;https://library.stanford.edu/projects/epadd&quot;&gt;freely available&lt;/a&gt; and customizable for those eager to explore how it can assist with research.&lt;/p&gt;
 
       </description>
-      <pubDate>Thu, 30 Jul 2015 19:00:00 +0000</pubDate>
+      <pubDate>Thu, 30 Jul 2015 17:00:00 +0000</pubDate>
       <dc:creator>Josh Schneider</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/epadd-new-platform-conducting-dh-research-email-correspondence/</guid>
     </item>
@@ -2287,7 +2329,7 @@ Name&lt;/p&gt;
 &lt;p&gt;[slides: “&lt;a href=&quot;http://dh.stanford.edu/docs/Bauch_5-7-15.pdf&quot;&gt;Digital Spatial Narrative and the Production of Photographic Space at the Grand Canyon&lt;/a&gt;”]&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 07 Jun 2015 19:00:00 +0000</pubDate>
+      <pubDate>Sun, 07 Jun 2015 17:00:00 +0000</pubDate>
       <dc:creator>Karl Grossner</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/cidr-hosts-osullivan-geography-lecture-and-geospatial-narratives-workshop/</guid>
     </item>
@@ -2304,7 +2346,7 @@ Name&lt;/p&gt;
 &lt;p&gt;Çatalhöyük Living Archive features Karl Grossner, Digital Humanities Research Developer, and Claudia Engel, Academic Technology Specialist for the Department of Anthropology.&lt;/p&gt;
 
       </description>
-      <pubDate>Mon, 27 Apr 2015 19:00:00 +0000</pubDate>
+      <pubDate>Mon, 27 Apr 2015 17:00:00 +0000</pubDate>
       <dc:creator>Mike Widner</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/members-center-interdisciplinary-digital-research-central-many-digital-humanities-projects/</guid>
     </item>
@@ -2323,7 +2365,7 @@ Name&lt;/p&gt;
 &lt;a href=&quot;http://shc.stanford.edu/events/humanities-digital-tools&quot;&gt;http://shc.stanford.edu/events/humanities-digital-tools&lt;/a&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Mon, 30 Mar 2015 19:00:00 +0000</pubDate>
+      <pubDate>Mon, 30 Mar 2015 17:00:00 +0000</pubDate>
       <dc:creator>Glen Worthey</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/humanities-digital-tools-panel-discussion/</guid>
     </item>
@@ -2340,7 +2382,7 @@ Name&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/Russian-Formalism-final-1-screen.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Mon, 30 Mar 2015 19:00:00 +0000</pubDate>
+      <pubDate>Mon, 30 Mar 2015 17:00:00 +0000</pubDate>
       <dc:creator>Glen Worthey</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/russian-formalism-digital-humanities-0/</guid>
     </item>
@@ -2397,7 +2439,7 @@ The emergence of large corpora of digitalized literary texts has prompted a retu
 |&lt;/p&gt;
 
       </description>
-      <pubDate>Mon, 16 Mar 2015 19:00:00 +0000</pubDate>
+      <pubDate>Mon, 16 Mar 2015 17:00:00 +0000</pubDate>
       <dc:creator>Karim Arsalane</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/russian-formalism-digital-humanities-abstracts/</guid>
     </item>
@@ -2497,7 +2539,7 @@ The emergence of large corpora of digitalized literary texts has prompted a retu
 &lt;/table&gt;
 
       </description>
-      <pubDate>Mon, 16 Mar 2015 19:00:00 +0000</pubDate>
+      <pubDate>Mon, 16 Mar 2015 17:00:00 +0000</pubDate>
       <dc:creator>Karim Arsalane</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/schedule/</guid>
     </item>
@@ -2513,7 +2555,7 @@ The emergence of large corpora of digitalized literary texts has prompted a retu
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/ConferencePoster.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Thu, 12 Mar 2015 19:00:00 +0000</pubDate>
+      <pubDate>Thu, 12 Mar 2015 17:00:00 +0000</pubDate>
       <dc:creator>Karim Arsalane</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/russian-formalism-digital-humanities/</guid>
     </item>
@@ -2542,7 +2584,7 @@ The emergence of large corpora of digitalized literary texts has prompted a retu
 &lt;p&gt;You can read more of the teachings of Donald Rumsfeld &lt;a href=&quot;http://en.wikiquote.org/wiki/Donald_Rumsfeld&quot;&gt;here&lt;/a&gt;. But remember that, like all teachers, Rummy can only guide us. It’s up to you to integrate his wisdom into your digital humanities practice.&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 26 Aug 2014 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 26 Aug 2014 17:00:00 +0000</pubDate>
       <dc:creator>Elijah Meeks</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/4-lessons-digital-humanities-scholars-donald-rumsfeld/</guid>
     </item>
@@ -2572,7 +2614,7 @@ The emergence of large corpora of digitalized literary texts has prompted a retu
 &lt;p&gt;The non-desktop views are hard to design, even when you’re cutting corners on a simple example like this. I think it’s a great challenge to ask yourself what your data would look like on a phone or tablet, and what new affordances and limitations you need to account for to present the most valuable view into complex datasets like these. Responsive data visualization is a hard design challenge, but can contribute not only to making your data more accessible, but to discovery of new views and methods for presenting your data in any form. You’ll notice that there are different capabilities and different visual and interaction rhetoric embedded in each of these views, and so the goal is not to provide the same view into the data, but rather allied views that let users understand a dataset from multiple points of interaction.&lt;/p&gt;
 
       </description>
-      <pubDate>Mon, 18 Aug 2014 19:00:00 +0000</pubDate>
+      <pubDate>Mon, 18 Aug 2014 17:00:00 +0000</pubDate>
       <dc:creator>Elijah Meeks</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/responsive-data-visualization-0/</guid>
     </item>
@@ -2605,7 +2647,7 @@ The emergence of large corpora of digitalized literary texts has prompted a retu
 &lt;p&gt;* Matthew Kirschenbaum, “What is ‘Digital Humanities,’ and Why Are They Saying Such Terrible Things about It?” &lt;em&gt;differences&lt;/em&gt; 25.1 (2014): 46-63. Copyright © 2014 Duke University Press.  Pre-print version available on &lt;a href=&quot;http://mkirschenbaum.wordpress.com/2014/04/24/new-essay-what-is-digital-humanities-and-why-are-they-saying-such-terrible-things-about-it/&quot;&gt;Kirschenbaum&#39;s website&lt;/a&gt;.&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 06 May 2014 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 06 May 2014 17:00:00 +0000</pubDate>
       <dc:creator>Glen Worthey</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/why-are-such-terrible-things-written-about-dh-kirsch-v-kirschenbaum/</guid>
     </item>
@@ -2622,7 +2664,7 @@ The emergence of large corpora of digitalized literary texts has prompted a retu
 &lt;p&gt;The bad news is that we&#39;ll only have Scott here at Stanford for the summer, but moving forward, I hope to establish the very real stake that digital humanities has in data science, and how it can further support the research agendas of digital humanities scholars.&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 04 May 2014 19:00:00 +0000</pubDate>
+      <pubDate>Sun, 04 May 2014 17:00:00 +0000</pubDate>
       <dc:creator>Elijah Meeks</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/digital-humanities-and-data-science/</guid>
     </item>
@@ -2642,7 +2684,7 @@ The emergence of large corpora of digitalized literary texts has prompted a retu
 &lt;p&gt;*It&#39;s not lost on me the irony that from Dark Horse Analytic&#39;s perspective that this is presented as &lt;a href=&quot;http://darkhorseanalytics.com/blog/data-looks-better-naked/&quot;&gt;getting closer to &amp;quot;data&amp;quot; by removing visual cruft&lt;/a&gt;.&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 27 Apr 2014 19:00:00 +0000</pubDate>
+      <pubDate>Sun, 27 Apr 2014 17:00:00 +0000</pubDate>
       <dc:creator>Elijah Meeks</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/spreadsheets-are-information-visualization/</guid>
     </item>
@@ -2707,7 +2749,7 @@ The emergence of large corpora of digitalized literary texts has prompted a retu
 &lt;/ol&gt;
 
       </description>
-      <pubDate>Sun, 13 Apr 2014 19:00:00 +0000</pubDate>
+      <pubDate>Sun, 13 Apr 2014 17:00:00 +0000</pubDate>
       <dc:creator>Elijah Meeks</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/neotopology/</guid>
     </item>
@@ -2725,7 +2767,7 @@ The emergence of large corpora of digitalized literary texts has prompted a retu
 &lt;p&gt;If you are at Stanford and think of yourself as doing digital humanities scholarship, let me know and I will happily add you to the list.&lt;/p&gt;
 
       </description>
-      <pubDate>Mon, 07 Apr 2014 19:00:00 +0000</pubDate>
+      <pubDate>Mon, 07 Apr 2014 17:00:00 +0000</pubDate>
       <dc:creator>Elijah Meeks</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/day-dh/</guid>
     </item>
@@ -2754,7 +2796,7 @@ What you’re seeing is the aggregation of paths from Athens to the rest of the
 &lt;p&gt;The result of this and other information visualization is as much a graphical representation of the data as it is a representation of the perspective on the data and the methods used to process the data. Graphics, then, are not simply a product or publication, divorced or perhaps distilled from a dataset, but a summation of data and processing and perspective. Whether this is controversial depends on your perspective of data. If you think that information visualization is meant to only show “data”, then processing and perspective are corruptions of the pure data, and graphical similarity is a sign of someone using the “wrong” technique to represent that data. In that case, something like the Minard Diagram might be considered a dishonest attempt to hijack the cultural capital of Minard’s name for a visually similar but unrelated technique. But if the graphical similarity indicates meaningful similarities between the phenomena being represented, then it would indicate that graphical similarity of information visualization is a sign of similarity of perspective and processing in cases where the data is fundamentally different.&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 25 Mar 2014 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 25 Mar 2014 17:00:00 +0000</pubDate>
       <dc:creator>Elijah Meeks</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/what-makes-minard/</guid>
     </item>
@@ -2778,7 +2820,7 @@ What you’re seeing is the aggregation of paths from Athens to the rest of the
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/stanford_moeml_poster.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Thu, 06 Mar 2014 18:00:00 +0000</pubDate>
+      <pubDate>Thu, 06 Mar 2014 16:00:00 +0000</pubDate>
       <dc:creator>Jacqueline Hettel</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dh-presentation-map-early-modern-londons-pedagogical-sustainability-model-digital-humanities/</guid>
     </item>
@@ -2797,7 +2839,7 @@ What you’re seeing is the aggregation of paths from Athens to the rest of the
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/0301-historicalnetworks.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Thu, 06 Mar 2014 18:00:00 +0000</pubDate>
+      <pubDate>Thu, 06 Mar 2014 16:00:00 +0000</pubDate>
       <dc:creator>Glen Worthey</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/visualizing-historical-networks-emma-rothschild/</guid>
     </item>
@@ -2855,7 +2897,7 @@ What you’re seeing is the aggregation of paths from Athens to the rest of the
 &lt;p&gt;&lt;a href=&quot;https://digitalhumanities.stanford.edu/literary-texts-and-library-digital-age-or-how-library-dh-made/#_ftnref1&quot;&gt;[1]&lt;/a&gt; This “one more goddamn time…” image has been used by &lt;a href=&quot;http://tedunderwood.com/2012/09/22/how-everyone-gets-to-claim-they-do-dh/&quot;&gt;Ted Underwood&lt;/a&gt;, and by the &lt;em&gt;Los Angeles Review of Books&lt;/em&gt; in a polemic initiated by Stephen Marche late last year (“&lt;a href=&quot;http://lareviewofbooks.org/essay/literature-is-not-data-against-digital-humanities&quot;&gt;Literature is not Data: Against Digital Humanities&lt;/a&gt;”), among many others; I use it here as the product of folk imagination, without attribution.  (If it&#39;s yours, please tell the &lt;a href=&quot;http://www.ucl.ac.uk/dh/&quot;&gt;University College London Centre for Digital Humanities&lt;/a&gt;, which includes it in a very nice collection of &lt;a href=&quot;http://blogs.ucl.ac.uk/definingdh/digital-humanities-and-design/memes/&quot;&gt;DH memes&lt;/a&gt;.)  UPDATE: Ted Underwood informs me that &amp;quot;For the record, this super-successful contribution to DH critique was created by @frankridgway back in 2012.&amp;quot;  Thanks, Ted - and Franklin Ridgway!&lt;/p&gt;
 
       </description>
-      <pubDate>Mon, 03 Mar 2014 18:00:00 +0000</pubDate>
+      <pubDate>Mon, 03 Mar 2014 16:00:00 +0000</pubDate>
       <dc:creator>Glen Worthey</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/literary-texts-and-library-digital-age-or-how-library-dh-made/</guid>
     </item>
@@ -2877,7 +2919,7 @@ What you’re seeing is the aggregation of paths from Athens to the rest of the
 &lt;p&gt;And Willard is a good and true colleague and mentor – not only to me (and not so significantly, except to me), but to countless others, around the DH galaxy: for our remarkable community, a truly lifelong achievement.&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 18 Feb 2014 18:00:00 +0000</pubDate>
+      <pubDate>Tue, 18 Feb 2014 16:00:00 +0000</pubDate>
       <dc:creator>Glen Worthey</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/obi-wan-mccarty-episode-1/</guid>
     </item>
@@ -2896,7 +2938,7 @@ What you’re seeing is the aggregation of paths from Athens to the rest of the
 &lt;p&gt;Lunch is provided and will be served at 12:40 pm. Please RSVP to &lt;a href=&quot;mailto:kswall@stanford.edu&quot;&gt;kswall@stanford.edu&lt;/a&gt; by Friday, Feb 21.&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 16 Feb 2014 18:00:00 +0000</pubDate>
+      <pubDate>Sun, 16 Feb 2014 16:00:00 +0000</pubDate>
       <dc:creator>Glen Worthey</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/david-blei-probabilistic-topic-models-text-and-users/</guid>
     </item>
@@ -2911,7 +2953,7 @@ What you’re seeing is the aggregation of paths from Athens to the rest of the
 &lt;p&gt;Open to faculty and graduate students.  &lt;a href=&quot;http://www.stanford.edu/~hettelj/digiPrep_reg.fb&quot;&gt;Register here&lt;/a&gt;.&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 16 Feb 2014 18:00:00 +0000</pubDate>
+      <pubDate>Sun, 16 Feb 2014 16:00:00 +0000</pubDate>
       <dc:creator>Glen Worthey</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/workshop-metadata-digital-projects/</guid>
     </item>
@@ -2940,7 +2982,7 @@ What you’re seeing is the aggregation of paths from Athens to the rest of the
 &lt;p&gt;* This originally misidentified Bethany Nowviskie as not being a librarian, when the Scholar&#39;s Lab is located in the UVa Library. I also misspelled her name, which is absurd given that I know how to spell it.&lt;/p&gt;
 
       </description>
-      <pubDate>Sat, 08 Feb 2014 18:00:00 +0000</pubDate>
+      <pubDate>Sat, 08 Feb 2014 16:00:00 +0000</pubDate>
       <dc:creator>Elijah Meeks</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/digital-humanities-curio-cabinet/</guid>
     </item>
@@ -2973,7 +3015,7 @@ What you’re seeing is the aggregation of paths from Athens to the rest of the
 &lt;p&gt;&lt;a href=&quot;http://dh.stanford.edu/SUL_Digital_Humanities_Support_Proposal_2014.pdf&quot;&gt;&lt;strong&gt;Full Proposal Guidelines Here&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 02 Feb 2014 18:00:00 +0000</pubDate>
+      <pubDate>Sun, 02 Feb 2014 16:00:00 +0000</pubDate>
       <dc:creator>Elijah Meeks</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/sul-digital-humanities-project-support-call-proposals/</guid>
     </item>
@@ -2987,7 +3029,7 @@ What you’re seeing is the aggregation of paths from Athens to the rest of the
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/Algee-HewittPoster.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 29 Jan 2014 18:00:00 +0000</pubDate>
+      <pubDate>Wed, 29 Jan 2014 16:00:00 +0000</pubDate>
       <dc:creator>Glen Worthey</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/discourse-design-and-disorder-digital-models-aesthetic-theory-long-eighteenth-century/</guid>
     </item>
@@ -3001,7 +3043,7 @@ What you’re seeing is the aggregation of paths from Athens to the rest of the
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/TrettienPoster.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Thu, 23 Jan 2014 18:00:00 +0000</pubDate>
+      <pubDate>Thu, 23 Jan 2014 16:00:00 +0000</pubDate>
       <dc:creator>Glen Worthey</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/amplifying-past-material-interventions-digital-humanities/</guid>
     </item>
@@ -3021,7 +3063,7 @@ What you’re seeing is the aggregation of paths from Athens to the rest of the
 &lt;p&gt;The event is free and open to the public, but seating is limited. Please contact Sonia Lee &amp;lt;sonialee_at_stanford.edu&amp;gt; if you would like to attend.&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 22 Jan 2014 18:00:00 +0000</pubDate>
+      <pubDate>Wed, 22 Jan 2014 16:00:00 +0000</pubDate>
       <dc:creator>Glen Worthey</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/raising-stakes-arabic-text-handling-thomas-milo-lecture/</guid>
     </item>
@@ -3084,7 +3126,7 @@ simplifiedGeoms.push(simplifiedObject);
 &lt;p&gt;* 3000 visits in the last week, which is small potatoes to a big Internet site, but rather remarkable for a scholarly site that hasn&#39;t added any new features for a couple years&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 05 Jan 2014 18:00:00 +0000</pubDate>
+      <pubDate>Sun, 05 Jan 2014 16:00:00 +0000</pubDate>
       <dc:creator>Elijah Meeks</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/geographics/</guid>
     </item>
@@ -3131,7 +3173,7 @@ simplifiedGeoms.push(simplifiedObject);
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/orbis2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 23 Oct 2013 19:00:00 +0000</pubDate>
+      <pubDate>Wed, 23 Oct 2013 17:00:00 +0000</pubDate>
       <dc:creator>Nicole Coleman</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/hestia2stanford-visualizing-complex-networks/</guid>
     </item>
@@ -3151,7 +3193,7 @@ simplifiedGeoms.push(simplifiedObject);
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/image002.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 23 Oct 2013 19:00:00 +0000</pubDate>
+      <pubDate>Wed, 23 Oct 2013 17:00:00 +0000</pubDate>
       <dc:creator>Jason A. Heppler</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/jo-guldi-maps-and-after-smartphone-global-history-1968-2013/</guid>
     </item>
@@ -3169,7 +3211,7 @@ simplifiedGeoms.push(simplifiedObject);
 Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-history&quot;&gt;digital history&lt;/a&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 22 Oct 2013 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 22 Oct 2013 17:00:00 +0000</pubDate>
       <dc:creator>Jason A. Heppler</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/digital-history-stanford/</guid>
     </item>
@@ -3182,7 +3224,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;p&gt;&lt;a href=&quot;http://historying.org/2013/10/15/ada-lovelace-day-2013/&quot;&gt;Keep reading&lt;/a&gt; about the woman most repsonsible for my career.&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 16 Oct 2013 19:00:00 +0000</pubDate>
+      <pubDate>Wed, 16 Oct 2013 17:00:00 +0000</pubDate>
       <dc:creator>Cameron Blevins</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/ada-lovelace-day-2013/</guid>
     </item>
@@ -3199,7 +3241,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;p&gt;Let us celebrate and honor Ada Lovelace by remembering and encouraging our sister techies past, present, and future.&lt;/p&gt;
 
       </description>
-      <pubDate>Mon, 14 Oct 2013 19:00:00 +0000</pubDate>
+      <pubDate>Mon, 14 Oct 2013 17:00:00 +0000</pubDate>
       <dc:creator>Glen Worthey</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/digital-humanities-ada-lovelace-day/</guid>
     </item>
@@ -3211,7 +3253,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
       &lt;p&gt;&lt;small&gt;Jacqueline Hettel · October 4, 2013&lt;/small&gt;&lt;/p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/Screen%20Shot%202013-10-04%20at%201.01.36%20PM.png&quot; alt=&quot;A House Divided&quot; /&gt;&lt;p&gt;In this week’s post, I want to address a question that I have been asked quite often since coming to Stanford University Libraries, and one that made its way into a comment of &lt;a href=&quot;https://digitalhumanities.stanford.edu/debating-methods-matt-jockerss-macroanalysis&quot;&gt;Michael Widner’s recent blog post&lt;/a&gt;of the DH reading group&#39;s discussion of &lt;a href=&quot;http://www.matthewjockers.net/&quot;&gt;Matt Jocker’s&lt;/a&gt; new book, &lt;a href=&quot;http://www.press.uillinois.edu/books/catalog/88wba3wn9780252037528.html&quot;&gt;Macroanalysis&lt;/a&gt;: “I’m intrigued by the division within linguistics that Hettel describes; if there were a link to a blog post or something like that explaining it, I’d be interested in following up and learning more.” I searched online to see if someone had already written such a post and came up empty, so to help anyone out there who might want to understand these differences I have drawn &lt;a href=&quot;http://www.linguabrarian.com/a-family-portrait-of-computational-language-analysis/&quot;&gt;a basic portrait of computational language analysis on my blog (linguabrarian.com)&lt;/a&gt;. Feel free to check it out if you&#39;re interested in a reductionist view of two basic divisions within the field of linguistics.&lt;/p&gt;
 
       </description>
-      <pubDate>Thu, 03 Oct 2013 19:00:00 +0000</pubDate>
+      <pubDate>Thu, 03 Oct 2013 17:00:00 +0000</pubDate>
       <dc:creator>Jacqueline Hettel</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/house-divided/</guid>
     </item>
@@ -3223,7 +3265,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
       &lt;p&gt;&lt;small&gt;Jason A. Heppler · October 2, 2013&lt;/small&gt;&lt;/p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/my-alt-ac-life/undefined&quot; alt=&quot;My Alt-Ac Life&quot; /&gt;&lt;p&gt;I just &lt;a href=&quot;http://jasonheppler.org/2013/10/02/my-alt-ac-life.html&quot;&gt;wrote a piece on my blog&lt;/a&gt; about the kind of digital humanities work I do at Stanford. Given the interest in &lt;a href=&quot;http://mediacommons.futureofthebook.org/alt-ac/&quot;&gt;alternative academic careers&lt;/a&gt;, I find it useful to share stories about the sort of work I&#39;m doing, challenges I work on, and the collaborations I engage with in my career. My interest in alternative academic careers stemmed from my interest in digital humanities, hence the reason for this. I won&#39;t repost everything here, but &lt;a href=&quot;http://jasonheppler.org/2013/10/02/my-alt-ac-life.html&quot;&gt;head over to the blog&lt;/a&gt; if you&#39;re interested.&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 01 Oct 2013 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 01 Oct 2013 17:00:00 +0000</pubDate>
       <dc:creator>Jason A. Heppler</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/my-alt-ac-life/</guid>
     </item>
@@ -3288,7 +3330,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;/ol&gt;
 
       </description>
-      <pubDate>Mon, 23 Sep 2013 19:00:00 +0000</pubDate>
+      <pubDate>Mon, 23 Sep 2013 17:00:00 +0000</pubDate>
       <dc:creator>Jacqueline Hettel</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/shakespeare-goes-opera-part-1-scraping-query-results-opening-night/</guid>
     </item>
@@ -3301,7 +3343,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;p&gt;Jason A. Heppler, ATS for the Department of History, will be leading a series of workshops called Doing Digital History during the Fall quarter. The first session is a basic introduction to using Zotero to manage bibliographic information and insert citations into word processors.&lt;/p&gt;
 
       </description>
-      <pubDate>Mon, 16 Sep 2013 19:00:00 +0000</pubDate>
+      <pubDate>Mon, 16 Sep 2013 17:00:00 +0000</pubDate>
       <dc:creator>Jason A. Heppler</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/doing-digital-history-getting-started-zotero/</guid>
     </item>
@@ -3321,7 +3363,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;p&gt;Hosted by the Department of History and the Academic Technology Specialist Program.&lt;/p&gt;
 
       </description>
-      <pubDate>Mon, 16 Sep 2013 19:00:00 +0000</pubDate>
+      <pubDate>Mon, 16 Sep 2013 17:00:00 +0000</pubDate>
       <dc:creator>Jason A. Heppler</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/doing-digital-history-paper-machines-talk-jo-guldi/</guid>
     </item>
@@ -3334,7 +3376,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;p&gt;Jason A. Heppler, ATS for the Department of History, will be leading a series of workshops called Doing Digital History during the Fall quarter. The final session will be a talk introducing faculty, staff, and students to a variety of tools useful in managing research material. The talk will briefly introduce the tools DEVONthink, Evernote, Mendeley, and Omeka.&lt;/p&gt;
 
       </description>
-      <pubDate>Mon, 16 Sep 2013 19:00:00 +0000</pubDate>
+      <pubDate>Mon, 16 Sep 2013 17:00:00 +0000</pubDate>
       <dc:creator>Jason A. Heppler</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/doing-digital-history-tools-managing-research-assets/</guid>
     </item>
@@ -3346,7 +3388,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
       &lt;p&gt;&lt;small&gt;Mike Widner · September 11, 2013&lt;/small&gt;&lt;/p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/dhthis-slashdot-digital-humanities-0/undefined&quot; alt=&quot;On DHThis, a Slashdot for the Digital Humanities&quot; /&gt;&lt;p&gt;A recently launched site, &lt;a href=&quot;http://dhthis.org/&quot;&gt;DHThis&lt;/a&gt;, aims to be &lt;a href=&quot;http://chronicle.com/blogs/profhacker/crowdsourcing-the-best-digital-humanities-content/52135&quot;&gt;the Slashdot of the Digital Humanities&lt;/a&gt;. I have some reservations about the platform they chose, which &lt;a href=&quot;https://people.stanford.edu/widner/content/towards-front-page-digital-humanities-dhthis&quot;&gt;I discuss at some length&lt;/a&gt; on my blog.&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 10 Sep 2013 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 10 Sep 2013 17:00:00 +0000</pubDate>
       <dc:creator>Mike Widner</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dhthis-slashdot-digital-humanities-0/</guid>
     </item>
@@ -3365,7 +3407,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;p&gt;I have written more about my personal motivations for helping launch the SIG on my blog, at &lt;a href=&quot;http://kgeographer.com/&quot;&gt;http://kgeographer.com&lt;/a&gt;.&lt;/p&gt;
 
       </description>
-      <pubDate>Sat, 07 Sep 2013 19:00:00 +0000</pubDate>
+      <pubDate>Sat, 07 Sep 2013 17:00:00 +0000</pubDate>
       <dc:creator>Karl Grossner</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/geohumanities-special-interest-group/</guid>
     </item>
@@ -3389,7 +3431,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;p&gt;Matthew Wilkins, LA Review of Books: &lt;a href=&quot;http://lareviewofbooks.org/review/an-impossible-number-of-books/&quot;&gt;http://lareviewofbooks.org/review/an-impossible-number-of-books/&lt;/a&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 04 Sep 2013 19:00:00 +0000</pubDate>
+      <pubDate>Wed, 04 Sep 2013 17:00:00 +0000</pubDate>
       <dc:creator>Mike Widner</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/debating-methods-matt-jockerss-macroanalysis/</guid>
     </item>
@@ -3402,7 +3444,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;p&gt;The inaugural meeting of Division of Literatures, Cultures, and Languages&#39; new &lt;a href=&quot;http://www.stanford.edu/dept/DLCL/cgi-bin/web/groups/digital-humanities&quot;&gt;Digital Humanities Focal Group&lt;/a&gt;, convened by Dan Edelstein and Michael Widner, will provide an overview of the resources for doing digital humanities at Stanford.&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 04 Sep 2013 19:00:00 +0000</pubDate>
+      <pubDate>Wed, 04 Sep 2013 17:00:00 +0000</pubDate>
       <dc:creator>Mike Widner</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/digital-humanities-stanford/</guid>
     </item>
@@ -3417,7 +3459,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/Screen%20Shot%202013-09-05%20at%2011.39.51%20AM.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 04 Sep 2013 19:00:00 +0000</pubDate>
+      <pubDate>Wed, 04 Sep 2013 17:00:00 +0000</pubDate>
       <dc:creator>Mike Widner</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/postponed-dh-reading-10-print/</guid>
     </item>
@@ -3434,7 +3476,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;p&gt;I&#39;m not well-versed in interactive design and I&#39;m a firm believer in general open source principles, which is why ORBIS v2 is being developed publicly. Anyone who wants to sketch up a possible interface, information architecture, user flow, or other design artifact for ORBIS (whether in Balsamiq or by hand or whatever) is welcome to do so, with the very real possibility that it or elements of it will end up in the final site.&lt;/p&gt;
 
       </description>
-      <pubDate>Mon, 02 Sep 2013 19:00:00 +0000</pubDate>
+      <pubDate>Mon, 02 Sep 2013 17:00:00 +0000</pubDate>
       <dc:creator>Elijah Meeks</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/orbis-design-challenge/</guid>
     </item>
@@ -3453,7 +3495,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;p&gt;That&#39;s why you&#39;ll see &lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/tweet0.PNG&quot; alt=&quot;&quot; /&gt; for so many pages. Because that view of the network, the one you&#39;re looking at in a very particular configuration, has never been shared on Twitter. While the social sharing is important, what&#39;s more important is the idea of citing and deep-linking not just to objects in a database, but configurations of a database or views into a model. These URLs refer not to a particular row in a database or linked data ID but rather a specific query run on the data, or an even more complex state when a story is referred to. This citation form is necessary for the development of scholarship that utilizes interactive scholarly works not only for research but for publication.&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 27 Aug 2013 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 27 Aug 2013 17:00:00 +0000</pubDate>
       <dc:creator>Elijah Meeks</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/kindred-britain-techniques-1-permalinks-graph/</guid>
     </item>
@@ -3473,7 +3515,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;p&gt;What is the takeaway here? I think it depends on your place in the generational spectrum. For those of us beaten down with the impression that humanities students will be unemployable, take a look at the Digital Humanities and the contributions that don’t necessitate a technical background. For those of us teaching, it might be time to get more comfortable with the integration of data and narrative. For students like myself, consider how you can apply writing, editing, art, design, or history to make them new again. It has been a blessing to discover that though I am proficient in Google search, I don’t know about all of my opportunities.&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 25 Aug 2013 19:00:00 +0000</pubDate>
+      <pubDate>Sun, 25 Aug 2013 17:00:00 +0000</pubDate>
       <dc:creator>Emma Honour Mae...</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/kindred-britain-and-scholarship/</guid>
     </item>
@@ -3488,7 +3530,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;p&gt;In my two &amp;quot;stories&amp;quot; in Kindred Britain, I walk through how computational methods are used to measure importance and tragedy in Kindred Britain. In doing so, I point out that they are remarkably useful, if contingent, techniques for understanding patterns in such a dataset. That contingency, oft-alluded to by digital humanities scholars, is much more comprehensible and much more worrisome to me now, having learned how to deploy it, than it was when it was theoretical. My crude methods for measuring a limited and simple database are a pale imitation of the methods being brought to bear by the NSA or Amazon to measure and understand people. But they are of a similar kind. And in understanding them, like understanding other techniques like topic modeling, I better understand how they mis-measure and reinforce flawed assumptions and, most critically, produce random patterns of correlation that are so tempting to invest with narrative. I tried to explain how these methods were used in Kindred Britain because I thought it necessary and timely to educate not only a scholarly audience, but a public one, about the use and limitations of this kind of computational measurement of people. Just as our Tragedy Index misses tragic Jack Kipling, so does every computational method have significant blind spots. Kindred Britain has quite an audience--scholars and developers and designers and the public--interested in its many aspects--anglophilia, infoviz, data modeling--and it&#39;s my hope that along with learning a bit more about the nature of family in British culture, that this broad audience also learns a bit more about how they live as a node within their own database, a sort of Kindred Modernity, and what that means for society and culture.&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 25 Aug 2013 19:00:00 +0000</pubDate>
+      <pubDate>Sun, 25 Aug 2013 17:00:00 +0000</pubDate>
       <dc:creator>Elijah Meeks</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/kindred-britain-sign-our-times/</guid>
     </item>
@@ -3501,7 +3543,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;p&gt;Needless to say, the initial experiment proved extremely fruitful. Now, we&#39;re waiting to see what the rest of our colleagues in the library community think about this methodology when we present at Digital Library Federation Forum in Austin, TX, in November. Chris recently posted &lt;a href=&quot;http://chrisbourg.wordpress.com/2013/08/16/sometimes-scholars-do-tell-us-how-the-library-impacted-their-work/&quot;&gt;on her blog&lt;/a&gt; why this type of research and inquiry is important to libraries, and it essentially boils down to the fact that &amp;quot;In [Chris&#39;] opinion, acknowledgements provide the most direct measure of the impact of library collections and services on research.&amp;quot; As a follow-up to her blog post, I have begun a series of blog posts at &lt;a href=&quot;http://www.linguabrarian.com/&quot;&gt;A Linguist in the Library&lt;/a&gt; outlining the methodology we used for this research project. The series is called &amp;quot;A Method for Measuring Thanks,&amp;quot; and Part 1 is titled &lt;a href=&quot;http://www.linguabrarian.com/thanks-method-1/&quot;&gt;&amp;quot;A Search for Thankful Candidates.&amp;quot;&lt;/a&gt; In this post, I cover the intricacies of the Google Books query syntax we used for our proof-of-concept investigation. I invite you to journey on over and check it out. Enjoy!&lt;/p&gt;
 
       </description>
-      <pubDate>Thu, 22 Aug 2013 19:00:00 +0000</pubDate>
+      <pubDate>Thu, 22 Aug 2013 17:00:00 +0000</pubDate>
       <dc:creator>Jacqueline Hettel</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/text-analysis-library-library/</guid>
     </item>
@@ -3521,7 +3563,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;p&gt;Winer thinks that “there&#39;s something about programming that makes many women not want to do it” --- it’s mostly the same something that makes a lot of people not want to do it. We’re not all algorithm creators. Someone wants to be the engineer, and someone wants to be the architect. The sooner we focus on figuring out what we want, and stop worrying about whether it’s reinforcing a stereotype or not, the better. I guess that’s what we need patience for.&lt;/p&gt;
 
       </description>
-      <pubDate>Wed, 21 Aug 2013 19:00:00 +0000</pubDate>
+      <pubDate>Wed, 21 Aug 2013 17:00:00 +0000</pubDate>
       <dc:creator>Emma Honour Mae...</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/women-programming-or-lack-thereof/</guid>
     </item>
@@ -3544,7 +3586,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;p&gt;And that’s not a bad goal we can all work together for.&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 20 Aug 2013 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 20 Aug 2013 17:00:00 +0000</pubDate>
       <dc:creator>Hannah Rose Abalos</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/women-cs-and-digital-humanities/</guid>
     </item>
@@ -3558,7 +3600,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;p&gt;I won&#39;t repost here, so go read it there, if you&#39;re interested.&lt;/p&gt;
 
       </description>
-      <pubDate>Mon, 19 Aug 2013 19:00:00 +0000</pubDate>
+      <pubDate>Mon, 19 Aug 2013 17:00:00 +0000</pubDate>
       <dc:creator>Mike Widner</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/digital-humanities-and-surveillance/</guid>
     </item>
@@ -3571,7 +3613,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;p&gt;A simple demonstration of the kind of higher-level analysis possible with the new cartograms and clustering in the v2 version of ORBIS. This is accomplished entirely within the browser (except for turning it into a gif) first by running cartograms for selected sites (in this case the 9 sites that are labeled by default) according to each priority, then clustering them and then drawing borders around the clusters. Notice the borders are drawn using convex hulls, and so you have overlap on border regions. It may be better (or perhaps provide an interesting alternative) to derive borders using Voronoi diagrams.&lt;/p&gt;
 
       </description>
-      <pubDate>Sun, 18 Aug 2013 19:00:00 +0000</pubDate>
+      <pubDate>Sun, 18 Aug 2013 17:00:00 +0000</pubDate>
       <dc:creator>Elijah Meeks</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/discovering-regions-orbis-v2/</guid>
     </item>
@@ -3595,7 +3637,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;p&gt;The cartogram centers, shown in cyan, are surrounded by the sites closest to them, splitting the Roman world into distinct and, critically, user-defined areas. There are other features slated for v2 of ORBIS, as well as the integration of more detailed routes and route information, but hopefully those will be visible in the public development site and not in simple static screenshots like these.&lt;/p&gt;
 
       </description>
-      <pubDate>Fri, 16 Aug 2013 19:00:00 +0000</pubDate>
+      <pubDate>Fri, 16 Aug 2013 17:00:00 +0000</pubDate>
       <dc:creator>Elijah Meeks</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/orbis-v2/</guid>
     </item>
@@ -3610,7 +3652,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/Macroanalysis.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 13 Aug 2013 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 13 Aug 2013 17:00:00 +0000</pubDate>
       <dc:creator>Glen Worthey</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/dh-reading-group-macroanalysis/</guid>
     </item>
@@ -3624,7 +3666,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;p&gt;Welcome!&lt;/p&gt;
 
       </description>
-      <pubDate>Tue, 13 Aug 2013 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 13 Aug 2013 17:00:00 +0000</pubDate>
       <dc:creator>Glen Worthey</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/habemus-websitum/</guid>
     </item>
@@ -3667,7 +3709,7 @@ Tags: &lt;a href=&quot;https://digitalhumanities.stanford.edu/tags/digital-hist
 &lt;/ul&gt;
 
       </description>
-      <pubDate>Tue, 02 Jul 2013 19:00:00 +0000</pubDate>
+      <pubDate>Tue, 02 Jul 2013 17:00:00 +0000</pubDate>
       <dc:creator>Jacqueline Hettel</dc:creator>
       <guid>https://digitalhumanities.stanford.edu/about-dh-stanford/</guid>
     </item>
