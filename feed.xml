@@ -4,11 +4,38 @@
   <subtitle>Articles and events from the Digital Humanities community at Stanford University</subtitle>
   <link href="https://digitalhumanities.stanford.edu/feed.xml" rel="self" />
   <link href="https://digitalhumanities.stanford.edu/" />
-  <updated>2023-09-26T00:00:00Z</updated>
+  <updated>2023-10-19T00:00:00Z</updated>
   <id>https://digitalhumanities.stanford.edu/</id>
   <author>
     <name>Digital Humanities @ Stanford</name>
   </author>
+  
+  <entry>
+    <title>Ukrainian Memes at &#39;AI at IA&#39;</title>
+    <link href="https://digitalhumanities.stanford.edu/ukrainian-memes-ai-at-ia/" />
+    <updated>2023-10-19T00:00:00Z</updated>
+    <id>https://digitalhumanities.stanford.edu/ukrainian-memes-ai-at-ia/</id>
+    <content type="html">&lt;p&gt;&lt;small&gt;Quinn Dombrowski · October 19, 2023&lt;/small&gt;&lt;/p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/ai-at-ia.jpg&quot; alt=&quot;Ukrainian Memes at &#39;AI at IA&#39;&quot; /&gt;&lt;p&gt;On October 12th, I presented the &lt;a href=&quot;https://memes.sucho.org/&quot;&gt;SUCHO Meme Wall&lt;/a&gt; at the Internet Archive with Slavic department grad student Alyssa Virker, as part of the &amp;quot;AI at IA&amp;quot; event. The Meme Wall project is led by Anna Rakityanskaya, a Slavic librarian at Harvard, and the wall itself and its technical workflow were developed by my CIDR DH developer colleague Simon Wiles. On one level, it was an odd fit for an event highlighting the innovative projects happening at and around the Internet Archive that leverage AI tools, developing corpora at scale, and exploring shifts in societal attitudes towards AI. The SUCHO Meme Wall is richly annotated and entirely hand-curated by people who can read the text and interpret the context of these memes. Even the most cutting-edge tools do an uneven job at best at the same.&lt;/p&gt;
+&lt;p&gt;As a test before the talk, I worked with Jamie Joyce from the Internet Archive to run a couple memes through Dall-e 3, asking it to explain them. It completely failed on a meme that is one of my kids&#39; favorites. (Operation Z is a Russian name for their war; the meme came out around the time Ukraine sunk a Russian battleship.)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/dalle-operationz.jpg&quot; alt=&quot;An image of a battleship labeled Operation Z, and then no battleship in the ocean labeled Operation Ctrl+Z. Dall-E explanation text is: This is a meme image consisting of two photos of a battleship at sea. The top photo shows the battleship sailing forward with the text “OPERATION Z” above it. The bottom photo shows the battleship sailing backwards with the text “OPERATION CTRL+Z” above it. The meme is making a joke about the battleship reversing its course, as if undoing its previous action 1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;That meme had always struck me as one of the most straightforward ones: very easy to explain to the kids, who still giggle when they see it. When we gave Dall-e 3 what I thought of as a more complex meme, it did better:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://digitalhumanities.stanford.edu/post-images/dalle-lotr.jpg&quot; alt=&quot;Lord of the Rings F-35 meme, as described in text below.&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The image contains three segments, seemingly referencing a meme format. The text is in Ukrainian. Here&#39;s a breakdown:&lt;br /&gt;
+Book Cover:&lt;br /&gt;
+Top and bottom images depict a book with the title &amp;quot;Володар Перснів&amp;quot; which translates to &amp;quot;Lord of the Rings&amp;quot; in English.&lt;br /&gt;
+Center Image:&lt;br /&gt;
+Depicts two characters from &amp;quot;The Lord of the Rings&amp;quot; standing on a modern fighter jet (Lockheed Martin F-35).&lt;br /&gt;
+Text: &amp;quot;Володар Перснів, якби у Фродо і Сема був Локхед Мартін F-35&amp;quot;. This can be translated as &amp;quot;Lord of the Rings, if Frodo and Sam had a Lockheed Martin F-35&amp;quot;.&lt;br /&gt;
+Book Spine:&lt;br /&gt;
+Text: &amp;quot;Володар Перснів, якби у Фродо і Сема був Локхед Мартін F-35 обіцяний штатами, але вони були змушені чекати на підтвердження передачі мусили ще пройти навчання&amp;quot;. This translates to &amp;quot;Lord of the Rings, if Frodo and Sam had a Lockheed Martin F-35 promised by the states, but they had to wait for transfer confirmation and still had to undergo training&amp;quot;.
+It&#39;s a humorous take on the idea that if the characters from &amp;quot;The Lord of the Rings&amp;quot; had modern technology, their journey and challenges would be considerably different. The joke seems to also touch upon the complexities and delays associated with military equipment transfers and training.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;My takeaway from this, as with many AI experiments, is that in choosing what tasks to pass to AI challenges our human-oriented ideas of what&#39;s &amp;quot;easy&amp;quot; or &amp;quot;hard&amp;quot;, and care and recalibration are essential for AI to be more use than hassle.&lt;/p&gt;
+&lt;p&gt;Alyssa spoke movingly about the power that these memes have as a vehicle for communication, self-expression, and solidarity across Ukraine and the Ukrainian diaspora. We both touched on the ways that &lt;em&gt;people love these images&lt;/em&gt; and want to see them preserved. Capturing and annotating these memes-- whose existence online is ephemeral, passing swiftly into the unqueryable depths of algorithmic feeds -- is an act of resistance to Russia&#39;s attempt to extinguish Ukrainian culture. And on one level, it&#39;s deeply satisfying to know that &lt;em&gt;this&lt;/em&gt; celebration of Ukrainian language, culture, and humor in dark times is (we think) the largest extensively hand-annotated meme corpus on the internet, and may well contribute to the future development of language and image models that are better at interpreting memes. In its own way, our Meme Wall is as much a hopeful and forward-looking contribution to the discussion of AI as Peter Wang&#39;s talk about AGI and ethical alignment: we&#39;re imagining a future of training data done differently, much as Lila Shroff does in her recent post &amp;quot;&lt;a href=&quot;https://joinreboot.org/p/artist-datasets&quot;&gt;Datasets as Imagination&lt;/a&gt;&amp;quot;, which quotes Anna Ridler in &lt;a href=&quot;https://annaridler.com/myriad-tulips&quot;&gt;describing dataset creation as craftwork&lt;/a&gt;: &amp;quot;repetitive, time-consuming…but necessary in order to produce something beautiful&amp;quot;. (This very much speaks to me, as someone who runs a &lt;a href=&quot;https://textilemakerspace.stanford.edu/&quot;&gt;Textile Makerspace&lt;/a&gt;. Thanks to Pam Lach for the pointer to that piece!)&lt;/p&gt;
+&lt;p&gt;To learn more about the SUCHO Meme Wall, check out Anna Rakityanskaya&#39;s &lt;a href=&quot;https://doi.org/10.1080/15228886.2023.2169634&quot;&gt;article in Slavic &amp;amp; East European Information Resources&lt;/a&gt;. You can also check out the &lt;a href=&quot;https://www.youtube.com/watch?v=USKMXT6t42w&amp;amp;ab_channel=InternetArchive&quot;&gt;video of the Internet Archive event&lt;/a&gt; on YouTube; our portion starts around the 46 minute mark.&lt;/p&gt;
+</content>
+  </entry>
   
   <entry>
     <title>DLCL ATS round-up, summer 2023</title>
