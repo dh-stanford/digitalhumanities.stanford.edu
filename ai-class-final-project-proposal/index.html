@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>AI class final project proposal :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+
+
+  <meta property="og:title" content="AI class final project proposal" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/ai-class-final-project-proposal/" />
+<meta property="og:site_name" content="Digital Humanities at Stanford" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="Post image" />
+<meta name="description" content="" />
+
+
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-between ">
+        <div
+          class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">AI class final project proposal</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Quinn Dombrowski<span class="text-muted d-block mt-1">November 8, 2023</span>
+            </small>
+          </div>
+        </div>
+        
+        <div class="col-md-6 pr-0 align-self-center">
+          <img class="rounded" src="../post-images/ai-final-project-weaving.jpg" alt="AI class final project proposal">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <p>Week 6 of &quot;Future Text: AI in Languages, Literatures, and Cultures&quot; has me approaching more familiar ground than the quarter so far. The class, like my non-English DH course, has a final project component. With 60 students, two instructors, and two TAs, we've split the students into four groups for final project support and advising, and I took the 20 students doing projects that are in some way technical, or involve hands-on crafting. For a class that's often felt disorienting (I'm not used to so many, particularly so many who for much of the quarter have been <em>so reluctant to talk at all</em>, willing to push <a href="https://scholarslab.lib.virginia.edu/blog/counting-to-seven/">Brandon Walsh's tips</a> to the breaking point), supporting 20 students to whatever extent they want in doing a technical or creative <em>thing</em> feels like a shift to something I'm more comfortable with. I've had 20 students before, both in last spring's &quot;Data Visualization with Textiles&quot;, and nearly 20 in fall 2020's non-English DH class. I might even have a prayer of learning at least these 20 students' names before the quarter is over.</p>
+<p>I've been more careful than usual when it comes to taking on things this quarter, given the scale of the class and how much time and space it takes up in my calendar, on my to-do list, and in my head. Other DH projects are going more slowly when they involve a sizable investment of time on my part. Some things are on hold until winter. I'm behind on planning workshops at the Makerspace. But the shift towards final projects and Thanksgiving on the horizon have left me feeling like we might actually pull this off, and I can risk indulging myself in one of my favorite things to do when assigning final projects: do one myself. This belated blog post (it's okay, I checked with me and granted myself an extension) is my project proposal, for my own amusement and yours.</p>
+<p>For my final project I'm going to try to grapple with what we did with this AI class. Because the topic we're covering is rapidly changing, new things are being written, and we had to rethink the format of the class given the students' reluctance to talk, not all the readings were things I, at least, thought long and hard about -- even when they were readings that I was changing to at the last minute. I wanted to take a moment to <em>actually engage with them</em> on a different level, individually and as a whole. Similarly with the students: there are a lot of them, and I don't have the luxury of getting to know them better in smaller groups like the TAs do in section. I have access to systems with data about them -- their major, their grades on assignments, their attendance -- but struggling with names particularly for the students who never talk in class, all the data seems more like a pile of facts than anything I have a feel for on any level. So I'm going to try to weave the class and make something beautiful, or at least striking, out of it.</p>
+<p>I've discovered this quarter that I really love weaving, and if I have a rigid heddle loom project going, it takes a lot of willpower to not stay up far too late working on it. This will likely come in handy on this project, because some of it will necessarily be last-minute work. I'm going to work with four sets of data: student majors, readings / lecture slides, attendance, and assignments. (Final project type -- analytical, creative, or technical -- might be a fifth.)</p>
+<p>The first time I tried to weave data on the rigid heddle loom, it was my library group's Slack messages, and I warped the loom using the same solid color all the way across. I soon learned how limiting this was, but I'd already put in a whole evening figuring out how to warp a loom in my kitchen and I wasn't going to start over. So that project wound up being all color and stripes. And I liked it, but I wanted to do more with warp/weft interplay and patterns, so my second project (currently in progress) has a more thoughtfully crafted warp (depicting what <em>Star Trek</em> series are represented in the novels, in what proportions). But then the data wasn't sorted the way I thought it was, and I didn't notice until 100+ rows in, so it'll end up doing something a little different than I was planning.</p>
+<p>Because I wanted to do the <em>Star Trek</em> data at least somewhat in chronological order, I was limited in what I could mix and match to get different patterns at the intersection of warp and weave. With the AI class, weaving the data in different orders is actually <em>beneficial</em>, as a way to enhance student privacy. Unusually for me, for this weaving I'll be working with a more limited palette of colors than I would otherwise, in order to maximize the possibilities for interesting patterns to emerge as the colors intersect with themselves. Colors will carry different meanings depending on where they occur in the weaving. The colors themselves aren't my usual favorite blues, greens, and purples: for this weaving, it'll be yellow, orange, red, white. It feels like the world is on fire, AI discussions often escalate to hitting the panic button -- and it's a small nod to the knitting I've been doing on the days when Laura Wittman does the lecture, using a <a href="https://www.republicofyarnia.com/product-page/halloween-special-drago-lantern">yarn from Republic of Yarnia</a> dyed to represent a fire-breathing dragon.</p>
+<p>As I worked on putting together a spreadsheet with the data, I realized I'm going to have to grapple with issues of scale. I'm counting not individual lecture slides (those numbers were boring, landing consistently in the 25-35 range) but <em>words on the lecture slides</em> (500-2,200). I was thinking of lopping off two zeroes and weaving 5-22 rows for those slides, but that's not going to work for the readings, where the <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">Stephen Wolfram piece on how ChatGPT works</a> comes in at 20,700 words. I'm not weaving 207 rows for that reading; I'm thinking of scaling readings to a row per thousand words, even though it means reducing favorite pieces to two rows with some generous rounding.</p>
+<p>Working with the student major data has led to some discoveries about how my university is set up. Just about half the students are CS majors; more if you include the several math + CS majors. CS is part of the Engineering division, along with various other flavors of engineering, including mechanical engineering, management science &amp; engineering, and bioengineering. Altogether, folks affiliated with the engineering division are 2/3 of the class. I was vaguely aware on some level that the sciences have a closer organizational kinship with the humanities than CS, but I rarely think about the fact that biology and physics are in the divisional bucket as my non-English literature department. The student majors, I've decided, will be the warp threads, and I'm hoping to show those divisional relationships in how I map majors to colors: things in the red zone for engineering, yellow for humanities, orange for sciences, and white for undecided.</p>
+<p>Scale is relevant for the student data, too. To get the number of warp threads I want, 60 students is for once not enough: each data point will be represented twice. I managed 90&quot; warp threads by warping the loom in my office across two long tables, which will help me pack in the data about attendance and student assignments: even using a thin yarn for student data, each assignment takes up a lot of space with 60 students.</p>
+<p>The question I kept going back to when reviewing student final project proposals was, &quot;How does this connect to the themes of the class?&quot; It would not have satisfied me, in my instructor hat, for the answer just to be that this weaving is a representation of the class. There's three points that I think make this work:</p>
+<ol>
+<li>My relationship to this data: we've talked about Books3 and how clearly some thought went into its construction (<em>so much &quot;Magic Treehouse&quot;!</em>) but we don't have access to that decision-making logic. One of the things that's struck me in talking with the CS students is their attitude towards  data: they casually reference grabbing data sets off of Kaggle. With the kind of digital humanities I do and teach, data is never something you can just grab somewhere. Odds are, you're building it -- slowly, painstakingly, and with a great deal of thought and care. You end up with a very different relationship with data that way. I want to apply that kind of thoughtfulness to the data created by this course, considering issues like scale and how it maps to color, and incorporate those elements deliberately into the weaving. If I get Dall-e 3 access before the end of the quarter, I might try dumping in the data and asking it to generate some art and explain it as a point of comparison.</li>
+<li>Where your data ends up: the conversations you have with ChatGPT go back into its training data, though you often don't think about it. (The API can be different, but the chat interface is still the primary one for many people.) It's easy to put that out of your mind, but having <em>your data show up in front of you as a physical object</em> (anonymized, but I imagine students can find threads that represent themselves and their work if they look) is much harder to forget about.</li>
+<li>Following AI instructions: I tried to ask ChatGPT for weaving advice, as a fairly new weaver. As usual, it wrote superficially fluent prose, and even got fairly detailed, but the actual information about how to implement different designs did not line up especially well with the handbook I picked up from my local library. Add another craft to the list of dubious ChatGPT topics -- honestly, it's kind of amazing it sounded as plausible as it did, given the older age skew of weavers and the amount of information online compared to, e.g. knitting or crochet.</li>
+</ol>
+<p>I had a moment of panic when I finished warping the loom that I had created some kind of abominable hot dog with a condiment buffet.</p>
+<p><img src="../post-images/ai-final-project-hotdog.jpg" alt="Warp threads on a rigid heddle loom, in shades of red, yellow, white, and orange"></p>
+<p>I consoled myself with the idea that I could write it off as a homage to the <a href="https://www.engadget.com/2017-05-15-not-hotdog-app-hbo-silicon-valley.html">hot dog / not a hot dog app</a> in <em>Silicon Valley</em>, or maybe there's a story here about how the humanities is treated like some mustard on the hot dog of a CS undergrad education.</p>
+<p>Now that I've started adding the actual data, though, I'm more curious than despairing.</p>
+<p>One row at a time, it's coming together.</p>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>
