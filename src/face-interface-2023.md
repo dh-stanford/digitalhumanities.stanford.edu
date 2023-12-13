@@ -1,6 +1,6 @@
 ---
 layout: templates/article
-title: "Face/Interface 2023"
+title: "Geeking Out at Face/Interface 2023"
 author: Quinn Dombrowski
 date: 2023-12-13
 post_images:
