@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Face/Interface 2023 :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+
+
+  <meta property="og:title" content="Face/Interface 2023" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/face-interface-2023/" />
+<meta property="og:site_name" content="Digital Humanities at Stanford" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="Post image" />
+<meta name="description" content="" />
+
+
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-between ">
+        <div
+          class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">Face/Interface 2023</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Quinn Dombrowski<span class="text-muted d-block mt-1">December 13, 2023</span>
+            </small>
+          </div>
+        </div>
+        
+        <div class="col-md-6 pr-0 align-self-center">
+          <img class="rounded" src="../post-images/faceinterface-arik.jpg" alt="Face/Interface 2023">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <p>Fonts, like fountain pens, are a locus of intense, niche geekery — one I've only ever dabbled in, but where I can imagine my life being different very if I stumbled into digital typography at the right moment. Likewise with script encoding: when I learned about Debbie Anderson's <a href="https://scriptencodinginitiative.github.io/">Script Encoding Initiative</a> while working at Berkeley, it made me wish I could go back in time and become and undergrad volunteer. The new <a href="https://silicon.stanford.edu/">SILICON</a> (Stanford Initiative on Language Inclusion and Conservation in Old and New Media) project I've been working on with Kathryn Starkey, Tom Mullaney, and Elaine Treharne has been a source of great joy lately. It feels like a second chance to dive into some of these latent niche passions. The <em>Face/Interface</em> conference at the start of December, organized by Tom Mullaney, served as the official kick-off for SILICON. It was a wonderful celebration of language, script, interface, and design, 40 years after a conference on &quot;The Computer and the Hand in Type Design&quot;, held shortly after the founding of <a href="https://doi.org/10.1016/j.sheji.2020.08.006">Stanford's short-lived digital typography program</a>.</p>
+<p>The program, as described in the opening and closing keynote by co-founder Chuck Bigelow, was a collaboration between the Art and Computer Science departments. In the end, it was the Art department's decision to withdraw from the arrangement that led to the program's demise after less than a decade. But during those years, Bigelow's mathematician collaborator Donald Knuth refined MetaFont (a vector-based type design description language) and developed TeX, which underpins and handles the layout for LaTeX. Donald Knuth was at the event as well. I'll confess I knew him better for his &quot;literate computing&quot; programming paradigm, which I'd referenced in my <a href="https://programminghistorian.org/en/lessons/jupyter-notebooks#literate-computing">Programming Historian tutorial on Jupyter notebooks</a> and whose concept of &quot;tangled&quot; code executed by a computer and &quot;woven&quot; formatted documentation speaks to me even more now that I regularly untangle and weave things physically. And the students of the program went on to be key players in the ongoing development of digital typography in Silicon Valley and beyond.</p>
+<p>I had decided in advance that I wasn't going to do a detailed livepost of the conference, especially since all the talks were being recorded. But there were so many remarkable moments that I did end up posting a few of them on Bluesky. Ariq Syauqi's talk on his work developing fonts for Javanese and Balinese raised fascinating, messy challenges like how you handle a concept like &quot;bolding a word&quot; when the script is a syllabary, where a syllable can be split between two words? The way that these scripts — which can involve no small amount of vertical stacking — get cut off and otherwise mangled in text-input fields of web forms was also thought-provoking.</p>
+<p>Arshia Sobhan Sarbandi's experiments with AI-generating Perso-Arabic script showed how badly Dall-e 3 fails on it, even though it's improved dramatically for Latin. What's worse, these pseudo-script images are likely to end up in future training data sets, making the situation worse rather than better. He drew a connection to the use of &quot;Arabic&quot; script in Orientalist European art, like the background of Jean-Léon Gérôme's &quot;The Snake Charmer&quot;.</p>
+<p>I'll confess that AR tech has never spoken to me much, but nonetheless, Niteesh Yadav's talk about typography in AR was striking. In short, it's bad, but it's bad because today's AR is based on game engines, which are stuck in the 90's with how they render text: lots of bitmaps, where the texture and fuzziness is visible when you get &quot;close&quot;.</p>
+<p>We got a fascinating peek into the process of font designers, including Fernando de Moraes Caro's numerous revisions of his font for Dives Akuru, an extinct script, trying to balance &quot;rationalizing&quot; and embracing the irregularities inherent in calligraphy. Alexandre Bassi amazed the audience with his assemblage of examples of the Mayan jaguar glyph, and a video showing step-by-step his sketch of that glyph for his font — fresh off his digital pen, as apparently he'd been sketching in the car on an outing to San Francisco the day before.</p>
+<p><img src="../post-images/mayan-faceinterface.jpg" alt="Multiple examples of Mayan jaguar symbol and the composite sketch"></p>
+<p>Shani Avni &amp; Liron Lavi Turkenich's talk took the interplay between technology and script in a different direction, showing how easily-broken wood type led to a shortened default ascender for Hebrew: a change not everyone was happy about, but one which put it into better vertical alignment when typeset with Latin script..</p>
+<p><img src="../post-images/hebrew-ascender.jpg" alt="Slide with drawing of people sawing off or wrestling into place Hebrew ascender"></p>
+<p>Manish Goregaokar and Ben Joeng (Yang) demystified the Unicode script proposal process by acting out a scenario for a script &quot;from a small island off the west coast of Europe&quot;, which had to spell out and explain features like capital letters, and justify why certain glyphs like c and g shouldn't be unified. It was a wonderful moment of flipping the English default on its head for a moment, and I plan to use that video clip in a future non-English DH class. The pair's introduction slides were multilingual and multi-scriptural, giving their names in a variety of languages and scripts and showing an IPA transcription. During the coffee break, we talked about how the registration form for the event in the future should include two name fields: one for your name as used in English, and another with your name in your preferred script/language, or just another that you like.</p>
+<p><img src="../post-images/faceinterface-name-transliteration.jpg" alt="Slide with various ways to write and the IPA transliteration of Ben Joeng's name"></p>
+<p>Hrant Papazian teaches font design at Cal State LA, noting that the school's motto &quot;ranked #1 in the nation for upward mobility&quot; has a dark side: you can only get that kind of mobility starting from the bottom. The examples he showed of his students' work were beautiful; they learn to make fonts for non-Latin scripts, including ones for languages they don't personally know. He acknowledged that the money is in fonts for the Latin script, but he described advocating for non-Latin scripts nonetheless, drawing from his own pride in the Armenian script. This led to one of the most heated moments of the conference in the Q&amp;A, which turned into a debate between Papazian and an attendee of Basque heritage about the value of a language having a distinctive script, especially in light of the technical challenges involved in having a non-Latin script. In this discussion, Peter Bilak also noted, drawing from his work on fonts for indigenous languages, that &quot;in the absence of geographic autonomy, graphic autonomy is meaningful.&quot;</p>
+<p>Kourosh Beigpour's poetic reflection on the Farsi type of Los Angeles added another perspective on script and identity. He took us on a tour of shop signs, neon lights, and gravestones in the Persian-speaking (but also vibrantly multilingual and multi-scriptual) neighborhoods of Los Angeles, often in the same, plain typeface but it was what they had 50 years ago when a community had to reconstruct their identity in a new place. Having signs in Persian, even without aesthetic fonts, signals &quot;an Iranian is living or working here&quot;; as he put it, &quot;We are carriers of language. A script is a reflection of culture and heritage.&quot;</p>
+<p>The conference was live-streamed, and all the recordings will be available online in 2024, which I really appreciate as a way to make the event more accessible from the perspective of the talks themselves. But it was likewise a reminder of how few examples come to mind of virtual spaces that recreate the playfulness that comes out in informal moments in person at a conference. One of my fondest memories was playing a game of &quot;what's the glyph drizzled onto the soup&quot; with Chuck Bigelow and other folks at my table, including Abeera Kamran.</p>
+<p><img src="../post-images/faceinterface-soupglyph.jpg" alt="Abeera Kamran laughing at the drizzled glyph in her soup"></p>
+<p><a href="https://silicon.stanford.edu/">SILICON</a> is hoping to have Face/Interface be an annual event — keep an eye out for a CFP next year, or consider joining us in person or online!</p>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>
