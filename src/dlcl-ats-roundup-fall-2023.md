@@ -7,6 +7,8 @@ post_images:
   - ../post-images/ai-weaving-fall2023.jpg
 ---
 
+This fall, I got my first experience teaching a large class, helped launch a major new Unicode project, and got excited about the possibility of weaving as a medium for data visualization.
+
 ## Textile Makerspace
 
 It's been a great fall at the Textile Makerspace, which I incorporated into the _Future Text: AI in Literatures, Cultures, and Languages_ class (more on that below). We've been having regular hours thanks to student staff, and have picked up a few additional volunteers and staff for the winter who will help out with more hours.
