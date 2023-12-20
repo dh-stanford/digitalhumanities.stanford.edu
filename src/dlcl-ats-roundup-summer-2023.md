@@ -33,7 +33,7 @@ I still have several things on my to-do list related to the **Multilingual DH w
 
 In my role as **ACH representative to ADHO**, I attended something like 20 hours of (un-air-conditioned in the heat of summer) meetings at the DH 2023 conference, which included the joyous task of welcoming two new constituent organizations, the Korean Association of DH and DHARTI (based in India). I was talked into serving as Secretary of the Constituent Organization Board, so I have more early morning meetings in my future for this upcoming year as we continue to try different angles on the question of what and who ADHO is for.
 
-This summer, I sorted out a workflow for going from scanned**Jewish cookbooks** to OCR'd text, and a student assistant has helped make it happen. Once we have a few more plain text files, I'll be working on Python scripts for parsing the data into a **Django database**. Likewise, the historic TAPS costume collection is going to be a December effort, due to how the summer has gone for the TAPS folks.
+This summer, I sorted out a workflow for going from scanned **Jewish cookbooks** to OCR'd text, and a student assistant has helped make it happen. Once we have a few more plain text files, I'll be working on Python scripts for parsing the data into a **Django database**. Likewise, the historic TAPS costume collection is going to be a December effort, due to how the summer has gone for the TAPS folks.
 
 This fall I'll be returning to the **DLCL dissertation** project, which will be enriched by some data about career outcomes gathered by Phoebus Cotsapas.
 
