@@ -4,7 +4,7 @@ title: "DLCL ATS round-up, winter 2024"
 author: Quinn Dombrowski
 date: 2024-03-28
 post_images:
-  - ../post-images/dhrpg_dice.jpg
+  - ../post-images/slavicdh_aatseel.jpg
 ---
 
 This winter I got to revisit my best class, DLCL 205: Project Management and Ethical Collaboration for Humanists, AKA the [#DHRPG course](https://dhrpg.github.io/), and juggled work on several projects, as well as starting to wrap up my service as ACH co-presient while also launching a new ACH working group on AI.
