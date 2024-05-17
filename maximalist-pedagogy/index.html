@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>The joy of maximalist pedagogy in DH :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+
+
+  <meta property="og:title" content="The joy of maximalist pedagogy in DH" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/maximalist-pedagogy/" />
+<meta property="og:site_name" content="Digital Humanities at Stanford" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="Post image" />
+<meta name="description" content="" />
+
+
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-between ">
+        <div
+          class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">The joy of maximalist pedagogy in DH</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Quinn Dombrowski<span class="text-muted d-block mt-1">May 17, 2024</span>
+            </small>
+          </div>
+        </div>
+        
+        <div class="col-md-6 pr-0 align-self-center">
+          <img class="rounded" src="../post-images/quinn_office.jpg" alt="The joy of maximalist pedagogy in DH">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <p>I have not been great at blogging lately, though I don't have Brandon Walsh's excuse of an infant around the house. Still, I read with interest his piece on <a href="https://scholarslab.lib.virginia.edu/blog/maximalist-digital-humanities-pedagogy/">Maximalist Digital Humanities Pedagogy</a> a little while ago, and think I might have a few missing pieces to add to this discussion.</p>
+<p>It's hard to find much to love about maximalist DH pedagogy via the list of traits he enumerates, including &quot;many tools, few decisions&quot;, &quot;more readings&quot;, &quot;the greatest&quot;, &quot;tech tech tech&quot;, &quot;overwhelm&quot;. Some of the other points feel like a gray area that could be the basis for a different take on maximalist pedagogy: &quot;dwelling only in possibilities&quot;, &quot;no constraints&quot;, &quot;no prior experience necessary&quot;, &quot;yes, and&quot;.</p>
+<p>Maybe it was that the picture Brandon chose illustrating &quot;maximalism&quot; resonated with my own visual aesthetic, but reading this piece made me recognize that, honestly, &quot;minimalism&quot; isn't my vibe in any context, ever. But my maximalism isn't &quot;all the latest tools and tech and readings and assignments&quot;, either. So what is it?</p>
+<p>I have to start by saying that my maximalism is only possible because of the unusual nature of my job, and the place I work. I'm not an adjunct with a crushing course load and huge classes. My biggest class ever was last fall's AI course, with 60 students, a co-instructor, and two TAs. I taught multilingual DH to 20 students in fall 2020, asynchronously. This quarter, I have 25 students in &quot;Data Visualization with Textiles&quot;, but it's a one-credit independent study. My job is to support DH primarily within my department (non-English literatures) -- which includes hands-on project work, collaborating with grad students, matching people with resources, thinking and working on infrastructure (like OCR / HTR workflows) for multilingual DH and my department's other programs, and also teaching. In quarters when I'm teaching an intensive class, people are generally understanding if some of the project work takes longer. I'm in an incredibly fortunate position here, where I get to do a lot of different things that I love, where my work on projects and infrastructure informs my teaching, and vice versa.</p>
+<p>In some sense, my job itself is maximalist. Maximalist jobs most often appear in bad forms: jobs with impossible expectations and an absurd scope. But I've had the good fortune to land in a maximalist position with a long history -- the Academic Technology Specialist program dates to the 90's. My department has had arguably the best track record with these roles, recognizing that different people bring different things to it, but it's a valuable contribution to the department in whatever form it takes. The job itself is &quot;dwelling in possibilities&quot; and &quot;no constraints&quot; and &quot;yes, and&quot; -- I support DH (defined very broadly) for the department. It's not &quot;no experience necessary&quot;, but I came into it with basically no ability to code, and most of what I do day-to-day on a technical level anymore I've learned over the last few years. I love all these things about my job, and what they've enabled me to do: start a <a href="https://textilemakerspace.stanford.edu/">Textile Makerspace</a>, teach project management <a href="https://dhrpg.github.io/">using a D&amp;D-style role-playing game</a>, build non-English corpora, <a href="https://datasittersclub.github.io/site/books">develop pedagogical materials using the Baby-Sitters Club books</a>. Having a less-maximalist job would feel constraining; I think I'd suffocate in a faculty position where I was expected to develop a focused research agenda, write a book, and teach some core courses for several years.</p>
+<p>I can tell a sensible story about the DH pedagogy landscape here, about how there's enough people who want exposure to some kind of DH training, and being the person who offers the one <a href="https://github.com/quinnanya/dlcl204">non-English-oriented text analysis class</a> means that I owe it to the students to make the class work for whatever language they bring me. A minimalist approach would mean making decisions to support one set of languages and not another, and/or limit the scope to a certain set of methods. I do that to some extent (we don't cover digital exhibits, for instance) but I think of my non-English DH class as something like a scaled-up version of the project consulting I do for my grad students, except I can do it for students outside my department. How frustrating would it be to show up with a set of questions that you want to ask an expert, and instead they talk about something else? But because it's a class with usually 5-10 people, each with their own languages and interests, I try to find a way to make at least the methodological stuff interesting and thought-provoking for everyone, even if not every method makes sense for every student's intended project.</p>
+<p>The <a href="https://dhrpg.github.io/">#DHRPG class</a> (Project Management and Ethical Collaboration for Humanists) has its own kind of maximalism: it's run as a simulation of a year in the life of a DH project, and stripping that experience down to a &quot;minimalism&quot; version, I believe, would do students no favors. The real world, and collaborating with real people, is messy and complicated. There have been other DH project management simulations (like DH Quest), but the choices necessary to turn the DH experience into something you can play as a simple web-based game inevitably strip it down to something that no longer resembles what it actually is. I want the students to be able to make choices for their character -- a broad universe of choices, including not working on the DH project at all -- and then for the whole project team to live with the consequences of these individual choices, all piled on top of one another. The difficulties and compromises that are unavoidable if you're going to work with real people and try your best to do right by them -- that's the biggest takeaway I want the students to leave with. I don't think you can get there through minimalism -- or if there's a path, I don't know it.</p>
+<p>The Data Visualization with Textiles independent study takes openness and flexibility to the maximum. It's structured so most of the &quot;class&quot; is just the students spending time in the Makerspace, learning and exploring different equipment and techniques. There's a weekly check-in assignment, and a few others along the way (actually make a data set based on data you compile from your life! spend 90 minutes making a textile data visualization based on one of three data sets I give you!), but it's a lightly structured framework for students to actually make time to learn a craft. The crafts that speak to them vary widely: some are doing hand embroidery, some are sewing garments, some are doing crochet or weaving. There absolutely are more focused textile craft classes on offer at Stanford: in Theater and Performance Studies, there's a class focused just on developing a solid set of core sewing techniques. I'm very glad it exists; as a student, I would have hated it and quite possibly concluded that sewing wasn't for me.</p>
+<p><img src="../post-images/quinn-teaching-makerspace.jpg" alt="Quinn teaching in the Makerspace"></p>
+<p>The times I'm staffing the Makerspace during open hours it's wild: bouncing between several groups of students, helping each debug their problems just enough that they can move forward on their own, until they hit the next roadblock, while I work with someone else on their project -- sometimes involving an entirely different machine or craft. When I've spent a whole afternoon that way in the Makerspace, I feel completely wrung out but happy. And based on the students' midterm assignments, I've been really pleased with how this quarter has been going overall.</p>
+<p>I describe these three classes I teach as examples of maximalism, as if there's some sort of well-considered pedagogical underpinning for why they are the way they are. I think I can do a reasonable job justifying them in an post-hoc way, but if I'm honest with myself, my classes are like this most of all because <strong>I'm like this</strong>, and I'm in a position where I can run my classes as I see fit.</p>
+<p>Would I recommend maximalist pedagogy? Probably not, considering the circumstances under which most DH teaching takes place. If you don't have time and support and a lot of flexibility with the rest of your life, and ways to connect it with your other responsibilities, I can imagine adopting maximalist pedagogy the way I do it in my classes being a gasoline can on the fire of academic burnout. But for me, given my job, non-teaching responsibilities, and my way of existing in the world as a person, it's a beautiful thing, and I'm proud of what I manage to do with it.</p>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>
