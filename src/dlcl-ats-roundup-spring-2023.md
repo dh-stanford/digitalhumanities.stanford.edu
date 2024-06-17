@@ -1,0 +1,102 @@
+---
+layout: templates/article
+title: "DLCL ATS round-up, spring 2023"
+author: Quinn Dombrowski
+date: 2023-06-21
+post_images:
+  - ../post-images/knitting-machine-animals.jpg
+---
+
+Attempting to restore some order to my inbox reminded me what a busy quarter this spring has been, with a combination of teaching, travel, and on-campus events. 
+
+
+
+
+## Classes
+
+This quarter I ran two independent studies: the DH Practicum, where students work on their own DH project with support from me, and "Data Visualization with Textiles", a new class where students spend time at the Textile Makerspace during its open hours, learn one or more textile methods, then do a project using those methods that also incorporates a data element.
+
+I've done the DH Practicum before, though never with this many projects at the same time. I worked with Merve Tekgürler on their project exploring the lemmatization capabilities of GPT-3.5 and GPT-4 for Ottoman Turkish, as well as models they could fine-tune. With help from Sebastian Majstorovic of SUCHO, I worked with Alyssa Virker on her project gathering and analyzing TikTok videos featuring Ukrainian poetry. Chloé Brault MacKinnon worked with her CESTA intern Claire Chua on a project comparing historical and recent news articles about Pierre Vallières and his book *Nègres blancs d'Amérique*.
+
+The 1-credit "Data Visualization with Textiles" class was an experiment, and one that turned out better than I could have reasonably expected, especially since I planned for 5 students and ended up with 20 and a full waiting list. The Textile Makerspace can't physically fit that many people at once, so students were invited to come by during any of the Makerspace open hours. (Still, somehow, there were days when it felt like half the class managed to show up at once!) As a result, the Textile Makerspace staff -- Akasha Hayden, Shaina Kaye, Cristyn Filla, and Kavya Srikanth -- deserve so much credit for making this class work, as co-instructors when students came to the Makerspace during their shifts.
+
+I ran a couple specific topical workshops as part of the textile dataviz course, on how to read sewing patterns, and on how to think about incorporating data. I had in-person, one-on-one meetings with almost all the students in the middle of the quarter, to check in and talk through any questions about their final projects. The final projects were diverse and delightful, from turning seven years of selfies into a scarf with custom-made yarn capturing changes in hair color over that time, to a string-based visualization of obsessive thoughts, to hand-embroidery capturing an immigration journey. I'm really looking forward to teaching it again next year.
+
+
+## Textile Makerspace
+
+This quarter I completely rebuilt the Textile Makerspace website, which now includes profiles for each of our pieces of equipment... written in the first person, as a way to center the personalities and quirks of these tools. 
+
+The Textile Makerspace has a couple more new acquisitions: the Studio Mod 360 punchcard knitting machine and a Brother KH-940 knitting machine. The KH-940 is a digital knitting machine with a built-in computer that has over 400 patterns, but Akasha gave it an electronic brain transplant by hooking it up to an Arduino with a custom shield, and now it can knit any B&W image thanks to the open-source [All Yarns Are Beautiful](https://ayab-knitting.com/) software. After development stalled for a few years during the pandemic, AYAB is now approaching a 1.0 release, and I've been enjoying following along in their Discord channel.
+
+Loom setup continues to be a struggle, since none of us really know what we're doing, frankly. I'm hoping some focused effort at the end of the summer can get us something usable in time for fall.
+
+We got some generous yarn donations from my mother-in-law, Mary Dombrowski, which led to several creative student projects. As one student quipped, "I wish I could marry into yarn!" The yarn bins have overflowed this quarter, also with a donation from the Arts Council to fund a stash of yarn for projects that they're not able to individually fund, as the number of textile-based project proposals has grown dramatically in recent years.
+
+Wrapping up the full cycle of an academic year at the Textile Makerspace, I've discovered that during the last couple weeks of spring quarter, the embroidery machine is in near-constant use as graduating seniors make goodbye gifts and embroider graduation stoles. I also worked with Chloé to embroider several pin-on embroidered patches using the grad student union logo, to hand out at graduation.
+
+The Makerspace will be on summer hiatus until mid-August, at which point I hope to finish the documentation project I've begun, putting QR codes on every machine that takes the viewer directly to the machine's profile page, with quickstart instructions.
+
+
+## Existing Projects
+
+The **Data-Sitters Club** has been stuck this quarter, with several pieces in progress and nothing complete. *DSC Super Special 1* is basically done, but not the accompanying new website. The topic modeling book with Xanda Schofield is almost there, but first I need to finish the corpus book, where I've been struggling to find a good example for a case study. I suspect we'll be able to get through all of these this summer.
+
+At the same time, this was the quarter that got the **Multilingual Harry Potter fanfic** project unstuck, thanks to the patience and skill of Valeria Korotkova and support from Francesco Bacci as our Italian data expert. Lera has worked wonders on data wrangling and network visualization, and for the first time publishing this project doesn't feel like a pipe dream.
+
+Towards the end of the quarter, with CSS design help from my colleague Simon Wiles in the library, I was able to put together a **Senegalese Countercultural Movement** website with Fatoumata Seck, and get the materials she's gathered from the Front Culturel Sénégalais accessioned into the Stanford Digital Repository with support from Geoff Willard in the library.
+
+**Global Medieval Sourcebook** has a projected wrap-up date of this summer, and I've got a list of design changes to make before the final data import. It's the very last of the lingering Drupal projects from my predecessor, and I'm looking forward to having all of them migrated in time for my 5th anniversary here.
+
+Another longstanding Drupal project was the **Entitled Opinions podcast**, recently migrated to a modern WordPress site hosted by WordPress itself, which handles updates. This quarter there were two small miracles: we successfully regained access to both Apple Podcast instances of the show, neither of which was originally connected to any account that anyone on the project team had access to. Bless Apple for actually having phone support with humans who can help you figure out what part of that giant organization you should file a help ticket with in bizarre situations like this one. I'm also grateful to central IT for bending their rule of not giving people access to email addresses that don't comply with the current username policy -- like the one we needed in order to create an Apple account to prove that we owned the podcast.
+
+The **Multilingual DH working group**, led by Merve Tekgürler from Stanford and Till Grallert. I didn't get far on the various projects I planned for it, including updating the multilingual list of computational text analysis resources, but it's exciting to finally get past the bureaucracy stage. It's a small thing, but I recently saw that a GitHub issue I filed over at Voyant with students during last quarter's non-English digital humanities class -- where the language detection algorithm wasn't correctly detecting Chinese -- was resolved because they've [replaced the language detection code](https://github.com/voyanttools/VoyantServer/releases/tag/2.6.6). I'll keep this handy for next time I teach that class, as an example of how you can do things to make our shared tooling better.
+
+I've continued in my role as **ACH representative to ADHO**, where this quarter I've managed to arrange for program committee co-chairs (Jaj Karajgikar and Andrew Janco) for DH 2024, as well as Alex Wermer-Colan as our program committee representative for ACH. The whole process has  required learning a lot more about the extensive rules that underpin the DH conference. Also in my ADHO hat, the ADHO Identity Project was not successful as I had created it. I'd hoped to get every constituent organization to write up something about their organization, their values, what they thought ADHO was, and what they thought it should be doing. The larger purpose here was the fact that ADHO faces several difficult decisions about how to prioritize resources, how to decide among recommendations from the Intersectional Identity Task Force, and how to evolve in response to criticism, such as a recent [piece on the DH conference](http://www.digitalhumanities.org/dhq/vol/16/4/000643/000643.html). This identity project was one of the responses ADHO mentioned in its [response to that piece](https://www.digitalhumanities.org/dhq/vol/16/4/000664/000664.html); getting all the organizations on the same page about what ADHO is, what it's for (and for whom), and its goals and priorities seemed like a necessary first step in moving the organization forward. On the ACH side, we put together a survey and sent it out to members, getting some very thought-provoking responses about how people see ADHO vs. ACH. But several organizations didn't participate at all, and most of the responses didn't get much more concrete about ADHO than generalities about the value of internationalism. Since the initial model didn't work out, ADHO turned towards Lisa Spiro's classic "[This is Why We Fight: Defining the Values of Digital Humanities](https://dhdebates.gc.cuny.edu/read/untitled-88c11800-9446-469b-a3be-3fdb36bfbd1e/section/9e014167-c688-43ab-8b12-0f6746095335)" and doing what she suggested at the end: putting together a shared document that people can edit and comment on, as an attempt to find some shared vision. I'll be trying to see if we can get anywhere with that approach at the international DH conference this summer.
+
+My part of the **DLCL dissertation** project has been on hold this quarter, but my conversations with Xanda Schofield about the topic modeling Data Sitters Club book have given me a lot of food for thought that I'd like to apply to the project as it resumes this summer.
+
+It's been a slower road to recovery for my injured hand than I was hoping, which has impacted my book scanning, since that requires exactly the hand position I've struggled with. **Corpus-building** has taken on a new role in the context of **AI projects**, described below. 
+
+**Jewish cookbooks** have been on hold this quarter due to delays in getting them scanned, but I have all kinds of ideas for them, including ones that might take the shape of embroidery. It'll likely be a later summer project, along with the various **Django databases**, including the project on the historic TAPS costume collection.
+
+The **Script Encoding Initiative** project decided to take a different direction, but the interest in better supporting "digitally disadvantaged languages" is coalescing in a shape that better connects with existing expertise on campus. I'm hopeful that the pieces will come together this summer, in a way that has synergy with a new exhibit at Hohbach Hall about "making global computing". Simon Wiles and I worked with Kristen Valenti from the Silicon Valley Archives on selecting some materials from the Unicode Archives for the exhibit, and writing up some narrative around them. It's such a joy to get to geek out about scripts and encoding, which have been pet topics of mine for a long time.
+
+This quarter we presented the **Browsertrix Cloud pilot** at the International Internet Preservation Consortium (IIPC), and the discussions as we prepared for that talk led me to conclude that the biggest challenges are administrative, policy, and financial, rather than technical. This has continued to play out in discussions since the conference. What are the expectations around bibliographers' web archiving? Should we be prioritizing creating our own web archives as part of our collections? Currently the bibliographers have to pay for their own ArchiveIt accounts. ArchiveIt also stores all the data, though there are workflows to get web archives accessioned to the Stanford Digital Repository. Currently there are no workflows to get web archive data from Browsertrix Cloud or anywhere else into SDR, so while anyone is free to use any tool they want, there is infrastructural support only for ArchiveIt, making alternatives a dead end without a lot of additional labor on the bibliographers' part. Does continuing the pilot make sense without also doing the infrastructural development to make it comparably functional to ArchiveIt in terms of ease of accessioning the data to SDR.
+
+This year again, the undergraduate peer mentors curated a collection of creative undergraduate works for their [*Ingenio* publication](https//ingenio.stanford.edu), and I spent a day updating their Jekyll-based website with the new material. I also wrangled together blurbs about active DH projects for the annual DLCL Year in Review.
+
+I've had the opportunity to revisit the **HPC for Humanists** project with the arrival of Brad Rittenhouse in Stanford's Research Computing group. It's a beautiful thing: his role there is exactly what we describe in a forthcoming piece in *Debates in DH: Computing* about what we foresaw to be a rise in support staff roles for facilitating humanities and social science people's access to HPC clusters. Brad was planning to build out documentation for things that humanities and social science people wanted to do, so we're going to collaborate on expanding the [HPC for Humanists resource](https://dh-stanford.github.io/hpcforhumanists/intro.html). I've also been talking with him about piecing together the code and fiddly library installation setup for fine-tuning large language models using Sherlock, and it's really coming together.
+
+Finally, there was a whole week in May where we brought to the Bay Area my SUCHO co-organizers, Anna Kijas and Sebastian Majstorovic, along with long-term core volunteer Andreas Segerberg and Ulia Gosart who has been our connection to the Cherkasy Regional Library where we donated the high-end digitization scanner and equipment purchased with the funds from the Pearl Jam Vitalogy Foundation. That visit, which included a trip to the Internet Archive, was the subject of [its own write-up](https://digitalhumanities.stanford.edu/sucho-week/) on the DH at Stanford blog.
+
+
+## New projects
+
+While there was some planning last quarter, the three-part workshop on large language models and their impact on teaching (especially language teaching) took place at the beginning of this quarter. From there, Laura Wittman and I put together a course that we'll be offering in the fall called "Future Text", on large language models, machine generated art, and their impact on society along with their entanglements with languages beyond English. For the final project, there'll be a technical track where students can fine-tune a model, build a corpus, or do other hands-on work with data and/or computation, as well as a critique track where they can write a paper, and a creative track where they can do a creative project (e.g. at the Textile Makerspace) in collaboration with, or in some other way engaging with "AI".
+
+It took some intervention from Alexander Key, the DLCL Director of Undergraduate Studies, to get this course approved for the Aesthetic and Interpretive Inquiry (AII) [WAYS](https://ways.stanford.edu/) (the undergraduate distribution requirement that roughly corresponds to "humanities courses"); the committee was willing to approve it for the Exploring Difference and Power (EDP) WAYS, but the comments from the committee were that AI has no intentionality, so it can't create art, so it's inappropriate to apply aesthetic and interpretive inquiry to it. On the contrary, we argued, that issue shouldn't be treated axiomatically, but engaged with in a course such as ours, since it may in fact be one of the most pressing questions of aesthetic and interpretive inquiry for our times. With the course approved for two different WAYS categories, I expect we'll have the largest enrollment I've ever had this fall.
+
+## Writing
+
+I haven't done much writing this quarter in the form of papers, but I have put in an effort to get back to more regular blogging on the DH at Stanford blog beyond the quarterly DLCL round-ups, which are all I've managed since 2020. I wrote up the [AI and pedagogy workshop](https://digitalhumanities.stanford.edu/ai-and-pedagogy-workshop/),  [SUCHO week](https://digitalhumanities.stanford.edu/sucho-week/), and the [New Horizons in Digital Humanities and Cultural Data Science](https://digitalhumanities.stanford.edu/new-horizons-dh-cultural-data-science/) workshop in Hong Kong. In addition, I've been writing up projects and events over at the [Textile Makerspace blog](https://textilemakerspace.stanford.edu/blog/).
+
+
+## Talks and Events
+
+In April, I participated in a virtual event at San Jose State University on "Ukrainian libraries during the wartime: a year in review", talking about SUCHO. I also had the chance to return to where DH all started for me, at the University of Chicago, to give a talk as part of their lecture series. In addition to the [talk and workshop I did in Hong Kong](https://digitalhumanities.stanford.edu/new-horizons-dh-cultural-data-science/), I had the honor of giving the keynote for the Carleton College Day of DH event. It was the middle of the night in Hong Kong when I gave the talk, but it seemed to go okay, at least judging by Rebecca Moss's incredible live-doodle of the talk, which perfectly captured how I do DH. I loved it so much I printed it on fabric and will sew a dress with it.
+
+![Doodle image of Quinn's talk, on fabric](../post-images/carleton_day_of_dh.jpg)
+
+
+## Other Things
+
+The trip to Hong Kong led me to an uneasy truce with Twitter, which I had been completely off (save the occasional DM I noticed) since November. A fair amount of information that's valuable for me to follow is shared primarily or exclusively on Twitter -- however disappointing that may be. And yet, when I started dropping back in from time to time (to lurk; I can't see myself posting much if at all), it isn't what it used to be. 
+
+That said, nothing is what DH Twitter used to be. Active Mastodon use has plateaued at a fairly low level. I managed to get a BlueSky invite and has a more Twitter-like look and feel, but the most active users seem to be celebrities. Following every single librarian I could find (still not a terribly large group) helped a little, but it doesn't feel like a very active place (not unlike Mastodon) but also posting things doesn't seem to lead to much conversation (unlike Mastodon.) That's not even all the platforms in the mix: I've been seeing more folks posting DH things to Facebook and Instagram.
+
+For ACH 2023 later this week, I've wrangled together a group of people -- Claudia Berger, Jojo Karlin, Alix Keener, Anne Ladyem McDivitt, and Amanda Visconti -- for an "alternate format" contribution around #DHmakes (DH-inflected crafting). A core part of this submission is attempting to aggregate #DHmakes posts from across all the social networks. Who knows, maybe that process itself will turn into a textile data viz down the road.
+
+Finally, moving from global to very local networks, I was able to attend the DLCL graduation this year for the first time. I've almost been here five years now, which means that the students I've worked with are starting to gradaute. It was really meaningful to be able to be present for that, congratulate them in person, and meet some of their family. Seeing students take what we've done together and bring it to new places is one of the most satisfying things about this work.
+
+![Faculty and graduating students wearing academic robes before the graduation](../post-images/dlcl-graduation-2023.jpg)
