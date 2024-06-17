@@ -1,0 +1,3 @@
+---
+layout: mundana/front-page
+---
