@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>DLCL ATS round-up, winter 2020 :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+
+
+  <meta property="og:title" content="DLCL ATS round-up, winter 2020" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/dlcl-ats-round-winter-2020/" />
+<meta property="og:site_name" content="Digital Humanities at Stanford" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="Post image" />
+<meta name="description" content="" />
+
+
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-between ">
+        <div
+          class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">DLCL ATS round-up, winter 2020</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Quinn Dombrowski<span class="text-muted d-block mt-1">March 23, 2020</span>
+            </small>
+          </div>
+        </div>
+        
+        <div class="col-md-6 pr-0 align-self-center">
+          <img class="rounded" src="../post-images/dhrpg-lastday.jpg" alt="DLCL ATS round-up, winter 2020">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <p>It is a strange time to be writing my quarter-in-review blog post. The quarter is over (according to the calendar we started the year with, it’s spring break right now) but I feel like a normal sense of time is one of the things that’s already started to dissolve, and the shelter-in-place order in the Bay Area has only been in place a week.</p>
+<p>February’s monthly blog post was supposed to be a reflection on the <a href="https://dlcl.stanford.edu/news/dlcl-hosts-hackathon-computational-criticism-russian-literature">Russian NLP hackathon that we held on Valentine’s Day at CESTA</a>. I’d still like to write that reflection, but I need to think it through some more; the conclusions I’d reached assume a level of freedom of time and travel that we might not have back anytime soon.</p>
+<p>In the current working conditions (and I’ve <a href="http://quinndombrowski.com/blog/2020/03/21/working-conditions">written about my own, here</a>) there’s a balance to be struck between maintaining standing meetings, monthly blog post schedules, and other structures that arose under very different circumstances, and rethinking everything from the ground up, at a point where decision fatigue (and straight-up fatigue) are major factors. Tentatively, I’m inclined to try to keep up my monthly blogging. If nothing else, I’ve always seen these quarterly round-ups as an important form of accountability to myself, my bosses, and my communities, given the very unstructured nature of my job.</p>
+<h3>Teaching</h3>
+<p>While I’m anticipating that my teaching quarter will shift to autumn starting next academic year, I taught a new course this winter: “Project Management and Ethical Collaboration for Humanists”. I expect to teach it in alternating years with my other course, “Digital Humanities Across Boundaries”, AKA Non-English DH. This new course covered a lot of ground, including the labor conditions of digitization, what goes into getting tenure and alternative structures of promotion, Gantt charts and how to use them, and what alt-ac careers look like in practice. We spent half of our classroom time discussing readings, and the other half playing a simulation of a year in the life of a DH project — as a Dungeons and Dragons-style tabletop role-playing game, complete with character sheets and dice. I’d hoped that we’d be able to play through the game twice, learning from mistakes made in the first round. Instead, having 8 regular attendees, each with their own character, meant that we weren’t able to get through more than one month of game time per class — sometimes less. Even so, it was an experience that will stay with me for a long time, and from the feedback I’ve received from some of the students, it may have accomplished more than I even imagined.</p>
+<p>The <a href="https://github.com/quinnanya/dlcl205">syllabus and other class materials</a> are available on GitHub, and one of my small goals over the next few weeks is to update the RPG guidebook to reflect some of things I discovered that I hadn’t initially thought about when designing the game (e.g. the original version of the handbook  didn’t have a character skill for teaching).</p>
+<p>While the weekly prep for this course was trivial in comparison to last year’s course (where I was writing technical tutorials for multiple languages for much of the quarter), I was still surprised at how much time teaching and teaching-related activities took up. My goal of continuing to make progress on all the DLCL collaborative research projects while also teaching was completely unrealistic. The quarter was largely a scramble from one deadline to another, with every expectation of catching up on everything else as soon as the quarter ended. Suffice it to say, I’m now re-evaluating those expectations as well. Here’s where things currently stand, as of the end of the quarter.</p>
+<h3>Existing Projects</h3>
+<h4>Global Medieval Sourcebook</h4>
+<p>The big meeting we had planned with the Stanford Digital Repository folks about the new shape of this project (i.e. accessioning texts into the repository, and adding metadata to make them findable within our own library catalog and WorldCat) had to be postponed. It’s now scheduled for April 20th. Dates more than a month out have always had a sort of imaginary quality to them, but now more than ever it’s hard to fathom what things will look like by then. Circumstances may well push it back further. But in the meantime, I managed to work through all of the tags used by the current Global Medieval Sourcebook, aligning them to Library of Congress Subject Headings. This was <a href="https://twitter.com/quinnanya/status/1234534180840542208">an adventure</a>, leading to discoveries such as the fact that there’s no subject heading for “evil”: your only choice is “good and evil”. More immediately, we’re trying to write a paper on the project for the Germanic Studies journal Seminar. The writing was derailed by more immediate deadlines during the quarter, and then all the chaos at the end of the quarter, but I’m hoping to be able to spend some time fishing up my piece in the next few weeks.</p>
+<h4>French Revolution Digital Archive</h4>
+<p>The relaunch of FRDA using a combination of a <a href="https://exhibits.stanford.edu/frenchrevolution">Spotlight exhibit for images</a>, a <a href="http://sul-philologic.stanford.edu/philologic/archparl/">Philologic searchable-text instance</a>, and a lightweight landing page connecting all the pieces, surfaced large user communities that had been using FRDA in a very different way than the faculty members behind the project, whose needs drove the reformulation of the site. While sophisticated search queries are now better supported on the new site, the interface is more awkward for users who just want to flip through and read the text. French and Italian librarian Sarah Sussman has been fielding queries from these users, and we’ve worked together on trying to develop documentation to help bridge the gap between those kinds of use cases and what the new site can offer.</p>
+<h4>Poetic Media Lab projects</h4>
+<p>This quarter, I worked with some of the Poetic Media Lab student (and recent-graduate) collaborators on applying for postdocs, and was delighted to learn that one of them received a prestigious four-year fellowship that will enable her to continue working on her project and develop parts of it into a book. I’d hoped we could meet in person at this year’s convocation, but it’ll have to wait for another time. Still, I’m grateful to have had a chance to meet another long-distance Poetic Media Lab collaborator in person while she was in town, and show her around the Textile Makerspace.</p>
+<p>My work on the Poetic Media Lab projects has largely been on hold this quarter, other than corresponding with partners at Bucknell about putting together training data to attempt to train a Transkribus model for the Spanish and Nahuatl hands of the <a href="https://poeticmedia.stanford.edu/florentine-codex-project">Florentine Codex</a>. Thanks to Diane Jakacki’s brilliance with XSLT, I have the data I need — now to just sort through renaming all the files properly, and actually try to train a model.</p>
+<h4>Other web-based projects</h4>
+<p>Apparently Web Services was still on track with their timeline for finding a vendor for supporting WordPress sites as of earlier this quarter, but we’ll see how the COVID-19 situation impacts things. Such a service would be the ideal long-term infrastructure for <a href="http://bookhaven.stanford.edu/">The Book Haven</a> and <a href="http://entitledopinions.stanford.edu/">Entitled Opinions</a>. This quarter I also met with the Entitled Opinions team about getting all of their content accessioned into the Stanford Digital Repository, which is on my to-do list now that the quarter is over.</p>
+<h4>Multilingual Harry Potter fanfic</h4>
+<p>This quarter brought two more opportunities to present on this project: once at CESTA (with Steele Douris and Masha Gorshkova) for the broader Stanford DH community, and one at the University of Virginia, for the Slavic department. While I haven’t been able to make more progress on the data cleaning (again, due to teaching), the UVA talk gave me an excuse to start looking into Archive of Our Own (AO3) as another point of comparison. AO3 is a more recent fanfic archive, and much better supported in terms of existing web-scraping scripts. While I only had a day or so to work with it before the talk, I found a few interesting things in comparing it to <a href="http://fanfiction.net/">fanfiction.net</a> — notably, that AO3 is more Anglophone in its Harry Potter fanfic, but with a very different distribution of non-English languages. Spanish, French, Portuguese, and German appear <em>much less frequently</em>, and Russian, Chinese, and (to a lesser extent) Italian appear more frequently.</p>
+<h4>The Data-Sitters Club</h4>
+<p>This autumnal-vacation Anglophone project has taken a turn towards the multilingual with the acquisition of French translations of “The Baby-Sitters Club” books, from Quebec, Belgium, and France. Together, Lee Skallerup Bessette and I wrote two “multilingual mysteries” this quarter: one on <a href="https://datasittersclub.github.io/site/dscm1/">metadata</a>, and one on <a href="https://datasittersclub.github.io/site/dscm2/">French named-entity recognition</a>. I’ve been scanning and OCRing the French translations we’ve purchased, but wasn’t even halfway through them when I left campus for the last time for … a still-indefinite span of time. They’ll be waiting in my office, whenever I get back.</p>
+<p>To my surprise, the Data-Sitters Club was nominated for two <a href="http://dhawards.org/">DH Awards</a> this year: Best Series of Blog Posts and Best Use of DH for Fun. Figuring we’d have better odds with fun than blog posts, I started posting ads for the project on Twitter, using remixed old book covers, ads, and other retro BSC content. And it seems to have worked! We won Best Use of DH for Fun (in a tie), and got third place (also in a multi-way tie) for Best Series of Blog Posts. You can <a href="https://datasittersclub.github.io/site/dhawards2019">check out all the ads here</a>.</p>
+<p>Perhaps more satisfying, even, than winning the DH Awards was when Dan Sinykin taught the Data-Sitters club as part of his <a href="http://www.dansinykin.com/teaching.html">Intro to Digital Humanities course</a> at Emory, and we heard from them on Twitter. Much like with the DH RPG, it’s an incredible feeling to discover that one of your wild, random projects has worked, beyond even what you imagined possible.</p>
+<h4>JSTOR Data for Research</h4>
+<p>Shortly after the quarter started, Slavic grad student Masha Gorshkova and I both signed a contract with JSTOR’s Data for Research to obtain a bulk download of OCR’d texts potentially relevant to her research. I was surprised at how easy and straightforward the process was. Less straightforward is the question of what do we do next, now that we have the texts. Fellow Data-Sitter Anouk Lang was wonderful about answering questions and offering suggestions, and I suspect her next Data-Sitters Club book on AntConc, coming out soon, will be a helpful resource as we try to sort things out.</p>
+<h4>Ostrov: Russian radical feminist zine</h4>
+<p>I spent a lot of imaginary-world time on this project, since it was the project we “did” in the DH RPG. It was wonderful to have an imaginary project based on real materials that the students could look at, and even have a chance to try to scan one volume on a real flatbed scanner. All the imaginary-world time spent creating metadata, building some sort of web interface, and doing text analysis sadly did not translate into the real world, and between one thing and another we got nothing done on the real-world version this quarter. But as a silver lining, it gives us a great virtual co-working project to chip away at together, and we’ve set up a time every week going forward to work on it over Zoom.</p>
+<h4>Palladio Bricks</h4>
+<p>I set myself the goal of trying to have some preliminary documentation for Palladio Bricks ready by the end of the quarter, but got tripped up over the fact that the main Palladio app has been updated to address some deprecated dependencies (thanks to my CIDR developer colleague Simon Wiles), but the individual brick components have not yet. I’m reluctant to write documentation for things that I know will change soon. While I was visiting the Scholar’s Lab at the University of Virginia, we came up with the idea of a DH developer “code-op” (like a co-op) where each DH development group could host a one-day hackathon for all participants, and everyone would pitch in on a particular project. Palladio seems like a great candidate for piloting that idea in the near future.</p>
+<h4>Other projects</h4>
+<p>No new developments of note this quarter on Prof. Yulia Ilchuk’s networked novel project, but the Russian NLP hackathon (more on that below) provided an opportunity to brainstorm some ideas for tools we could develop that might shed new light on this work. Also, nothing of note around tools for Japanese text analysis, though I got to put my childhood katakana skills to the test in locating the “download” button in a Japanese corpus interface as part of a web scraping consult. I also haven’t had any time at all to think about what I’ll present at CMEMS in the spring — if there is CMEMS in the spring given everyone’s remote working conditions? Perhaps my contribution may end up being simply supporting the group meeting online nexts quarter.</p>
+<h3>New projects</h3>
+<p>I was too busy teaching this quarter to accrue many new projects. I offered to experiment with some computational approaches to analyzing translations, for a project Héctor Hoyos is working on aboutMichael Kohlhaasby Heinrich von Kleist. Due to various data-acquisition delays, and then the world unraveling at the end of the quarter, it’s taking longer than I anticipated, and the graduate student who’s done the comparative work manually has finished her analysis before I’ve even succeeded in aligning my texts. (Ah, digital humanities!) But I’m really curious about what I might be able to find, and even if it takes too long to be useful for this project, I’d like to have a good example of how DH can be useful to translation studies, and ideally, a Jupyter notebook to go with it.</p>
+<p>This quarter — albeit with some delay — I launched <a href="http://arounddh.org/">Around DH 2020</a> through Global Outlook::DH, which highlights one non-English DH project somewhere in the world every week, through an interview with a person affiliated with the project. The goal of this effort is to raise the visibility of DH work in languages other than English, and I’m hoping that it also opens up opportunities for collaboration.</p>
+<p>I had the chance to meet with Alexander Key about  the possibility of making DH options more visible and accessible to students pursuing the honors program in the DLCL, especially Comp Lit. It’s hard to know how feasible that would be to roll out this coming fall, given the uncertainty around everything undergrad-related at the moment, but I look forward to future discussions and planning in the coming months.</p>
+<h3>Workshops</h3>
+<p>I was scheduled to co-teach an OpenRefine CIDR workshop with Simon Wiles, but I was out sick for a week at the end of January with something flu-like, and couldn’t make it (or do much besides sleep, sweat, and shiver). It’ll be nice to get back to teaching workshops, though I’m not sure yet when that will be, or what it’ll look like. Navigating which services we can offer virtually, and how, is high on the list of CIDR priorities right now.</p>
+<p>While it wasn’t exactly a workshop, this was my first year experiencing the prospective student campus visit in DLCL, which took place the week before everything began to shut down and go online. I held office hours for DH-interested students, along with a Textile Makerspace session one afternoon in case any of our guests wanted a creative break from all the interviewing. In what has been one of the most fun assignments I’ve gotten from my department, I made runners for all the tables at the interdisciplinary dinner, each connected to that table’s “theme” (e.g. medieval, digital humanities, poetry, pedagogy, etc.)</p>
+<h3>Writing</h3>
+<p>This quarter, Patrick Burns and I wrote our short chapter on multilingual DH for the Debates in DH 2020 collection, and I did some extensive revisions of my chapter on the non-English DH class for Debates in DH: Pedagogy. The original coda, as expected, did not make it through peer review, so I published an expanded version of it on my own blog, entitled “<a href="http://quinndombrowski.com/blog/2020/03/13/stakes-multilingual-dh-united-states">The Stakes of Multilingual DH in the United States</a>”, which incorporates some additional material from a talk I gave at the Scholar’s Lab’s Feminist DH symposium in February.</p>
+<p>My tutorial from last summer’s <a href="https://www.languageacts.org/">Language Acts and Worldmaking</a> tutorial write-a-thon hosted by Kings College London is in final revisions, and should be published soon.</p>
+<p>Along with colleagues from a High-Performance/Research Computing for DH group I used to run, I put in an abstract over the holidays for the Computational Humanities volume of <em>Debates in DH</em>, but haven’t heard anything yet. I’ve had a few more abstracts accepted recently: one about collaboration and failure for Heather Froehlich and Kim Martin’s &quot;Revealing Meaning: Feminist Methods in Digital Scholarship” edited volume, and another for Alex Gil and Roopika Risam’s DH Quarterly special issue on minimal computing, which will raise questions about how widely adoptable minimal computing technologies can be without better tooling or at least much more detailed documentation.</p>
+<p>We extended the deadline for “love letters” from women and gender minorities in DH, to pieces of DH scholarship, for the edited volume coming out of last year’s “Women and Gender Minorities in DH” event. Realistically, we’ll probably extend it again — I suspect March is a lost cause for everyone. And I still need to write up my talk from the event as well.</p>
+<p>I finished and submitted the “Multilingual DH” ADHO special interest group proposal this quarter, which garnered 39 signatures from scholars around the world by the time it was submitted. It’s the second SIG proposal I’ve sent in this year (after DH-WoGeM), and it seems unlikely that any decision will be made before the DH 2020 conference in July — if the conference ends up happening, and there’s a quorum of CO representatives attending. Meanwhile, we’re also in the process of developing a DARIAH working group proposal for Multilingual DH, as a kind of follow-up to the “DARIAH Beyond Europe” event held at Stanford in 2018, and as a way to draw on the strengths, connections, and resources of two different kinds of organizational infrastructure.</p>
+<p>I submitted a proposal for a short paper / presentation at the Digital Humanities Summer Institute (DHSI) weekend workshop on project management, talking about the course I taught this quarter. Even though DHSI has been canceled for this year, the workshops are still going to be held virtually, and it’ll be great to have a chance to share some reflections on this year’s course.</p>
+<p>Finally, I’m happy to say that DH 2020 didn’t break my (freakish?) acceptance streak at the DH conference. All five of the abstracts I wrote/ghostwrote were accepted. We’ll see if any of them happen.</p>
+<h3>Talks and Events</h3>
+<p>In addition to the CESTA and UVA presentations on Harry Potter fanfic this quarter, I had my first experience with a Twitter conference, presenting on Multilingual DH at the DHARTI (Indian DH organization) <a href="https://dhaindia.wordpress.com/dharti-twitter-conference-2020/">Twitter conference on Innovating for DH in India</a>. It’s a conference modality I’ll be trying again in the near future; I was invited to present at “<a href="https://www.dariah.eu/event/twitter-conference-dh-in-the-time-of-virus/">DH in the Time of Virus</a>”, organized by APOLLONIS (the Greek Infrastructure for Digital Arts, Humanities and Language Research and Innovation) and co-ordinated by the Athena Research and Innovation Center, on April 2nd. (I’m very much looking forward to the talk, tentatively entitled “Getting Serious About Fun”, even though I’ll be tweeting at 4 or 5 AM.)</p>
+<p>I co-presented with Yulia Ilchuk and J.D. Porter at the Literary Lab this quarter, about our “Translation” project (looking at distinctive features of short stories translated into English from other languages); we’re hoping to make some progress on putting together a paper based on the project’s current state.</p>
+<p>All the Academic Technology Specialists in CIDR gave the first all-virtual presentation of the “Concierge” library series, where people from less-well-understood groups in the library talk about their work and how it can connect with the rest of the library.</p>
+<p>I virtually attended and <a href="https://twitter.com/quinnanya/status/1238257085806231553">live-tweeted</a> a wonderful Berkeley Center for New Media event on <a href="http://bcnm.berkeley.edu/events/22/history-theory/3207/online-feminist-open-access-and-internet-publishing">Feminist Open Access and Internet Publishing</a> on March 12th. I’d been planning on arranging for transportation to get Stanford colleagues to Berkeley and back when the event was supposed to be held in person, but I was happy that everyone who was available could just call in.</p>
+<p>I put in a proposal for giving a talk at Stanford WebCamp, reflecting on the work I’ve been doing to think through sustainable infrastructure for DLCL’s web-based DH projects, and the way that is — and isn’t — compatible with a minimal computing toolset. The proposal was accepted, but my talk is scheduled for this Friday during hours that I can’t work on account of running a kindergarten/preschool at home, and my work hours that day are already filled with online course support, so I’ve had to withdraw.</p>
+<p>I was delighted to be accepted to the “<a href="https://buildinglltdm.org/">Building Legal Literacies for Text and Data Mining</a>” NEH-funded institute hosted by UC Berkeley this June. Thorny, multi-national legal questions are a mainstay of the work I’ve been doing, and I’m still very excited to do it, even though it was just announced this morning that it’s going to be held entirely online.</p>
+<p>The <a href="https://scholarslab.lib.virginia.edu/events/event-2020-02-28-feminist-dh-uva-symposium-3/">Feminist DH symposium</a> at the Scholar’s Lab at the University of Virginia was one of the highlights of the quarter for me: a chance to catch up with old friends and finally, for the first time, see the world-famous Scholar’s Lab right before its renovation. The other speakers, Gabriela Baeza Ventura and Carolina A. Villarroel, are doing amazing work on recovering Spanish-language literature, newspapers, manifestos, and other compelling documents published in the United States, and I wonder what opportunities there might be for students in the DLCL to collaborate with them on a “Spanish NLP” effort modeled after what we’ve done with the Russian NLP research unit this year.</p>
+<p>My talk at the symposium, “The 2040 Plan”, was partly an abbreviated version of these write-ups (looking at some of the things I’ve done recently, and whether they worked or not), and partly a reflection on the challenges we’ll see more of between now and 2040 — and what kind of projects and collaborations can help us make it through. Already, it’s a talk that feels prescient, even though at the time — less than a month ago — there was still a solid mental wall between me and how things might change in my own day-to-day life as fall-out from the accelerating number of COVID-19 cases in the Bay Area. It meant a lot to be invited to the symposium, and to be able to make the trip and meet in person with colleagues I usually only see online. It means even more now, knowing that it may have been my only trip outside the Bay Area this year.</p>
+<h3>Working Groups and Organizations</h3>
+<h4>Stanford DH Community</h4>
+<p>My fellow DH colleagues in CIDR and I started running a monthly series of consulting hours, lightning talks, and social hour at CESTA for the broader DH community. We managed to hold two of our three planned events this quarter, before things started going virtual. It seemed got a fair amount of initial traction; now we'll have to face the challenge of how to reconceptualize it in an online environment.</p>
+<h4>DH-WoGeM</h4>
+<p>I tried to hold the quarterly &quot;Parenting and DH&quot; <a href="http://www.dhwogem.org/">DH-WoGeM</a> call in January, but only one person came. Since then, I haven’t had much time to organize anything, but with April approaching, I may try another &quot;Parenting and DH (and COVID-19)” call, where everyone is welcome with however many kids they have at home.</p>
+<h4>Danger Noodle Club</h4>
+<p>My Python co-learning meet-up group, Danger Noodle Club, was one thing too many to try to schedule this quarter. Things kept coming up, and we eventually agreed to just re-convene in spring. Now it may play a bigger role than I imagined in trying to maintain — however tenuously — at least one corner of the campus DH community while everyone is remote.</p>
+<h4>Textile Makerspace</h4>
+<p>The inclusion of the Textile Makerspace in a <a href="https://news.stanford.edu/2019/12/09/makerspaces-at-stanford/">Stanford News article on campus makerspaces</a> late last quarter continued to pay off, and I feel like this was the quarter where the Textile Makerspace really solidified as a space and organization. Having regular weekly hours (Tuesday, Wednesdays, and Thursdays at lunch time), rather than a set of specifically-scheduled dates, definitely helped, as did having more people around to cover shifts. (We had two undergrads offer to open it for more, non-lunch, hours, and enthusiastically accepted their offer.) German Librarian Kathleen Smith brought in a loom towards the end of the quarter for us to try out weaving, and the quarter’s creations included a giant Pusheen pillow, multiple shoulder bags, the beginnings of an art quilt, numerous stickers, and a few pairs of toddler pants. Of all my on-campus work, I’m saddest about the necessary shutdown of the Textile Makerspace (which doesn’t translate well into virtual alternatives) just as things were starting to really flourish. The departure of almost all the undergrads from campus means it’ll be fall, at the earliest, before we have a chance of getting back to where we were.</p>
+<h4>Russian NLP</h4>
+<p>This quarter, we had the culminating event for the Russian NLP Research Unit in the DLCL: a hackathon that brought three participants in the virtual working group to campus, along with Prof. David Bamman from UC Berkeley. I put together a <a href="https://dlcl.stanford.edu/news/dlcl-hosts-hackathon-computational-criticism-russian-literature">write-up of the event on the DLCL website</a>. I’d meant to follow up on the ideas and work at the hackathon after returning from the Scholar’s Lab trip, but then the world started falling apart. I hope to have a chance to regroup and think through next steps soon.</p>
+<h4>Six Septembers: Mathematics for the Humanist</h4>
+<p>It took until early March, but we finally kicked off the second round of the <a href="https://six-septembers.github.io/">“Six Septembers” reading group</a>, which is scheduled to run through the end of 2020. This time, we’re working through understanding neural networks — both mathematically and practically. There’s a schedule on the webpage, if you find yourself with time on your hands now and would like to catch up and join us in April.</p>
+<h4>DH Reading Group</h4>
+<p>The DH reading group for grad students was on hiatus during winter quarter, and it seems unlikely that it will resume this academic year under the current circumstances.</p>
+<h4>ACH</h4>
+<p>As mentioned in last quarter’s round-up, I agreed to run for VP/President-elect of the Association for Computers and the Humanities (ACH), the US-based DH organization. To my surprise, I discovered I was running against my fellow Data-Sitters Club member Roopika Risam. The election window was supposed to wrap up yesterday, but has now been extended until March 30th — and along with it, my series of Baby-Sitters Club book cover remixes that <a href="https://twitter.com/quinnanya/status/1238511389397811200">support voting for either of us</a>.</p>
+<h3>Moving forward from here</h3>
+<p>For the next two weeks, at least half my working time will be going towards supporting faculty and lecturers in my department as they figure out what they’re going to do for their spring courses. It’s something I’ve done before; I worked in “Academic Technology” (which included instructional support) for six years at the University of Chicago, ultimately leading the IT / instructional design part of the team that developed some of the university’s first MOOCs, back when that was a huge thing. I’m very happy that my job, under normal circumstances, is focused specifically on research support, but in a crisis there’s no question about helping out. Hats off to everyone in the Center for Teaching and Learning who’s been working non-stop for weeks (including answering some questions from me when I’ve gotten stuck when trying to support faculty in my department). What’s left of the time I have will go towards catching up on projects that have been on hold during winter quarter while I was teaching.</p>
+<p>After that, we’ll see where people are at, who needs support, what that might look like, and how many kids are still attending my home-preschool. But as we talked about in our “Concierge” presentation in the library, there’s never been a way to describe a typical day in the life of an ATS: every day is something different. So as spring quarter comes, I’ll be sorting through challenges they arise, same as always, even as the number of uncertainties skyrockets.</p>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>

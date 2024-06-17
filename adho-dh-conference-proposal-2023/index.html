@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>How to Write an ADHO DH Conference Proposal in 2023 :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+
+
+  <meta property="og:title" content="How to Write an ADHO DH Conference Proposal in 2023" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/adho-dh-conference-proposal-2023/" />
+<meta property="og:site_name" content="Digital Humanities at Stanford" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="Post image" />
+<meta name="description" content="" />
+
+
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-between ">
+        <div
+          class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">How to Write an ADHO DH Conference Proposal in 2023</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Quinn Dombrowski<span class="text-muted d-block mt-1">November 14, 2023</span>
+            </small>
+          </div>
+        </div>
+        
+        <div class="col-md-6 pr-0 align-self-center">
+          <img class="rounded" src="../post-images/adho_new_cos.jpg" alt="How to Write an ADHO DH Conference Proposal in 2023">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <p>Four years ago I wrote a <a href="https://digitalhumanities.stanford.edu/guide-writing-dh-conference-submissions/">guide to writing DH conference submissions</a>, a blog post that got a fair bit of traction and seems to be passed around every time there's a new CFP.</p>
+<p>The problem is, it's not good advice anymore for the international ADHO digital humanities conference. I've been the ACH representative to ADHO since summer 2021, and one of the major initiatives that ADHO has undertaken has been to rework the review criteria for the conference. Previously, a lot was left to the discretion of the individual program committees, meaning that there could be a lot of variability from year to year in terms of the taxonomies used to classify papers, the review criteria, and even whether your bibliography was properly formatted (see Jennifer Guiliano and Laura Estill, &quot;<a href="https://doi.org/10.1093/llc/fqac091">What gets categorized counts: Controlled vocabularies, digital affordances, and the international digital humanities conference</a>&quot; for a closer look at the taxonomy issues). The changes from year to year were usually small (though enough to potentially make a difference in your overall score), and because the following year could bring a totally new set of changes, I never saw the need to rewrite that blog post.</p>
+<p>That's different now. Christof Schöch, who led the review criteria revision work, wrapped up that project over the summer, drawing upon feedback from relevant committees (like the Conference Coordinating Committee) as well as a survey of DH conference attendees and the community more broadly. Christof is the current president of the Constituent Organization Board, made up of representatives from all the constituent organization, which collectively provides leadership and direction for ADHO -- which is to say, these review criteria were developed not for this year, but as a set of criteria that we can hopefully work with long-term. I'm sure they'll eventually evolve once put into practice, but this is what we're currently working with.</p>
+<p>The goal of the new review criteria was to elicit constructive feedback and not just negative comments, and functionally make reviewers justify their numeric choices through their text comments.</p>
+<h2>The criteria</h2>
+<p>The evaluation criteria are as follows:</p>
+<ul>
+<li>Does the submission include a sufficient description of the current state of knowledge and best practices in the area(s) relevant to the work, and is that description backed up by useful references? (20%)</li>
+<li>Does the work described in the submission go beyond the current state of knowledge and best practices in the areas(s) relevant to the work? This may concern method, approach, application domain, or findings. (20%)</li>
+<li>Does the submission describe its approach or method with sufficient detail for readers to understand what was done and why it was done, within the limitations of the abstract format? (20%)</li>
+<li>Does the submission support diversity, in the sense that it describes work that increases the range of topics, approaches and perspectives presented at the DH conference, and/or does it give adequate recognition to a broad range of relevant scholarly work, including by members of disadvantaged or under-represented groups? (15%)</li>
+<li>Is the submission well-structured and clearly written in a way that supports readers in understanding the submission? (15%)</li>
+<li>Overall recommendation. Based on the evaluation criteria overall, but also taking into account any additional criteria or issues you may consider important for the evaluation, do you recommend that this submission be accepted for presentation or not? (10%)</li>
+</ul>
+<p>For workshops, the second two points are a little different:</p>
+<ul>
+<li>Does the submission describe the contents of the workshop (topics, issues, methods, tools) in sufficient detail for readers to understand what will be taught? (20%)</li>
+<li>Does the submission describe its didactical approach, the materials to be used, and the progression of topics over the course of the workshop with sufficient detail for readers to understand how the workshop will be taught? (20%)</li>
+</ul>
+<h2>Structure of a DH submission</h2>
+<p>Based on these review criteria, here's how I'd approach structuring a DH submission in 2023:</p>
+<h3>Disciplinary context &amp; broad description</h3>
+<p>What are you doing, broadly speaking, and what makes it interesting or different or new? Don't overthink this too much: doing a pretty standard DH project on a new corpus, archive, or subject matter counts as interesting, if you can convey what's special or important about that corpus, archive, or subject matter. Maybe you're bringing in a new audience (the public, children, retirees), or the subject matter is in a language other than English, or you're working texts in a genre that's under-studied, or there's some connection to current events. Maybe it relates to something that's really important in your discipline. For anything disciplinary, lean towards <em>over-explaining it</em>. You might get a reviewer from a very different discipline, for whom it isn't at all self-evident what the major debates are in your field. Explain this like you would to an educated but non-academic relative over the holidays. Even things like questions of DH labor that don't necessarily seem disciplinary in nature often depend on different academic cultures that vary across countries, and you can't assume you'll automatically share that context with your reviewer. If you were writing a grant proposal for your thing, why should it be funded? That's similar to your pitch here. This portion is also a good place to address the question of diversity -- and for a lot of projects, the &quot;what makes this new&quot; is basically the same as &quot;how does this contribute to diversity&quot;. If you want to draw the reader's attention to this very clearly (which helps them out as they're writing the review), you can be explicit about how some aspects of your project would make it contribute to the diversity of the work presented at the conference.</p>
+<h3>DH context and citations</h3>
+<p>Make sure you contextualize what you're doing within the field of DH, and have citations. Do a little research in DH journals and the <a href="https://dh-abstracts.library.virginia.edu/">Index of DH Conferences</a>. It's fine to also talk about what you're doing in the context of your disciplinary field, but I'd guess that there will be some expectation that you have some idea what's going on in DH that's relevant to your proposal -- after all, it's a DH conference. Also, don't just cite the usual go-to figures in the history of DH. Citing a more diverse group of scholars -- ideally, not just from the US and UK -- also contributes to the diversity parameter.</p>
+<h3>Detailed description</h3>
+<p>What are you doing -- concretely, and specifically? With DH conferences, you can and should assume that people are much more technical, or at least technically-inclined, than the reviewers at your disciplinary conferences. Don't go overboard with detail: you don't need to list every library you're using in your code, but please do talk about technical specifics! If there are multiple algorithms you could be using for your task, you can say which one you've picked and why. You can mention which NLP library you're using, or any interesting or significant choices in processing your data. One of the things about DH being an interdisciplinary field and conference is that the technical section is likely to be more immediately accessible to your reviewer than the disciplinary piece of your proposal. In short, you don't have to define what NLP is, but the trade-off is that your reviewer will want you to say specifically what you're doing and &quot;text analysis&quot; won't cut it.</p>
+<p>Note that at least for DH 2024, there's an option for requesting a &quot;technical&quot; reviewer, whereby the <a href="https://dh-tech.github.io/">DHTech SIG</a> will try to find you a reviewer with specific technical expertise to review your proposal. So if you really want to go all in on technical detail, you can do that this year for the first time without it being a total dice roll whether the reviewer will be able to follow you down that rabbit hole.</p>
+<h3>Stakes</h3>
+<p>I like wrapping up abstracts with a clear reiteration of the stakes. Again, why is this important? What new perspective or knowledge does it offer? How is this going to be relevant for scholars who don't work on exactly what you do (or may only share a few methods in common with you, while working in a very different field, institutional context, and national context).</p>
+<h2>What if the project isn't done?</h2>
+<p>It's rough having to submit something in December for a conference next August. The safest route is to write up a project that you're already done with, where you can clearly state what you did and the outcomes. Personally, though, I hate doing that: if I'm done with a thing, I'm probably bored with it, and writing a proposal about something I'm done with is boredom that promises future boredom when I have to prep slides late next summer.</p>
+<p>The wisdom of putting in a proposal for an unfinished project depends on how much your confidence can make up the gap in the work that's done. If you've done a fair bit of work on something and have gotten a sense for the shape it's taking, it's a smaller bluff than if you put in a proposal for something you haven't started yet. (I've done both!)</p>
+<p>If you're writing up work that isn't done yet, don't use the future tense. That makes the situation too obvious. I'll often use the present tense (e.g. &quot;In this project, we use topic modeling on a corpus consisting of...&quot;). If you're proposing something completely new, give yourself some leeway by not picking one single method, because then it'll be very awkward if it turns out that doesn't work for some reason. You can talk about &quot;using a range of techniques, including...&quot; and list a set of viable things that you've used before and can talk about competently in the detailed technical description section. If everything else is in order with your proposal, you can probably get away with some hand-waving when it comes to the details of your actual findings if you can say something vague. It's probably a fair bet that they'll be complex and will reveal something -- you can riff on that.</p>
+<p>DH 2024, at least, will have a meaningful hybrid component, so even if Washington, DC in August isn't your idea of a fun trip, you can still share what you're working on with the international DH community! It's a joy to see presentations from students and folks who are new to DH but are doing interesting things. Don't be intimidated, put in an abstract!</p>
+<p>(I shouldn't have to say this, but I will anyway: please, please do not try to get ChatGPT to write this for you, even prompting from the outline. There's a lot of DH folks who've been playing with LLMs and the odds of getting someone who's very familiar with the kind of language they use are not small. Plus, it sucks at the kind of specific, concrete detail you'll need for a successful proposal. If you're not a native speaker of English, by all means have ChatGPT do a copyediting pass but write the thing yourself.)</p>
+<p>And if this conference still feels like a bit much, there'll be a virtual ACH conference in fall 2024 with in-person &quot;hubs&quot;. The vibes of those review criteria are different, and I'll probably write another explainer in the spring when the ACH CFP is posted.</p>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>

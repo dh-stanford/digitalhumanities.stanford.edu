@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Brandes in translation: multilingual corpora at the Digital Brandes Hackathon :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+
+
+  <meta property="og:title" content="Brandes in translation: multilingual corpora at the Digital Brandes Hackathon" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/brandes-translation-multilingual-corpora-digital-brandes-hackathon/" />
+<meta property="og:site_name" content="Digital Humanities at Stanford" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="Post image" />
+<meta name="description" content="" />
+
+
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-center ">
+        <div
+          class=" col-md-8  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">Brandes in translation: multilingual corpora at the Digital Brandes Hackathon</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Quinn Dombrowski<span class="text-muted d-block mt-1">May 23, 2019</span>
+            </small>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <p>What do you do when you're invited to a hackathon around a text in a language you can't read? In keeping with my tendency to navigate difficulty by means of additional complications, I added more languages!</p>
+<p>Prof. Tim Tangherlini (UCLA) organized the Digital Brandes hackathon at the UC Berkeley Scandinavian department on April 25-26, which brought together the Danish team of Brandes and Danish computational linguistics experts behind an upcoming digital edition of Georg Brandes's groundbreaking work on 19th century literature. While not all the technical folks (which included my CIDR developer colleague Peter Broadwell, Dave Shepherd from UCLA, and Peter Leonard—virtually— from Yale) could read Danish, I was at a double disadvantage by having a background in Slavic (not Scandinavian) linguistics (not literature). The first thing I had to learn was who Georg Brandes was. The second thing  I had to learn was what romanticism was, and what followed it, and I'm grateful to Peter Broadwell for his Cliff Notes version thereof.</p>
+<p>Not knowing from Danish, Brandes, or 19th century literature, I didn't think I'd be able to get much out of a close examination of Brandes on his own terms, especially when mediated by Google Translate for gisting. But I did quickly discover that the work was widely translated in the half-century after its publication (with more translations subsequently). How accurate are these translations? What, exactly, got translated at the macro level (how many of the six volumes?), the meso level (were chapters or paragraphs omitted?), the micro level (were words or phrases changed in ways that impact readers' understanding of the text?) This sort of translation alignment is one facet of the <a href="https://francestanford.stanford.edu/projects/rosetta-resources-endangered-languages-through-translated-texts">Rosetta Project</a> I've recently gotten involved with, and I wanted to see how far I could get in replicating it in a short time frame for Brandes.</p>
+<p>The first problem with this plan? The hackathon as conceived was intended to apply different DH methodologies and tools (topic modeling, word vectors, Philologic) to the original Danish text, which had been provided in multiple formats (plain text, plain text chunked, TEI-XML). As with so much DH work, my project morphed from being about writing some algorithm that could show off one's skills as a developer (hardly my forte to begin with), into a time-consuming, unglamorous, but very necessary data discovery and remediation job.</p>
+<p><strong>Finding translations through a nest of metadata</strong></p>
+<p>HathiTrust was my first stop, where I quickly discovered that there are two records for Georg Brandes, and each of these author facets has a different set of languages:
+<img src="../post-images/htrc-brandes.png" alt=""></p>
+<p>Despite some early musings over working with one of Brandes's other writings (I really wanted to take a look at the Russian and Polish translations of his book on Russia), I realized I'd get the most linguistic overlap sticking to 19th century literature. Tempted as I was by book 5 (French Romanticism, the only volume translated into French), only volumes 1 and 2 of the Russian translation had found their way online, via a moderately blurry PDF that has propagated through all the Russian ebook sites. Add to that the fact that it's the shortest volume at (X) words in the original, and I was sold on &quot;The Emigrant Literature&quot;.</p>
+<p>Digital humanities work is widely touted for being highly collaborative. Doing multilingual DH, you have to get comfortable asking for help with even the most basic things, like figuring out the title of a text — not to mention more complex evaluations, like telling the difference between not-great OCR and completely unusable garbage OCR. Never have I been more grateful for the network of people with specialist knowledge of obscure things around Stanford than while working on this project. Via our retired Jewish Studies librarian, Zachary Baker, I was able to ask emeritus professor of Armenian James Russell about the one Armenian translation of Brandes in HathiTrust (not 19th Century Literature, but &quot;Armenia and Europe, a Lecture read in Berlin, 2nd February 1903&quot;). Our current Jewish Studies librarian, Eitan Kensky, gave me a rundown on the current state-of-the-art for Yiddish OCR and helped me get a usable plain-text version of a Yiddish translation of 19th Century Literature. What’s more, he was able to map the 11 Yiddish volumes to the 6 original Danish volumes, give me the names of the translators — themselves notable literary critics — and read the introduction, where volume 1 translator Chaim Liberman states that he consulted three translations of Brandes when writing his Yiddish translation, to try to get to the “real Brandes” through the translator signal. (That translation, plus the fact that we have other writings by the translators, has left me wanting to try a Yiddish stylometry project.)</p>
+<p>I ended up with seven versions of the text for the hackathon:</p>
+<ul>
+<li>Danish (plain text files — but not the ones originally provided for the hackathon; I didn’t want the original text, but the revised edition that was the basis of the translations)</li>
+<li>Yiddish (plain text files, one per volume),</li>
+<li>English (copied and pasted from the Project Gutenberg HTML, to avoid the line-break artifacts in the plain text version)'</li>
+<li>Polish (djvu files from a digital Polish library, converted to plain text using Calibre — a process that completely eliminated the paragraph and chapter breaks)</li>
+<li>Russian (blurry PDF, had to be OCR’d)</li>
+<li>Spanish (had to be recalled from the UC system's Northern California storage facility by a friend, scanned, then OCR’d)</li>
+<li>German (PDFs from HathiTrust with completely unusable Fraktur OCR; re-running Tesseract on them with the fraktur training data had a much better output)</li>
+</ul>
+<p>Figuring what text to work with, researching what translations were available, searching for digitized versions, and scanning and OCRing where necessary, probably took in the range of 15-20 hours prior to the hackathon itself.</p>
+<p><strong>Text Cleaning</strong>
+<img src="../post-images/brandes_hackathon.jpg" alt="">The first day of the hackathon was largely dedicated to presentations about the ongoing role Brandes plays in Danish political discourse, the development and state of the Digital Brandes project, an overview of topic modeling for the non-DH attendees from Berkeley's Scandinavian department, and an overview of methods for visualizing and making use of word vectors (e.g. for machine-generation of text) by Peter Leonard, with the caveat that all of Brandes's writings together (under a million words) comprise a small enough corpus that word vectors aren't going to be particularly useful for any kind of analysis.</p>
+<p>Meanwhile, I was engaged in light multitasking during these presentations. I'd decided to manually clean up the running page headers in my text files, and split volume one in each of the languages into its constituent chapters. In retrospect, the situation was a good litmus test for where one falls on the humanist / technologist spectrum. It could've been automated, with a set of fuzzy regexes to accommodate the dirty OCR, but figuring out what those regexes should look like would've required more attention and focus (and grumbling and swearing) than would be feasible while multitasking during presentations. Worse, it'd impose a binary status on this aspect of data cleaning: for a given language, it'd be done, or not done. If I ran out of time, I'd have to start jettisoning languages, rather than scoping the project down to the first three or four chapters in each language. I knew I could get enough done if I did it manually; automating it introduced too much uncertainty, and this wasn't a project I planned to do more with, where the work put into automation would pay off at scale.</p>
+<p>This process of data cleaning extended into the second day of the hackathon, when the official &quot;hacking&quot; commenced. While my colleagues worked in silence or quiet consultation, I found myself frequently laughing out loud. The Yiddish translators' decision to render &quot;Emigrant Literature&quot; as &quot;French Emigrant Literature&quot; opened the door for all sorts of variations on OCR errors, rendered hilarious by Google Translate.</p>
+<ul>
+<li>Frantic inside the immigrant literature (פראַנצו ין ישע עמיגראַנטען ליטעראַטור)</li>
+<li>For technical emigrants (פראָנצו זישע עמיגראַנטען ליטעראַטור)</li>
+<li>French emigrated liquor store (פראנצױזישע עמיגראנטען ליסעראסור)</li>
+<li>Russian emigrant literature (—ראַנצו יז ישע עמיגראַנטען ליטעראַטור)</li>
+<li>Annotate emigrant literature (מראַנצו יז ישע עמיגראַנטען ליטעראַטור)</li>
+<li>Munches up the big grass of the earth(?!) (מראַנצו יז ישע עמ יגראַנטען לי טעראַטור)</li>
+</ul>
+<p>And my two favorites:</p>
+<ul>
+<li>&quot;Yeah. Yeah, you emigrants” (פראַנצן יז יע עמיגראַנטען לי מעראַטור) and</li>
+<li>&quot;Francis, it is the liquidator” (פראַנצו יז ישע עס י גראַנטען לי עראַטור).</li>
+</ul>
+<p>The data cleaning took about seven hours, with half of that time spent multitasking.</p>
+<p><strong>Interlude</strong>
+As luck would have it, the 0-2 program at my kids’ daycare closed early the second day of the hackathon to support teacher professional development, so in the afternoon I brought along my junior collaborator, Eliza, who drank a bottle and fell asleep in her stroller while I wrangled the data extraction. Everyone was very kind towards the hackathon’s youngest participant, who woke up in time to sprawl on my lap while I made the visualization, and give her first academic co-presentation on the eve of her first birthday.</p>
+<p><strong>Data extraction</strong>
+The data cleaning convinced me of the futility of attempting paragraph alignment (or even paragraph-count alignment) between the texts. Paragraph breaks were lost in converting the Polish text from .djvu, and with the other texts, I’d have needed to write a script to try to get every paragraph onto a single line in the text file. Instead, I decided for an even cruder metric: word counts. They’re not directly comparable across languages (e.g. in Russian and Polish, the grammatical cases and lack of articles</p>
+<p>After cleaning up each text and splitting it into chapters, I started copying and pasting each chapter into an online word count tool and manually constructing a  table. In that moment, I remembered that I do know how to automate some things, and cobbled together a Jupyter notebook for getting what I needed from my files. Voila — data!</p>
+<p>It took about 45 minutes — including a little bit of additional text cleaning — to finish this part of the project, the only code I wrote over the two-day hackathon.</p>
+<p><strong>Visualization</strong>
+<img src="../post-images/quinn_eliza_brandes_hackathon.jpg" alt="">Earlier in the week, I'd taught a workshop on Tableau — and just previous week, I'd learned some Tableau myself with help from Miriam Posner's <a href="http://miriamposner.com/classes/dh201w19/tutorials-guides/data-visualization/getting-started-with-tableau-public/">wonderful</a> <a href="http://miriamposner.com/classes/dh201w19/tutorials-guides/mapping/create-a-map-with-tableau/">tutorials</a> — so it made an appealing option for doing a visualization of my word count data to use for my final hackathon presentation. Once you've gotten the hang of the major elements of Tableau's visual vocabulary and some UI quirks, putting together new visualizations is quick and easy.</p>
+<p>I used the data from the Jupyter notebook to create a <a href="https://public.tableau.com/views/multilingual-brandes-viz/Sheet1?:embed=y&amp;:display_count=yes&amp;publish=yes&amp;:origin=viz_share_link">heat map table visualization based on the word counts</a>. Putting that together took about 10 minutes (even with my wriggly collaborator periodically requiring attention), which took me up until the beginning of the final presentations.</p>
+<p><strong>Presentation</strong>
+For somewhere around 24 hours of work, what I had felt modest, particularly when juxtaposed with word vectors, deep-learning based text generator, or the permutations on topic modeling, or the Philologic instance with Brandes running. It was just a word-count visualization, punctuated by a few examples of the best OCR errors. It’s not, by itself, anything particularly interesting — it’s a distant proxy for what I really would want to look at. It only hinting at the promise of potentially meaningful discoveries that could be possible through much more work. But it was striking that the less-technical Scandinavian scholars seemed to get what I was trying to do, even while appearing to struggle somewhat with how topic modeling or word vectors further scholarship as such. As digital humanists, we commonly fall back on minimizing such questions with words like “exploratory”, but I don’t think that’s a satisfactory answer particularly when presenting outside of DH circles. Andrew Piper’s Enumerations deliberately builds a navigable path through some of these methods for scholars without a technical background, but it’s not something you can easily encapsulate in an answer to a question, or a framing device for a lightning talk. At least for myself, I feel like I need a better set of examples of meaningful — and, if possible, surprising — discoveries that build on digital humanities methods, readily on hand for moments like this.</p>
+<p><strong>Post-hackathon</strong>
+I recently finished the aspect of my project that I didn’t have time for during the hackathon itself: using Voyant to compare the translations beyond just the word counts. The distinctive word information is particularly useful: we can see that everything seems to line up through chapter 4, after which point Russian and Polish diverge (together? Note the parallel in some of the not-named-entities like babko/бабушка in Ch. 8) from the rest of the translations, and they start running a chapter behind in named entities (e.g. see констанъ in Russian chapter 8 instead of 7 for constant; элеонора in 9 instead of 8 for eleonore, etc.)</p>
+<p>All of the chapter-separated text files for volume 1 are <a href="https://github.com/quinnanya/multilingual-brandes">up on Github</a>, along with the Voyant stats, Jupyter notebook, and Tableau file for the visualization. I’ve also stuck in various other text files and PDFs of translations of Brandes’s writing that I came across along the way, but didn’t end up using. Until I hear otherwise from a Scandinavian studies scholar in my division, I think my time with Brandes may have come to an end. Nevertheless, I hope this project and the texts I tracked down may be of value someday for someone else with a longer-term commitment to Brandes and his work.</p>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>

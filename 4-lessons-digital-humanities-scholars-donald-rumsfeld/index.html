@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>4 Lessons for Digital Humanities Scholars from Donald Rumsfeld :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+
+
+  <meta property="og:title" content="4 Lessons for Digital Humanities Scholars from Donald Rumsfeld" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/4-lessons-digital-humanities-scholars-donald-rumsfeld/" />
+<meta property="og:site_name" content="Digital Humanities at Stanford" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="Post image" />
+<meta name="description" content="" />
+
+
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-center ">
+        <div
+          class=" col-md-8  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">4 Lessons for Digital Humanities Scholars from Donald Rumsfeld</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Elijah Meeks<span class="text-muted d-block mt-1">August 27, 2014</span>
+            </small>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <p>As digital humanities scholarship matures, it behooves us to look to thinkers outside the field for help in crafting our research agenda and planning our projects. One of those thinkers is Donald Rumsfeld, the Socrates of Strategery, whose insightful rhetoric can guide us in our treatment of this young field. Some of you might be thinking, “Who’s Donald Rumsfeld?” If you don’t know who Donald Rumsfeld is, you can skip reading this, since you’re not firmly enough ensconced in the fear, uncertainty and doubt that comes from trying to understand the place of humanities scholarship in relation to new technologies, new media, and new modes of engagement.</p>
+<p>For those who do know Donald Rumsfeld, you know that he had a way of expressing the complex, postmodern world in a way that was simultaneously accessible and fertile. Like a modern Laozi, his seemingly blaise descriptions of complex systems contain multilayered wisdom of the kind necessary for identifying the key features of such systems.</p>
+<p><strong>Lesson 1: Known Unknowns</strong>
+<em>“There are things we know that we know. There are known unknowns. That is to say there are things that we now know we don't know. But there are also unknown unknowns. There are things we do not know we don't know. So when we do the best we can and we pull all this information together, and we then say well that's basically what we see as the situation, that is really only the known knowns and the known unknowns. And each year, we discover a few more of those unknown unknowns.”</em></p>
+<p>The experience of digital humanities scholarship invariably includes representation of data and processes on maps and other forms of information visualization. The problem of such representation is that it obscures the aspects of the research that are not amenable to these views. Foregrounding and emphasizing the parts of the dataset that are hidden in these views is a key aspect to a successful use of information visualization as scholarly publication.</p>
+<p>If successful, then such material is no longer subject to the tired critiques that are easily deployed in response to digital humanities scholarship that attempt to highlight the inherent quality of data visualization: that it obscures data not easily visualized or preferences data over the processes that produce and modify such data. Representation of the known unknowns and unknown unknowns is one of the key aspects that signals information visualization rather than simple data visualization.</p>
+<p><strong>Lesson 2: You go to DH with the data you have</strong>
+<em>“As you know, you go to war with the army you have, not the army you might want or wish to have at a later time.”</em></p>
+<p>Building on Lesson 1, we have to realize that there is always more data to be included in any dataset that acts as the material for a project. In my experience, it’s common to hear that a project does not want to move forward with analysis out of fear that a new and significant set of data will become available. This is not to say that data collection and data creation should be ignored, but we have to act to produce some level of research (whether formal publication or not) that can be responded to by related projects or scholars. I’ve long described ORBIS as a terrible network model of the Roman world, but the best that we have right now. If we acknowledge the gaps in our data and the limits of our methods, then even a sparse dataset can produce fertile material for future research.</p>
+<p><strong>Lesson 3: Embrace the Complexity</strong>
+<em>“It sounds like a riddle. It isn't a riddle. It is a very serious, important matter.”</em></p>
+<p>Information visualization and statistical summaries often obscure the complexity of the phenomena being studied. Because presentation of such new views of humanities scholarship are still in the process of being formalized, we need to avoid the impulse to treat such representations as either inspirational but opaque symbols of complexity or, on the other hand, gross simplifications of things that are already known or better understood in traditional scholarship. The new forms of publication and presentation available in digital humanities need to be simultaneously as rich and as legible as the old forms--a high standard but one we can achieve by focusing on integration of design principles into scholarly publication.</p>
+<p><strong>Lesson 4: Expect and honor intuitive criticism</strong>
+<em>“I read eight headlines that talked about chaos, violence, unrest. And it just was Henny Penny -- &quot;The sky is falling.&quot; I've never seen anything like it!”</em></p>
+<p>As a movement with growing visibility, a false binary has been propagated in regard to the response to digital humanities scholarship: Either you embrace it as a fundamentally exciting Savior of the Humanities or you disregard it as a tired rehash of the Quantitative Turn. The popularity of the asking “So what?” in response to some new map or chart, with the implication that digital humanities only recapitulates the most basic truisms well-established decades or centuries prior in humanities research, is allied with the casual criticism of information visualization techniques for being hairballs, infographics or bad maps. Rather than ignoring these critiques and lumping those who voice them into an enemies list, it pays to engage with them and understand the core intuitions being expressed.</p>
+<p>As an example, I have to rely on a very specific incident in my early forays into network visualization. One criticism I heard, from a highly respected scholar, was that force-directed layouts produced network visualizations that were randomly rotated, such that, to put it simply, “The thing on the upper left is now on the right.” To me, this seemed like a naive critique, especially since it was used to discard the entire method, and my first impulse was to laugh it off. But in thinking about it more clearly, I realized I was in the wrong. Position is a channel in information visualization, and position, whether relative or absolute, implies meaning as much as size or color. By not explaining this or being prepared to explain it to an audience that might otherwise be prepared to read such a network visualization, either in a legend or other embedded or supplemental form, then it’s the equivalent of representing nodes or edges with some arbitrary shape or color and never explaining that those shapes and colors are meaningless.</p>
+<p><strong>Embrace Your Inner The Donald</strong></p>
+<p>You can read more of the teachings of Donald Rumsfeld <a href="http://en.wikiquote.org/wiki/Donald_Rumsfeld">here</a>. But remember that, like all teachers, Rummy can only guide us. It’s up to you to integrate his wisdom into your digital humanities practice.</p>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>

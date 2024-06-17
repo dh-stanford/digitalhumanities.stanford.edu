@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Technical enough :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+
+
+  <meta property="og:title" content="Technical enough" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/technical-enough/" />
+<meta property="og:site_name" content="Digital Humanities at Stanford" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="Post image" />
+<meta name="description" content="" />
+
+
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-between ">
+        <div
+          class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">Technical enough</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Quinn Dombrowski<span class="text-muted d-block mt-1">September 3, 2019</span>
+            </small>
+          </div>
+        </div>
+        
+        <div class="col-md-6 pr-0 align-self-center">
+          <img class="rounded" src="../post-images/3353063137_f0e01c37b1_b.jpg" alt="Technical enough">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <p>One of the most memorable panels at ACH was the one with DH Developers talking about how they got to where they are. Matthew Lincoln, Zoe LeBlanc, Rebecca Sutton Koeser, and Jamie Folsom all came to their careers in different ways, and work under different conditions. Even the largest shop (Scholars' Lab), with enough staff to have &quot;junior&quot; and &quot;senior&quot; developer roles, feels small, and everyone seemed interested in cultivating more of a community that crosses institutional boundaries. Some folks, including Rebecca, have begun to get involved with the emerging Research Software Engineering scene in the US. At the end, they called for more developers to tell their &quot;origin stories&quot;, referencing the 2013 &quot;Speaking in Code&quot; workshop.</p>
+<p>I've gone back and forth on whether to write one. Stanford has DH developers (2.5 of them, putting us among the mid-size shops), and I'm not one of them. It's not just a matter of titles: what they know, what they do, and how they work is very different. In my previous job, I kept hearing from my boss that I wasn't technical enough. As supportive as I am of the idea behind the Research Software Engineer movement, the name makes me shudder every time because “Software Engineer” was the title my boss held up as a marker of superiority over all those humanists writing spaghetti code, who don’t know how to properly engineer things. Which is to say, even if I had been able to make time on nights and weekends to become “more technical”, it wouldn’t be enough to get any respect.</p>
+<p>I’ve never felt technical enough to stray anywhere close to titles like “developer”, “programmer”, “hacker”, but looking back over the long arc of my involvement with technology, being one has never been my goal (save a brief pubescent fascination with black hat hackers in the mid-90’s). Instead, I’ve just wanted to do things that were only feasible using technology, and I learned what I needed to reach those goals. My father telecommuted for a Fortune 500 pharmaceutical company, which meant I was lucky to have technology around the house in a way none of my peers did. I learned how to defrag hard drives, or back up computers using 3.5” diskettes, because I wanted money for doing extra chores, and it was more interesting than folding and organizing my father’s socks. I figured out how to replace a sound card when ours broke, and my computer games weren’t the same without it, but getting around to the repair wasn’t as serious a priority for my parents as it was for me. When I got stuck on my games, I learned how to go onto CompuServ and VERY QUICKLY find the hints I needed, because it was pay-per-mintute. Later, when we got “Internet-In-A-Box” (featuring the Mosaic browser), I wanted to find other Star Trek fans, and learned about the Web and Gopher. When I got into manga and anime, I could find episode descriptions in English, and fan-subbed clips in Japanese — so much easier than trying to convince a parent to drive me a few towns over to the one comic book store that sometimes had a couple imports from Japan. I built an anime fan site for my final project for HTML class in 6th grade (complete with a beautiful starry background that made the text unreadable) — then, when I forgot my disk at home the day the project was due, I convinced my teachers to let me spend the whole day in the computer lab, where I recreated the yearlong project from scratch.</p>
+<p>I first learned XSLT first from David Birnbaum, whose digital medieval Slavic projects (now up at <a href="http://obdurodon.org/">http://obdurodon.org/</a>) were an inspiration. I wanted to do that with texts of my own choosing. (Doing XSLT first was a decision with long-term consequences; now that I’m working with Python, I’ve realized the underlying concepts and structures I expect from XSLT just aren’t there. But it was the best option available at the time to people with my background and interests.) I discovered Drupal 4 when I wanted to create a community and research oriented portal for Slavic studies in 2005; I settled on it over <a href="https://en.wikipedia.org/wiki/PHP-Nuke">PHP-Nuke</a> and ran it locally using XAMPP. Life got easier with the introduction of Drupal 5, and the first sites that got far enough to go into production were in Drupal 6, which was released in 2008.</p>
+<p>What’s never worked for me is learning things because I “should”. In the second grade gifted program, we were taught BASIC. I had some vague ideas about wanting to use it to make text adventure games, or educational games to help my sister learn to read, but wasn’t quite able to work out the details of how you’d map out a narrative more complex than the lesson examples and translate that to code. I quickly lost interest.</p>
+<p>I wrote a book on Drupal for digital humanities without knowing either PHP or SQL, even after attempting to struggle through various O’Reilly books on the topics. But I didn’t need them: the whole point of the book was that non-technical scholars could use Drupal to build complex web-based projects without writing any code.</p>
+<p>I took a Python class as part of my MLIS, and learned very little. The major takeaway of the class was that programming is hard and you have to be exceedingly specific in your instructions — but, once again, there was a gap between the programs we re-write ourselves  from the textbook into the IDE, and anything that would actually be useful. The dire warnings I saw about Unicode issues in Python 2 were also uninspiring.</p>
+<p>I made the acquaintance of CSS when I started a post-student job in Web Services at the University of Chicago. I spent the weeks before Christmas 2006 adding Lightbox tags to thumbnail image links for the <a href="https://web.archive.org/web/20070305231731/http://oi.uchicago.edu/">Oriental Institute website</a>. It wasn’t that I didn’t see the applicability of CSS — <a href="http://www.csszengarden.com/">CSS Zen Garden</a> sold me on that, and everything Web Services made looked very nice. I just hated it. It was extremely fiddly and had these browser-specific quirks, the syntax never stuck in my head, and it requires a level of attention to detail that has always been a challenge for me. I developed a “minimalist aesthetic” because a lot of CSS just didn’t seem worth the hassle. To this day, I try to avoid it like the plague. And don’t get me started on Javascript: been there, tried those tutorials, it never stuck — and customizing what I could get out of various boxes hardly seemed worth the extra whiz-bang.</p>
+<p>No PHP, no SQL, no Python, no Javascript, and a blood feud with CSS. HTML since childhood, traces of XSLT, and site-building with content management systems, the major one approaching end-of-life (September 2021 for Drupal 7). A smattering of weirdly specific facts about high-performance computing, but without the ability to put together a full workflow that ends with monitoring a running job. Pretty conclusively not a DH developer, right?</p>
+<p>One of my concerns in applying for my current job was that it would just be the same kind of DH work I’d been doing before: building and maintaining websites. I was delighted to discover during the interview process that that wasn’t necessarily the case: this job is to help faculty and students in my division to make good technical choices for their projects, and work with them to realize those projects. For me,that meant was doing <em>fewer</em> websites (in my year in this job, I haven’t started a single website that wasn’t either a static site, or fully maintained technically by our amazing central Web Services group), and more things that look like gathering research materials, transforming them into data, and <em>analyzing that</em>, in a way that can actually be finished, liberating both scholar and DH staff to move on to new things.</p>
+<p>When I started this job, I was most definitely <em>not technical enough</em> for the sorts of things I hoped to do. But I’ve learned, and the beauty of the Academic Technology Specialist position, which I’ve heard described as “the best dead-end job you’ll ever have”, is that the lack of anyone to impress for the next promotion means that you’re free to learn things through all sorts of means. This year, learning has often meant publicly performing ignorance: on Twitter, at the Lit Lab, with my actual DH Developer colleagues. It’s meant asking “and then what do you do?” in an attempt to pin down a workflow left implicit, and organizing a math reading group in response to the Nan Z. Da article criticizing, among other things, the math and stats knowledge of people doing the kind of work I want to undertake. (Guilty as charged! Time to fix that.) Having this kind of freedom is a rare luxury, and as I’ve learned things I’ve tried to document as much as possible — writing heavily annotated Jupyter notebooks, creating lists of resources, writing blog posts, starting mailing lists. I’ve got a Programming Historian lesson on Jupyter Notebooks currently in review. My hope is that others can use my public learning-it-the-hard-way into learning it more easily and more privately.</p>
+<p>I still don’t know if I count as a DH Developer, but in the Division of Literatures, Cultures, and Languages at Stanford, I’m the closest thing they’ve got. I get stuck, ask questions, ask for help from colleagues who actually know how to code. Sometimes the answer has to be, “If you really want to build this, you’ll need to apply for a grant, or submit your project to a CIDR Developer CFP, because this isn’t feasibly something I’ll be able to do for you.” But in most cases, I’ve been able to figure something out, with a little (or a lot) of help from a broad network of colleagues. And as I finish writhing this on a train en route to the <a href="https://slavic-dh.princeton.edu/2019-summer-workshop/">Princeton Slavic DH</a> workshop (&quot;Digital Humanities and Visual Resources: The Material and Digital Lives of Eastern European and Russian Artifacts&quot;), that’s what I’m really hoping to convey this week: you don’t necessarily have to be your idea of “technical” to undertake this work — by becoming part of a community, you can make it work with curiosity, persistence, and being <em>technical enough</em>.</p>
+<p><em>(Thanks to Rebecca Sutton Koeser for her post last week, &quot;<a href="https://cdh.princeton.edu/updates/2019/08/23/still-speaking-code/">Still Speaking in Code</a>&quot;, for nudging me to write this.)</em></p>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>

@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Projects :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+
+
+  <meta property="og:title" content="Projects" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/projects/" />
+<meta property="og:site_name" content="Digital Humanities at Stanford" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="Post image" />
+<meta name="description" content="" />
+
+
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="card-columns">
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Animal City
+        </div>
+        <img class="card-img-top" src="images/animal-city.png" alt="Animal City">
+        <div class="card-body">
+          <p class="card-text"><p>What roles did animals play in nineteenth-century cities? What urban spaces did they inhabit and how did those spaces change over time?</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Between Canon and Corpus: The Twentieth Century Novel in English
+        </div>
+        <img class="card-img-top" src="images/between-canon-and-corpus-the-twentieth-century-novel-in-english.png" alt="Between Canon and Corpus: The Twentieth Century Novel in English">
+        <div class="card-body">
+          <p class="card-text"><p>Of the many, many thousands of novels and stories published in English in the twentieth century, which group of several hundred would represent the most reasonable, interesting, and useful subset of the whole?</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Between the Tides
+        </div>
+        <img class="card-img-top" src="images/between-the-tides.png" alt="Between the Tides">
+        <div class="card-body">
+          <p class="card-text"><p>Between the Tides aims to reveal, visualize, and analyze the changing relationship between society and nature on San Francisco Bay's dynamic tidal margin.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Bibliopedia
+        </div>
+        <img class="card-img-top" src="images/bibliopedia.jpeg" alt="Bibliopedia">
+        <div class="card-body">
+          <p class="card-text"><p>Bibliopedia is a tool for the discovery and analysis of humanities research, and a platform where scholarly communities can form to discuss, revise, and extend our knowledge of existing research.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Boundaries of Nature
+        </div>
+        <img class="card-img-top" src="images/boundaries-of-nature.png" alt="Boundaries of Nature">
+        <div class="card-body">
+          <p class="card-text"><p>This project investigates the spatial and environmental history of the establishment of the Iguazú National Park in Argentina and the Iguaçu National Park in Brazil.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Broken Paths of Freedom
+        </div>
+        <img class="card-img-top" src="images/broken-paths-of-freedom.png" alt="Broken Paths of Freedom">
+        <div class="card-body">
+          <p class="card-text"><p>This project is an historical study of the geographies of enslavement, emancipation, and liberty traversed by Free Africans, a subgroup of the roughly three-quarter million enslaved Africans illicitly trafficked to the Brazilian empire between 1821 and 1856.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          California Delta
+        </div>
+        <img class="card-img-top" src="images/california-delta.png" alt="California Delta">
+        <div class="card-body">
+          <p class="card-text"><p>This project aims to reocnstruct a history of conservation of select arreas of California.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Carleton Watkins at the Cantor
+        </div>
+        <img class="card-img-top" src="images/carleton-watkins-at-the-cantor.png" alt="Carleton Watkins at the Cantor">
+        <div class="card-body">
+          <p class="card-text"><p>This project seeks to illustrate the importance of Carleton Watkins’ photography and situate his work in a broader historical and geographic context.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Chilean Aquaculture
+        </div>
+        <img class="card-img-top" src="images/chilean-aquaculture.png" alt="Chilean Aquaculture">
+        <div class="card-body">
+          <p class="card-text"><p>Chile's Aquaculture Industry, 1950-2000 researches the connections among environmental and social change in the salmon-farming industry in southern Chile.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Chinese Canadian Stories
+        </div>
+        <img class="card-img-top" src="images/chinese-canadian-stories.png" alt="Chinese Canadian Stories">
+        <div class="card-body">
+          <p class="card-text"><p>Chinese Canadian Stories: Uncommon Histories from a Common Past is a collaborative project developing a one-stop web portal dedicated to collecting, digital archiving, accessing, and distributing information about Chinese Canadian history.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Chinese Railroad Workers Project
+        </div>
+        <img class="card-img-top" src="images/chinese-railroad-workers-project.png" alt="Chinese Railroad Workers Project">
+        <div class="card-body">
+          <p class="card-text"><p>This project seeks to give a voice to the Chinese migrants whose labor on America's Transcontinental Railroad helped to shape the physical and social landscape of the American West.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Cigarette Citadels
+        </div>
+        <img class="card-img-top" src="images/cigarette-citadels.png" alt="Cigarette Citadels">
+        <div class="card-body">
+          <p class="card-text"><p>The Cigarette Citadels project explores visual and spatial questions around the six trillion cigarettes that are manufactured, packaged, and distributed by the tobacco industry every year.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          City Nature
+        </div>
+        <img class="card-img-top" src="images/city-nature.png" alt="City Nature">
+        <div class="card-body">
+          <p class="card-text"><p>The City Nature project at Stanford blends humanistic and social science approaches with &quot;hard&quot; science–in this case, satellite imagery for land cover and spatial analysis–in a research inquiry motivated by an important environmental and societal problem.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Contested Waters: Rio de Janeiro&#39;s Public Water Supply and the Social Structuring of a City
+        </div>
+        <img class="card-img-top" src="images/contested-waters-rio-de-janeiro-s-public-water-supply-and-the-social-structuring-of-a-city.jpeg" alt="Contested Waters: Rio de Janeiro&#39;s Public Water Supply and the Social Structuring of a City">
+        <div class="card-body">
+          <p class="card-text"><p>The spatially-oriented analysis of the water distribution in 19th combines data on the position of aqueducts, fountains, private taps, the conduit system and the amount of water provided by each of these with the data of the “Terrain of History&quot; project.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Critical Habitat
+        </div>
+        <img class="card-img-top" src="images/critical-habitat.png" alt="Critical Habitat">
+        <div class="card-body">
+          <p class="card-text"><p>Critical Habitat is investigating the relationship between people and the environment in the American West at different spatial and temporal scales.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Crowdsourcing in the Humanities
+        </div>
+        <img class="card-img-top" src="images/crowdsourcing-in-the-humanities.png" alt="Crowdsourcing in the Humanities">
+        <div class="card-body">
+          <p class="card-text"><p>This project, funded by a grant from the Mellon Foundation, seeks to test ways in which humanities researchers might use different types of crowdsourcing and community sourcing to further research.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Crusade Memory in Iraq
+        </div>
+        <img class="card-img-top" src="images/crusade-memory-in-iraq.png" alt="Crusade Memory in Iraq">
+        <div class="card-body">
+          <p class="card-text"><p>Crusade Memory in Iraq uses Drupal and D3.js visualizations to archive and mediate representations of the Crusades in Iraq from 1990-2015. The platform offers and innovative way to research and visualize cultural memory archives. (Brian Johnsrud)</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Decade of Fire in Western Australia
+        </div>
+        <img class="card-img-top" src="images/decade-of-fire-in-western-australia.png" alt="Decade of Fire in Western Australia">
+        <div class="card-body">
+          <p class="card-text"><p>Aboriginal Fire and Desert Biodiversity is an interdisciplinary NSF-sponsored project examining how indigenous Martu from Western Australia use fire in the process of hunting and how this daily practice leads to greater biodiversity.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Design for Endangered Languages
+        </div>
+        <img class="card-img-top" src="images/design-for-endangered-languages.jpeg" alt="Design for Endangered Languages">
+        <div class="card-body">
+          <p class="card-text"><p>Based on Sarah Ogilvie's Endangered Languages project, this collaboration between Stanford and Pratt Institute applied communication design skills to the challenge of preserving and maintaining languages in danger of extinction.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          DH Asia
+        </div>
+        <img class="card-img-top" src="images/dh-asia.png" alt="DH Asia">
+        <div class="card-body">
+          <p class="card-text"><p>This project focuses on East, South, Southeast, and Inner/Central Asia and centers around a series of intellectually intensive 3-day visits by a core group of scholars.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Digging Deeper
+        </div>
+        <img class="card-img-top" src="images/digging-deeper.jpeg" alt="Digging Deeper">
+        <div class="card-body">
+          <p class="card-text"><p>This project provides introductory training for students, scholars, and those interested in cultural heritage, in how to interpret manuscripts from about 500 CE to the modern period.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Digital Analysis of Syriac Handwriting (DASH)
+        </div>
+        <img class="card-img-top" src="images/digital-analysis-of-syriac-handwriting-dash-.png" alt="Digital Analysis of Syriac Handwriting (DASH)">
+        <div class="card-body">
+          <p class="card-text"><p>DASH is a customizable scriptchart generator and online manuscript viewer for digital paleography.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Digital Humanities Focal Group
+        </div>
+        <img class="card-img-top" src="images/digital-humanities-focal-group.png" alt="Digital Humanities Focal Group">
+        <div class="card-body">
+          <p class="card-text"><p>The DHFG promotes faculty and graduate research in the digital humanities through lectures series, praxis workshops, curriculum, and the identification and development of digital humanities research projects, especially those eligible for grant-funding opportunities.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Early Modern Roads
+        </div>
+        <img class="card-img-top" src="images/early-modern-roads.jpeg" alt="Early Modern Roads">
+        <div class="card-body">
+          <p class="card-text"><p>Katie McDonough leads this effort to capture a digital network of 17th and 18th century european roads for use by early modern scholars.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Emotions of London
+        </div>
+        <img class="card-img-top" src="images/emotions-of-london.png" alt="Emotions of London">
+        <div class="card-body">
+          <p class="card-text"><p>“The Emotions of London” is creating an emotional map of the English metropolis, charting the affective significance of the thousands of place-names mentioned in eighteenth- and nineteenth-century novels.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Enchanting the Desert
+        </div>
+        <img class="card-img-top" src="images/enchanting-the-desert.jpeg" alt="Enchanting the Desert">
+        <div class="card-body">
+          <p class="card-text"><p>Enchanting the Desert explicates the space produced by an early-twentieth-century photographic slideshow of the Grand Canyon made by journeyman photographer Henry Peabody.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Forma Urbis Romae
+        </div>
+        <img class="card-img-top" src="images/forma-urbis-romae.jpeg" alt="Forma Urbis Romae">
+        <div class="card-body">
+          <p class="card-text"><p>Using GIS technology and accepted scholarly methods, this multi-disciplinary project intends to create a layered history of Rome by updating Forma Urbis Romae, the cartographic masterpiece of ancient Roman topography published in 1901 by archeologist Rodolfo Lanciani.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          French Revolution Digital Archive
+        </div>
+        <img class="card-img-top" src="images/french-revolution-digital-archive.jpeg" alt="French Revolution Digital Archive">
+        <div class="card-body">
+          <p class="card-text"><p>The French Revolution Digital Archive (FRDA) is the result of a multi-year collaboration between the Stanford University Libraries and the Bibliothèque nationale de France (BnF) to produce a digital version of the key research sources of the French Revolution and make them available to the international scholarly community.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Geographies of Capital
+        </div>
+        <img class="card-img-top" src="images/geographies-of-capital.jpeg" alt="Geographies of Capital">
+        <div class="card-body">
+          <p class="card-text"><p>Using historical records of European banks, this project traces the geographical evolution of the region’s sprawling network of stock exchanges during the peak period of industrialization, 1860-1914.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Geography of the Post
+        </div>
+        <img class="card-img-top" src="images/geography-of-the-post.png" alt="Geography of the Post">
+        <div class="card-body">
+          <p class="card-text"><p>Geography of the Post maps the late nineteenth-century U.S. postal network on its western periphery: where it spread, how it operated, and its role in shaping the space and place of the region.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          George Moses Horton, Slave Poet
+        </div>
+        <img class="card-img-top" src="images/george-moses-horton-slave-poet.jpeg" alt="George Moses Horton, Slave Poet">
+        <div class="card-body">
+          <p class="card-text"><p>We think of Hip Hop and artists like Jay-Z as modern phenomena. But the life of George Moses Horton (1798-1883), the famous poet, entrepreneur, and slave, demonstrates that we need to see this as a much longer history.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Global Currents: Cultures of Literary Networks, 1050-1900
+        </div>
+        <img class="card-img-top" src="images/global-currents-cultures-of-literary-networks-1050-1900.jpeg" alt="Global Currents: Cultures of Literary Networks, 1050-1900">
+        <div class="card-body">
+          <p class="card-text"><p>This project undertakes the cross-cultural study of literary networks in a global context, ranging from post-classical Islamic philosophy to the European Enlightenment.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Grand Tour Explorer
+        </div>
+        <img class="card-img-top" src="images/grand-tour-explorer.jpeg" alt="Grand Tour Explorer">
+        <div class="card-body">
+          <p class="card-text"><p>Giovanna Ceserani's project transforms the Dictionary of British and Irish Travelers on the Grand Tour in Italy: 1701-1800, into a dynamic digital resource for studies of 18th c. european travel.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Grave Relocation and Funeral Home Reform in Modern China
+        </div>
+        <img class="card-img-top" src="images/grave-relocation-and-funeral-home-reform-in-modern-china.jpeg" alt="Grave Relocation and Funeral Home Reform in Modern China">
+        <div class="card-body">
+          <p class="card-text"><p>Not unlike its better known counterpart, the “one-child policy,” funeral reform (binzang gaige) is a controversial governmental initiative crafted in response to China’s population crisis.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Historial Ecology of Upper San Francisquito Watershed
+        </div>
+        <img class="card-img-top" src="images/historial-ecology-of-upper-san-francisquito-watershed.jpeg" alt="Historial Ecology of Upper San Francisquito Watershed">
+        <div class="card-body">
+          <p class="card-text"><p>In collaboration with Jasper Ridge Biological Preserve, Stanford Heritage Services, the Searsville Steering Committee and the broader community, this project reflects an ongoing academic engagement with the study of Stanford's ecological and historical context.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Historical Thinking and Empathy in Human Rights Education
+        </div>
+        <img class="card-img-top" src="images/historical-thinking-and-empathy-in-human-rights-education.png" alt="Historical Thinking and Empathy in Human Rights Education">
+        <div class="card-body">
+          <p class="card-text"><p>In this study of human rights education in Sweden and the US, funded by the Wallenberg foundation, digital tools are used to process and elucidate how history can be used, understood and written in different countries and school cultures.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Holocaust Geographies
+        </div>
+        <img class="card-img-top" src="images/holocaust-geographies.png" alt="Holocaust Geographies">
+        <div class="card-body">
+          <p class="card-text"><p>Holocaust Geographies is a collaboration on an NSF-sponsored grant led by Anne Knowles (Middlebury College) and Alberto Giordano (Texas State University). Across five studies, the project examines spaces and places of the Holocaust.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Idiographic Tool
+        </div>
+        <img class="card-img-top" src="images/idiographic-tool.jpeg" alt="Idiographic Tool">
+        <div class="card-body">
+          <p class="card-text"><p>Part of the Networks in History project, the idiographic tool is an attempt to build a data sketch pad for humanities researchers.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Kindred Britain 2.0
+        </div>
+        <img class="card-img-top" src="images/kindred-britain-2-0.png" alt="Kindred Britain 2.0">
+        <div class="card-body">
+          <p class="card-text"><p>Kindred Britain 2.0 introduces a new feature to Kindred Britain 1.0: Kindred London, which is focussed on Britain’s capital city in the period between 1700 and 1950.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Lacuna Stories
+        </div>
+        <img class="card-img-top" src="images/lacuna-stories.png" alt="Lacuna Stories">
+        <div class="card-body">
+          <p class="card-text"><p>Lacuna Stories is a collaborative platform for research, learning and teaching.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Living With the Railroads
+        </div>
+        <img class="card-img-top" src="images/living-with-the-railroads.png" alt="Living With the Railroads">
+        <div class="card-body">
+          <p class="card-text"><p>A crowdsourcing project for railroad historians and scholars in the humanities</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Mapping Endangered Languages and Dictionaries
+        </div>
+        <img class="card-img-top" src="images/mapping-endangered-languages-and-dictionaries.png" alt="Mapping Endangered Languages and Dictionaries">
+        <div class="card-body">
+          <p class="card-text"><p>Mapping Endangered Languages and Dictionaries Project focuses on endangered languages around the world and efforts to preserve and revitalize them by the creation of dictionaries.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Mapping Rebellions in the Americas
+        </div>
+        <img class="card-img-top" src="images/mapping-rebellions-in-the-americas.png" alt="Mapping Rebellions in the Americas">
+        <div class="card-body">
+          <p class="card-text"><p>This project aims at creating a model of spatial and semantic representation of rebellions in the Americas, and showing that they are a potentially promising object for Spatial History.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Mapping the Republic of Letters
+        </div>
+        <img class="card-img-top" src="images/mapping-the-republic-of-letters.jpeg" alt="Mapping the Republic of Letters">
+        <div class="card-body">
+          <p class="card-text"><p>Mapping the Republic of Letters is a collection of case studies investigating early modern intellectual exchange through correspondence, travel, and publication.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Mapping Vice in Early Twentieth-Century Philadephia
+        </div>
+        <img class="card-img-top" src="images/mapping-vice-in-early-twentieth-century-philadephia.png" alt="Mapping Vice in Early Twentieth-Century Philadephia">
+        <div class="card-body">
+          <p class="card-text"><p>Mapping Vice in Early Twentieth-Century Philadelphia uses maps to explore the distribution of prostitution &quot;commutes&quot; and arrests in Philadelphia in the nineteen teens.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Microhistory of the Great Migration
+        </div>
+        <img class="card-img-top" src="images/microhistory-of-the-great-migration.png" alt="Microhistory of the Great Migration">
+        <div class="card-body">
+          <p class="card-text"><p>The Great Migration was a watershed in African American life: over the course of six decades (1910-1970), six million black southerners left the South in search of more meaningful experiences of freedom. This project offers a different angle of vision on the migration by bringing to light the places where migrants slept, ate, got haircuts, and danced along the way.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Micromegas
+        </div>
+        <img class="card-img-top" src="images/micromegas.jpeg" alt="Micromegas">
+        <div class="card-body">
+          <p class="card-text"><p>Digital humanities have broken with a “human” and readerly scale, replacing it with the radical discontinuity of Micro and Mega: a change of landscape that is incredibly promising, but for which we haven’t yet found the right categories.  This project is an empirical investigation and conceptual reflection of this new state of affairs.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Modeling Dramatic Networks
+        </div>
+        <img class="card-img-top" src="images/modeling-dramatic-networks.png" alt="Modeling Dramatic Networks">
+        <div class="card-body">
+          <p class="card-text"><p>This project uses computer models to identify the fundamental properties of dramatic networks – with particular attention to the correspondence between genres and patterns of growth – and to reflect on the relationship between modeling parameters and aesthetico-critical categories.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Networks of the DLCL
+        </div>
+        <img class="card-img-top" src="images/networks-of-the-dlcl.png" alt="Networks of the DLCL">
+        <div class="card-body">
+          <p class="card-text"><p>Michael Widner surveyed the faculty of the Division of Literatures, Cultures, and Languages about their research, teaching, and collaboration. From this information, he generated several network graphs for use in an all-faculty retreat at which the agenda was to center around how the DLCL is structured and how well it works for faculty.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Nineteenth-Century Crowdsourcing
+        </div>
+        <img class="card-img-top" src="images/nineteenth-century-crowdsourcing.png" alt="Nineteenth-Century Crowdsourcing">
+        <div class="card-body">
+          <p class="card-text"><p>This project investigates scholarly enterprises that sought contributions from the public in the nineteenth century.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Noh as Intermedia
+        </div>
+        <img class="card-img-top" src="images/noh-as-intermedia.jpeg" alt="Noh as Intermedia">
+        <div class="card-body">
+          <p class="card-text"><p>An interactive playback interface featuring two full-length Japanese Noh theater performances is the centerpeice of this site, with descriptions of the plot, text, music, and stage actions synchronized at subsecond granularity, accompanied by numerous explanatory essays, catalogs, and sound and video clips.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Non-State-Based Atlas of Economic and Social Development
+        </div>
+        <img class="card-img-top" src="images/non-state-based-atlas-of-economic-and-social-development.png" alt="Non-State-Based Atlas of Economic and Social Development">
+        <div class="card-body">
+          <p class="card-text"><p>The standard geopolitical model based on sovereign states provides an inadequate framework for mapping basic economic and social data. This projects re-maps the world around compact units of similar economic circumstances, all of which contain approximately 100,000,000 inhabitants.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          ORBIS
+        </div>
+        <img class="card-img-top" src="images/orbis.png" alt="ORBIS">
+        <div class="card-body">
+          <p class="card-text"><p>ORBIS is an interactive scholarly work that allows readers to examine the movement of goods and people in the Roman World through the creation of a historical transportation network model and its publication using interactive maps and information visualization.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Palladio
+        </div>
+        <img class="card-img-top" src="images/palladio.png" alt="Palladio">
+        <div class="card-body">
+          <p class="card-text"><p>Palladio is a platform for the exploration of historical data combining spatial, temporal and relational views at once.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Performing Trobar
+        </div>
+        <img class="card-img-top" src="images/performing-trobar.png" alt="Performing Trobar">
+        <div class="card-body">
+          <p class="card-text"><p>Performing Trobar is a website designed to support teaching and learning in Marisa Galvez‘s course Songs of Love and War: Gender, Crusade, Politics.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Poetic Thinking
+        </div>
+        <img class="card-img-top" src="images/poetic-thinking.png" alt="Poetic Thinking">
+        <div class="card-body">
+          <p class="card-text"><p>Poetic Thinking is a creative learning and research platform that promotes the study and close engagement with creative works, as well as fostering creative (especially digital) responses to those works through practices like remediation, deformation, and critical making. (Amir Eschel, Brian Jonsrud)</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Project Steel Beta
+        </div>
+        <img class="card-img-top" src="images/project-steel-beta.png" alt="Project Steel Beta">
+        <div class="card-body">
+          <p class="card-text"><p>Project Steel Beta is a web-based visualization tool for spatio-temporal data that allows users to visually display and explore GIS data from geodatabases within a browser.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Rebooting History
+        </div>
+        <img class="card-img-top" src="images/rebooting-history.png" alt="Rebooting History">
+        <div class="card-body">
+          <p class="card-text"><p>Rebooting History is an exploration with a point of origin in how regional utilization of East Palo Alto's space helped set the stage for a dynamic of inequality between the community and what would become Silicon Valley.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          REVS
+        </div>
+        <img class="card-img-top" src="images/revs.png" alt="REVS">
+        <div class="card-body">
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Richard Pryor&#39;s Peoria
+        </div>
+        <img class="card-img-top" src="images/richard-pryor-s-peoria.png" alt="Richard Pryor&#39;s Peoria">
+        <div class="card-body">
+          <p class="card-text"><p>&quot;Richard Pryor's Peoria&quot; aims to open up the work of a biography for the digital age. Traditionally, biographers have done their research–rooted around in archives, conducted their interviews, and so on–and then streamlined that research to write the story of the person in question.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Shaping the West
+        </div>
+        <img class="card-img-top" src="images/shaping-the-west.png" alt="Shaping the West">
+        <div class="card-body">
+          <p class="card-text"><p>Shaping the West explores the construction of space by transcontinental railroads in North America during the late nineteenth century.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Spaces of Mexican Migration
+        </div>
+        <img class="card-img-top" src="images/spaces-of-mexican-migration.jpeg" alt="Spaces of Mexican Migration">
+        <div class="card-body">
+          <p class="card-text"><p>This project will examine the late-twentieth-century history of illegal border crossing, Mexican migrant communities, and bi-national efforts to regulate the border. \</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Spatial History and Genealogy of Desert Ant Colonies
+        </div>
+        <img class="card-img-top" src="images/spatial-history-and-genealogy-of-desert-ant-colonies.jpeg" alt="Spatial History and Genealogy of Desert Ant Colonies">
+        <div class="card-body">
+          <p class="card-text"><p>(2012 - present) Over the past 3 decades, Gordon has studied the behavior, demography and ecology of a population of about 300 harvester ant colonies in Arizona, using both field and laboratory experiments.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Spiritual Networks 1890-1930
+        </div>
+        <img class="card-img-top" src="images/spiritual-networks-1890-1930.png" alt="Spiritual Networks 1890-1930">
+        <div class="card-body">
+          <p class="card-text"><p>In Britain, America and parts of Europe, the late nineteenth and early twentieth century witnessed the advent of the phenomenon we know today as 'spiritual but not religious.’</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Suspense: Language, Narrative, Affect
+        </div>
+        <img class="card-img-top" src="images/suspense-language-narrative-affect.jpeg" alt="Suspense: Language, Narrative, Affect">
+        <div class="card-body">
+          <p class="card-text"><p>This project seeks to bridge the gap between the experience of suspense as it is felt by the reader in anticipation of impending events, and the formal features that may be responsible for producing this feeling.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Taxonomy of Titles in the 18th Century Marketplace
+        </div>
+        <img class="card-img-top" src="images/taxonomy-of-titles-in-the-18th-century-marketplace.jpeg" alt="Taxonomy of Titles in the 18th Century Marketplace">
+        <div class="card-body">
+          <p class="card-text"><p>This project investigates the relationship between title and text in eighteenth-century fiction.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Terrain of History
+        </div>
+        <img class="card-img-top" src="images/terrain-of-history.png" alt="Terrain of History">
+        <div class="card-body">
+          <p class="card-text"><p>Terrain of History, an international collaborative project, seeks to reconstruct and analyze the social, cultural, and economic spaces of nineteenth-century Rio de Janeiro.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          The African Archives
+        </div>
+        <img class="card-img-top" src="images/the-african-archives.png" alt="The African Archives">
+        <div class="card-body">
+          <p class="card-text"><p>In order to enrich the study of colonial systems, researchers at the Center for African Studies at Stanford University, the Department of History and Geography in Faculté des Sciences et Technologies de l'Education et de la Formation (FASTEF), Cheikh Anta Diop University (UCAD), and other faculty members and researchers are digitizing indigenous personnel records of the colonial administration in Senegal.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          The Law of the Antebellum Frontier
+        </div>
+        <img class="card-img-top" src="images/the-law-of-the-antebellum-frontier.jpeg" alt="The Law of the Antebellum Frontier">
+        <div class="card-body">
+          <p class="card-text"><p>Innovative digital research technologies allow us to look at the expansion of the American nation during the critical years before the Civil War in new ways. During this time in history, law served in the process of empire.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          The World According to the Bank: The Language of World Bank Reports, 1946-2010
+        </div>
+        <img class="card-img-top" src="images/the-world-according-to-the-bank-the-language-of-world-bank-reports-1946-2010.jpeg" alt="The World According to the Bank: The Language of World Bank Reports, 1946-2010">
+        <div class="card-body">
+          <p class="card-text"><p>A literary historian and a sociologist of science analyze how the World Bank presents – and justifies – its role within the global economy.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Tracing the Arctic Regions
+        </div>
+        <img class="card-img-top" src="images/tracing-the-arctic-regions.png" alt="Tracing the Arctic Regions">
+        <div class="card-body">
+          <p class="card-text"><p>This project seeks to chart a geography of The Arctic Regions, an enormous 1873 book that represents the first photographic survey of Greenland’s western coast.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Trans-Historical Poetry Project
+        </div>
+        <img class="card-img-top" src="images/trans-historical-poetry-project.jpeg" alt="Trans-Historical Poetry Project">
+        <div class="card-body">
+          <p class="card-text"><p>The goal of the Trans-Historical Poetry Project is to trace the variation of poetic form over a large corpus of English-language poetry, combining the insights of prosodic and metrical analysis with the methods of phonetics, natural language processing, and statistics.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Transnational 9/11 Memorials and Geographies of Global Anti-Terrorism
+        </div>
+        <img class="card-img-top" src="images/transnational-9-11-memorials-and-geographies-of-global-anti-terrorism.png" alt="Transnational 9/11 Memorials and Geographies of Global Anti-Terrorism">
+        <div class="card-body">
+          <p class="card-text"><p>This project aims to “map” 9/11 memorials built in countries other than the United States, providing a geographic database of their locations, styles, subjects, dedication histories, and audiences.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          U.S. Deportation Trains
+        </div>
+        <img class="card-img-top" src="images/u-s-deportation-trains.jpeg" alt="U.S. Deportation Trains">
+        <div class="card-body">
+          <p class="card-text"><p>These trains made constant circuits through the country in the early twentieth century, picking up and then ejecting so-called “undesirable aliens” – non-citizens convicted of crimes, deemed mad or politically radical, the very poor, or else those considered racially ineligible to citizenship, many Chinese among them.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Vulnerabitlity in Production
+        </div>
+        <img class="card-img-top" src="images/vulnerabitlity-in-production.png" alt="Vulnerabitlity in Production">
+        <div class="card-body">
+          <p class="card-text"><p>Vulnerability-in-Production reconstructs how vulnerability to the 1991 Oakland Hills Fire developed over time, space and in the context of dynamic social-ecological change.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Western Railroads
+        </div>
+        <img class="card-img-top" src="images/western-railroads.png" alt="Western Railroads">
+        <div class="card-body">
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Writing Rights
+        </div>
+        <img class="card-img-top" src="images/writing-rights.jpeg" alt="Writing Rights">
+        <div class="card-body">
+          <p class="card-text"><p>A collaboration between faculty at Stanford and at the University of Technology at Sydney, Writing Rights is an exploration of the writing of the Declaration of the Rights of Man and the Citizen (1789) at the time of the French Revolution.</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Year of the Bay
+        </div>
+        <img class="card-img-top" src="images/year-of-the-bay.png" alt="Year of the Bay">
+        <div class="card-body">
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-auto mb-3">
+      <div class="card">
+        <div class="card-header">
+          Çatalhöyük Living Archive
+        </div>
+        <img class="card-img-top" src="images/çatalhöyük-living-archive.png" alt="Çatalhöyük Living Archive">
+        <div class="card-body">
+          <p class="card-text"><p>The Çatalhöyük Living Archive is a Stanford University digital humanities project, now in a pilot phase, aimed at making the data and interpretive works from that 20+ year archaeological project more accessible for ongoing and future scholarship. Çatalhöyük is a late-Neolithic settlement site on the Anatolian Plateau of south-central Turkey (occupied approx. 7500 BC to 5700 BC).</p>
+</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>

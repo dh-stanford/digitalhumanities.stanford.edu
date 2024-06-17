@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>A Day in the Life of a DLCL ATS :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+
+
+  <meta property="og:title" content="A Day in the Life of a DLCL ATS" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/day-in-the-life-dlcl-ats/" />
+<meta property="og:site_name" content="Digital Humanities at Stanford" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="Post image" />
+<meta name="description" content="" />
+
+
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-between ">
+        <div
+          class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">A Day in the Life of a DLCL ATS</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Quinn Dombrowski<span class="text-muted d-block mt-1">August 30, 2022</span>
+            </small>
+          </div>
+        </div>
+        
+        <div class="col-md-6 pr-0 align-self-center">
+          <img class="rounded" src="../post-images/fras_interface.jpg" alt="A Day in the Life of a DLCL ATS">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <p>With a hard-to-explain job title like &quot;Academic Technology Specialist&quot;, I've often gotten the question, &quot;What's a normal day like for you?&quot; Every day is different, but yesterday felt like a reasonably representative, busy day in the life of the ATS for the Division of Literatures, Cultures, and Languages. In order to have an answer for next time I get the question, I've written it up.</p>
+<h2>8:30 AM</h2>
+<p>I had a half-hour between dropping off the kids and the first meeting of the day, so I decided to tackle some email: ADHO things (I'm the representative for ACH, as one of the co-Presidents), replying to a planning email for an event in Vienna in October related to <a href="https://sucho.org">SUCHO</a>, replying to an email about some sample METS XML files for books scanned as part of the Google Books project, a quick email about a course schedule change, an inquiry about IRB requirements related to a project I'm doing through ADHO, and confirming that everyone who needs to be is in touch regarding an upcoming grant opportunity.</p>
+<p>I saw some activity on SUCHO Slack in the digitization channel, and amplified a question about flatbed scanner recommendations on Twitter, where we got a great assortment of tips and suggestions and pointers to existing resources and tutorials.</p>
+<h2>9 AM</h2>
+<p>9 AM was a meeting with Sarah Connell and Avery Blankenship to sketch out an outline for our Programming Historian lesson on word vectors. It's a method I first got into shortly after I started at Stanford, and I taught it -- somewhat haphazardly -- the first time I taught non-English DH. There's good materials on it here and there (including a <a href="https://ryanheuser.org/word-vectors-1/">nice</a> <a href="https://ryanheuser.org/word-vectors-2/">series</a> <a href="https://ryanheuser.org/word-vectors-3/">of</a> <a href="https://ryanheuser.org/word-vectors-4/">posts</a> by Ryan Heuser), but something that covers both the conceptual and practical bases is a gap in the Programming Historian offerings, as well as in my syllabus for when I re-teach non-English DH again this coming winter. A Twitter conversation last year or the year before led to this particular collaboration, which builds on materials from the Women Writers' Project NEH workshop series on word vectors.</p>
+<p>Before the next meeting, I checked in on the responses to the Twitter posts, shared some of them back to SUCHO Slack, and dealt with some travel logistics for the October SUCHO trip.</p>
+<h2>10 AM</h2>
+<p>10 AM was a deep dive into retro-DH (Humanities Computing Era edition) with the French Revolution Analysis System (FRAS), originally a DOS-based database containing 1,108 <em>cahiers de doleances</em> (notebooks of grievances, AKA requests/demands), prepared by electoral assemblies in France in 1789. We had gotten one of the copies of this software running on a Windows XP emulator via Virtualbox, but couldn't make heads or tails of how it actually worked, given its super-minimal text-based interface and the complex coding system that underpinned its query engine. The 10 AM meeting was with James Stinchcomb, an independent scholar in Cincinnati and a long-time user of FRAS, who walked us through how the system works and what the metadata means. The original creator has passed away, and registered the software with the US Copyright Office, so there's some issues of getting permission from his heirs to reimagine the software and make it publicly available. But if we can do that, it would make a great addition to the set of resources under the <a href="https://frda.stanford.edu/">French Revolution Digital Archive</a> led by Dan Edelstein in the DLCL. Watching FRAS in action left me with tremendous respect for folks who undertook the precursors to modern DH work without modern tools -- either for developing software like this, or from the user side, e.g. being unable to easily preview your results without having to export the data outside the program first. That meeting ran up to and beyond the hour, at which point I had to hop over to another Zoom room...</p>
+<h2>11 AM</h2>
+<p>... to talk resources and tutorials for web archiving with Melody Kramer, who's worked as a journalist and is developing a toolkit for journalists as part of her MLIS program. She's found the tutorials we put together for SUCHO to be useful, and we talked through the pros and cons of different technologies and options, weighing factors like cost (long-term storage of huge web archives can get expensive) and accessibility for minimally-technical users.</p>
+<p>After that brief call, I had a chance to finish the self-paced online course portion of the <a href="https://cardinalatwork.stanford.edu/engage/ideal-staff/ideal-learning-journey">IDEAL Learning Journey</a>, required diversity, equity, and inclusion training program at Stanford, register for the follow-up synchronous workshops, and send out a Doodle poll for a future meeting about Persian handwritten text recognition.</p>
+<h2>12 PM</h2>
+<p>Another Zoom call, this time with Antonia Murath, who will be visiting my department during winter quarter to work with Prof. Kathryn Starkey on a medieval DH project. We talked about the database she's putting together, different visualization options, the affordances you can add to qualitative coding if you have access to full-text, what I'm planning for the non-English DH class in the winter, and the <a href="https://datasittersclub.github.io/site/books">Data-Sitters Club</a>.</p>
+<p>After that call, I followed up on some more scheduling emails, including meetings with visitors this fall, and a planned visit to Stanford Surplus to pick up some more tables and other equipment for the <a href="https://textilemakerspace.stanford.edu/">Textile Makerspace</a>. I threw some cheese sticks in the air fryer and then ate them while reading a draft of a delightful short piece by Claire Battershill for the Endings Project (featuring one of my favorite children's books, &quot;We are In a Book&quot; by Mo Willems). Sent another email following up on when/where it will be published, because I want to teach with it, which took me right up to the next Zoom call.</p>
+<h2>1 PM</h2>
+<p>This was a large meeting, with the other DH ATSes, the head of <a href="https://cidr.stanford.edu/">CIDR</a> (my sub-organization within the Library), the head of the Stanford Digital Repository (SDR), and other folks from SDR and metadata to talk about how ATSes like myself could access information about what's been digitized through Google Books, and submit requests for our researchers to be able to access that data under the conditions that have been defined for its use. The plan going into the meeting was that I'd get a dump of 2.4M METS XML metadata records, and parse what I thought would be useful into a spreadsheet that we could query, but the conclusion was that it would make mores sense for us to use an existing backend library metadata querying tool, which sounds like an improvement to me! During some of the more in-the-weeds discussion, I worked on some file wrangling, PDF-ifying books that I've scanned for <a href="https://yrdl.org/">YRDL</a> to make it easier to do bulk OCR.</p>
+<h2>2 PM</h2>
+<img src="../post-images/writing_hammock.jpg" style="float:right;" />
+<p>I've been trying to come up with a substitute for public transit (my most-effective writing spot) when I'm working from home. The hammock on the back patio has proven to be a workable alternative, and I've been setting aside time to work on various writing projects (including the SUCHO Handbook of Emergency Web Archiving, a guide to HPC for humanists, and the next Data-Sitters Club book). Today, it was proofs for two chapters for <em>The Bloomsbury Handbook to the Digital Humanities</em> (on multilingual DH and whether coding is necessary to do DH), then rereading the latest version of Data-Sitters Club book 15, and working towards weaving in the code components.</p>
+<h2>3:30-5</h2>
+<p>An email came in while I was writing, with the news that the Library Systems folks had rolled out a patch that enabled an export of up to 10,000 library catalog records (instead of the previous 20) as JSON (instead of bibliographic formats). So I dove right into trying to export the 30,000 results I needed, then using OpenRefine to munge the data into a spreadsheet, and figure out which of the many, many metadata columns contained the information I actually needed.</p>
+<p>Meanwhile, I was brainstorming with fellow Data-Sitter Katia Bowers how to get access to the full text and metadata of Slavic department dissertations from 2000-2020 for a named-entity extraction project, which parallels some work I've been doing on dissertations from my department from that same period, as a way to visualize for prospective students what our grad students write about. This led to some Slack messages with Kate Barron, our library Data Curator, about better routes than downloading the dissertations one by one.</p>
+<p>At the same time, I was exploring an online collection of Ukrainian literature, with an eye towards writing a web scraper for an upcoming multilingual text analysis project through the Stanford Literary Lab, with Prof. Yuliya Ilchuk and a number of grad students.</p>
+<h2>Not the end</h2>
+<p>I didn't finish any of those things before it was time to go pick up the kids. But they'll be waiting for me tomorrow, along with the unfinished writing, the websites that need migrating, the summer projects and grad students who have been quiet lately and maybe could use some checking-in-on, the 200 emails in my inbox that need to be responded to or filed away, the new Slack messages that will come in overnight from SUCHO, and probably ten other things that aren't at the front of my mind but will, undoubtedly, show up in my inbox or Slack workspaces or DMs or text messages. Such is the nature of the job.</p>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>

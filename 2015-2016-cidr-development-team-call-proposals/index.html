@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>2015-2016 CIDR Development Team Call for Proposals :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+
+
+  <meta property="og:title" content="2015-2016 CIDR Development Team Call for Proposals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/2015-2016-cidr-development-team-call-proposals/" />
+<meta property="og:site_name" content="Digital Humanities at Stanford" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="Post image" />
+<meta name="description" content="" />
+
+
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-center ">
+        <div
+          class=" col-md-8  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">2015-2016 CIDR Development Team Call for Proposals</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Glen Worthey<span class="text-muted d-block mt-1">September 30, 2015</span>
+            </small>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <p><strong>Introduction</strong></p>
+<p>The Center for Interdisciplinary Digital Research (CIDR), a division of the Stanford University Libraries, is pleased to announce a Call for Proposals from Stanford faculty members for research collaborations in the digital humanities and computational social sciences.  Projects should focus on the production of digitally enabled scholarship designed to analyze, visualize, or simulate an interesting problem in the humanities or social sciences.  CIDR support in these collaborations will consist of dedicated software development, project planning, and project management efforts.</p>
+<p>We expect and encourage proposal submissions that represent the widest range of topics, theories, and disciplines.  We welcome ideas that push the boundaries of conventional research and pedagogical methods and that introduce new and sophisticated modes of analysis and visualization.  Successful projects will make novel contributions to the scholar’s field, will be theoretically and/or methodologically novel, and will be creative and technically innovative.   We will look favorably upon projects that cross disciplines, that engage students, and that produce tools and methods that are generalizable and reusable by others.</p>
+<p>CIDR has particular expertise in these and related methodologies, and especially welcomes proposals making use of them:</p>
+<ul>
+<li>textual analysis and text mining</li>
+<li>historical geographic information systems (hGIS)</li>
+<li>network analysis (geographic, social, citation, etc.)</li>
+<li>advanced data visualization</li>
+<li>computer gaming and the humanities / social sciences</li>
+</ul>
+<p><strong>Program scope</strong></p>
+<p>The Stanford University Libraries are committed to collaborations with Stanford faculty on innovative research projects in the digital humanities and computational social sciences.  The Center for Interdisciplinary Digital Research at Stanford includes a team of software developers and digital research specialists who maintain a portfolio of projects that vary in complexity and duration.  The CIDR team works closely with a variety of other SUL units such as the Geospatial Center and IT infrastructure specialists (database analysts, systems administrators, development operations managers), and relies on other Library services such as the Stanford Digital Repository in support of selected projects.</p>
+<p>Because proposals themselves may vary in complexity and duration, we cannot guarantee award of a specific number of supported projects.  We will select a portfolio of projects in the context of our available resources such that SUL can confidently help carry each one to a successful outcome within a reasonable timeframe.  The selection process will take into consideration current project commitments and staffing resources.</p>
+<p>The size and composition of the team collaborating on selected projects will be determined during the detailed project planning phase, after successful proposals are selected.</p>
+<p><strong>Submission and selection process</strong></p>
+<p>Brief Statements of Interest (on the order of 1-3 pages) will be received and reviewed by the CIDR team on a rolling basis (but before Oct. 20).  The CIDR team will initiate an in-person consultation with each faculty proponent in order to make early-stage assessments of project scope, fitness for the CIDR team’s skill set and overall portfolio, compatibility with SUL technology infrastructure, and other technical aspects of the project.  It is appropriate for CIDR team members to review drafts of proposals and make suggestions to the proposing P.I.</p>
+<p>Statements of Interest can be fairly informal, and may be based roughly on the format of the full proposal described below.</p>
+<p>The Statement of Interest and initial consultation are intended primarily to assist faculty in the crafting of a fuller proposal, including explicit goals, a proposed schedule, and a work plan for the collaboration.   The CIDR team will be happy to review drafts before submission, and to consult in the preparation of the full Final Proposal.</p>
+<p>Final Proposals will then be evaluated for scholarly appropriateness and recommended for support by members of the CIDR Faculty Advisory Board, for project planning to begin as soon as projects underway now reach conclusion and, therefore, on a rolling basis.</p>
+<p><strong>Final Proposals should include the following:</strong></p>
+<ul>
+<li>Project title and one-sentence description</li>
+<li>Abstract of no more than 250 words</li>
+<li>Proposal narrative of not more than three pages</li>
+<li>CV for each applicant</li>
+</ul>
+<p><em>Project title and one sentence description</em>: A clear and concise description of the project that describes the work and its intellectual and technological significance.</p>
+<p>The Proposal narrative should address the following topics:</p>
+<p><em>Audience</em>: Please describe the intended audience for the proposed work.  We are seeking rigorous scholarly work that lends itself to peer review and advances the field, so fellow scholars are almost always one audience.  In addition, projects may be intended for the lay public, policy makers, undergraduates, or K-12 education, among others.</p>
+<p><em>Purpose</em>: What are the main purposes of your project?  Some possible purposes are: scholarly communication, creation of analytical or exploratory environments, collaboration, or pedagogy.  Since a project may have several purposes that may be in competition with one another, we find it helpful to prioritize them.</p>
+<p><em>Presentation:</em> The proposal should detail the intended interface or forms of digitally-enabled scholarship, and depth of interactivity with the data.  While the actual interface may still be unknown or loosely conceived, the proposal should establish the feasibility of the project such that achievable milestones can be expressed and a recognizable end-product can be produced.</p>
+<p>The intended presentation can be described in narrative as static mockups, or as an interactive or dynamic animation. Visualizations are encouraged, given that visualization of data flow is common in explaining the design and function of scholarly digital work.</p>
+<p>Technical requirements need to be clearly defined. If the project is expected to be produced in a particular type of code or to exist in a particular computing environment or platform, then these requirements need to be specified.</p>
+<p><em>Data</em>: The proposal should identify any existing digital or digital-ready content that will be used for the project. The former could be tabular data, images, 3D models/textures, existing pieces of code, et cetera. The latter could be data sources and other media still in a traditional format but readily digitized. Describe any new data to be collected as part of the project, and how it will be collected and processed.</p>
+<p><em>Data management and sustainability</em>: As a project supported by SUL, long term management and sustainability of the project outcomes and data is a critical consideration. The libraries offer long-term data preservation services, and data management support that should be factored into any proposal.   In addressing data management and project sustainability please describe the following:</p>
+<ul>
+<li><strong>Project lifecycle</strong>: The intended duration of the project outputs once the project is complete.  For example if the project output is a web application, for how long do you expect the web site to persist, and how will it be sustained?</li>
+<li><strong>Licensing and copyright</strong>: Describe the licensing or copyright disposition of data used or produced, as well as the scholarly output itself.</li>
+<li><strong>Data preservation</strong>: Describe your goals and expectations with respect to data storage and long-term preservation of the project’s digital assets and outputs.</li>
+</ul>
+<p><em>Generalizability and reuse</em>: One of the goals of this program is to develop new digital methods and tools that not only advance the research in question, but also extend the digital humanities and computational social sciences infrastructure at Stanford.  In this regard we look favorably upon projects that result in tools, methods and platforms that can be reused by students and other scholars at Stanford and beyond, and can be applied to a variety of research and pedagogical questions, possibly in other disciplines.  Please describe known work, or speculate on work by peers or others, that may benefit from the outcomes of the proposed project.</p>
+<p><strong>Proposal timeline</strong></p>
+<p>October 1, 2015: CfP distributed</p>
+<p>October 19: Deadline for Brief Statements of Interest</p>
+<p>October 19 - November 13: CIDR review and consultation / proposal development with PIs</p>
+<p>November 13: Deadline for Final Proposals</p>
+<p>30 November – 2 December: Faculty Advisory Board meets to review and select projects</p>
+<p>after 2 December: Decisions announced</p>
+<p>January 2016: Detailed planning begins for selected projects (NB: Projects may be scheduled serially in order to maintain the team’s portfolio)</p>
+<p><strong>Contacts</strong></p>
+<p>Send submissions and questions to <a href="mailto:contact-cidr@lists.stanford.edu">contact-cidr@lists.stanford.edu</a></p>
+<p>… or contact a member of the CIDR team directly: Stu Snydman and Glen Worthey (CIDR Co-Leads); Karl Grossner and David McClure (CIDR Developers); Vijoy Abraham, Nicole Coleman, Claudia Engel, Jason Heppler, and Mike Widner (Academic Technology Specialists); and Judy Marsh and Ron Nakao (Social Science Data &amp; Software, SSDS).</p>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>

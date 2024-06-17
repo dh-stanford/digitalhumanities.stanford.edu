@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Introducing &quot;Digital Humanities Across Borders&quot; :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+
+
+  <meta property="og:title" content="Introducing &quot;Digital Humanities Across Borders&quot;" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/introducing-digital-humanities-across-borders/" />
+<meta property="og:site_name" content="Digital Humanities at Stanford" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="Post image" />
+<meta name="description" content="" />
+
+
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-between ">
+        <div
+          class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">Introducing "Digital Humanities Across Borders"</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Quinn Dombrowski<span class="text-muted d-block mt-1">January 15, 2019</span>
+            </small>
+          </div>
+        </div>
+        
+        <div class="col-md-6 pr-0 align-self-center">
+          <img class="rounded" src="../post-images/5889720469_f0c7911794_b.jpg" alt="Introducing "Digital Humanities Across Borders"">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <p>“Digital Humanities Across Borders” (DLCL 204, cross-listed with Comp Lit and English) kicked off last week. As of today, there are seven registered students and three intrepid auditors (including two area studies librarian colleagues).</p>
+<p>The Digital Humanities Summer Institute workshops I’ve taught before have a similar number of classroom hours, but packing them into a single week produces a very different dynamic. My DHSI classes focused on one specific, technical topic (Drupal for DH projects), which led to a very different experience of both class preparation and teaching. When it comes to building Drupal sites, there’s a clear set of sequential steps. There’s a set of functionality that are relevant for most humanists, and that’s what we cover. In the afternoons, the students work on their own projects, because we only have five days to build something and giving homework isn’t particularly feasible. I wrote all the course materials and came up with the pacing for the syllabus myself, but it wasn’t difficult to make it all fall into place.</p>
+<p>Shortly after starting my current job as the Academic Technology Specialist in the Division of Literatures, Cultures, and Languages, I offered to teach. Initially I threw out the idea of covering the medieval Slavic literature course, since the Slavic department is short on medievalists and that used to be my disciplinary area. But it was hard to argue when Dan Edelstein, the Division of Literatures, Cultures, and Languages (DLCL) chair, suggested that I perhaps instead teach something that could draw a bigger enrollment. We agreed I’d do “a digital humanities course”, and left it at that.</p>
+<p>Being based in the DLCL, it made sense to focus the class on textual, non-English digital humanities. I’ve been surprised — though perhaps I shouldn’t be— at the pervasiveness of English in the pedagogical materials for digital humanities tools and methods. Even in <a href="https://teach.dariah.eu/">#dariahTeach</a>: while the lesson on TEI has been translated into <a href="https://teach.dariah.eu/mod/assign/view.php?id=562">Hungarian</a> and <a href="https://teach.dariah.eu/mod/assign/view.php?id=575">French</a>, the exercise still involves encoding a poem by William Butler Yeats. In “Digital Humanities Across Borders”, the students bring their own texts, in any non-English language that they can read. We’ve got Chinese (both traditional and simplified characters), Japanese, Spanish, Portuguese, Russian, German, and Italian. I’m looking for tools and software that claim to work for each of these languages, so the students can try out a range of methods, including topic modeling, network analysis, counting words, and various approaches to NLP.</p>
+<p>Familiarity with tools is one step towards “doing digital humanities”, but it felt deeply unfair to throw tools at students and leave them to figure out on their own what it means to be a modern languages person who “does digital things”. Between early exposure to the ADHO DH conference (DH 2007 was held at the University of Illinois at Urbana-Champagin, just as I started the MLIS program there) and the “listening tour” phase of Project Bamboo, I had many opportunities for acculturation to digital humanities at the beginning of my career. Beyond just knowing what kinds of questions to ask using digital tools, and how to operate those tools, I want my students this quarter to have a sense of orientation around how (and to what extent) DH is “done” in their fields. I want them to have an idea for how they can position their research in their field, in whatever “DH group” exists within their field, and in the larger national and international DH communities (ACH, ADHO, and if there’s a DH organization centered on their language or country of specialization.)</p>
+<p>There’s no shortage of readings that one could assign for this class, and I’m very grateful to Molly des Jardin for sharing her <a href="https://mollydesjardin.com/projects/publications.html">East Asian Digital Humanities</a> syllabus. That said, these are students who have gotten, and/or will get plenty of practice reading and writing academic-style prose. I want to do something different here. I’m updating the syllabus with pointers to additional readings on all the topics we’re covering (and the <a href="https://github.com/quinnanya/dlcl204">syllabus and other class materials are available on Github</a> for anyone to use), the students don’t have to do any reading to prepare for class. Instead, I’m asking them to spend the time they would otherwise be doing readings experimenting with applying different tools and methods to the major text they’re working with in their language. I’m hoping that by the end of the course, they’ll be as comfortable experimenting with tools as they are opening a book — or at least, comfortable enough to work their way through error messages without giving up.</p>
+<p>The first two class sessions covered introductions (of ourselves, the course, and that classic question, <em>what even <strong>is</strong> digital humanities</em>), some of the kinds of questions we can answer using digital tools and methods, and a few examples of how people with backgrounds in non-English languages and literatures have position their work within the landscape of digital humanities.</p>
+<p>Today we had our first hands-on session in which we tackled OCR: a timely topic given the recent release of David Smith and Ryan Cordell’s OCR report, “<a href="https://repository.library.northeastern.edu/files/neu:f1881m035">A Research Agenda for Historical and Multilingual Optical Character Recognition</a>” accompanied by Ryan Cordell’s “<a href="https://ryancordell.org/research/why-ocr/">Why You (A Humanist) Should Care About OCR</a>”, which took care of a large part of class prep for me for today. I assigned installing and experimenting with ABBYY FineReader (which has a reasonably friendly UI) as homework, and together we dove into installing Imagemagick and Tesseract — starting with locating the Mac terminal or Windows command prompt. While only one student left the class today with OCR’d text, many others came close, extracting Tesseract-compatible PNGs from PDFs after working through error messages one after another. “Congratulations, you’re doing digital humanities!” I tried to reassure them as they were copying (or retyping) error messages from the command line and wading into Google’s results. We’ll pick this up again on Thursday.</p>
+<p>There was an amazing moment of synchronicity. Melissa Hosek, one of this year’s <a href="https://cesta.stanford.edu/student-programs/graduate-programs/digital-humanities-graduate-research-fellows">Digital Humanities Fellows</a>, was able to use what she’d learned about the Windows command prompt at a recent DH Fellows meeting to help her fellow Windows-using classmates when the problems they were running into (including basic syntax for the command prompt) had me stumped. As I ran from one Mac-using student to another, and saw the Windows users all sitting around one table, working together across the linguistic divides between their operating systems (Korean, Portuguese, English), it may have been the first time I’ve ever seen such a vivid simultaneous embodiment of every one of the “values” <a href="http://dhdebates.gc.cuny.edu/debates/text/13">Lisa Spiro proposed for digital humanities</a>: openness, collaboration, collegiality and connectedness, experimentation, diversity.</p>
+<p>It was an adrenaline rush to try to cover installation and use of command-line tools in under an hour, across two operating systems and seven languages. Scampering from one end of the classroom to the other and back again, I had a very visceral memory of my exhaustion at the end of every day the first year I taught Drupal at DHSI without a co-instructor.</p>
+<p>But I also had a humbling moment helping one student debug issues with Imagemagick. I wasn’t sure they’d typed the command right, so I asked if I could try it on their laptop. I put my fingers on the keyboard in the places they’ve been trained to go since I was 6 years old, and confidently pounded out the command… and then I looked at the screen, and saw it was all wrong. Every forward-slash I had typed was a hyphen, and there was no hyphen. The Latin characters on the keyboard had drawn me in, and I hadn’t realized that they were arranged slightly differently — especially the punctuation. Typing the commands yourself isn’t good pedagogy, and neither is making snap judgements that “close enough” is anywhere close to <em>right</em>. Most of the materials my students are working with are in languages I can’t actually read (despite recognizing an Indo-European root here, a logograph there). By the end of the quarter, they’ll be a lot closer to knowing what I know about DH tools and communities than I will be to reading many of their texts without assistance. My contribution here is a variety of technical and social approaches to <em>how</em> one might do digital humanities. The questions of <em>why</em> to do digital humanities, and <em>what</em> to do it with, and the evaluation of <em>how well</em> any of these particular approaches work for a specific language or genre are places where I have to defer to the students in their language and disciplinary knowledge.</p>
+<p>Today I learned that ₩ (the won sign) is used to represent the path separator () on Korean Windows in the command prompt. With some help from Google and the Internet Archive, I was able to find out <a href="https://web.archive.org/web/20060110022833/http://blogs.msdn.com:80/michkap/archive/2004/12/14/284838.aspx">some</a><a href="https://web.archive.org/web/20051026085918/http://blogs.msdn.com:80/michkap/archive/2005/10/12/479561.aspx">more</a> about the history of that convention, and it all comes down to Unicode, which we’ll be covering with a special guest lecture by Debbie Anderson from the <a href="http://linguistics.berkeley.edu/sei/about-us.html">Script Encoding Initiative at UC Berkeley</a> next week. I can’t wait to see what else I learn this quarter.</p>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>
