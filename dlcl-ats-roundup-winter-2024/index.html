@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>DLCL ATS round-up, winter 2024 :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+
+
+  <meta property="og:title" content="DLCL ATS round-up, winter 2024" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/dlcl-ats-roundup-winter-2024/" />
+<meta property="og:site_name" content="Digital Humanities at Stanford" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="Post image" />
+<meta name="description" content="" />
+
+
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-between ">
+        <div
+          class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">DLCL ATS round-up, winter 2024</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Quinn Dombrowski<span class="text-muted d-block mt-1">March 28, 2024</span>
+            </small>
+          </div>
+        </div>
+        
+        <div class="col-md-6 pr-0 align-self-center">
+          <img class="rounded" src="../post-images/slavicdh_aatseel.jpg" alt="DLCL ATS round-up, winter 2024">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <p>This winter I got to revisit my best class, DLCL 205: Project Management and Ethical Collaboration for Humanists, AKA the <a href="https://dhrpg.github.io/">#DHRPG course</a>, and juggled work on several projects, as well as starting to wrap up my service as ACH co-presient while also launching a new ACH working group on AI.</p>
+<h2>Textile Makerspace</h2>
+<p>The <a href="https://textilemakerspace.stanford.edu/">Textile Makerspace</a> is where I work. Textile Makerspace has been busy this quarter, especially with the annual FashionX fashion show in February. We've been able to hold regular hours and a few events, and I participated in a promotional video for the <a href="https://making.stanford.edu/">Making@Stanford</a> initiative. There's been more efforts -- centralized and distributed -- to coordinate across the different makerspaces. We've been developing shared documentation / wiki resources, defining safety standards based on the actual equipment different makerspaces have, and having informal knowledge exchange days. I got to learn the basics of the risograph from Owen Hipwell from the D-School this quarter, and Jacob Ramirez at the Makery (part of the School of Education) has been a wonderful partner for the Textile Makerspace, taking extra supplies off our hands and hosting events when they exceed our space or staffing capacity.</p>
+<p>Thanks to Making@Stanford funding, I was able to purchase three <a href="https://searchworks.stanford.edu/view/in00000062940">folding rigid heddle looms (knitters looms)</a> and two <a href="https://searchworks.stanford.edu/view/in00000062941">inklette looms</a> for circulation via the <a href="https://guides.library.stanford.edu/makerbar">Terman MakerBar program</a>. Thanks to Mike Nack for getting the items cataloged! Once they sort out some storage constraints, I look forward to adding needle felting kits to their equipment available for check-out.</p>
+<p>The highlight of the quarter for the Textile Makerspace was the pop-up weaving exhibit <em>Thread Control</em> at the Roble Arts Gym, which coincided with the visit from the DLCL's admitted grad students (and I was able to bring them to see it). The weavings on exhibit were mostly work done on the digital TC2 loom at the Product Realization Lab, but two of my pieces from the knitters loom were on display too: <a href="https://quinndombrowski.com/textiles/cidr-coeur/">#CIDR-Coeur</a> (a visualization of my library group's conversations in our Slack channel) and <a href="https://quinndombrowski.com/textiles/future-text/">Future Text</a> (a visualization of the AI class I taught in the fall).</p>
+<h2>Classes</h2>
+<p>The first time I taught DLCL 205: Project Management and Ethical Collaboration for Humanists (the <a href="https://dhrpg.github.io/">#DHRPG course</a>), the class ended with final rolls on Zoom as campus shut down due to the pandemic. It wasn't a particularly satisfying conclusion, but I do have an article forthcoming with several of the students in an upcoming <em>Debates in DH</em> volume.</p>
+<p>I'd revised the syllabus thoroughly for the version of the class that ended up not running in fall 2021, and a little bit more before teaching this winter. We used Hannah Alpert-Abrams's <a href="https://halperta.com/shalperta%20press/purpose/">Finding Your Purpose</a> workbook as a major set of activities, and I'm really proud of the work and thought that the students put into their NEH grant assignments. What I discovered, though, is that having 8 people playing the DH RPG means that there's no way we'll get through the arc of the whole year: in the end, we played the last two quarters as one turn apiece. That said, all of the students really ran with the characters they created in wonderful and memorable ways, and I loved how committed they were to these characters from the very first round. I will miss the class a great deal, and plan to weave something to commemorate it, in a way that I can share some piece of the weaving with the students.</p>
+<p>When registration time rolled around, my class for next quarter, DLCL 203: Data Visualization with Textiles, filled up immediately, and my inbox filled up shortly thereafter with requests to join the class. When I realized I have enough money to staff it, I decided to open it to the whole wait list, so now it looks like I'll have somewhere around 25 students for that 1-credit independent study next quarter. I'll also be teaching the DH Practicum next quarter, as a path for students to work on their own DH projects.</p>
+<p>While these weren't associated with any class as such, this quarter I also taught a workshop on <a href="https://readcoop.eu/transkribus/?sc=Transkribus">Transkribus</a> for CIDR, as well as a workshop on DH for dissertations for the DLCL. One thing that came out of the latter was realizing that multiple students have needs around corpus-building via book scanning. Thanks to support from the department, we now have a document camera scanner (like I have and use at home to scan books, also with the support of the department) that students can check out from me and take home to use. It's a much better use of their time to scan book that way, than to do it in the middle of the day at the library when they could be doing more mentally-intensive work.</p>
+<h2>Existing Projects</h2>
+<p>I got a piece for the beginning of a new <strong>Data-Sitters Club</strong> sub-series from Roopika Risam right before going to a conference in Las Vegas, but I came down with covid when I got back and I still need to post it, along with its accompanying main-series piece. Something to start spring quarter with! In the meantime, though, I managed to get <a href="https://digitalhumanities.stanford.edu/dois-for-dsc/">DOIs for the DSC</a>, as well as a <a href="https://search.worldcat.org/title/1426042415">WorldCat record</a> that will make it appear as part of our library catalog.</p>
+<p>The project on Senegalese Countercultural Movements with Fatoumata Seck soft-launched as <a href="https://stanford-dlcl.github.io/ArchivingRevolution221/">Archiving Revolution 221</a>, but work on that site is ongoing. The <strong>Global Medieval Sourcebook</strong> continues to be on hold, but pressure from central IT around accessibility for the old site may accelerate the timeline for switching over to the new static sit in the next quarter. Data entry work continues on <strong>The Futurist Archive</strong>, and ADHO's <strong>multilingual DH working group</strong> continues its work under the leadership of Merve Tekgürler and Till Grallert. <strong>HPC for Humanists</strong> has also been on hold this quarter. While I worked on some improved visualizations for the <strong>DLCL alumni data</strong>, the dissertations project has remained on hold, but I feel like I have a better handle on how to revisit it since doing the Data-Sitters Club book on topic modeling in the fall.</p>
+<p>We actually did make some progress on the <strong>Harry Potter multilingual fanfic</strong>, adding Jaj Karajgikar to the project team as an Anglophone fanfic expert, prepping the data for topic modeling, and presenting some of the work that's been done so far as part of Lab Day at the Stanford Literary Lab.</p>
+<p>Similarly, I finally got somewhere with the <strong>Jewish cookbooks</strong> project with Eitan Kensky, OCR-ing the scans and writing some code that parses most of the books into individual recipes, then doing a little bit of topic modeling as an initial exploratory step. I'm looking forward to doing more work on that one, including doing some kind of basic interface for navigating the corpus.</p>
+<p>Tania Flores's <strong>database of Flamenco <em>letras</em></strong> project is underway; in the last week, we've talked through some data modeling questions and issues, and I'm excited to see what emerges as she and her team start to enter data into <a href="https://pocketbase.io/">PocketBase</a>.</p>
+<p>This quarter, I started attending Unicode Script Ad-Hoc meetings on behalf of <strong><a href="https://silicon.stanford.edu/">SILICON (Stanford Initiative on Language Inclusion and Conservation in Old and New media)</a></strong>. We also did interviews for the SILICON project manager position, and look forward to having someone on board soon. In addition, we reviewed applicants for the summer internship program, and I'm looking forward to working with both these students and the mentors who will be participating in the program.</p>
+<p>I've been grateful to have the <strong>Browsertrix Cloud pilot</strong> in place, and have used it for things ranging from the old <em>Global Medieval Sourcebook</em> site to statements from the Russian government about US citizens no longer allowed in Russia, as a form of historical documentation.</p>
+<p>I continue to be fairly involved in DH 2024 planning as the <strong>ACH representative to ADHO</strong>, but I've also begun to plan for passing those responsibilities to Lauren Tilton this summer. ADHO has some challenges stemming from the way it's organized and the inhuman dedication of people who have taken on poorly scoped roles with ballooning responsibilities. I hope we can confront the tension between what the organization does and the amount of volunteer labor it can request in good faith. In the meantime, in my ACH co-president hat, I wrote up a detailed description of how we often prepare texts for computational analysis as a way to support the petition for an expanded DMCA exemption for text and data mining. I used the petition itself and the opposition's responses as the texts, and wove a data visualization of the material, submitting images of the weaving along with the narrative to the US Copyright Office.</p>
+<h2>New projects</h2>
+<p>There are various small-scale new student projects, ranging from the use of images in African newspapers to documents associated with Chernobyl. I've also been working with Sergio Rey on digitizing and making searchable an extensive bibliography of Spanish pornography prior to the 20th century, with the potential of linking this database to the original source texts. I've also been talking with Davis Tantillo about some of his project ideas, as part of the DH project management class. A project in potentia with Cristian Soler about medieval cartography is likely to become a real project in the next quarter or so.</p>
+<p>This quarter, I was involved in a pilot project with AJ Naddaff exploring possibilities for using state-of-the-art computer vision models for Arabic OCR, funded by my broader group within the library, Research Data Services. The pilot phase went well, with Merve Tekgüler and Umar Patel exploring fine-tuning models using data from Nora Barakat's projct, with help from my CIDR colleague Peter Broadwell. I'm optimistic about being able to continue in the spring and wrap it up this summer, as a way to accelerate Arabic-script OCR beyond what we can do with Transkribus.</p>
+<p>With regard to Transkribus, I'm also planning to push ahead a bit further with what it might look like to try to get all digitized materials run through Transkribus or similar OCR/HTR tools. It seems like there's no shortage of DLCL-relevant materials that have been digitized already, and getting it turned into text that's usable for computational text analysis is a matter of mostly a small amount of manual work -- less if I put in the time to write some code against the Transkribus API. This is a dream I've had since 2019, and it feels like this is the moment when there might be a window to make it happen, at least at a limited scale.</p>
+<p>I've also been involved with my department's efforts to launch an Environmental Humanities minor, largely in the role of project management coach, but also synthesizing notes, trying to ask questions that can get to the real issues at hand, and generally supporting the project team. It's been interesting to see the overlaps between at least some forms of Environmental Humanities and DH, especially with the shared point of intersection of makerspaces.</p>
+<p>This quarter, Meredith Martin (Princeton) and I organized the first meeting of the ACH AI working group that was approved in the fall. It was wonderful to see how many people had shared interests and goals, and we were graced with the presence of a real, live, non-stochastic parrot on the call thanks to Andrea Reyes Elizondo.</p>
+<p>Finally, the quarter ended with several official requests from IT to deal with accessibility-related issues on sites that I'm responsible for, so I imagine no small part of next quarter will be spent dealing with those.</p>
+<h2>Writing</h2>
+<p>My aspirations of biweekly blogging completely fell apart this quarter; I will try again next quarter.</p>
+<p>I managed to get the piece on Unicode for the special issue of the Journal of Electronic Publishing (JEP) submitted in time, although vastly over word count. The library writing group gave me some good feedback, along with an artisanally printed copy of the overgrown original, and I'm looking forward to doing the revisions as much as anyone ever is.</p>
+<p>A piece from SUCHO about rapid-response DH initiatives is moving along the publication pipeline, with a final draft coming soon. The piece with Lauren Tilton on the DMCA exemption has had its final proofs approved, so should be published very soon. The Data-Sitters Club got a piece accepted to the &quot;On Gathering&quot; special issue of JEP, which we'll be writing next month. I also have an abstract on failure accepted to an edited volume on the same, reflecting on the degree to which most grant programs require engaging in a sort of collective delusion about what's actually likely or feasible in reality with a DH project. I have revisions due soon for a piece as part of a <em>DH + Lib</em> special issue on making praxis, and I'm hoping to go more in depth on what I'm doing with my own textile data visualization as pat of a piece for the new journal that the Korean Association of Digital Humanities is launching.</p>
+<h2>Talks and Events</h2>
+<p>This quarter, I found out that all my ADHO proposals were accepted (SILICON poster, DH RPG mini-conference / play session, DH Makes mini-conference, workshop on teaching machine learning). Since this year's project management class was such a source of inspiration, I'm especially looking forward to revisiting the game at the conference, as well as DH Makes: I continue to dream of a DH fashion show with live music from <em>The Hard Modes</em>, but we'll see what can be arranged.</p>
+<p>I did class lectures / interviews / visits for a course on &quot;Digitizing Cultural Heritage in Greater China&quot; at the University of Hong Kong, and for &quot;Critical Making for Humanist Scholarship&quot; at the University of Central Florida with Anastasia Salter. I also gave a talk on SILICON as part of the Global DH Symposium earlier this month.</p>
+<p>I attended the AATSEEL conference to support Eric Kim, Alyssa Virker, Georgii Korotkov, and Ostap Kin (along with Anna Ivanov from Harvard) presenting their projects that combine computational methods with Ukrainian studies. It was wonderful to see these projects come to fruition in a public form and get the recognition they deserve, after having watched and supported them off and on for a few years, in some cases. The resonances between these projects were a good reminder to revisit the idea of regular Slavic DH Zoom meetings, to facilitate more cross-pollination.</p>
+<p>Laura Wittman and I organized a DLCL Symposium on AI and the Humanities as the closing event for our admitted grad student visit, bringing together a group of faculty and grad students who are doing work at that intersection of technology and scholarship. It was well attended, with a robust discussion that continued into the closing reception. Laura and I also presented as part of &quot;Who Wrote That Paper? Teaching Humanities Writing in the Era of Generative AI', a lunch workshop organized by CTL and H&amp;S.</p>
+<h2>Other Things</h2>
+<p>Shortly before the visit by the admitted grad students, my colleague John Giammalva, who managed grad student affairs, passed away suddenly. He was the kind of person who always left you feeling better when you happened past his office. It's been a tremendous loss for the department, and I'm hoping to host a few afternoons in the Makerspace next quarter to work on a quilt for his widow, with some of the wisdom he shared with us all over his couple years in the department.</p>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>ATS Unpacked: Why I love my job and you might, too :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+
+
+  <meta property="og:title" content="ATS Unpacked: Why I love my job and you might, too" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/ats-unpacked-why-i-love-my-job-and-you-might-too/" />
+<meta property="og:site_name" content="Digital Humanities at Stanford" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="Post image" />
+<meta name="description" content="" />
+
+
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-between ">
+        <div
+          class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">ATS Unpacked: Why I love my job and you might, too</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Quinn Dombrowski<span class="text-muted d-block mt-1">March 11, 2019</span>
+            </small>
+          </div>
+        </div>
+        
+        <div class="col-md-6 pr-0 align-self-center">
+          <img class="rounded" src="../post-images/7744258278_39b9d8328b_k.jpg" alt="ATS Unpacked: Why I love my job and you might, too">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <p>“Academic Technology Specialist” is one of the most generic titles I’ve ever held — it’s hard to guess whether the position answers LMS help tickets, digitizes media, updates webpages, runs workshops, or any of a hundred other things that fall broadly under “academic technology”. It’s easy for such a position to escape attention — especially from people who aren’t actively looking for jobs (as I wasn’t a year ago). After nearly six months in this role, I’d like to unpack what being an “ATS” has meant for me, and why the <a href="https://careersearch.stanford.edu/jobs/academic-technology-specialist-5692">currently-listed History ATS position</a> might be worth considering even if you’re not otherwise looking for a new job.</p>
+<h3>Discipline-focused DH support</h3>
+<p>The ATS position is a staff role that bridges the library and a department. It is jointly funded by the library and department on hard money. If you're currently in a term-limited position, or if your job depends on your lab continuing to get grants, the shift to hard funding is a major boost for peace of mind. If your heart is set on a faculty or researcher role, being an ATS isn’t what you’re looking for. If you’re invested in the title of “librarian” as such, being an ATS isn’t quite that, either — although you have many opportunities to become part of the community of campus librarians, and I count the librarians whose subject areas overlap with mine among my closest colleagues. If you’ve held a staff job, and are comfortable with that modality of work (e.g. using your expertise to play an important role shaping DH work, while not serving as the lead researcher), it’s not easy to find a staff job that provides as much independence, flexibility, and empowerment as the ATS role.</p>
+<p>The History ATS is the go-to DH person for the entire history department. Individual projects may have their own staff (including grad students, external developers, etc.) but if someone wants to do digital humanities research, odds are they’ll end up talking with you about it. (While ATS positions are primarily research-oriented, we also sometimes help out with pedagogy-oriented DH, and collaborate with colleagues in the <a href="https://vptl.stanford.edu/">Vice Provost for Teaching and Learning</a>group.) In previous positions I’ve held, we’ve only had funding to provide “consulting” — which is to say, we could give scholars some suggestions and pointers, maybe provide some language for a grant proposal, but hands-on work was out of the question. An ATS works directly with faculty on realizing their projects — not just telling them what they hypothetically could do if they were able to get a grant and find someone with the right expertise. What shape those projects take depends on your expertise, interests, and judgment. While this could lead to sustainability problems (e.g. if an ATS had a penchant for building projects in an obscure framework that no one else could support), fear not: the previous History ATS, Katie McDonough (now at the Turing Institute), hasn’t left any such messes for her successor.</p>
+<h3>The projects</h3>
+<p>Here are some of the currently-ongoing DH projects in the history department that you’d be helping with:</p>
+<ul>
+<li><strong>Oral History Text Analysis</strong> (<a href="https://history.stanford.edu/people/estelle-b-freedman">Estelle Freedman</a>). Project to analyze oral history transcripts as sources where women describe sexual violence and rape. Project has explored initial methodological options for analyzing digitized oral history transcripts. Pilot phase complete for modeling metadata, organizing the corpus, and testing relevance of collected transcripts. Digital workflow in place for creating subcorpora of relevant transcripts, basic text analysis, and automatic TEI encoding. Project currently working on development of a front-end interface to run these tools and semantic analysis of corpus.</li>
+<li><strong>Corpus Synodalium</strong> (<a href="https://history.stanford.edu/people/rowan-dorin">Rowan Dorin</a>). Corpus of transcribed medieval ecclesiastical legal texts. Project has created a basic corpus exploration tool that could be extended to include interactive mapping of query results. Project has designed Philologic TEI header and database for corpus;  undergraduate RA has designed a new mapping interface for Philologic queries.</li>
+<li><strong>Mapping Ottoman Epirus</strong> (<a href="https://history.stanford.edu/people/ali-yaycioglu">Ali Yaycioglu</a>). Geospatial data modeling, gazetteer development, and spatial history opportunities.</li>
+<li><strong>Massively Multiplayer Humanities</strong> (<a href="https://history.stanford.edu/people/tom-mullaney">Tom Mullaney</a>). On campus and eventually online distributed undergraduate course that introduces students to hands-on archival research. Collaboration on digital platforms for course materials and student experiential learning in archives.</li>
+</ul>
+<p>As an ATS, you don't have to wait for projects to show up at your office door: you can seek out and encourage the projects in your department that would benefit from your particular skills and interests.</p>
+<h3>Teaching</h3>
+<p>Is there a workshop or digital humanities class that you’ve always dreamed of teaching? The History ATS position can be your chance to make that dream a reality. The <a href="http://library.stanford.edu/research/cidr">Center for Interdisciplinary Digital Research (CIDR)</a>, the library-based parent organization for ATSes, runs a workshop series every quarter. While the schedule was already set when I started this fall, this quarter I had the chance to co-teach a workshop on research data management for the humanities and social sciences, and teach a workshop on how to think through data modeling (based on a portion of my previous DHSI Drupal for Humanists workshop).</p>
+<p>In addition to the workshop series, CIDR provides digital humanities consulting, open to anyone on campus, for two hours each week. All the staff with DH experience take turns staffing those slots. It’s a new program this year, and people are still learning that it's available, but it’s a great way to engage with questions and research beyond the department that you’re affiliated with.</p>
+<p>If you’re interested in teaching courses, ATSes also have the opportunity to do that if they want. I’m just finishing up my first quarter of teaching a non-English textual digital humanities course that I created myself. This spring, Katie (the previous History ATS) was scheduled to teach a spatial history course. Depending on how the course is listed, you might be teaching undergrads and/or grad students. For undergrads, your courses would count towards Stanford’s <a href="https://dhminor.stanford.edu/">DH Minor</a>.</p>
+<p>I’ve been amazed at how supportive the library and my department have been with allowing me to build my technical skills. I’ve gotten involved in a project with the <a href="https://litlab.stanford.edu/">Lit Lab</a> in order to better understand how that group goes about doing computational literary analysis — which will add to the toolbox I can offer the scholars in my department. There’s funding available for training, and for attending relevant conferences, even if you’re not presenting. After years of being told in central IT that I needed more programming skills, but not having the time available at work to learn them, I’ve finally started picking up Python. Which is to say: don’t be intimidated by the list of suggested technical experience in the job description. Part of the job is to learn the things you don’t come in knowing as well as you’d like.</p>
+<p>There are lots of other opportunities — formal and informal — for sharing your expertise. It’s been my pleasure to talk to the DH Fellows group at the <a href="https://cesta.stanford.edu/">Center for Spatial and Textual Analysis (CESTA)</a>, in addition to providing advice for students working on DH projects through CESTA’s undergraduate research assistant program. If there’s something you want to do that doesn’t fit into an existing group or workshop series, you have the freedom to start it yourself! This Thursday I’m holding an in-person and <a href="https://digitalhumanities.stanford.edu/dlcl204">virtual poster session</a> for the students in my non-English DH course. I’ve also converted an unused computer lab into a “<a href="https://textilemakerspace.sites.stanford.edu/">Textile Makerspace</a>”, where a diverse assortment of librarians, instructors, and students come to sew during lunch a few days a week.</p>
+<h3>The community</h3>
+<p>ATS positions sit at the nexus of multiple campus communities, and you have the opportunity to participate in any or all of them as part of your job. You can go to talks in your department; to library special events, meetings, and working groups; to DH events hosted by any of the numerous DH labs and organizations (including CESTA and the <a href="https://litlab.stanford.edu/">Literary Lab</a>); to interdisciplinary workshops and events. Myself, I’ve been frequenting a library reading/writing group, the lunchtime seminar series at CESTA, the biweekly LitLab meetings, the <a href="https://cmems.stanford.edu/">Center for Medieval and Early Modern Studies</a> lunch meetings, and meetings for a library-based project around the <a href="https://www.softwarepreservationnetwork.org/eaasi/">Scaling Emulation and Software Preservation Infrastructure (EaaSI)</a>. I’ve found each of those groups, in different ways, to be valuable places to meet people (including people in my own division), build relationships, and contribute in small ways to a diverse set of projects.</p>
+<p>Both CIDR and CESTA, in different ways, work towards cultivating an interdisciplinary DH community across campus, where inertia would otherwise lead to the dispersal of DH into lab- or project-specific silos. We’ve alternated hosting a monthly “DH Happy Hour” that brings together a wonderful mix of people with DH interests, including those whose job is primarily something else (e.g. ATSes with a background in the humanities but a job focused on pedagogy or another discipline, or digital library developers).</p>
+<p>In contrast to the grinding, always-on nature of my last job, I’ve found Stanford to be very supportive of work/life balance, which has been tremendously helpful as a person with three small children. Last week, a colleague took my DH consulting shift so I could attend my oldest kid’s school performance.  Compared to other places I've worked, it feels like the pace of email is typically a little slower — in most cases, if it takes a few days to respond to an email, there's no apology expected with your response.  There’s a campus wellness program that will pay you a few hundred dollars a year for setting a personal goal (for your own health or caring for others) and reflecting on your progress. And there’s no shortage of amazing guests, activities, and events on campus at any point in the year that you have the freedom to attend.</p>
+<h3>The cost of living</h3>
+<p>If you’re coming from almost anywhere else in the country, the cost of living — especially in the immediate vicinity of Palo Alto — is nothing short of mind-boggling. Particularly if you have a daycare-age child, the cost of rent + childcare is going to require two (or more) incomes to make things work. (In the long term, though, benefits like Stanford's <a href="https://cardinalatwork.stanford.edu/learning-stanford/tuition-training-assistance/tgp">Tuition Grant Program</a> can be a huge boost in covering your kids’ college tuition.)</p>
+<p>Palo Alto isn’t your only option for places to live. This has been my first experience working at a “commuter school”, where people truly do live all over the Bay Area. Because long commutes are so common, people are generally understanding and flexible about virtual meetings, and scheduling in-person meetings at times that work for you. It changes the dynamic of some of the activities (it’s harder than usual to get people to attend, since they might be working from home on that day, or have a long commute back if it’s in the late afternoon), but people make it work. Stanford’s new campus location in Redwood City (about 7 miles from the main campus) will go even further in normalizing options like video conferences.</p>
+<p>Myself, I live in Berkeley, two hours away from Stanford in each direction (via public transit or car — and the public transit option is more enjoyable). I thought the commute would make it impossible to take this job, but doing it by BART and CalTrain, I’ve honestly come to enjoy the peace and quiet and focused time of the commute. I’ve worked out a schedule where I can get the kids out the door in the morning, and make it home in time for dinner and bedtime more often than not.</p>
+<h3>Come build DH at Stanford</h3>
+<p>While CIDR has one cohort of ATSes and other librarians who have been at Stanford for over a decade, the last 5 years have been marked by a lot of turnover in numerous DH positions, including ATSes. Being an ATS gives you a seat at the table for thinking through the future of DH at one of the world’s major research institutions. You have the ability to take action to realize a shared vision. From project development to sustainability and infrastructure planning, from courses and workshops to mentoring, you shape the ATS role — and in turn, that role can have a meaningful impact on building Stanford’s DH capacity and community.</p>
+<p>If you’re thinking of <a href="https://careersearch.stanford.edu/jobs/academic-technology-specialist-5692">applying</a>, or would like to learn more, I’m happy to talk with anyone about the position and answer questions. <a href="https://calendly.com/qad/ats">Grab a time on my calendar</a>, or drop me an email at [qad] [at] [stanford] [dot] [edu] (especially if it’s easier to find a time to chat in the evening; it's no trouble to work around your schedule.)</p>
+<p>One note on timing: while we'll be conducting the job search over the next 6 months or so, we anticipate that this position will have a September start date.</p>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>&quot;Difficulty manatees&quot; after the swan song :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+
+
+  <meta property="og:title" content="&quot;Difficulty manatees&quot; after the swan song" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/difficulty-manatees-after-swan-song/" />
+<meta property="og:site_name" content="Digital Humanities at Stanford" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="Post image" />
+<meta name="description" content="" />
+
+
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-between ">
+        <div
+          class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">"Difficulty manatees" after the swan song</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Quinn Dombrowski<span class="text-muted d-block mt-1">January 30, 2019</span>
+            </small>
+          </div>
+        </div>
+        
+        <div class="col-md-6 pr-0 align-self-center">
+          <img class="rounded" src="../post-images/youmanateescomputing.jpg" alt=""Difficulty manatees" after the swan song">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <p>It’s once again the season for the “<a href="http://dhawards.org/">DH Awards</a>”, an international DH-themed popularity contest with an award category for “best exploration of DH failure” that <a href="http://dhawards.org/dhawards2014/nominations/">debuted in 2014</a>, the year “<a href="https://academic.oup.com/dsh/article-abstract/29/3/326/2938127">What Ever Happened to Project Bamboo?</a>” was published. Alas, that year I lost to Melissa Terras’s “<a href="http://melissaterras.blogspot.com/2014/10/reuse-of-digitised-content-4-chasing.html">Reuse of Digitized Content</a>”, and I haven’t had anything worth nominating in that category since.</p>
+<p>This year, I decided to revisit and submit my keynote from last year’s <a href="https://novel-tm.ca/?p=807">“On the Benefits of Failure” symposium</a> at the University of Alberta, <a href="https://era-av.library.ualberta.ca/media_objects/avalon:42992">recently made available through their digital repository</a>.</p>
+<p>Truth be told, I hate watching videos. I also never write out my talks in advance, so I have nothing written to draw upon, beyond my slides. A text version, then, was only possible as a derivative. I ran the video through YouTube’s auto-captioning, cleaned up the transcript, and did a light edit before <a href="http://quinndombrowski.com/blog/2019/01/30/towards-taxonomy-failure">posting the text on my website</a>.</p>
+<p>This cleanup workflow was well-suited to the failure-centric topic of the talk, producing numerous creative and amusing failures of transcription. In addition to “difficulty manatees” as a rendering of “digital humanities” (which has gone viral on DH Twitter, complete with John Unsworth’s creation of a “You Manatees Computing” image), other gems included:</p>
+<ul>
+<li>“Full audit” for <a href="http://artfl-project.uchicago.edu/philologic4">Philologic</a></li>
+<li>“Deleuze many projects” for digital humanities projects (props to YouTube for the humanities reference, even if completely wrong)</li>
+<li>“Mighty people” for IT people</li>
+<li>“Pee eyes” or “API” for PIs</li>
+<li>&quot;Law heuristics&quot; for Slavic linguistics</li>
+<li>&quot;the business&quot; for linguistics</li>
+<li>&quot;Romantic mystics&quot; for Romance linguistics</li>
+<li>“Tape work” for TAPoR</li>
+<li>“Bone puzzle” for grant proposal</li>
+<li>“Dean of Arts vanities” for dean of arts and humanities</li>
+<li>“Paralyze” for catalyze</li>
+</ul>
+<p>The fact that YouTube’s transcription performs as well as it does is nothing short of remarkable, but I’m nonetheless grateful that I’m not currently working on any projects that primarily rely on videos in need of transcription. Difficulty manatees aside, the substitution of “paralyze” for “catalyze” and similar changes that fundamentally shift meaning, while being undetectable without an attentive manual process of checking against the original video, certainly gives me pause when considering it for research at scale.</p>
+<p><a href="http://quinndombrowski.com/blog/2019/01/30/towards-taxonomy-failure">“Towards a Taxonomy of Failure”</a> captures a strange, liminal moment: I was nearly 7 months pregnant, and it was my last trip before my youngest was born. What’s more, I meant this talk to be a swan song for my involvement in DH. I make reference to being, in a sense, “post-DH”; I saw my future in central IT and research computing. At the same time, inequities in the expectations and compensation for staff in my group were becoming more difficult to brush off. Watching the video now, it’s painfully evident how hard I was trying to make the best of a situation where I wasn’t happy, but thought I had enough agency to fix things. I wouldn’t realize until months later that I was wrong — that I had, once again, <strong>failed to probe assumptions</strong>. Because I thought I was done with DH, I took the opportunity to reference a wide range of failures — the collapse of my academic field, my own failed projects, and failures to do the right thing including those I saw perpetuated  by well-established DH staffing models and organizations.</p>
+<p>It’d be easy enough to let this talk disappear quietly, an un-transcribed video hidden in plain sight in an institutional repository. But, despite my sense of strangeness and estrangement looking back on this talk, I think it still has some ideas worth sharing. Nominating it for a DH Award gives it a larger audience than humanities grad students at the University of Alberta in March, and it transforms what was intended as a final statement into a living challenge to myself to fail better in my new role at Stanford.</p>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>

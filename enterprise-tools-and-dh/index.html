@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Enterprise tools and DH :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+
+
+  <meta property="og:title" content="Enterprise tools and DH" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/enterprise-tools-and-dh/" />
+<meta property="og:site_name" content="Digital Humanities at Stanford" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="Post image" />
+<meta name="description" content="" />
+
+
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-between ">
+        <div
+          class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">Enterprise tools and DH</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Quinn Dombrowski<span class="text-muted d-block mt-1">December 5, 2018</span>
+            </small>
+          </div>
+        </div>
+        
+        <div class="col-md-6 pr-0 align-self-center">
+          <img class="rounded" src="../post-images/4780433375_4af57565f0_o.jpg" alt="Enterprise tools and DH">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <p>&quot;Can you say something about using enterprise tools for DH?&quot; <a href="https://annieswafford.wordpress.com/about/">Annie Swafford</a> asked towards the end of a recent meeting. I think she knew that prompt was like pulling out a chocolate advent calendar in front of a 3-year-old, and I managed to show some restraint by limiting myself to the short form of my usual rant, so that everyone could make it to their next meetings on time.</p>
+<p>For over a decade, I worked in central IT, first at the University of Chicago and then at UC Berkeley. There are lessons (positive and negative) that digital humanities can take from central IT, but it's important to think carefully before adopting their tools.</p>
+<p>To begin, let's differentiate two kinds of tools in DH: those that we use for the organization, collaboration, and management of tasks, funding, staff, etc. that surround our work (let’s call them support tools); and those that we use for the work itself (project tools).</p>
+<p>I’ve found that self-identifying as &quot;enterprise&quot; is a red flag for tools in either category. While this has started to change, the term &quot;enterprise&quot; has correlated with user experience not being a priority. Even as the marketplace has grown crowded with apps and platforms competing for customers, in an &quot;enterprise&quot; context, there is usually one decision-maker behind a large purchase that dozens, hundreds, or thousands of people will be forced to use for years at a time. Even when there's a committee involved, it tends to be made up of people who think differently than humanities scholars do. For instance, at UC Berkeley we had an enterprise purchasing system that apparently the financial people loved, but problems arose when everyone else had to use it, too. To illustrate the absurdity of this system, the first step to pay an invoice from any arbitrary online retailer was to search for &quot;not found&quot; in the supplier field, so that you could select the controlled vocabulary term &quot;supplier not found&quot; and then get on with the rest of the 8-step process.</p>
+<p>The UX situation with enterprise tools is improving, if only in the sense that tools developed to compete in the individual-user or small-group market are trying to reach bigger and more profitable customers by developing &quot;enterprise&quot; features and pricing models. The to-do list platform Asana, which I've used for a couple years, comes to mind as an example. Their &quot;enterprise&quot; page highlights features that have to do with authentication (e.g. single sign-on integration, user provisioning/de-provisioning through single sign-on) and control. Some of the control-based options, such as the feature for exporting all data that was ever entered into Asana, could have some utility in a DH context — though data portability is more important for project tools than support tools. Other enterprise features, like blocking Asana’s integration with other apps, have limited relevance for DH projects.</p>
+<p>What does it matter if a tool has extra features that a project doesn’t need? As long as its feature set covers the things your project does need, why should extra authentication or security features be a concern? Microsoft Word is the example par excellence of software adopted throughout the humanities, where most people use only a tiny fraction of its feature set. That said, the designers of Word have largely figured out how to include and maintain a large, complex set of features in a manner that does not disrupt the simpler workflows of much of the software’s user base. I was not, and still am not, a fan of the &quot;ribbon&quot; UI when it was rolled out, but I can do most of what I need using just the options in the &quot;Home&quot; tab, while ignoring the rest of the interface.</p>
+<p>I’ve found that &quot;enterprise&quot; features are less good at staying out of the way. Institutionally-based single sign-on authentication systems impose paradigms of access that are at odds with the broadly (and cross-institutionally) collaborative models of project development in digital humanities. Yes, tool-internal authentication is less secure than single sign-on, but it makes adding an account for a collaborator trivially easy. If a tool requires the use of institutional single sign-on, you have to hope that your institution offers guest accounts, and enables those guest accounts for authenticating against the tool. And if you’re fortunate enough for that to be the case, you might have the pleasure of waiting hours, days, or longer for the guest account to be approved and created. Whether or not the tool itself imposes enterprise-style restrictions on integrations, enterprise tools often come with policies that that limit customization, plugins, etc. Not being allowed to install a plugin that would simplify tedious tasks of data entry or formatting is a nuisance in the context of support tools, but these restrictions can have serious implications for the kind of data and metadata you can collect, how you can store it, how you can analyze it, and how you can export or publish it in the context of project tools. Enterprise tools are also built with the expectation that they’ll be installed, maintained, and supported in an &quot;enterprise&quot; environment, by some number of IT support staff with specific technical expertise. In a university context, central IT, library, or divisional / local IT staff typically play this role. Being able to delegate the maintenance and support of this software to those kinds of staff positions, rather than funding a grad student or postdoc out of DH project funds to wrangle maintenance of a smaller open-source software package, may make enterprise tools look like a more appealing option. However, problems arise when the scholar leading the project departs for another institution. The new institution may have made different choices about which enterprise platforms to run, leaving the scholar to choose between a migration (time-consuming and expensive, but mostly a one-time cost), trying to run an enterprise tool on their own (complicated and an ongoing expense), or seeking out a software-as-a-service environment (a potentially cost-prohibitive ongoing expense).</p>
+<p>The leadership behind every piece of software — be it open-source or proprietary — has to make decisions about which features to prioritize. Particularly for software that depends on purchases or subscriptions (as opposed to consortial membership) for financial sustainability, the enterprise market is alluring. It’s much more efficient to land a handful of large enterprise contracts than pursue leads for many, many small-scale projects and organizations whose needs are more heterogenous than enterprise environments’. This inevitably influences development priorities: given limited resources, would it be more advantageous to develop (or enrich) a relatively predictable set of features for well-paying clients, or tackle the diverse requests of users who may not be a source of revenue at all?</p>
+<p>Some software has found a middle ground — content management systems come to mind as an example. For WordPress, there are plugins and ways of configuring it that are geared towards &quot;enterprise&quot;, but the core software itself doesn’t lean heavily in that direction. Drupal 7 also took that approach, before its creator decided to actively court &quot;enterprise developers&quot; with Drupal 8 by replacing much of Drupal’s core with the <a href="https://symfony.com/">Symfony framework</a> and object-oriented code. The resources directed towards the Drupal 8 rewrite were immense, but the result is a platform that — more than three years after it was released — is still less usable for digital humanities projects than the preceding version. Its PHP memory requirements for even decent performance are noticeably higher than for Drupal 7, and more than what you get by default through inexpensive shared hosting services (though the difference is insubstantial in an enterprise IT context). Writing modules in Drupal 8 may be more intuitive if you have experience with the Symfony framework, but that’s not a widespread skill among DH developers. And that shows in the number of DH-supporting modules available for Drupal 8.</p>
+<p>About a month ago, I attended the <a href="https://2018.badcamp.org/summits/backdrop-cms-summit">Backdrop CMS summit at the Bay Area Drupal Camp</a> and was treated to a vivid example of what it looks like to work with open an open source tool whose intended audience, goals, and priorities align with your own. <a href="https://backdropcms.org/">Backdrop CMS</a> is a fork of Drupal 7, and a small team of developers has spent the last three years fixing most of the annoying things about Drupal 7 that I had grown so accustomed to that I’d stopped noticing them. Backdrop is platform that minimally-technical people can use to build sophisticated websites, without having to write code. The developers have integrated some of the features from Drupal 8 (like configuration management) that are directly useful to their audience, and added new features, like being able to search for and install modules through Backdrop’s GUI. The next release is slated to have an optional feature for automatically updating Backdrop core. Having just spent much of my first two months at this job cleaning up hacked Drupal sites that hadn’t been updated, the possibility of automatic core updates seemed transformative. It’s the opposite of enterprise — shouldn’t updates be thoroughly tested before being rolled out in a version-controlled manner to a live site? But particularly for DH projects that are no longer being actively developed or even maintained, the risks associated with automatic updates might be a trade-off worth making.</p>
+<p>DH projects aren’t &quot;enterprise&quot;. Our goals are different, our audiences are different, our staffing models are different — in substantive ways that can cause friction when we adopt enterprise tools. DH isn’t unique in its divergence from &quot;enterprise&quot; (as I learned during my time working in research and high-performance computing), but it's an aspect of our work that we can't forget about when evaluating tools.</p>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>DLCL ATS round-up, winter &amp; spring 2022 :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+
+
+  <meta property="og:title" content="DLCL ATS round-up, winter &amp; spring 2022" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/dlcl-ats-round-winter-spring-2022/" />
+<meta property="og:site_name" content="Digital Humanities at Stanford" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="Post image" />
+<meta name="description" content="" />
+
+
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-between ">
+        <div
+          class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">DLCL ATS round-up, winter & spring 2022</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Quinn Dombrowski<span class="text-muted d-block mt-1">June 15, 2022</span>
+            </small>
+          </div>
+        </div>
+        
+        <div class="col-md-6 pr-0 align-self-center">
+          <img class="rounded" src="../post-images/sucho-fabric.jpg" alt="DLCL ATS round-up, winter & spring 2022">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <p>In almost four years at Stanford, I've never missed one of my quarterly round-ups, but March 2022 was unlike any other month of my life. When Russia invaded Ukraine at the end of February, I ended up getting together with Anna Kijas from Tufts and Sebastian Majstorovic from the Austrian Center for Digital Humanities and Cultural Heritage to co-found Saving Ukrainian Cultural Heritage Online (SUCHO), a rapid-response DH effort that's brought together over 1,300 volunteers from around the world to archive Ukrainian cultural heritage websites. Especially for the first six weeks, it consumed my life day and night; writing up winter quarter wasn't a priority. But summer starts this week, and before I get too caught up in summer plans, it's time for a look back over the last half-year.</p>
+<h2>Classes</h2>
+<p>Winter quarter started with the worst COVID surge so far, though if we had better testing we'd probably be there again right now in the Bay Area. Between daycare closures, then getting COVID myself, the quarter was well underway by the time I was on campus regularly, and the DH independent study I was teaching, with three students, was comfortably settled into a series of remote coworking sessions. During winter quarter, I was also supporting visiting Slavic faculty member Kat Hill's &quot;Russia in Color&quot; class, which had a DH project component. It was an ongoing source of randomness and whimsy to see the student meetings show up on my calendar, never knowing what language, what medium, or what angle on color the student would be interested in exploring. I learned some things about how the library's digitization workflow works when a student needed a Winnie the Pooh DVD digitized to compare the color to what was used in the Soviet &quot;Vinni-Pukh&quot;. I also learned about <a href="https://teachablemachine.withgoogle.com/">teachable machines</a>, when Eric Kim was interested in training a &quot;horse/not-a-horse&quot; model for processing manuscript images. And I learned some things about different color modes when working with images computationally, thanks to Georgii Korotkov's final project. The class final presentations were held a few days after SUCHO started, but I made it in-person for the first set, and virtually for the second. I'm hoping to share some of the students' work (with permission) over the summer, but sadly, it's not a class that's likely to repeat, as Kat left the University after winter quarter. My days of working on computational analysis of Russian periodicals may be over for now, but I'll continue to keep an eye on work going on in computational periodical space elsewhere in DH.</p>
+<p>During spring quarter, Victoria Zurita joined me once again for the DH Practicum independent study. I'm happy to include her project, on Rubén Darío's archives, as part of our revamped DH project gallery on the new DH at Stanford website.</p>
+<h2>Existing Projects</h2>
+<p>Things are coming together for the <strong>Global Medieval Sourcebook</strong> despite a few delays, but we'll absolutely be wrapping everything up for the relaunch this summer. In conversations on Twitter about migration from database-backed CMSes to static sites, I've been happy to have GMS (and its documentation) to point to as an example of a Drupal-to-Jekyll conversion.</p>
+<p>Things have gotten complicated with the <strong>various departmental-support websites</strong> that I've built and continue to support as Stanford Web Services is retiring their D7-based Stanford Sites in favor of a more recent version with much less functionality, by the end of June. I built a lot of sites using that platform because it was free and centrally-maintained, and it's been a bit of a scramble to try to find alternatives for everything in a relatively short time. Most likely, there'll be a number of sites that need to go onto paid medium-term hosting, and/or be rebuilt with more limited functionality on the new system.</p>
+<p><strong>Transkribus</strong> has taken a back seat over the last two quarters; the honors thesis idea didn't quite take off. But discussions with the latest cohorts of grad students have again ignited some possibilities I'll pursue this summer, and developments in Arabic and Ottoman Turkish models have made me optimistic about possibilities in that area.</p>
+<p>We had a long dry spell with the <strong>Data-Sitters Club</strong>, beginning <em>DSC #13: Goodbye Friends, Goodbye</em> in November, but it was hard for everyone to make the time, especially in these times, to work through emotionally-taxing writing. But we managed to get it done in time for the DH Unbound 2022 conference, when we published two new books in one week: our <a href="https://datasittersclub.github.io/site/dsc13.html">wrenching tribute to DH friends who recently died young</a>, and <em><a href="https://datasittersclub.github.io/site/dsc14.html">DSC #14: Hello, DMCA Exemption</a></em> explaining what the new exemption to the DMCA for text and data mining does (and doesn't) mean for DH scholars. That book also formed the basis for a roundtable at DH Unbound 2022 with Rachael Samberg, Erik Stallman, and Lauren Tilton.</p>
+<p>Masha Gorshkova and Steele Douris and I got a proposal for <strong>Multilingual Harry Potter fanfic</strong> accepted to the DH Unbound conference. The time I'd hoped to work on the project between getting the proposal accepted and the conference itself mostly went to SUCHO, but some of the preliminary new results we were able to share -- related to how people wrote fanfic during the great fanfic-writing surge of 2020 (which happened after our original data collection in 2019). Long story short: Italian Harry Potter fanfic writers vented their angst, while Russian Harry Potter fanfic writers went for happy endings. Seeing those kinds of striking differences was enough to inspire me to add the project to my summer to-do list, in hopes of finally writing something up.</p>
+<p><strong>Animal Crossing: New Digital Humanities</strong> has been on hold since last year, first due to scheduling challenges, and then because of SUCHO. But we're planning on bringing it back this summer, including giving a talk for a Japanese DH lecture series in Animal Crossing, about SUCHO.</p>
+<p>I was hoping to reopen the <strong>Textile Makerspace</strong> in winter with a good air purifier, but it took a while before I was regularly on campus... which didn't last long before I was off campus for a while because of SUCHO. But more than a few students reached out to me over the last couple months, and I'm feeling good about the summer, especially with some volunteers helping keep it open on days I'm not around. An influx of new equipment thanks to an anonymous donor and a retro knitting machine will give us something mechanical (and pre-digital) to explore.</p>
+<p>I took the occasion of Day of DH to put together a little survey of how people are feeling -- especially about virtual/hybrid conferences and other accommodations -- after two years of the pandemic, as a way to get back to <strong>DH-WoGeM</strong>. This Women and Gender Minorities in DH group was approved shortly after the pandemic started, and ironically, ongoing childcare disruptions have meant I haven't been able to do much with it. But there's a few people interested in lending a hand with coordinating it, and I'm hoping to get things back on track in the summer.</p>
+<p>Some of the work I did in the fall with Cécile Alduy on <strong>French far-right political rhetoric</strong> turned into a book... that also turned up on my desk one day! It's always a joy to see this work turn into something meaningful out in the world.</p>
+<p><strong>Corpus-building</strong> took a few tentative steps forward early in the year, as I continued to work on amassing book lists across different languages, but I didn't get nearly as far as I hoped to by the end of the academic year. The project suffered a big setback when I explored with Sarah Sussman what it would take to get the equivalent of the NYT bestseller list data for French and was quoted a ludicrous number. I did give a talk in May as part of the CIFNAL Speaker Series (Collaborate Initiative for French Language Collections) about the need for such corpora and tools to work with them, where I got to preview a forthcoming Data-Sitters Club Multilingual Mystery about the limitations of the French spaCy NLP model compared to English.</p>
+<p>The corpus-building work is partially a response to nice things they have in English, including a corpus (both text and scans) of women's magazines, that formed the basis for a LitLab project on domestic appliances. I ended up being a fly on the wall for the project, but it was really interesting to see what kinds of approaches they were able to try through a combination of querying metadata and parsing the texts. Some new projects have taken me into comparative spaces that have given me an excuse to work more with English, and enjoy the comparative ease afforded by nice metadata.</p>
+<h2>New projects</h2>
+<p>This spring, I started working with Adrian Daub on some data for his upcoming book on <strong>cancel culture</strong> as a moral panic in France and Germany. The New York Times data set has been useful for points of comparison (especially around &quot;political correctness&quot; in the 90's and into the 21st century), and I've gotten to explore the landscape of newspaper access across languages and countries. Suffice it to say, research using German newspapers (which are typically behind paywalls) isn't easy, and while there are news aggregator sites, pay-per-article and convoluted (i.e. non-scrapable) code takes that off the table. We've got a few more options to try, though, including working with the Internet Archive; looking forward to writing more about that this summer.</p>
+<p>A relatively new project that took some time to get started due to negotiations over the terms for accessing and disseminating the materials is with Fatoumata Seck, on a Maoist cultural movement called <strong>Le Front Culturel Sénégalais</strong> dating to the 1970's. The songs, poems, translations, and other materials will be accessioned to Stanford Digital Repository for long-term storage, and will also be presented on a website that may incorporate maps, timelines, and network visualizations tracing the history of the movement, depending on the resources available.</p>
+<p>As part of the DLCL's efforts to improve transparency about graduate placement, I'm working with some internal data to present aggregate visualization summaries of career trajectories. We had an idea to look at the corresponding <strong>dissertations</strong>, and with some help from Andrew Berger in DLSS, I now have (non-consumptive, computational use) access to almost all the dissertations from my department in the last 20 years. This summer I'm interested in seeing what I can get out of them, and sync it up with data like dissertation committee.</p>
+<p>Of course, the metaphorical elephant in the room on my &quot;new projects&quot; list is <strong>SUCHO</strong>. Even locally, it's been more than just me: around 20 Stanford grad students and library staff have helped out, at one time or another, in different capacities. On the DLSS side, Yuliya Ilchuk has been there for all our translation needs with communicating with cultural heritage workers on the ground in Ukraine, and is incorporating work on SUCHO into her next book project on memory. Slavic grad student Georgii Korotkov made a huge contribution to the project by reading through all the documentation for a post-Soviet library system called Irbis, and writing a scraper to be able to capture the library catalogs from Ukrainian libraries that use that software. On the library side, special thanks to Ed Summers and Laura Wrubel in the DLSS group (Laura has been babysitting my Twitter scraping for three months now, rebooting it every time it collapses), and to Simon Wiles for everything from debugging volunteers' web crawling to taking on large crawls himself, to now building the public-facing gallery (and internal-facing data entry interface) for our more recent meme collection work for SUCHO. Simon has also been the developer for an adjacent project to SUCHO, called <strong><a href="http://forfutureuse.org/">ForFutureUse</a></strong>. Developed in partnership with a number of Slavic scholars and librarians, ForFutureUse is a way to provide free storage (and a publication venue, if desired) for dissident creatives in Russia and Belarus, as well as anyone displaced in Ukraine. There is much more to be said about SUCHO, and writing some of it up -- including in an open-access <em>Handbook of Emergency Web Archiving</em> -- is on my to-do list this summer.</p>
+<h2>Writing</h2>
+<p>I haven't written much this year so far, though I have a few pieces I've ushered through a couple rounds of edits and tweaks in prepration for publication later this year.</p>
+<p>I did get a proposal about SUCHO accepted to an upcoming edited volume about DH in libraries, edited by Glen Layne-Worthey and Isabel Galina. It'll be a collaborative effort with a handful of SUCHO volunteers.</p>
+<h2>Talks and Events</h2>
+<p>Winter was relatively quiet, with just two talks: at the Australia National University's &quot;Digital Approaches to Multilingual Text Analysis&quot;, a talk called &quot;Non-English DH is Not a Thing&quot; argued that #MultilingualDH is a rhetorical device that have pragmatic utility in some contexts (e.g. &quot;please pay attention to language here&quot;), but once you get into practical implementation, there's no single &quot;multilingual DH&quot; that you can support -- much of the work that needs to happen is language-specific, and has to be done with thought and care as to which languages you actually want to support. In late February, right before Russia invaded Ukraine, Nichole Nomura and I gave the DHARTI conference a sneak preview of the <a href="https://yrdl.org/">Young Readers Database of Literature (YRDL)</a>, which had its proper birthday in late April at a LitLab talk.</p>
+<p>Since then, though, there's been a lot of SUCHO talks -- including a lot of <a href="https://www.sucho.org/press">talking to the media about the project</a>, which was pretty new for me. In April, I was invited to give a talk about SUCHO at the Fiesole Retreat in Athens, Greece, which was my first time at an in-person event since the pandemic. Other venues have included the Internet Archive's <em>Library as Laboratory</em> talk series, an IFAR panel, Charleston In-Between, and the IIPC Web Archiving 2022 conference. In the midst of all this have been a keynote for Day of DH 2022 at the University of North Texas (&quot;Taking Fun Seriously&quot; -- which turned into a SUCHO talk), and a CUDAN Open Lab Lecture for Tallinn University. I gave them a title in the fall (&quot;Coding, Childcare, and Badly-Behaved Tools: Adventures in Multilingual 'Data-Sitting'&quot;), and couldn't have imagined SUCHO then or how it would fit into that picture.</p>
+<h2>Other Things</h2>
+<p>This year really did not work out the way I planned with the Slavic DH working group -- which is to say, between COVID and the war and generally the state of things, it never quite got off the ground. We reframed it in our proposal for a new research unit in the fall, more around the SUCHO work, also with the goal of organizing some kind of SUCHO event at Stanford around the first anniversary of Russia's invation, with additional support from the library.</p>
+<p>During the winter, the Library <a href="https://library.stanford.edu/node/172812">hired Peter Leonard as the new Assistant University Librarian for Research Data Services</a> (the group I report through in the Library). We also went through the hiring process for a new Academic Technology Specialist for History-- same job as me, in a different department. I'm looking forward to being able to share good news soon on that front.</p>
+<p>Looking ahead, there are some conversations in play between SUCHO, Stanford Libraries, and UNESCO about roles, partners, and goals for SUCHO in the shorter-term, and a National Digital Library of Ukraine in the longer term. These discussions tend to move slowly, as does our advocacy work, coming out of SUCHO, for more proactive web archiving of cultural heritage materials around the globe. Much as I never thought of web archiving as really &quot;my thing&quot; before this, I suspect this is a thread of work I've now picked up for the long haul.</p>
+<p>There's a lot in flux right now: a new DLCL chair, new faculty member in Slavic, new AUL for Research Data Services, and numerous other departures, arrivals, and reorganizations. Perhaps by the fall some of the larger context for what I'm doing here will be clearer. In the meantime, there's work to be done.</p>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>

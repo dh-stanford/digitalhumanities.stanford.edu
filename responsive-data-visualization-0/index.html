@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Responsive Data Visualization :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+
+
+  <meta property="og:title" content="Responsive Data Visualization" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/responsive-data-visualization-0/" />
+<meta property="og:site_name" content="Digital Humanities at Stanford" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="Post image" />
+<meta name="description" content="" />
+
+
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-center ">
+        <div
+          class=" col-md-8  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">Responsive Data Visualization</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Elijah Meeks<span class="text-muted d-block mt-1">August 19, 2014</span>
+            </small>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <p>The final chapter of my book, <a href="http://manning.com/meeks/">D3.js in Action</a>, is focused on explaining using the <a href="http://d3js.org">D3 data visualization library</a> for mobile development. It was a bit of a stretch for me, since I hadn’t done very much mobile development, and I expected to write a short chapter outlining the functions like <a href="https://github.com/mbostock/d3/wiki/Selections#d3_touches">d3.touches</a> that exist to handle touch interface.</p>
+<p>The concept of creating websites that are properly formatted for various screen sizes and interaction methods is known as <strong>Responsive Web Design</strong>. Applying the same perspective to data visualization can be thought of as <strong>Responsive Data Visualization</strong>. But as I was researching responsive design as applied to data visualization, I found very little written on the subject and what I found was focused on moving the individual components of, say, a data dashboard so that it could be presented in a long-scrolling window.</p>
+<p><img src="../post-images/ch12_design1.png" alt=""></p>
+<p>The problem with this approach is that, unlike text, different types of data visualization--and any graphical display of information more generally--are more or less suitable for different sized canvases. Charts that are perfectly legible on a 15” screen can end up being useless on the screen of a 4” phone.</p>
+<p>This is compounded by interactivity. The interaction available in a web site when accessed from the desktop has fundamental differences when accessed in a touch interface. Clickable icons can be much smaller than touchable icons, and well-established modes of interaction like panning or zooming have sometimes very different interaction expectations on touch compared to a mouse or keyboard.</p>
+<p>So, along with using D3 to visualize how touch works, I ended up created a <a href="http://emeeks.github.io/d3mobile/">simple demo of responsive data visualization</a> that provides different data presentation and interaction depending on the screen size of the device you access it with.</p>
+<p><strong>A disclaimer:</strong> This example was created to teach people how to code something relatively accessible in D3. As a result, it’s missing pieces that would make it a successful data visualization. One major missing piece is a legend, to explain what the symbols mean as well as what the colors mean. It’s also missing context, and while the sample real estate dataset I generated is easily engaged with, there is no real answer to the question “Why do people care about this?” Finally, there’s no good explanation of how to interact with the data visualization, so you’ll have to settle for the simple explanation in text that I give here. Were this to be released, it would need those legend, context, and tutorial elements.</p>
+<p>Note also that I rely on screen width to detect whether the browser is on a desktop, tablet or phone, you might actually get a phone view from your tablet or a tablet view from your phone, depending on its aspect ratio and the size of the device. With that in mind, I created three distinct views into the data, each with different interaction methods and screen sizes in mind:</p>
+<p><strong>Desktop Version</strong></p>
+<p><img src="../post-images/ch12_desktop1.png" alt=""></p>
+<p>If you access the site from a desktop browser, you should see a simple scatterplot and a list of the various datapoints represented on the scatterplot. This view maximizes the fine control and large screen of a desktop browser, allowing you to mouseover elements on the scatterplot and see their name on the list and vice versa, or click on the symbols to get more information. Obviously, the axes are rudimentary and in a final version they, along with the aforementioned more general elements, would be improved.</p>
+<p><strong>Tablet Version</strong></p>
+<p><img src="../post-images/ch12_tablet2.png" alt=""></p>
+<p>If you access the same site from a tablet-sized screen, you get a very different view of the data. The list is gone because it would take up too much room on an already small canvas size. Instead of a scatterplot, which would be hard to read and difficult to interact with, you get a grid of all the datapoints and two brushes, allowing you to cross-brush by the same attributes that ordered the scatterplot: value and size. Because D3 brushes have built-in touch support, this is relatively easy to implement. What’s missing here is on-touch functionality for the symbols (which have increased in size to be touchable) that would bring up the same details as the modal window in the desktop version. An interesting aspect of this particular implementation is that the cross-brushing is fundamentally a simple implementation of <a href="http://exposedata.com/parallel/">parallel coordinates</a>, and could serve as a gentle introduction to that powerful information visualization method.</p>
+<p><strong>Phone Version</strong></p>
+<p><img src="../post-images/ch12_phone1.png" alt=""></p>
+<p>Accessing the site via a phone-sized screen gives you a very different view. The datapoints are nested by their location and type attributes, and all the circles are touch-sensitive so that you can click on a circle and zoom to that grouping. Because accurate touch on a small screen requires you to have very large touchable areas, then you can only touch on circles that are one level deeper or at the same depth as you are currently at. This lets the user drill down in the groups, getting averages of size and value as they go, until they’ve zoomed in enough that the individual datapoints are large enough to be clicked and return the attributes of that datapoint. In a full version, there would need to be a mechanism to let you zoom out, as well as a mechanism that let’s you change the nesting priorities. The former could be accomplished with the pinch gesture and the latter with the rotate gesture, which are both now relatively intuitive to touch users.</p>
+<p><strong>This Matters</strong></p>
+<p>The non-desktop views are hard to design, even when you’re cutting corners on a simple example like this. I think it’s a great challenge to ask yourself what your data would look like on a phone or tablet, and what new affordances and limitations you need to account for to present the most valuable view into complex datasets like these. Responsive data visualization is a hard design challenge, but can contribute not only to making your data more accessible, but to discovery of new views and methods for presenting your data in any form. You’ll notice that there are different capabilities and different visual and interaction rhetoric embedded in each of these views, and so the goal is not to provide the same view into the data, but rather allied views that let users understand a dataset from multiple points of interaction.</p>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>

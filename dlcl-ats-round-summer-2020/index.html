@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>DLCL ATS round-up, summer 2020 :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+
+
+  <meta property="og:title" content="DLCL ATS round-up, summer 2020" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/dlcl-ats-round-summer-2020/" />
+<meta property="og:site_name" content="Digital Humanities at Stanford" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="Post image" />
+<meta name="description" content="" />
+
+
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-between ">
+        <div
+          class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">DLCL ATS round-up, summer 2020</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Quinn Dombrowski<span class="text-muted d-block mt-1">September 13, 2020</span>
+            </small>
+          </div>
+        </div>
+        
+        <div class="col-md-6 pr-0 align-self-center">
+          <img class="rounded" src="../post-images/Edsb6szXoAYLxkx.png" alt="DLCL ATS round-up, summer 2020">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <p>It’s hard to believe that fall is already here. A couple weeks of virtual first grade have given me some time to start preparing for teaching my non-English DH course this fall, but as usual, a lot of it will be worked out in the moment, responding to the students’ own languages, projects, and needs. Before getting too far into the work of fall quarter, here’s the summer 2020 round-up.</p>
+<h3>Teaching</h3>
+<p>Over the summer, I held a workshop for CESTA’s summer interns about how to structure and organize data, and consulted with a number of summer projects on various code and data issues. I also had the chance to chat with a number of undergrads, recent grads, and people starting graduate programs in the humanities and library and information science about DH. Most of them had a background in some non-English language. It’s really beautiful to see the interest in DH from people who work in other languages — seeing DH methods make real inroads in non-English languages has been my dream for the last 15+ years, and now it’s happening. I have a great deal of hope for a future where people who want to use DH methods for non-English languages don’t have to justify that choice (beyond what anyone has to justify when doing DH), or feeling like they’re the only person doing that work in their language.</p>
+<p>Stanford has extended its pilot of the Hypothesis/Canvas integration through the fall, so I did some outreach work to promote the integration to faculty in my division. I coached a few people through using Hypothesis without that integration last spring, but having it part of Canvas makes a huge difference. (I’m using it as a major part of my own course this coming fall, too, but I may not have bothered if it weren’t for that integration.) I’ve also worked on facilitating access to films and film clips that the library has purchased. More than once this summer, I’ve appreciated the split departmental/library nature of my position, and having a metaphorical seat at both tables.</p>
+<p>Understandably, there’s a lot of interest in DH methods among later-stage grad students who are looking at the current (general lack of) academic job market with horror. My division chair, Cécile Alduy, has been taking steps to support professional development for graduate students with an eye towards a broad range of job outcomes, which I’ve personally found inspiring. I’m hoping to get into questions of what “DH” looks like in other, non-academic contexts as part of my non-English DH course in the fall.</p>
+<h3>Existing projects</h3>
+<h4>Global Medieval Sourcebook</h4>
+<p>Over the summer, I’ve been working with Danny Smith to add some new texts to the Global Medieval Sourcebook. One of the interesting challenges of this work has involved RTL languages: the Versioning Machine software wasn’t built to handle those. Luckily, I have a generous and brilliant colleague in Simon Wiles at CIDR in the library, and he helped me sort out the CSS necessary for the RTL-languages to be right-justified, and the LTR-languages to be left-justified (for both prose and poetry, which use different encoding).</p>
+<p>By the end of the year, we’re hoping to retire the current Drupal site for the Global Medieval Sourcebook and replace it with a static, <a href="https://minicomp.github.io/wax/">Wax</a>-based site.</p>
+<h4>Poetic Media Lab projects</h4>
+<p>This quarter, I’ve wrapped up my involvement with the Florentine Codex project, after using Transkribus to develop a model that could transcribe a large amount of the text. Compared to having project PI Obed Lira working with undergrads to transcribe the entire manuscript, Transkribus has provided a hugely impactful technical intervention.</p>
+<p>I was happy to support Nelson Endebo's <a href="http://liqproject.org/">Life in Quarantine</a> project officially launching over the summer, as well. This, along with another project focused on the impact of COVID-19 on international students, have benefited from consultation with Josh Schneier, the Library’s new University Archivist, along with Natalie Marine-Street, who works with the Stanford Oral History Program. For project that are trying to capture the present moment, having the input and the support of people with experience in these areas is a huge help.</p>
+<p>Over the summer, I also explored the options for doing IIIF-compatible annotation without running an annotation server for Fyza Parviz’s project looking at Arabic astronomy manuscript texts.</p>
+<h4>Data-Sitters Club</h4>
+<p>It’s been a relatively quiet summer for the Data-Sitters in terms of publications (other than “<a href="https://datasittersclub.github.io/site/dsc5/">The DSC and the Impossible TEI Quandaries</a>”, our “book” on the Text Encoding Initiative with Elisa Beshero-Bondar), but I and others have been working on multiple new “books” that we should be able to publish throughout the fall, on topics including copyright, text comparison, machine learning models for text generation, stylometry, and others.</p>
+<p>Lee Skallerup-Bessette and I got a proposal accepted to the “Flyover Comics Symposium” (about different French translations of the Baby-Sitters Club graphic novels), and this fall we’ll be giving talks about the Baby-Sitters Club at a DH symposium at the University of British Columbia, and at Northeastern University (where Ryan Cordell is teaching most of the things we’ve written so far as part of <a href="https://f20idh.ryancordell.org/schedule/">his Intro to DH course</a>).</p>
+<h4>Projects on hold</h4>
+<p>There are many projects I wasn’t able to make progress on this summer, including data cleaning for Multilingual Harry Potter Fanfic, JSTOR for research, Ostrov: a Russian radical feminist zine, and Palladio bricks.</p>
+<h3>New projects</h3>
+<p>I’ve consulted with professors Marie Hubert and Sarah Prodan about their ideas for new DH projects. As with so much DH work, there’s a long road from gathering the necessary data in a workable format to taking the first step towards analysis.</p>
+<h3>Writing</h3>
+<p>As it happens, the summer wasn’t terrible for being able to write up some of the work I’ve done so far, in a format that other people can learn from. Along with a group of current and former high-performance computing (HPC) colleagues, I finished an article for “Debates in DH: Computational Humanities” about the intersection of HPC and DH.</p>
+<p>In collaboration with three students from my winter course on project management and ethical collaboration, I wrote a chapter for a “Debates in DH: The Digital Futures of Graduate Study in the Humanities” and undertook peer review for other chapters in that volume.</p>
+<p>I also wrote up a piece on minimal computing, for a special issue of DH Quarterly — mostly critiquing how usable “minimal computing” web development methods actually are, and proposing infrastructural interventions that the DH community could undertake to improve the situation.</p>
+<p>The peer review process is wrapping up for the “Debates in DH 2021” piece that Patrick Burns and I co-authored about multilingual DH, and I’ll be happy to have it out in the world (relatively) soon. It also benefited from some feedback from colleagues in the library as part of the recently-restarted library reading group.</p>
+<p>Meanwhile, the tutorial on preparing non-English texts for computational text analysis methods that I wrote last fall has <a href="https://www.modernlanguagesopen.org/articles/10.3828/mlo.v0i0.294/">been published</a>, just in time for me to use it in my class this fall.</p>
+<h3>Talks and Events</h3>
+<p>Right after my spring write-up, I attended “Building Legal Literacies for Tex and Data Mining”, an NEH-funded workshop relevant to multiple projects that I support. During the course of the workshop, I had the opportunity to meet Matt Sag, a law professor at Loyola University School of Law and an expert on fair use. Since the institute, we've put together an upcoming Data-Sitters Club piece on copyright that should be published this fall. In addition, I’m hoping to put together a LibGuide on the library website about copyright and fair use.</p>
+<p>Along with Kalika Bali (from Microsoft Research), I facilitated a weeklong panel as part of the “Disrupting Digital Monolingualism” through “Language Acts and Worldmaking” at University College London. We brought together a group of scholars and industry folks who work with multilingual NLP, and hope to produce a white paper summarizing their perspectives around opportunities and needs for multilingual NLP.</p>
+<p>The international DH conference is my conference, and I was very sad (though sympathetic) that it didn’t happen this year. I didn’t have the time to organize something for most of the things I’d gotten accepted for the mostly-asynchronous manifestation of the conference. That said, I did manage to put together a simple website with <a href="https://dh2020directoriesforum.hcommons.org/">opinion pieces about DH directories</a> (in lieu of the “roundtable” panel accepted for the conference). I also live-tweeted the “Demystifying ADHO” roundtable, and <a href="http://quinndombrowski.com/?q=blog/2020/07/21/it-doesnt-work-failure-and-dh-tools">presented at the tool criticism workshop</a> sponsored by the Digital Literary Stylstics ADHO SIG.</p>
+<p>But my favorite memory of DH 2020 is something that I didn’t submit as part of the usual process during fall 2019. Along with Artjoms Šela and Shawn Moore, I organized a series of lightning talks in the game “Animal Crossing: New Horizons” on the Friday of the DH conference. It felt amazing to be able to be somewhere “in person” (in some sense) with colleagues during the DH conference. And since there’s reason to expect the COVID-induced world of virtual everything will persist for some time, I’ve recently been talking with Liz Grumbach about imagining a DH reading group that meets via Animal Crossing and streams to Twitch.</p>
+<p>Towards the end of the summer, I did a week of workshops on statistics, machine learning, deep learning, and NLP through the <a href="https://icme.stanford.edu/events/icme-online-summer-workshops-2020">ICME summer workshop series</a> on the fundamentals of data science. The workshops went better than I expected, and I learned a lot — without the domestic tension that would result from early/late days at work if I’d tried to attend them in their pre-COVID in-person form. I really hope this kind of online training sticks around after we can go back to campus.</p>
+<p>I also took a couple weeks of “vacation”, but it mostly amounted to housework and left me eager to return to work.</p>
+<h3>Working Groups and Organizations</h3>
+<p>It feels so very ironic that DH-WoGeM (Women and Gender Minorities in DH) got approved as an ADHO (international DH umbrella organization) special interest group during the summer, but the amount of juggling I’ve needed to do around managing childcare has meant that I haven’t been able to follow up on it or have it formally announced. I look forward to having downtime at some point that isn’t interrupted by childcare closures due to smoke.</p>
+<p>Meanwhile, while the Multilingual DH group SIG proposal hasn’t been accepted yet, I’ve had some wonderful conversations with Cecily Raynor at McGill University, the incoming head of ADHO’s Multilingual and Multi-cultural Committee, about what that committee might be able to do within ADHO to better support non-English DH work.</p>
+<p>I started my term as co-VP of ACH, where I’ve been working on reimagining the mentoring committee and creating a series of working groups that people can use as a way to get involved with the organization.</p>
+<p>Over the summer, the Masquaraders (the group of library sewists that Julie Sweetkind-Singer and I coordinated) finished up their task of sewing three masks for every library staff member. We’ll be depositing photos from the project, along with our instructions, in the Stanford Digital Repository for posterity, and Julie put together a <a href="https://library.stanford.edu/blogs/stanford-libraries-blog/2020/07/masquaraders-rescue">lovely write-up on the Stanford Libraries blog</a>.</p>
+<p>Finally, the thing I’m proudest of having accomplished over the summer is administrative: I worked through the process of Stanford Libraries joining the <a href="https://readcoop.eu/">READ Co-op</a> that supports Transkribus and purchase a pack of 30,000 pages of transcription for when the per-page cost model starts. The process for joining, the rates, and the payment options (and turnaround time) aren’t nearly as well documented as the software, and figuring out issues of licensing review and financial transfers on our end was similarly challenging. But I’m excited to go into this fall knowing that Transkribus will be able to work its magic for scholars throughout the year.</p>
+<p><em>Photo credit Houda Lamqa, from the ADHO ACNH lightning talks</em></p>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>
