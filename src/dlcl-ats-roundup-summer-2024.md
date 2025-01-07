@@ -21,11 +21,11 @@ We received a donation of canvas and zipper stock from Craig Milroy, a [Making@S
 
 I've got plans coming together with Anna Jerve (also from Stanford Libraries and Doerr School) to pilot a "fleece to fiber" spinning club this fall. We've identified a real interest that spans students and staff, and I can see points of intersection with the developing Environmental Humanities program in DLCL as well.
 
-There's been an outpouring of interest in the joint textile specialist program with the Makery, and we'll have to make some hard choices about staffing for this upcoming year. But I'm excited about the potential of this collaborative stsaffing model.
+There's been an outpouring of interest in the joint textile specialist program with the Makery, and we'll have to make some hard choices about staffing for this upcoming year. But I'm excited about the potential of this collaborative staffing model.
 
 ## Classes
 
-For this upcoming year, I'm teaching a compressed version of the non-English DH class in the fall, taking the winter off, then textile data visualization in the spring. I've been giving some thought this summer to what it might look like to teach a more coding-oriented version of non-English DH using generative AI plugins, but we'll see what the students' needs and interests (and langauges) are.
+For this upcoming year, I'm teaching a compressed version of the non-English DH class in the fall, taking the winter off, then textile data visualization in the spring. I've been giving some thought this summer to what it might look like to teach a more coding-oriented version of non-English DH using generative AI plugins, but we'll see what the students' needs and interests (and languages) are.
 
 I'll also be running something we're calling the [DH Co-Op](https://dhcoop.stanford.edu/) throughout the year, focused mutual support for people who do non-English DH projects. I've built a very simple starter website, and have been mulling over different workshop and activity options for the group.
 
@@ -43,7 +43,7 @@ Off and on through the summer, I've been working with Eitan Kensky and Kristen V
 
 ![Quinn's wrists with the original multi-ocular O manuscript character and the Unicode character](../post-images/quinn_unicode_tattoo.jpg)
 
-We haven't yet had the debrief meeting after the first year of the **Browsertrix Cloud pilot** but I'mo hopeful we'll be able to continue subscribing to the tool as sa resource particularly for archiving complex digital humanities sites before they begin to decay.
+We haven't yet had the debrief meeting after the first year of the **Browsertrix Cloud pilot** but I'mo hopeful we'll be able to continue subscribing to the tool as a resource particularly for archiving complex digital humanities sites before they begin to decay.
 
 There's been ongoing interest in **Transkribus** throughout the summer, both for library-internal things (e.g. better accessibility for special collections materials) and for faculty projects (e.g. Alice Staveley's work on Virginia Woolf and Hogarth Press.) There's no shortage of AI-powered handwritten text recognition tools available now, but I really appreciate what Transkribus is doing to create a very low-barrier-to-entry, accessible tool for even non-technical scholars to do this work on their own, using models trained on data you can feel good about. I think Transkribus, and HTR workflows in general, have a lot of potential as a pragmatic use of AI in libraries, actually driven by user needs.
 
@@ -62,16 +62,16 @@ I did get to spend a day at the D-School's new print shop as it was in developme
 
 ## Writing
 
-This summer, the Data-Sitters Club finished editing our piece for the Journal of Electronic Publishing. Also with the Journal of Electronic Publishing, this summer an article came out on the history and future of multilingual publishing, with a focus on the early computing years and transition to Unicode. "[Encoding Multilingualism: Technical Affordances of Multilingual Publication from Manuscripts to Unicode and OpenType](https://journals.publishing.umich.edu/jep/article/id/5528/)", with Manish Goregaokar, Ben Joeng (Yang), and Abeera Kamran, ended up being a pared down version of a truly wild rabbit hole I went down early in the year, that initially included brief histories of the tyewriter and printing press across several scripts. As far as I know, it may also be the first publication that's used materials from Stanford's Unicode Collection of materials, the first collection I was involved in acquiring.
+This summer, the Data-Sitters Club finished editing our piece for the Journal of Electronic Publishing. Also with the Journal of Electronic Publishing, this summer an article came out on the history and future of multilingual publishing, with a focus on the early computing years and transition to Unicode. "[Encoding Multilingualism: Technical Affordances of Multilingual Publication from Manuscripts to Unicode and OpenType](https://journals.publishing.umich.edu/jep/article/id/5528/)", with Manish Goregaokar, Ben Joeng (Yang), and Abeera Kamran, ended up being a pared down version of a truly wild rabbit hole I went down early in the year, that initially included brief histories of the typewriter and printing press across several scripts. As far as I know, it may also be the first publication that's used materials from Stanford's Unicode Collection of materials, the first collection I was involved in acquiring.
 
 "Voices from the Server Room: Humanists in HPC", a collaboratively-authored piece with many DH folks who do/did DH support for HPC and the potential of that role as a career path for humanists, came out as part of *[Computational Humanities](https://www.upress.umn.edu/9781517915988/computational-humanities/)*, ed. Jessica Marie Johnson, David Mimno, and Lauren Tilton. 
 
-I wrote a about the Textile Makerspace and the Data Vsiualization with Textiles class as a "statement of practice" piece for the *Journal of Modern Craft*.
+I wrote a about the Textile Makerspace and the Data Visualization with Textiles class as a "statement of practice" piece for the *Journal of Modern Craft*.
 
 And, despite several delays (that I joked were just me honoring the theme of the edited volume), I managed to write a piece entitled "Stop Lying to Yourself: Collective Delusion and Digital Humanities Grant Funding" for the volume *Reframing Failure*, ed. Michael Donnae and Anna-Maria Sichani.
 
 ## Talks and events
 
-DH 2024 was busy, between my remaining duties as ADHO secretary and the four things I'd gotten accepted to the conference: a poster for SILICON, a workshop on teaching machine learning in the humanities, a #DHMakes mini-conference, and a one-shot campaign of the [#DHRPG](https://dhrpg.github.io/) I created for my project managemenet class. Unfortunately, everything but the poster ended up double-booked with ADHO secretary responsibilities, so I recorded a video about my [Future Text](https://github.com/quinnanya/future-text) class from last year, scared up some friends/dopplegangers to run the #DHRPG (huge thanks to Paige Morgan and Brandon Walsh for that), and dropped into #DHMakes during the break (and wove a shawl in solidarity while taking notes for ADHO).
+DH 2024 was busy, between my remaining duties as ADHO secretary and the four things I'd gotten accepted to the conference: a poster for SILICON, a workshop on teaching machine learning in the humanities, a #DHMakes mini-conference, and a one-shot campaign of the [#DHRPG](https://dhrpg.github.io/) I created for my project management class. Unfortunately, everything but the poster ended up double-booked with ADHO secretary responsibilities, so I recorded a video about my [Future Text](https://github.com/quinnanya/future-text) class from last year, scared up some friends/dopplegangers to run the #DHRPG (huge thanks to Paige Morgan and Brandon Walsh for that), and dropped into #DHMakes during the break (and wove a shawl in solidarity while taking notes for ADHO).
 
 ![Brandon, Paige, and Quinn with the materials for the #DHRPG](../post-images/dh2024_dhrpg.jpg)
