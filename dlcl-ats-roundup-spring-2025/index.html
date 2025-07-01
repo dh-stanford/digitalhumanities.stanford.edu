@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>DLCL ATS round-up, spring 2025 :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+
+
+  <meta property="og:title" content="DLCL ATS round-up, spring 2025" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/dlcl-ats-roundup-spring-2025/" />
+<meta property="og:site_name" content="Digital Humanities at Stanford" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="Post image" />
+<meta name="description" content="" />
+
+
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-between ">
+        <div
+          class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">DLCL ATS round-up, spring 2025</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Quinn Dombrowski<span class="text-muted d-block mt-1">July 1, 2025</span>
+            </small>
+          </div>
+        </div>
+        
+        <div class="col-md-6 pr-0 align-self-center">
+          <img class="rounded" src="../post-images/spring2025-embroidery.jpg" alt="DLCL ATS round-up, spring 2025">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <p><em>I was on leave for much of winter quarter, so this update catches up on work projects for the rest of the 2024-2025 academic year.</em></p>
+<h2>Textile Makerspace &amp; Classes</h2>
+<p>While I was on leave, Jacob Ramirez from the GSE Makery stepped in to help manage the Textile Specialist students shared between our two programs. While I wasn't able to do as much with it as I'd hoped this year in terms of shared programming, it was a useful step towards imagining what alternate makerspace staffing models might look like more generally. Differences in HR processes between our two units came up a few times, and would be something worth smoothing out for a broader program.</p>
+<p>Spring is always a busy time for the Textile Makerspace, with lots of students coming in for the <em>Data Visualization with Textiles</em> class. I had about 20 students this year, and more from the humanities than in the past. Anne Ladyem McDivitt, Mary-Ellen Petrich, and Snowden Becker helped out by running workshops for the students. A more detailed writeup of the end-of-the-quarter showcase and the final projects students were willing to share is forthcoming, but I was impressed with all the varied and thoughtful work that the students did, spanning machine knitting, weaving, crochet, knitting, embroidery, and sewing. The students' midterm assignments -- where they had 90 minutes to make, from start to finish, a visualization of some part of the gender data for Stanford faculty -- were particularly good this year, and ended up being a major part of the showcase.</p>
+<p>At the end of the quarter, Zach Lannes from the Terman MakerBar borrowed our guestbook loom for part of their end-of-quarter de-stressing activities for students. We've got tentative plans for joint workshops next academic year.</p>
+<h2>Existing projects</h2>
+<p>Just in time for a presentation at the ACH 2025 virtual conference, the <strong>Data-Sitters Club</strong> published <a href="https://datasittersclub.github.io/site/dsc22.html">DSC 22: Lee Skallerup Bessette, Zine-Sitter</a>, which includes an interview with Julia Evans and Marie LeBlanc Flanagan of <a href="https://wizardzines.com/">Wizard Zines</a>, home of my favorite tech zines.</p>
+<p>The grad student projects that were presented at the fall ACH conference -- <strong>The Futurist Archive</strong> (Ty Davidian), <strong>Flamenco letras</strong> (Tania Flores), <strong>Network Analysis of Vsesvit</strong> (Georgii Korotkov) and <strong>Where is the world for Montréal?</strong> (Chloé Brault) -- have been making incremental progress on their own. The ACH 2025 conference (held 7 months after the last one, due to scheduling issues) featured Alyssa Virker's work on <strong>Ukrainian Poetry on Social Media during the Russia's Full-Scale Invasion Against Ukraine</strong>. Awkwardly, I introduced Tania to Sara Arribas Colmenar at Penn State, who also works on dance and networks -- using a really beautiful #DHmakes angle of physicalizing these networks through yarn. Small world that academia is, they already knew each other, but I always find it joyful to discover that the work I help support exists in a broader community where it's not the only digital project.</p>
+<p>I've continued working with Ali Karakaya on his <strong>Eva Biss</strong> project from fall quarter as part of the CESTA Fellows program, and for a number of conference presentations.</p>
+<p>The <strong>Senegalese Countercultural Movements</strong> (Fatoumata Seck) project has been on hold, other than helping enhance the resolution of some images for the related book project. <strong>Global Medieval Sourcebook</strong> (Kathryn Starkey) is in wrap-up mode, with an eye towards a less labor-intensive process for future expansion. The final, painstakingly-formatted PDF files are almost entirely ready, and we should be able to fully switch over to a static site version and decommission the long-suffering Drupal instance by the end of the summer.</p>
+<p>Taking time away from work in the winter gave me the chance to reflect on some of my unfinished projects, and I've come to the conclusion that the <strong>Multilingual Harry Potter Fanfic</strong> is not going to be one I devote more time to. It started 6 years ago, was an excellent learning experience on multiple technical and data-wrangling fronts, I still think the topic is fascinating and fanfic is a great environment for doing multilingual work, but everything J.K. Rowling does now is too hateful for me to want to work on it. On top of it, one of my original collaborators on the project, Masha Gorshkova, just graduated this year, so it's really time to officially put this to bed, even without an article or data set to point to. On the other hand, while I haven't made much progress on the <strong>DLCL Dissertations/Syllabi</strong> ideas that I was bouncing around with grad students in the fall, I'm hoping to take a fresh look at that over this summer.</p>
+<p>Spring included some useful discussions with Hannah Frost about the future of the <strong>Browsertrix Cloud pilot</strong> and how we might move things forward. With Alix Keener no longer being at Stanford Libraries and no replacement on the horizon for her position, there's fewer people around to help pitch in on the tasks that would go into service development. Even having a dedicated student-type assistant on it would go a long way in terms of being able to run experiments and do quality control. But I continue to use it and advocate for it as part of our toolkit, where I can.</p>
+<p>For various reasons, the <strong>Jewish cookbooks</strong> exhibit was only on display for a short time, but the project continues to amuse and delight through presentations that Eitan Kensky and I have given at SF State and ACH 2025. Our digitized corpus has expanded a bit with help from student assistants, and I'd like to put together a draft version of a website for the project by the end of the summer.</p>
+<p><strong>SILICON</strong> continues apace, with the <em>Face/Interface</em> conference in January right before I was on leave, a large cohort of summer interns in partnership with UNESCO and Unicode, and also just the ongoing maintenance work of adding new characters to the standard, prepping code charts for the fall release, and a million small tasks in between. Due to various conflicts I was only able to take notes at one of the Script Encoding Working Group meetings this spring, but it's always a pleasure to do.</p>
+<p>Off and on, I continue to get requests for access to the <strong>Transkribus</strong>  seats that come with our membership, as well as additional pages. I have a summer project going with Rebecca Wingfield and Chloé Brault Mackennon to see what we can do to train a model on the hands used to catalog Alan Ginsberg's library.</p>
+<p>I've continued helping out on Adrian Daub and Connor Yankowitz's project looking at the <strong>history of feminist, gender, and sexuality studies</strong> courses at Stanford. The data they're working with is extremely messy, and every new inquiry feels like it needs a new way to wrangle the data. It makes me wonder whether it might be worthwhile to invest some thought and time in remediating at least some of the Stanford course registry data sets to facilitate future work.</p>
+<p><strong>SUCHO</strong> continues, with the meme wall continuously expanding, and funding going out to the Ukraine Heritage Monitoring Lab for expanding their mobile digitization kits.</p>
+<h2>New projects</h2>
+<p>This quarter I've been working with Davis Tantillo on what started off as a project on autofiction, but it's evolved into looking at reader response to award-winning French fiction via popular book review sites. It's been a good reminder of the utility of the <em>Data-Sitters Club</em> work, where I've got pieces written up that I can pull out at a moment's notice when we're wrestling with questions like <a href="https://datasittersclub.github.io/site/dsc19.html">&quot;What should I put in a corpus?&quot;</a> or <a href="https://datasittersclub.github.io/site/dsc10.html">&quot;How do I make sense of all these texts?&quot;</a></p>
+<p>Towards the end of the quarter, I got to work with Cécile Alduy on a project looking at media discourse around the murder of an 11-year-old French schoolgirl. The text analysis workflow set up by my predecessor had finally reached its end-of-life (involving software that no longer would run at all), so I wrote some Jupyter notebooks for her to do similar things, and showed her how to run them using Google Colab. Even though it too is getting a little old and buggy, <a href="https://shifterator.readthedocs.io/en/latest/">Shifterator</a> was a really useful package here, along with <a href="https://datasittersclub.github.io/site/dsc4.html">Antconc</a> and <a href="https://datasittersclub.github.io/site/dsc10.html">Principal Component Analysis</a>.</p>
+<h2>Writing</h2>
+<p>The article Adrian Daub and I wrote on &quot;Cancel Culture&quot; articles on Wikipedia is now going through revisions. I haven't done much new writing this quarter, though I've put a fair bit of thought into how I want to structure the <em>Handbook to Data Visualization with Textiles</em>, and I hope to start writing on that over the summer.</p>
+<h2>Talks and events</h2>
+<p>At ACH 2025, I presented with Eitan on the Jewish cookbook project, and participated in a #DHmakes session at the &quot;care fair&quot; on the last day. While I got a piece on DH failure accepted into the international DH 2025 conference, I decided against traveling internationally this summer. Instead, I'll be talking at DEFCON in August about SUCHO and opening up data rescue efforts to a larger group of volunteers (under the conference theme &quot;Access Everywhere&quot;).</p>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>
