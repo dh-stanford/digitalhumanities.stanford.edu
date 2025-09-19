@@ -51,6 +51,8 @@ A lot of the folks I work with have been traveling over the summer, so I'll be c
 
 This summer I've been chipping away at **DLCL corpora**, trying to compile computationally-usable versions of the texts on the MA reading lists for each of the sub-departments. It's been a fascinating and often frustrating look at different cultural practices around creating digital editions of classic literary works -- or leaving them in the print realm. This project continues to push the boundaries of my skill on the library degree side (wrangling different editions, sleuthing down copies in various formats), data wrangling side (creating metadata, file management, OCR on buggy virtual machines), and DH pedagogy side (what should this look like to be maximally useful to students)? On the other hand, it's been a good opportunity to collaborate more with the subject-area librarians who work with my departments. The **DLCL dissertations/syllabi** project is another piece of this larger project, but I made less progress than I hoped as I was working on finding and digitizing the reading lists.
 
+And finally, I lost some time this summer dealing with a laptop that would no longer charge, where the fix involved replacing the hard drive as well. Restoring data from the cloud backup has been slow and buggy and incomplete, and I expect I'll be dealing with reconstructing and digging up missing data for some time still.
+
 ## Writing
 
 The Data-Sitters Club put together a couple short pieces this summer, one for a handbook fo DH and children's literature, and another talking about toolbuilding and infrastructure. 
