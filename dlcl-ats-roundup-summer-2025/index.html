@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>DLCL ATS round-up, summer 2025 :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+
+
+  <meta property="og:title" content="DLCL ATS round-up, summer 2025" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/dlcl-ats-roundup-summer-2025/" />
+<meta property="og:site_name" content="Digital Humanities at Stanford" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="Post image" />
+<meta name="description" content="" />
+
+
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container">
+  <div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div
+        class="row  justify-content-between ">
+        <div
+          class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+          <h1 class="display-4 mb-4 article-headline">DLCL ATS round-up, summer 2025</h1>
+          <div class="d-flex align-items-center">
+            
+            <small class="ml-3">
+              Quinn Dombrowski<span class="text-muted d-block mt-1">September 19, 2025</span>
+            </small>
+          </div>
+        </div>
+        
+        <div class="col-md-6 pr-0 align-self-center">
+          <img class="rounded" src="../post-images/summer2025-weaving.jpg" alt="DLCL ATS round-up, summer 2025">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-lg pt-4 pb-4">
+  <div class="row justify-content-center">
+    <!-- Share -->
+    <div class="col-lg-2 pr-4 mb-4 col-md-12">
+      <div class="sticky-top sticky-top-offset text-center">
+        <div class="text-muted">
+          
+        </div>
+        <div class="share d-inline-block">
+          <!-- AddToAny BEGIN -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            
+          </div>
+     
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+      <!-- Article -->
+      <article class="article-post">
+        <h2>Textile Makerspace</h2>
+<p>The Textile Makerspace was busy all summer, with crafters undeterred by the locked doors of Pigott Hall. Even less-commonly used machines like the Cricut found an audience, and I've enjoyed seeing some of the projects that people have put together.</p>
+<p>There's a lot of change going on with <em>Making@Stanford</em>, the organization that brought together and funded a diverse set of makerspaces across campus. The program staff who were the driving force behind it -- in terms of fundraising, coordination, and on-the-ground support with troubleshooting and repairs -- are no longer there, as the result of budget cuts and funding constraints. The creative making courses in Mechanical Engineering that had enormous waiting lists, such as the silver pendant class, are no longer being offered. The space manager for the large Product Relization Lab makerspace was one of the victims of campus layoffs. <em>Making@Stanford</em> has been my primary funder since 2022, covering supplies, new equipment and -- most significantly -- student staffing. The Textile Makerspace doesn't have an ongoing operating budget beyond the year-by-year grants we received from <em>Making@Stanford</em>. We haven't spent down everything we've received already and can make it through this year, but trying to secure more reliable funding in an already challenging budgetary time has to be at the top of my to-do list this year.</p>
+<p>The news isn't all grim, though: Mark Algee-Hewitt, the new director of our local digital humanities center, CESTA, invited me to open a second location for the Textile Makerspace on the 4th floor of Wallenberg. We've done a lot with the little computer lab I was given in 2018, but it's crowded, and it's nearly impossible to run any sort of workshop or activity without needing to book the larger room down the hall.</p>
+<p>After seeing the runaway success of an event in the History department where staff and others got together with some catered lunch and learned basic crochet and knitting (or brought their own craft projects), it seemed like a sensible split would be to take the yarn-based crafts (knitting, knitting machines, crochet, weaving) and move those to the new space in CESTA. There's lots of seating, plenty of tables for the large knitting machines (including an adjustable-height one that will be perfect for knitting machine work), couches, and a kitchen. The space is also open all day and has multiple coffee machines, making it the perfect spot for people to drop by and do some casual crafting alone or with friends.</p>
+<p>All the sewing supplies and equipment will stay in the original Textile Makerspace, which now has more room to spread out without accommodating all the yarn crafts. We got a new serger over the summer, a donation from Mary-Ellen Petrich. I'm hoping to give hand embroidery more room in the Textile Makerspace as well.</p>
+<p>The GSE Makery, a makerspace that's always been well aligned with us and who we've shared staffing with in the past, is moving to a new location too, just across the street from us. Over the summer, I learned how to use the TC2 digital loom, where my practice project was to make some signage for the new space in CESTA: &quot;Text* Lab&quot;, to encompass both the YarnLab and a book digitization station that will be sharing the space. We've also been working more with Zach Lannes and the MakerBar program at Terman Library, where they're ready to add more looms to the collection of equipment that people can check out. We wrapped up the summer with a well-attended station at the Engineering Library Open House.</p>
+<p>In addition to my &quot;Data Visualization with Textiles&quot; class in the spring, I'm looking forward to teaching some weaving and embroidery as part of Kathryn Starkey's winter course &quot;Making the Middle Ages: Objects and Meaning Then and Now&quot;.</p>
+<p>Despite the funding uncertainties, I'm optimistic about this year for the Textile Makerspace and new YarnLab. It would be disingenous to underplay the importance of the funding we got from <em>Making@Stanford</em>, but I do think there's something to the idea (as the cliché goes) that the true <em>Making@Stanford</em> may have been the friends we made along the way, and nothing can stop us from talking to each other and working together.</p>
+<h2>Existing projects</h2>
+<p>Over the summer, the <strong>Data-Sitters Club</strong> collaborated with Anastasia Salter and John Murray on a new book about AI and vibe-coding, <a href="https://datasittersclub.github.io/site/dsc23.html">DSC 23: Dawn of the Coasting AI</a>. Since publishing it, we've been running a little survey about people's attitudes about AI, which we'll be discussing (along with our own takes) for DSC 24. DSC 25 is also in the works, probably on fine-tuning BERT for classification problems.</p>
+<p>Ty Davidian won the local Wreden Prize for book collecting, which made him eligible for a national competition sponsored by the Antiquarian Booksellers of America and the Library of Congress. His <strong>Futurist Archive</strong> project won first place, and will be celebrated in an event in DC later this month. A couple years ago, he and I walked through developing a spreadsheet for him to gather metadata about items in his collection. The plan at that point was for me to use <a href="https://minicomp.github.io/wax/">Wax</a> to generate a static site out of the spreadsheet. But since he needed something to demo sooner rather than later, Ty sat down and learned to use WordPress and built the site himself from the ground up. As much as I enjoy teaching people how to make things with digital tools, hearing this news from Ty was one of my prouder moments as a teacher. I'd helped him get started with thinking about the data, and he just... ran with it. He went and figured it out, the same way I did at his age. Picked a tool, learned enough to make a thing, and learned a lot more as he made it. I've got my own feelings about WordPress, as someone with a certain set of priorities and goals when I make websites, but it's a perfectly reasonable choice given where he's at and the nature of his project, and all the more so since it empowered him to sit down and make a thing in a short period of time. That's a kind of authentic, old-school digital humanities experience that makes me happy to see my students encounter.</p>
+<p>This summer I continued working with Cécile Alduy on modernizing the <strong>workflows for French computational text analysis</strong> that my predecessor set up, as part of her project on news discourse about the murder of an 11-year-old in France. I expect I'll be continuing to revisit and refine the Jupyter notebooks I put together for her, and tweaking them to work with future projects.</p>
+<p>I've also continued working with Davis Tantillo on a couple projects related to <strong>French book reviews</strong>, and we've started exploring various research questions related to French- vs. English-language Wikipedia. For both of these, it's been striking how much help genAI plugins for coding have been. Web scraping and sorting out the syntax for APIs I don't know well go much faster with help from LLMs. I'm still a little wary of turning people with little to no coding experience loose with vibe-coding -- even if you're being careful, the code that gets generated is often the laziest, quickest solution with side-effects to match (especially when working with non-English text) -- but for certain kinds of coding tasks I've always hated and struggled with, it's been a game-changer.</p>
+<p>The <strong>Global Medieval Sourcebook</strong> feels like it continues to be asymptotically close to done, but I sorted out a few things this summer including how to extract the full text from the beautifully-formatted PDFs for some kind of screen-based display and searchability. Once all the final PDFs are ready, it shouldn't take terribly long to build the new static site and retire the aging Drupal version. But so far, saying it'll be done this quarter has reliably jinxed things, so it'll get there when it gets there.</p>
+<p>There hasn't been much progress on the website for the <strong>Jewish cookbooks</strong> project with competing priorities on the library end, but I'm hoping to meet with Eitan Kensky this quarter and come up with a plan. He'll be hiring a student assistant to help with bulk collections, including additional cookbooks, so I see this one as an ongoing project with a lot of interesting potential angles for new research and tool development.</p>
+<p>There are a number of projects with Adrian Daub, around the <strong>history of feminist, gender, and sexuality studies</strong> courses at Stanford, <strong>letters to Christine Blasey Ford</strong>, and <strong>cancel culture articles on Wikipedia</strong> that are progressing at their own pace, with some articles in the pipeline, and some interesting upcoming opportunities for data analysis.</p>
+<p><strong>SILICON</strong> had numerous summer interns working on interesting projects, and I was able to attend and take notes at one of the Script Encoding Working Group meetings. It's taken some time, but I'm starting to feel pretty comfortable with the note-taking -- I can get through most meetings now without having to backchannel ask questions about jargon, either on the language side or the Unicode process side. I get a lot of satisfaction being able to put my semi-transcript note-taking skills to use as part of a slow, deliberative, careful infrastructure.</p>
+<p>It's unclear where things stand with the <strong>Browsertrix Cloud pilot</strong>, or web archiving in general after the library's web archivist position was eliminated in the campus layoffs. At the same time, there continues to be a fair bit of interest in web archiving, and Browsertrix Cloud is a compelling option as a DIY or library-facilitated tool. This project exists in a complex landscape of priorities, goals, and funding constraints, but I hope to continue to advocate for it, and for clarifying to what extent we're using it as an internal tool vs. an offering for researchers.</p>
+<p>A simpler, but similar, case is <strong>Transkribus</strong>: there are quite a few people using it, I facilitate access to our campus subscription seats, but it's an informal word-of-mouth situation rather than a specific service offering in the library. At the retreat for the Research Data Services group I belong to on the library side, I advocated for the group being clearer about what is and isn't a service, and then promoting and managing those things that are services accordingly. But these sorts of changes take time to implement.</p>
+<p>A lot of the folks I work with have been traveling over the summer, so I'll be catching up with those projects in the fall: <strong>Flamenco letras</strong> (Tania Flores), <strong>Network Analysis of Vsesvit</strong> (Georgii Korotkov), <strong>Ukrainian Poetry on Social Media during the Russia's Full-Scale Invasion Against Ukraine</strong> (Alyssa Virker), <strong>Eva Biss in Ukrainian and diasporic canons</strong> (Ali Karakaya), and the <strong>Senegalese Countercultural Movements</strong> (Fatoumata Seck).</p>
+<p>This summer I've been chipping away at <strong>DLCL corpora</strong>, trying to compile computationally-usable versions of the texts on the MA reading lists for each of the sub-departments. It's been a fascinating and often frustrating look at different cultural practices around creating digital editions of classic literary works -- or leaving them in the print realm. This project continues to push the boundaries of my skill on the library degree side (wrangling different editions, sleuthing down copies in various formats), data wrangling side (creating metadata, file management, OCR on buggy virtual machines), and DH pedagogy side (what should this look like to be maximally useful to students)? On the other hand, it's been a good opportunity to collaborate more with the subject-area librarians who work with my departments. The <strong>DLCL dissertations/syllabi</strong> project is another piece of this larger project, but I made less progress than I hoped as I was working on finding and digitizing the reading lists.</p>
+<p>And finally, I lost some time this summer dealing with a laptop that would no longer charge, where the fix involved replacing the hard drive as well. Restoring data from the cloud backup has been slow and buggy and incomplete, and I expect I'll be dealing with reconstructing and digging up missing data for some time still. Once a week or so, I still run into packages that are missing or software that's still not configured the way I need it.</p>
+<h2>Writing</h2>
+<p>The Data-Sitters Club put together a couple short pieces this summer, one for a handbook fo DH and children's literature, and another talking about toolbuilding and infrastructure.</p>
+<p>Beyond that, there hasn't been a lot of writing this summer, though I continue to gather materials for the <em>Handbook of Textile Dataviz</em> that I'm hoping to use in the spring.</p>
+<h2>Talks and events</h2>
+<p>I've dreamed of going to DEFCON since I was a child, and it was an honor to get a talk on <strong>SUCHO</strong> accepted this year as part of the Policy track. I attended DEFCON instead of DH 2025 as my conference for the year, and it was an absolutely remarkable, generative experience. I was surprised at how much DEFCON overlapped with the Makerspace side of my job, with a culture of making exemplified by electronic badges but also other creations. I met some people interested in expanding the makerspace &quot;village&quot; (community activity center) to include textile making, and I can definitely imagine returning to DEFCON in the future for some inspiration at the intersection of data and craft.</p>
+<p>I also participated in the Open Space Day of the Digital Academy at Bielefeld University, talking about workflows for digital humanities, and how actually talking to and understanding the needs of your collaborators underpins successful projects.</p>
+<p>Yesterday was the orientation for the new group of grad students, who seem like a particularly dynamic bunch. There's a lot of uncertainty in the world at large, and on campuses everywhere, as we go into the fall (and quite a lot of work ahead, for instance, in completely rethinking my #DHRPG project management class, now that there are no longer meaningfully NEH grants to use as a final writing assignment). Still, it feels like meaningful work with good people, and I'm grateful for that.</p>
+
+      </article>
+
+      <!-- Tags --><!-- Author Box --><!-- Comments --></div>
+  </div>
+</div>
+
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>
