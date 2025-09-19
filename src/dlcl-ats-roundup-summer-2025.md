@@ -7,6 +7,8 @@ post_images:
   - ../post-images/summer2025-weaving.jpg
 ---
 
+Fall quarter starts on Monday, so it's time for what I've been up to lately!
+
 ## Textile Makerspace
 
 The Textile Makerspace was busy all summer, with crafters undeterred by the locked doors of Pigott Hall. Even less-commonly used machines like the Cricut found an audience, and I've enjoyed seeing some of the projects that people have put together.
