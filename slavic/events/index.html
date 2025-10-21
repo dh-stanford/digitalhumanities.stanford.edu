@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Slavic Events :: Digital Humanities @ Stanford</title>
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/">
+
+  <!-- Font Awesome Icons -->
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+  <!-- Bootstrap Modified -->
+  <link rel="stylesheet" href="/assets/css/main.css" ">
+
+  <!-- Theme Stylesheet -->
+  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+
+  <style>
+    /* add margin if scroll bar not visible
+      Note: leaving space for a scroll bar can result in obviously uneven margins
+      on smaller screens when there is no scroll bar.  This is potentially an issue
+      on environments without overlay scrollbars and very narrow viewports, but 
+      such environments are very uncommon and in my contrived examples behaviour
+      is entirely acceptable imo. */
+    body {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+    .navbar { left: calc(100vw - 100%); }
+  </style>
+
+
+  <meta property="og:title" content="Slavic Events" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/slavic/events/" />
+<meta property="og:site_name" content="Digital Humanities at Stanford" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="Post image" />
+<meta name="description" content="" />
+
+
+</head>
+
+<body class=" ">
+
+  <!-- Navbar -->
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Digital Humanities @ Stanford</strong>
+      </a>
+      <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler collapsed" data-target="#navbarColor02" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about-dh-stanford">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/projects">Projects</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+</li>
+<li class="nav-item">
+  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/slavic">Slavic</a>
+</li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <script src="/assets/js/lunr.min.js"></script>
+
+<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and enter..." />
+</form>
+
+<div id="lunrsearchresults"></div>
+
+<script>
+  const lunrSearchResults = document.getElementById("lunrsearchresults");
+  let idx;
+  let docs;
+
+  fetch("/lunr-index.json")
+    .then((response) => response.json())
+    .then((data) => {
+      idx = lunr.Index.load(data.index);
+      documents = data.documents;
+    });
+
+  const closeSearch = () => {
+    lunrSearchResults.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  document.body.addEventListener("click", (event) => {
+    if (event.target.id !== "lunrsearchresults" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key == "Escape" && document.body.classList.contains("modal-open")) closeSearch();
+  });
+
+  const lunrSearch = (term) => {
+    lunrSearchResults.style.display = "block";
+    document.body.classList.add("modal-open");
+
+    lunrSearchResults.innerHTML = `
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+      <div class="modal-dialog shadow-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="modtit">
+            <h5 class='modal-title'>Search results for "${term}"</h5>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+
+    //put results on the screen.
+    const results = idx.search(term);
+    if (results.length > 0) {
+      results.forEach(({ ref }) => {
+        const { url, title, excerpt } = documents[ref];
+        const li = document.createElement("li");
+        li.classList.add("lunrsearchresult");
+        li.innerHTML = `
+          <a href='${url}'>
+            <span class='title'>${title}</span>
+            <br />
+            <small>
+              <span class='body'>${excerpt}</span>
+              <br />
+              <span class='url'>${url}</span>
+            </small>
+          </a>
+        `;
+        lunrSearchResults.querySelector("ul").appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.classList.add("lunrsearchresult");
+      li.innerText = "Sorry, no results found. Close & try a different search!";
+      lunrSearchResults.querySelector("ul").appendChild(li);
+    }
+    return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    position: relative;
+    z-index: 1100;
+  }
+
+  #lunrsearchresults .modal {
+    left: calc(100vw - 100%);
+  }
+
+  #lunrsearchresults .modal-dialog {
+    display: flex;
+    max-height: calc(100vh - 3.5em);
+  }
+
+  #lunrsearchresults .modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+
+  .lunrsearchresult .url {
+    color: silver;
+  }
+
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="site-content" role="main">
+    <div class="container-lg pb-4">
+  <div class="row justify-content-center">
+
+    
+
+    <div class="col-md-12 col-lg-12">
+      <article class="article-post">
+        <h1>Slavic DH Events</h1>
+<div class="events-list">
+  <!-- Event 0 - Upcoming February 2026 AATSEEL -->
+  <div class="event-item mb-5 pb-4 border-bottom">
+    <div class="event-date mb-2">
+      <span class="badge badge-primary">Upcoming</span>
+      <span class="text-muted ml-2">February 19-22, 2026</span>
+    </div>
+    <h3 class="h4 font-weight-bold mb-2">Computational Formalism v.2.0: Methodological Innovations in Digital Literary Analysis</h3>
+    <p class="text-muted mb-2">
+      <strong>Event:</strong> AATSEEL 2026<br>
+      <strong>Location:</strong> New Orleans, LA
+    </p>
+    <p class="mb-3">A roundtable exploring the latest methodological innovations in digital literary analysis and computational approaches to formalism.</p>
+    <a href="https://www.aatseel.org/" target="_blank" class="btn btn-sm btn-primary">
+      AATSEEL Conference <i class="fas fa-external-link-alt ml-1"></i>
+    </a>
+  </div>
+  <!-- Event 1 - March 2025 -->
+  <div class="event-item mb-5 pb-4 border-bottom">
+    <div class="event-date mb-2">
+      <span class="badge badge-secondary">Past Event</span>
+      <span class="text-muted ml-2">Thursday, March 13, 2025 | 5:00 PM</span>
+    </div>
+    <h3 class="h4 font-weight-bold mb-2">Triangulated Publishing Practices During and After the Cold War: Texts in Motion Above, Below, and Across Borders</h3>
+    <a href="https://dlcl.stanford.edu/events/triangulated-publishing-practices-during-and-after-cold-war-texts-motion-above-below-and" target="_blank" class="btn btn-sm btn-primary">
+      More Info <i class="fas fa-external-link-alt ml-1"></i>
+    </a>
+  </div>
+  <!-- Event 2 - March 2025 Workshop -->
+  <div class="event-item mb-5 pb-4 border-bottom">
+    <div class="event-date mb-2">
+      <span class="badge badge-secondary">Past Event</span>
+      <span class="text-muted ml-2">Thursday, March 13, 2025 | 1:00 PM - 6:00 PM</span>
+    </div>
+    <h3 class="h4 font-weight-bold mb-2">Transnational Paths and Networks: Gosizdat, Tamizdat, Samizdat during the Cold War </h3>
+    <a href="https://dlcl.stanford.edu/events/transnational-paths-and-networks-gosizdat-tamizdat-samizdat-during-cold-war" target="_blank" class="btn btn-sm btn-primary">
+      More Info <i class="fas fa-external-link-alt ml-1"></i>
+    </a>
+  </div>
+  <!-- Event 3 - May 2024 -->
+  <div class="event-item mb-5 pb-4 border-bottom">
+    <div class="event-date mb-2">
+      <span class="badge badge-secondary">Past Event</span>
+      <span class="text-muted ml-2">Wednesday, May 15, 2024 | 4:30 PM - 6:30 PM</span>
+    </div>
+    <h3 class="h4 font-weight-bold mb-2">Queer Digital Humanities for Precarious Times: The Project kvir_izdat</h3>
+    <p class="text-muted mb-2">
+      <strong>Speaker:</strong> Prof. Philip Gleissner (Ohio State University)<br>
+      <strong>Location:</strong> Building 260, Pigott Hall, Room 216
+    </p>
+    <p class="mb-3">A talk on documenting post-Soviet LGBTQ+ history through the kvir_izdat project, which aims to preserve gay and lesbian periodicals and book publications from mid-1990s and early 2000s Russia.</p>
+    <a href="https://dlcl.stanford.edu/events/slavic-digital-humanities-philip-gleissner-ohio-state-university" target="_blank" class="btn btn-sm btn-outline-secondary">
+      Event Details <i class="fas fa-external-link-alt ml-1"></i>
+    </a>
+  </div>
+  <!-- Event 4 - February 2024 AATSEEL -->
+  <div class="event-item mb-5 pb-4 border-bottom">
+    <div class="event-date mb-2">
+      <span class="badge badge-secondary">Past Event</span>
+      <span class="text-muted ml-2">Saturday, February 17, 2024 | 1:15 PM - 3:00 PM</span>
+    </div>
+    <h3 class="h4 font-weight-bold mb-2">Roundtable: Computational Formalism: Digital Approaches to Ukrainian Culture</h3>
+    <p class="text-muted mb-2">
+      <strong>Event:</strong> AATSEEL 2024 (Session 6-6)<br>
+      <strong>Location:</strong> AATSEEL Annual Conference
+    </p>
+    <p class="mb-3">A roundtable discussion exploring computational and digital approaches to studying Ukrainian culture.</p>
+    <a href="https://www.aatseel.org/cfp_program_search_2024" target="_blank" class="btn btn-sm btn-outline-secondary">
+      Conference Program <i class="fas fa-external-link-alt ml-1"></i>
+    </a>
+  </div>
+  <!-- Event 5 - January 2024 -->
+  <div class="event-item mb-5 pb-4 border-bottom">
+    <div class="event-date mb-2">
+      <span class="badge badge-secondary">Past Event</span>
+      <span class="text-muted ml-2">Thursday, January 18, 2024 | 4:30 PM - 6:00 PM</span>
+    </div>
+    <h3 class="h4 font-weight-bold mb-2">Annotating as Hunting: A Digital Annotated Edition of Sasha Sokolov's Between Dog and Wolf</h3>
+    <p class="text-muted mb-2">
+      <strong>Speaker:</strong> Prof. José Vergara (Bryn Mawr College)<br>
+      <strong>Location:</strong> Building 260, Pigott Hall, Room 216
+    </p>
+    <p class="mb-3">A presentation on The Encyclopedia of the Dog, a bilingual digital edition with annotations of Sasha Sokolov's 1980 novel Between Dog and Wolf, frequently called the "Russian Finnegans Wake."</p>
+    <a href="https://events.stanford.edu/event/slavic_digital_humanities_jose_vergara" target="_blank" class="btn btn-sm btn-outline-secondary">
+      Event Details <i class="fas fa-external-link-alt ml-1"></i>
+    </a>
+  </div>
+  <!-- Event 6 - May 2023 -->
+  <div class="event-item mb-5 pb-4 border-bottom">
+    <div class="event-date mb-2">
+      <span class="badge badge-secondary">Past Event</span>
+      <span class="text-muted ml-2">Wednesday, May 10, 2023 | 1:00 PM - 2:30 PM</span>
+    </div>
+    <h3 class="h4 font-weight-bold mb-2">SUCHO: Workshop on Archiving Websites and Social Media</h3>
+    <a href="https://dlcl.stanford.edu/events/sucho-workshop-archiving-websites-and-social-media" target="_blank" class="btn btn-sm btn-outline-secondary">
+      More Info <i class="fas fa-external-link-alt ml-1"></i>
+    </a>
+  </div>
+  <!-- Event 7 - May 2023 -->
+  <div class="event-item mb-5 pb-4 border-bottom">
+    <div class="event-date mb-2">
+      <span class="badge badge-secondary">Past Event</span>
+      <span class="text-muted ml-2">Tuesday, May 9, 2023 | 2:00 PM - 4:00 PM</span>
+    </div>
+    <h3 class="h4 font-weight-bold mb-2">DIY Ukrainian Embroidery Textile Makerspace Pop-up </h3>
+    <a href="https://dlcl.stanford.edu/events/diy-ukrainian-embroidery-textile-makerspace-pop" target="_blank" class="btn btn-sm btn-outline-secondary">
+      More Info <i class="fas fa-external-link-alt ml-1"></i>
+    </a>
+  </div>
+  <!-- Event 8 - May 2023 -->
+  <div class="event-item mb-5 pb-4">
+    <div class="event-date mb-2">
+      <span class="badge badge-secondary">Past Event</span>
+      <span class="text-muted ml-2">Tuesday, May 9, 2023 | 12:00 PM - 1:15 PM</span>
+    </div>
+    <h3 class="h4 font-weight-bold mb-2">Saving Ukrainian Cultural Heritage Online: Socially-Engaged Digital Humanities </h3>
+    <a href="https://dlcl.stanford.edu/events/saving-ukrainian-cultural-heritage-online-socially-engaged-digital-humanities" target="_blank" class="btn btn-sm btn-outline-secondary">
+      More Info <i class="fas fa-external-link-alt ml-1"></i>
+    </a>
+  </div>
+</div>
+<style>
+.events-list {
+  max-width: 900px;
+}
+
+.event-item {
+  transition: transform 0.2s ease;
+}
+
+.event-item:hover {
+  transform: translateX(10px);
+}
+
+.event-date {
+  font-size: 0.95rem;
+}
+
+.badge-primary {
+  background-color: #007bff;
+}
+
+.badge-secondary {
+  background-color: #6c757d;
+}
+
+.btn-primary, .btn-outline-secondary {
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-outline-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+</style>
+      </article>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+  <script src="/assets/js/theme.js" "></script>
+
+    <!-- Footer -->
+    <footer class=" bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0">
+              <strong>Digital Humanities @ Stanford</strong>
+            </span>
+          </div>
+          <div>
+            <span>Copyright © 2022.</span>
+
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+              <i class="fab fa-github"></i>
+              Site Source
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>
