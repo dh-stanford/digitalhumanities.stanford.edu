@@ -4,7 +4,7 @@ layout: templates/page.liquid
 permalink: /slavic/projects/
 ---
 
-# Slavic DH Projects
+<h1><span style="transform: scaleY(0.95); display: inline-block;">Slavic DH projects</span></h1>
 
 <div class="row mt-4">
   <!-- Project 1 -->
