@@ -4,7 +4,7 @@ layout: templates/page.liquid
 permalink: /slavic/publications/
 ---
 
-# Slavic DH Publications
+<h1><span style="transform: scaleY(0.95); display: inline-block;">Slavic DH publications</span></h1>
 
 <div class="publication-list">
   
