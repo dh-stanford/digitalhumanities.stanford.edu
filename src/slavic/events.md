@@ -4,7 +4,7 @@ layout: templates/page.liquid
 permalink: /slavic/events/
 ---
 
-<h1><span style="transform: scaleY(0.95); display: inline-block;">Slavic Digital Humanities</span></h1>
+<h1><span style="transform: scaleY(0.95); display: inline-block;">Slavic DH events</span></h1>
 
 <div class="events-list">
 
