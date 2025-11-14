@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Color and Imperial Memory in Gogol&#39;s Ukraine :: Digital Humanities @ Stanford</title>
+  <title>Publicat :: Digital Humanities @ Stanford</title>
 
   
 
@@ -39,9 +39,9 @@
   </style>
 
 
-  <meta property="og:title" content="Color and Imperial Memory in Gogol&#39;s Ukraine" />
+  <meta property="og:title" content="Publicat" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="/slavic/projects/gogol-color/" />
+<meta property="og:url" content="/slavic/projects/Publicat/" />
 <meta property="og:site_name" content="Digital Humanities at Stanford" />
 <meta property="og:description" content="" />
 <meta property="og:image" content="" />
@@ -227,22 +227,30 @@
 
     <div class="col-md-12 col-lg-12">
       <article class="article-post">
-        <h1><span style="transform: scaleY(0.95); display: inline-block;">Color and Imperial Memory in Gogol's Ukraine</span></h1>
-<p><strong>Eric Kim</strong></p>
+        <h1><span style="transform: scaleY(0.95); display: inline-block;">Publicat</span></h1>
+<p><strong>Georgii Korotkov</strong></p>
 <!-- Add project image here when available:
 <img src="/post-images/your-image.jpg" class="img-fluid mb-4" alt="Project image">
 -->
 <h2>Project Overview</h2>
-<p>I demonstrate how Nikolai Gogol employs color in the short story &quot;Sorochinskaia iarmarka&quot; to construct a deliberately colorful space for his Imperial Russian reader.</p>
+<p><strong>Publicat</strong> is a fast and scalable web application that converts any structured CSV bibliography into an interactive scholarly explorer of journal archives. Combining timeline-based discovery, full-text metadata search, and D3.js visualizations, Publicat makes archival metadata, issue- and article-level records, immediately discoverable, explorable, and shareable. Built as a generalization of the <strong><a href="https://vsesvit.vercel.app">https://vsesvit.vercel.app</a></strong> structure, Publicat is intended for use by scholars, archivists, and cultural heritage projects that maintain CSV-based catalogs and wish to publish them as navigable, analyzable corpus interfaces.</p>
+<p>The system accepts a canonical CSV schema, ingests it client-side via PapaParse, and renders a set of interoperable views: chronological timelines (decade and issue level), faceted search across metadata fields (author, title, translator, language, country), and explorable visual analytics (author diversity by decade, language and country distributions, maps of contributors, and network graphs). The application is implemented in <strong>Next.js</strong> and <strong>React</strong>, and is optimized for rapid deployment on <strong>Vercel</strong>.</p>
 <h2>Methodology</h2>
-<p>To support my close reading, I provide quantitative analysis along with data visualization, both of which reveal marked clusters of colorations at the beginning, middle, and end of the story. By distributing colors throughout the work along a narratologically methodical schema, Gogol establishes a colorful memory of or legacy for this Ukrainian setting; as a result, this rhetorical effect reaches not only Gogol's contemporary readers but also future readers of this text.</p>
-<h2>Theoretical Framework</h2>
-<p>This multilateral approach to the story practices what Georgii Korotkov refers to as &quot;disclosed reading,&quot; or the combined use of traditionally philological and otherwise quantitative methods to produce and test readings of a text. Through this act of disclosed reading, I revisit the colonial memories of and imperial relations between Ukraine and Russia.</p>
-<!--## Analysis
-
-[Add visualizations, color distribution charts, detailed textual analysis, etc.]-->
+<p>Publicat operationalizes a research workflow that interleaves close reading with quantitative, corpus-level description. The methodological stance is explicitly hybrid: metadata-driven aggregation produces hypotheses about temporal and spatial patterns (for example, shifts in language distribution or concentrations of unique contributors), which are then investigated through targeted close reading of issues and articles surfaced by the interface.</p>
+<p>Concretely, the project pipeline follows these steps:</p>
+<ol>
+<li><strong>Canonicalization.</strong> Source CSVs are normalized to a fixed header schema so that heterogeneous archival exports become interoperable units of analysis.</li>
+<li><strong>Ingestion &amp; Parsing.</strong> Client-side parsing loads the dataset without server-side preprocessing, enabling rapid iteration and lowering barriers for non-technical users.</li>
+<li><strong>Exploratory Visualization.</strong> D3 visualizations provide descriptive overviews that reveal macro-patterns and inform micro-analytic choices.</li>
+<li><strong>Iterative Reading.</strong> Visualized patterns guide archival close reading: clusters, outliers, and discontinuities identified visually are inspected in their original metadata context (issue, article, translator), producing interpretive claims grounded in both quantitative description and textual evidence.</li>
+<li><strong>Documented Interpretation.</strong> Findings are recorded alongside the dataset and interface, enabling reproducible interpretive chains from visual observation to textual quotation.</li>
+</ol>
+<p>This mixed-methods workflow privileges transparency: every visualization is traceable back to the CSV rows that produced it, and the UI is designed to let researchers move from pattern to primary source rapidly.</p>
+<h2>Support</h2>
+<p>The project has been featured at the <strong>Stanford Open Source Projects Registry</strong>: <a href="https://opensource.stanford.edu/projects-registry">https://opensource.stanford.edu/projects-registry</a></p>
+<p>The project has been awarded <strong>Vercel Open Source Sponsorship</strong>: <a href="https://vercel.com/open-source-program">https://vercel.com/open-source-program</a></p>
 <h2>Resources</h2>
-<p><a href="https://scholar.kyobobook.co.kr/article/detail/4010071048315">https://scholar.kyobobook.co.kr/article/detail/4010071048315</a></p>
+<p><strong><a href="https://github.com/KGeorgii/Publicat">Publicat</a></strong></p>
 
       </article>
     </div>
