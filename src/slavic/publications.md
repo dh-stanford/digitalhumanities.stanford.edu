@@ -4,8 +4,7 @@ layout: templates/page.liquid
 permalink: /slavic/publications/
 ---
 
-<h1><span style="transform: scaleY(0.95); display: inline-block;">Slavic DH publications</span></h1>
-
+<h1><span style="transform: scaleY(0.95); display: inline-block;">Slavic DH Publications</span></h1>
 <div class="publication-list">
   
   <!-- Publication 1 - April 2025 (Most Recent) -->
@@ -37,7 +36,7 @@ permalink: /slavic/publications/
     </a>
   </div>
 
-  <!-- Publication 3 - December 2023 (Oldest) -->
+  <!-- Publication 3 - December 2023 -->
   <div class="publication-item mb-5 pb-4">
     <h3 class="h4 font-weight-bold mb-2">International Literature: A Multi-Language Soviet Journal as a Model of "World Literature" of the Mid-1930s USSR</h3>
     <p class="text-muted mb-2">
@@ -50,6 +49,18 @@ permalink: /slavic/publications/
     </a>
   </div>
 
+  <!-- Publication 4 - February 2021 -->
+  <div class="publication-item mb-5 pb-4">
+    <h3 class="h4 font-weight-bold mb-2">Linguistic Fingerprints on Translation’s Lens</h3>
+    <p class="text-muted mb-2">
+      <strong>Authors:</strong> J.D. Porter, Yulia Ilchuk, Quinn Dombrowski<br>
+      <strong>Publisher:</strong> Journal of Data Mining and Digital Humanities<br>
+      <strong>Date:</strong> February, 2021
+    </p>
+    <a href="https://hal.archives-ouvertes.fr/hal-03151249" target="_blank" class="btn btn-sm btn-primary">
+      Read More <i class="fas fa-external-link-alt ml-1"></i>
+    </a>
+  </div>
 </div>
 
 <style>

@@ -6,6 +6,7 @@ permalink: /slavic/
 
 <h1><span style="transform: scaleY(0.95); display: inline-block;">Slavic Digital Humanities</span></h1>
 
+
 <div class="row mt-5">
   <div class="col-md-3 mb-4">
     <div class="card h-100 shadow-sm">
