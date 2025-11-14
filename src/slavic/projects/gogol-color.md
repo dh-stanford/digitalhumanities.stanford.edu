@@ -5,7 +5,7 @@ permalink: /slavic/projects/gogol-color/
 scholar: Student_name
 ---
 
-# Color and Imperial Memory in Gogol's Ukraine
+<h1><span style="transform: scaleY(0.95); display: inline-block;">Color and Imperial Memory in Gogol's Ukraine</span></h1>
 
 **Eric Kim**
 
@@ -31,4 +31,4 @@ This multilateral approach to the story practices what Georgii Korotkov refers t
 
 ## Resources
 
-<a>https://scholar.kyobobook.co.kr/article/detail/4010071048315</a>
+[https://scholar.kyobobook.co.kr/article/detail/4010071048315](https://scholar.kyobobook.co.kr/article/detail/4010071048315)

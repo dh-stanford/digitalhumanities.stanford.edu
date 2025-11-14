@@ -5,7 +5,7 @@ permalink: /slavic/projects/yeva-biss/
 scholar: Student_name
 ---
 
-# Heteroglossic Literature: Yeva Biss Digital Analysis
+<h1><span style="transform: scaleY(0.95); display: inline-block;">Heteroglossic Literature: Yeva Biss Digital Analysis</span></h1>
 
 **Ali Karakaya** {{ scholar }}
 

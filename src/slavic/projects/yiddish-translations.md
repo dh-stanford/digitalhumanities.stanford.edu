@@ -1,15 +1,15 @@
 ---
-title: Digital Archive of Ukrainian Medicinal Herbs
+title: Translations from Yiddish into Ukrainian. Origins, Development, and Dissemination
 layout: templates/page.liquid
-permalink: /slavic/projects/ukrainian-medicinal-herbs/
+permalink: /slavic/projects/yiddish-translations/
 scholar: Student_name
 ---
 
-<h1><span style="transform: scaleY(0.95); display: inline-block;">Digital Archive of Ukrainian Medicinal Herbs</span></h1>
+<h1><span style="transform: scaleY(0.95); display: inline-block;">Translations from Yiddish into Ukrainian. Origins, Development, and Dissemination</span></h1>
 
-**Elizabeth Crim**
+**Ostap Kin**
 
-<!-- Image Slider -->
+<!-- Image Slider
 <div id="herbsCarousel" class="carousel slide mb-4" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#herbsCarousel" data-slide-to="0" class="active"></li>
@@ -43,11 +43,11 @@ scholar: Student_name
   object-fit: cover;
   border-radius: 10px;
 }
-</style>
+</style>  -->
 
 ## Project Overview
 
-My project aims to preserve Ukrainian cultural knowledge through the digital indexing of medicinal herbs. This database will resist Russian weaponization of ecocide in the region.
+My project traces the trajectory and dynamics of translations from Yiddish into Ukrainian—across poetry, fiction, and nonfiction—throughout the twentieth century, with particular attention to the Soviet period. It investigates the key actors involved in these translation and publishing initiatives—publishers, editors, and translators—and examines the cultural and political factors that shaped the intensity of this activity over time. By approaching the material through this lens, the project identifies the individuals and institutions that built cultural bridges between the two literatures and the forms of cooperation they fostered. Ultimately, it aims to deepen our understanding of Yiddish–Ukrainian literary interaction and to contribute to broader discussions in translation studies, transnational cultural history, and Soviet literary exchange.
 
 <!--## Detailed Description
 

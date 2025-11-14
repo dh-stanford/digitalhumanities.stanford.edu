@@ -5,7 +5,7 @@ permalink: /slavic/projects/war-poetry-archive/
 scholar: Student_name
 ---
 
-# Ukrainian War Poetry Video Archive
+<h1><span style="transform: scaleY(0.95); display: inline-block;">Ukrainian War Poetry Video Archive</span></h1>
 
 **Alyssa Virker**
 
