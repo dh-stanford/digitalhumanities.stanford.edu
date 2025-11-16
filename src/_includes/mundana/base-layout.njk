@@ -18,10 +18,10 @@
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
 
   <!-- Bootstrap Modified -->
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}" ">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
 
   <!-- Theme Stylesheet -->
-  <link rel=" stylesheet" href="{{ '/assets/css/theme.css' | url }}" ">
+  <link rel="stylesheet" href="{{ '/assets/css/theme.css' | url }}">
 
   <style>
     /* add margin if scroll bar not visible
@@ -49,12 +49,48 @@
 <meta name="description" content="" />
 {% endif %}
 
+
+  <style>
+    /* Visually hidden utility for accessible labels */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+      white-space: nowrap;
+    }
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #000;
+      color: #fff;
+      padding: 8px 12px;
+      z-index: 10000;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+    /* Improve focus visibility */
+    a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible {
+      outline: 3px solid #212529;
+      outline-offset: 2px;
+    }
+  </style>
+
 </head>
 
 <body class=" {% if page.url==" /" %} homefirstpage {% endif %}">
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <!-- Navbar -->
-  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu" role="navigation" aria-label="Primary">
     <div class="container">
       <a class="navbar-brand" href="{{ '/' | url }}">
         <strong>{{ "Digital Humanities @ Stanford" }}</strong>
@@ -68,18 +104,20 @@
           {% include "../mundana/menu-header.liquid" %}
         </ul>
         <ul class="navbar-nav ml-auto d-flex align-items-center">
-          {% include "../mundana/search-lunr.liquid" %}
+          <li class="nav-item">
+            {% include "../mundana/search-lunr.liquid" %}
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- Content -->
-  <main class="site-content" role="main">
+  <main class="site-content" role="main" id="main-content" tabindex="-1">
     {{ content | safe }}
   </main>
 
-  <script src="{{ '/assets/js/theme.js' | url }}" "></script>
+  <script src="{{ '/assets/js/theme.js' | url }}"></script>
 
     <!-- Footer -->
     <footer class=" bg-white border-top p-3 text-muted small">
@@ -93,7 +131,7 @@
           <div>
             <span>Copyright © 2022.</span>
 
-            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank" rel="noopener noreferrer" aria-label="View site source on GitHub (opens in a new tab)">
               <i class="fab fa-github"></i>
               Site Source
             </a>

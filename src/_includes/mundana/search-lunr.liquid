@@ -1,11 +1,12 @@
 <script src="{{ '/assets/js/lunr.min.js' | url }}"></script>
 
-<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
-  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
-    placeholder="Type keyword and enter..." />
+<form class="bd-search hidden-sm-down" role="search" aria-label="Site search" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <label class="sr-only" for="lunrsearch">Search the site</label>
+  <input type="search" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and press Enter" />
 </form>
 
-<div id="lunrsearchresults"></div>
+<div id="lunrsearchresults" aria-live="polite"></div>
 
 <script>
   const lunrSearchResults = document.getElementById("lunrsearchresults");
@@ -19,9 +20,11 @@
       documents = data.documents;
     });
 
+  const searchInput = document.getElementById('lunrsearch');
   const closeSearch = () => {
     lunrSearchResults.style.display = "none";
     document.body.classList.remove("modal-open");
+    if (searchInput) searchInput.focus();
   };
 
   document.body.addEventListener("click", (event) => {
@@ -37,12 +40,12 @@
     document.body.classList.add("modal-open");
 
     lunrSearchResults.innerHTML = `
-    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="results-heading">
       <div class="modal-dialog shadow-lg" role="document">
         <div class="modal-content">
           <div class="modal-header" id="modtit">
-            <h5 class='modal-title'>Search results for "${term}"</h5>
-            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+            <h2 id='results-heading' class='modal-title'>Search results for "${term}"</h2>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close search results"> &times; </button>
           </div>
           <div class="modal-body">
             <ul class="mb-0"> </ul>
@@ -51,7 +54,9 @@
       </div>
     </div>`;
 
-    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+    const closeBtn = lunrSearchResults.querySelector("#btnx");
+    closeBtn.addEventListener("click", closeSearch);
+    closeBtn.focus();
 
     //put results on the screen.
     const results = idx.search(term);

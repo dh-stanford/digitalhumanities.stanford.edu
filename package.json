@@ -6,12 +6,15 @@
     "build": "eleventy",
     "debug": "DEBUG=* npx eleventy",
     "dev": "eleventy --serve",
-    "gh-deploy": "CNAME=digitalhumanities.stanford.edu bin/gh-deploy.sh"
+    "gh-deploy": "CNAME=digitalhumanities.stanford.edu bin/gh-deploy.sh",
+    "a11y": "npm run build && axe file://$PWD/_site/index.html file://$PWD/_site/about-dh-stanford/index.html file://$PWD/_site/projects/index.html --tags wcag2a,wcag2aa,wcag21aa",
+    "a11y:full": "npm run build && find _site -name 'index.html' | head -20 | xargs axe --tags wcag2a,wcag2aa,wcag21aa"
   },
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@axe-core/cli": "^4.11.0",
     "clean-css": "^5.3.0",
     "lunr": "^2.3.9",
     "striptags": "^3.2.0"
