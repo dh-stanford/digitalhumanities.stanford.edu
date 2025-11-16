@@ -18,10 +18,10 @@
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
 
   <!-- Bootstrap Modified -->
-  <link rel="stylesheet" href="/assets/css/main.css" ">
+  <link rel="stylesheet" href="/assets/css/main.css">
 
   <!-- Theme Stylesheet -->
-  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+  <link rel="stylesheet" href="/assets/css/theme.css">
 
   <style>
     /* add margin if scroll bar not visible
@@ -38,23 +38,84 @@
     .navbar { left: calc(100vw - 100%); }
   </style>
 
+  
+  
+  
+  
+  
 
-  <meta property="og:title" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/1/" />
-<meta property="og:site_name" content="Digital Humanities at Stanford" />
-<meta property="og:description" content="" />
-<meta property="og:image" content="" />
-<meta property="og:image:alt" content="Post image" />
-<meta name="description" content="" />
+  
+  
+    
+  
 
+  
+  
+  
+
+  <link rel="canonical" href="https://digitalhumanities.stanford.edu/1/">
+  <meta name="description" content="" />
+
+  <meta property="og:title" content="Digital Humanities @ Stanford" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://digitalhumanities.stanford.edu/1/" />
+  <meta property="og:site_name" content="Digital Humanities @ Stanford" />
+  <meta property="og:description" content="" />
+  
+    <meta property="og:image" content="https://digitalhumanities.stanford.edu/post-images/Stanford_University_Main_Quad_May_2011_005.jpg" />
+    <meta property="og:image:alt" content="Digital Humanities @ Stanford" />
+  
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Digital Humanities @ Stanford" />
+  <meta name="twitter:description" content="" />
+  
+  
+    <meta name="twitter:image" content="https://digitalhumanities.stanford.edu/post-images/Stanford_University_Main_Quad_May_2011_005.jpg" />
+  
+
+
+  <style>
+    /* Visually hidden utility for accessible labels */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+      white-space: nowrap;
+    }
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #000;
+      color: #fff;
+      padding: 8px 12px;
+      z-index: 10000;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+    /* Improve focus visibility */
+    a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible {
+      outline: 3px solid #212529;
+      outline-offset: 2px;
+    }
+  </style>
 
 </head>
 
 <body class=" ">
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <!-- Navbar -->
-  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu" role="navigation" aria-label="Primary">
     <div class="container">
       <a class="navbar-brand" href="/">
         <strong>Digital Humanities @ Stanford</strong>
@@ -75,10 +136,10 @@
   <a class="nav-link" href="/projects">Projects</a>
 </li>
 <li class="nav-item">
-  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+  <a target="_blank" rel="noopener noreferrer" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops" aria-label="Workshops (opens in a new tab)">Workshops</a>
 </li>
 <li class="nav-item">
-  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+  <a target="_blank" rel="noopener noreferrer" class="nav-link" href="https://dhminor.stanford.edu/" aria-label="DH Minor (opens in a new tab)">DH Minor</a>
 </li>
 <li class="nav-item">
   <a class="nav-link" href="/slavic">Slavic</a>
@@ -86,14 +147,16 @@
 
         </ul>
         <ul class="navbar-nav ml-auto d-flex align-items-center">
-          <script src="/assets/js/lunr.min.js"></script>
+          <li class="nav-item">
+            <script src="/assets/js/lunr.min.js"></script>
 
-<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
-  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
-    placeholder="Type keyword and enter..." />
+<form class="bd-search hidden-sm-down" role="search" aria-label="Site search" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <label class="sr-only" for="lunrsearch">Search the site</label>
+  <input type="search" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and press Enter" />
 </form>
 
-<div id="lunrsearchresults"></div>
+<div id="lunrsearchresults" aria-live="polite"></div>
 
 <script>
   const lunrSearchResults = document.getElementById("lunrsearchresults");
@@ -107,9 +170,11 @@
       documents = data.documents;
     });
 
+  const searchInput = document.getElementById('lunrsearch');
   const closeSearch = () => {
     lunrSearchResults.style.display = "none";
     document.body.classList.remove("modal-open");
+    if (searchInput) searchInput.focus();
   };
 
   document.body.addEventListener("click", (event) => {
@@ -125,12 +190,12 @@
     document.body.classList.add("modal-open");
 
     lunrSearchResults.innerHTML = `
-    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="results-heading">
       <div class="modal-dialog shadow-lg" role="document">
         <div class="modal-content">
           <div class="modal-header" id="modtit">
-            <h5 class='modal-title'>Search results for "${term}"</h5>
-            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+            <h2 id='results-heading' class='modal-title'>Search results for "${term}"</h2>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close search results"> &times; </button>
           </div>
           <div class="modal-body">
             <ul class="mb-0"> </ul>
@@ -139,7 +204,9 @@
       </div>
     </div>`;
 
-    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+    const closeBtn = lunrSearchResults.querySelector("#btnx");
+    closeBtn.addEventListener("click", closeSearch);
+    closeBtn.focus();
 
     //put results on the screen.
     const results = idx.search(term);
@@ -213,13 +280,14 @@
   }
 </style>
 
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- Content -->
-  <main class="site-content" role="main">
+  <main class="site-content" role="main" id="main-content" tabindex="-1">
     
 <div class="container">
 
@@ -369,6 +437,7 @@ This quarter I ran two independ...
       <div class="mt-5">
         <!-- Pagination links -->
         
+        <nav aria-label="Pagination">
         <ul class="pagination">
           
           <li class="page-item">
@@ -482,6 +551,7 @@ This quarter I ran two independ...
           </li>
           
         </ul>
+        </nav>
         
       </div>
     </div></div>
@@ -491,7 +561,7 @@ This quarter I ran two independ...
 
   </main>
 
-  <script src="/assets/js/theme.js" "></script>
+  <script src="/assets/js/theme.js"></script>
 
     <!-- Footer -->
     <footer class=" bg-white border-top p-3 text-muted small">
@@ -505,7 +575,7 @@ This quarter I ran two independ...
           <div>
             <span>Copyright © 2022.</span>
 
-            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank" rel="noopener noreferrer" aria-label="View site source on GitHub (opens in a new tab)">
               <i class="fab fa-github"></i>
               Site Source
             </a>

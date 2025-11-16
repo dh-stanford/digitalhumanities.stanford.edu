@@ -18,10 +18,10 @@
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
 
   <!-- Bootstrap Modified -->
-  <link rel="stylesheet" href="/assets/css/main.css" ">
+  <link rel="stylesheet" href="/assets/css/main.css">
 
   <!-- Theme Stylesheet -->
-  <link rel=" stylesheet" href="/assets/css/theme.css" ">
+  <link rel="stylesheet" href="/assets/css/theme.css">
 
   <style>
     /* add margin if scroll bar not visible
@@ -38,23 +38,84 @@
     .navbar { left: calc(100vw - 100%); }
   </style>
 
+  
+  
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+  
+  
+
+  <link rel="canonical" href="https://digitalhumanities.stanford.edu/projects/">
+  <meta name="description" content="" />
 
   <meta property="og:title" content="Projects" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/projects/" />
-<meta property="og:site_name" content="Digital Humanities at Stanford" />
-<meta property="og:description" content="" />
-<meta property="og:image" content="" />
-<meta property="og:image:alt" content="Post image" />
-<meta name="description" content="" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://digitalhumanities.stanford.edu/projects/" />
+  <meta property="og:site_name" content="Digital Humanities @ Stanford" />
+  <meta property="og:description" content="" />
+  
+    <meta property="og:image" content="https://digitalhumanities.stanford.edu/post-images/Stanford_University_Main_Quad_May_2011_005.jpg" />
+    <meta property="og:image:alt" content="Projects" />
+  
 
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Projects" />
+  <meta name="twitter:description" content="" />
+  
+  
+    <meta name="twitter:image" content="https://digitalhumanities.stanford.edu/post-images/Stanford_University_Main_Quad_May_2011_005.jpg" />
+  
+
+
+  <style>
+    /* Visually hidden utility for accessible labels */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+      white-space: nowrap;
+    }
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #000;
+      color: #fff;
+      padding: 8px 12px;
+      z-index: 10000;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+    /* Improve focus visibility */
+    a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible {
+      outline: 3px solid #212529;
+      outline-offset: 2px;
+    }
+  </style>
 
 </head>
 
 <body class=" ">
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <!-- Navbar -->
-  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu">
+  <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="MagicMenu" role="navigation" aria-label="Primary">
     <div class="container">
       <a class="navbar-brand" href="/">
         <strong>Digital Humanities @ Stanford</strong>
@@ -75,10 +136,10 @@
   <a class="nav-link" href="/projects">Projects</a>
 </li>
 <li class="nav-item">
-  <a target="_blank" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops">Workshops</a>
+  <a target="_blank" rel="noopener noreferrer" class="nav-link" href="http://library.stanford.edu/research/cidr/workshops" aria-label="Workshops (opens in a new tab)">Workshops</a>
 </li>
 <li class="nav-item">
-  <a target="_blank" class="nav-link" href="https://dhminor.stanford.edu/">DH Minor</a>
+  <a target="_blank" rel="noopener noreferrer" class="nav-link" href="https://dhminor.stanford.edu/" aria-label="DH Minor (opens in a new tab)">DH Minor</a>
 </li>
 <li class="nav-item">
   <a class="nav-link" href="/slavic">Slavic</a>
@@ -86,14 +147,16 @@
 
         </ul>
         <ul class="navbar-nav ml-auto d-flex align-items-center">
-          <script src="/assets/js/lunr.min.js"></script>
+          <li class="nav-item">
+            <script src="/assets/js/lunr.min.js"></script>
 
-<form class="bd-search hidden-sm-down" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
-  <input type="text" class="form-control text-small" id="lunrsearch" name="q" value=""
-    placeholder="Type keyword and enter..." />
+<form class="bd-search hidden-sm-down" role="search" aria-label="Site search" onSubmit="return lunrSearch(document.getElementById('lunrsearch').value);">
+  <label class="sr-only" for="lunrsearch">Search the site</label>
+  <input type="search" class="form-control text-small" id="lunrsearch" name="q" value=""
+    placeholder="Type keyword and press Enter" />
 </form>
 
-<div id="lunrsearchresults"></div>
+<div id="lunrsearchresults" aria-live="polite"></div>
 
 <script>
   const lunrSearchResults = document.getElementById("lunrsearchresults");
@@ -107,9 +170,11 @@
       documents = data.documents;
     });
 
+  const searchInput = document.getElementById('lunrsearch');
   const closeSearch = () => {
     lunrSearchResults.style.display = "none";
     document.body.classList.remove("modal-open");
+    if (searchInput) searchInput.focus();
   };
 
   document.body.addEventListener("click", (event) => {
@@ -125,12 +190,12 @@
     document.body.classList.add("modal-open");
 
     lunrSearchResults.innerHTML = `
-    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal">
+    <div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="results-heading">
       <div class="modal-dialog shadow-lg" role="document">
         <div class="modal-content">
           <div class="modal-header" id="modtit">
-            <h5 class='modal-title'>Search results for "${term}"</h5>
-            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button>
+            <h2 id='results-heading' class='modal-title'>Search results for "${term}"</h2>
+            <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close search results"> &times; </button>
           </div>
           <div class="modal-body">
             <ul class="mb-0"> </ul>
@@ -139,7 +204,9 @@
       </div>
     </div>`;
 
-    lunrSearchResults.querySelector("#btnx").addEventListener("click", closeSearch);
+    const closeBtn = lunrSearchResults.querySelector("#btnx");
+    closeBtn.addEventListener("click", closeSearch);
+    closeBtn.focus();
 
     //put results on the screen.
     const results = idx.search(term);
@@ -213,20 +280,21 @@
   }
 </style>
 
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- Content -->
-  <main class="site-content" role="main">
+  <main class="site-content" role="main" id="main-content" tabindex="-1">
     <div class="container">
   <div class="card-columns">
     
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Animal City
+          <h3 class="h5 mb-0">Animal City</h3>
         </div>
         <img class="card-img-top" src="images/animal-city.png" alt="Animal City">
         <div class="card-body">
@@ -239,7 +307,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Between Canon and Corpus: The Twentieth Century Novel in English
+          <h3 class="h5 mb-0">Between Canon and Corpus: The Twentieth Century Novel in English</h3>
         </div>
         <img class="card-img-top" src="images/between-canon-and-corpus-the-twentieth-century-novel-in-english.png" alt="Between Canon and Corpus: The Twentieth Century Novel in English">
         <div class="card-body">
@@ -252,7 +320,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Between the Tides
+          <h3 class="h5 mb-0">Between the Tides</h3>
         </div>
         <img class="card-img-top" src="images/between-the-tides.png" alt="Between the Tides">
         <div class="card-body">
@@ -265,7 +333,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Bibliopedia
+          <h3 class="h5 mb-0">Bibliopedia</h3>
         </div>
         <img class="card-img-top" src="images/bibliopedia.jpeg" alt="Bibliopedia">
         <div class="card-body">
@@ -278,7 +346,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Boundaries of Nature
+          <h3 class="h5 mb-0">Boundaries of Nature</h3>
         </div>
         <img class="card-img-top" src="images/boundaries-of-nature.png" alt="Boundaries of Nature">
         <div class="card-body">
@@ -291,7 +359,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Broken Paths of Freedom
+          <h3 class="h5 mb-0">Broken Paths of Freedom</h3>
         </div>
         <img class="card-img-top" src="images/broken-paths-of-freedom.png" alt="Broken Paths of Freedom">
         <div class="card-body">
@@ -304,7 +372,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          California Delta
+          <h3 class="h5 mb-0">California Delta</h3>
         </div>
         <img class="card-img-top" src="images/california-delta.png" alt="California Delta">
         <div class="card-body">
@@ -317,7 +385,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Carleton Watkins at the Cantor
+          <h3 class="h5 mb-0">Carleton Watkins at the Cantor</h3>
         </div>
         <img class="card-img-top" src="images/carleton-watkins-at-the-cantor.png" alt="Carleton Watkins at the Cantor">
         <div class="card-body">
@@ -330,7 +398,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Chilean Aquaculture
+          <h3 class="h5 mb-0">Chilean Aquaculture</h3>
         </div>
         <img class="card-img-top" src="images/chilean-aquaculture.png" alt="Chilean Aquaculture">
         <div class="card-body">
@@ -343,7 +411,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Chinese Canadian Stories
+          <h3 class="h5 mb-0">Chinese Canadian Stories</h3>
         </div>
         <img class="card-img-top" src="images/chinese-canadian-stories.png" alt="Chinese Canadian Stories">
         <div class="card-body">
@@ -356,7 +424,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Chinese Railroad Workers Project
+          <h3 class="h5 mb-0">Chinese Railroad Workers Project</h3>
         </div>
         <img class="card-img-top" src="images/chinese-railroad-workers-project.png" alt="Chinese Railroad Workers Project">
         <div class="card-body">
@@ -369,7 +437,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Cigarette Citadels
+          <h3 class="h5 mb-0">Cigarette Citadels</h3>
         </div>
         <img class="card-img-top" src="images/cigarette-citadels.png" alt="Cigarette Citadels">
         <div class="card-body">
@@ -382,7 +450,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          City Nature
+          <h3 class="h5 mb-0">City Nature</h3>
         </div>
         <img class="card-img-top" src="images/city-nature.png" alt="City Nature">
         <div class="card-body">
@@ -395,7 +463,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Contested Waters: Rio de Janeiro&#39;s Public Water Supply and the Social Structuring of a City
+          <h3 class="h5 mb-0">Contested Waters: Rio de Janeiro&#39;s Public Water Supply and the Social Structuring of a City</h3>
         </div>
         <img class="card-img-top" src="images/contested-waters-rio-de-janeiro-s-public-water-supply-and-the-social-structuring-of-a-city.jpeg" alt="Contested Waters: Rio de Janeiro&#39;s Public Water Supply and the Social Structuring of a City">
         <div class="card-body">
@@ -408,7 +476,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Critical Habitat
+          <h3 class="h5 mb-0">Critical Habitat</h3>
         </div>
         <img class="card-img-top" src="images/critical-habitat.png" alt="Critical Habitat">
         <div class="card-body">
@@ -421,7 +489,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Crowdsourcing in the Humanities
+          <h3 class="h5 mb-0">Crowdsourcing in the Humanities</h3>
         </div>
         <img class="card-img-top" src="images/crowdsourcing-in-the-humanities.png" alt="Crowdsourcing in the Humanities">
         <div class="card-body">
@@ -434,7 +502,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Crusade Memory in Iraq
+          <h3 class="h5 mb-0">Crusade Memory in Iraq</h3>
         </div>
         <img class="card-img-top" src="images/crusade-memory-in-iraq.png" alt="Crusade Memory in Iraq">
         <div class="card-body">
@@ -447,7 +515,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Decade of Fire in Western Australia
+          <h3 class="h5 mb-0">Decade of Fire in Western Australia</h3>
         </div>
         <img class="card-img-top" src="images/decade-of-fire-in-western-australia.png" alt="Decade of Fire in Western Australia">
         <div class="card-body">
@@ -460,7 +528,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Design for Endangered Languages
+          <h3 class="h5 mb-0">Design for Endangered Languages</h3>
         </div>
         <img class="card-img-top" src="images/design-for-endangered-languages.jpeg" alt="Design for Endangered Languages">
         <div class="card-body">
@@ -473,7 +541,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          DH Asia
+          <h3 class="h5 mb-0">DH Asia</h3>
         </div>
         <img class="card-img-top" src="images/dh-asia.png" alt="DH Asia">
         <div class="card-body">
@@ -486,7 +554,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Digging Deeper
+          <h3 class="h5 mb-0">Digging Deeper</h3>
         </div>
         <img class="card-img-top" src="images/digging-deeper.jpeg" alt="Digging Deeper">
         <div class="card-body">
@@ -499,7 +567,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Digital Analysis of Syriac Handwriting (DASH)
+          <h3 class="h5 mb-0">Digital Analysis of Syriac Handwriting (DASH)</h3>
         </div>
         <img class="card-img-top" src="images/digital-analysis-of-syriac-handwriting-dash-.png" alt="Digital Analysis of Syriac Handwriting (DASH)">
         <div class="card-body">
@@ -512,7 +580,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Digital Humanities Focal Group
+          <h3 class="h5 mb-0">Digital Humanities Focal Group</h3>
         </div>
         <img class="card-img-top" src="images/digital-humanities-focal-group.png" alt="Digital Humanities Focal Group">
         <div class="card-body">
@@ -525,7 +593,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Early Modern Roads
+          <h3 class="h5 mb-0">Early Modern Roads</h3>
         </div>
         <img class="card-img-top" src="images/early-modern-roads.jpeg" alt="Early Modern Roads">
         <div class="card-body">
@@ -538,7 +606,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Emotions of London
+          <h3 class="h5 mb-0">Emotions of London</h3>
         </div>
         <img class="card-img-top" src="images/emotions-of-london.png" alt="Emotions of London">
         <div class="card-body">
@@ -551,7 +619,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Enchanting the Desert
+          <h3 class="h5 mb-0">Enchanting the Desert</h3>
         </div>
         <img class="card-img-top" src="images/enchanting-the-desert.jpeg" alt="Enchanting the Desert">
         <div class="card-body">
@@ -564,7 +632,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Forma Urbis Romae
+          <h3 class="h5 mb-0">Forma Urbis Romae</h3>
         </div>
         <img class="card-img-top" src="images/forma-urbis-romae.jpeg" alt="Forma Urbis Romae">
         <div class="card-body">
@@ -577,7 +645,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          French Revolution Digital Archive
+          <h3 class="h5 mb-0">French Revolution Digital Archive</h3>
         </div>
         <img class="card-img-top" src="images/french-revolution-digital-archive.jpeg" alt="French Revolution Digital Archive">
         <div class="card-body">
@@ -590,7 +658,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Geographies of Capital
+          <h3 class="h5 mb-0">Geographies of Capital</h3>
         </div>
         <img class="card-img-top" src="images/geographies-of-capital.jpeg" alt="Geographies of Capital">
         <div class="card-body">
@@ -603,7 +671,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Geography of the Post
+          <h3 class="h5 mb-0">Geography of the Post</h3>
         </div>
         <img class="card-img-top" src="images/geography-of-the-post.png" alt="Geography of the Post">
         <div class="card-body">
@@ -616,7 +684,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          George Moses Horton, Slave Poet
+          <h3 class="h5 mb-0">George Moses Horton, Slave Poet</h3>
         </div>
         <img class="card-img-top" src="images/george-moses-horton-slave-poet.jpeg" alt="George Moses Horton, Slave Poet">
         <div class="card-body">
@@ -629,7 +697,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Global Currents: Cultures of Literary Networks, 1050-1900
+          <h3 class="h5 mb-0">Global Currents: Cultures of Literary Networks, 1050-1900</h3>
         </div>
         <img class="card-img-top" src="images/global-currents-cultures-of-literary-networks-1050-1900.jpeg" alt="Global Currents: Cultures of Literary Networks, 1050-1900">
         <div class="card-body">
@@ -642,7 +710,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Grand Tour Explorer
+          <h3 class="h5 mb-0">Grand Tour Explorer</h3>
         </div>
         <img class="card-img-top" src="images/grand-tour-explorer.jpeg" alt="Grand Tour Explorer">
         <div class="card-body">
@@ -655,7 +723,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Grave Relocation and Funeral Home Reform in Modern China
+          <h3 class="h5 mb-0">Grave Relocation and Funeral Home Reform in Modern China</h3>
         </div>
         <img class="card-img-top" src="images/grave-relocation-and-funeral-home-reform-in-modern-china.jpeg" alt="Grave Relocation and Funeral Home Reform in Modern China">
         <div class="card-body">
@@ -668,7 +736,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Historial Ecology of Upper San Francisquito Watershed
+          <h3 class="h5 mb-0">Historial Ecology of Upper San Francisquito Watershed</h3>
         </div>
         <img class="card-img-top" src="images/historial-ecology-of-upper-san-francisquito-watershed.jpeg" alt="Historial Ecology of Upper San Francisquito Watershed">
         <div class="card-body">
@@ -681,7 +749,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Historical Thinking and Empathy in Human Rights Education
+          <h3 class="h5 mb-0">Historical Thinking and Empathy in Human Rights Education</h3>
         </div>
         <img class="card-img-top" src="images/historical-thinking-and-empathy-in-human-rights-education.png" alt="Historical Thinking and Empathy in Human Rights Education">
         <div class="card-body">
@@ -694,7 +762,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Holocaust Geographies
+          <h3 class="h5 mb-0">Holocaust Geographies</h3>
         </div>
         <img class="card-img-top" src="images/holocaust-geographies.png" alt="Holocaust Geographies">
         <div class="card-body">
@@ -707,7 +775,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Idiographic Tool
+          <h3 class="h5 mb-0">Idiographic Tool</h3>
         </div>
         <img class="card-img-top" src="images/idiographic-tool.jpeg" alt="Idiographic Tool">
         <div class="card-body">
@@ -720,7 +788,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Kindred Britain 2.0
+          <h3 class="h5 mb-0">Kindred Britain 2.0</h3>
         </div>
         <img class="card-img-top" src="images/kindred-britain-2-0.png" alt="Kindred Britain 2.0">
         <div class="card-body">
@@ -733,7 +801,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Lacuna Stories
+          <h3 class="h5 mb-0">Lacuna Stories</h3>
         </div>
         <img class="card-img-top" src="images/lacuna-stories.png" alt="Lacuna Stories">
         <div class="card-body">
@@ -746,7 +814,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Living With the Railroads
+          <h3 class="h5 mb-0">Living With the Railroads</h3>
         </div>
         <img class="card-img-top" src="images/living-with-the-railroads.png" alt="Living With the Railroads">
         <div class="card-body">
@@ -759,7 +827,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Mapping Endangered Languages and Dictionaries
+          <h3 class="h5 mb-0">Mapping Endangered Languages and Dictionaries</h3>
         </div>
         <img class="card-img-top" src="images/mapping-endangered-languages-and-dictionaries.png" alt="Mapping Endangered Languages and Dictionaries">
         <div class="card-body">
@@ -772,7 +840,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Mapping Rebellions in the Americas
+          <h3 class="h5 mb-0">Mapping Rebellions in the Americas</h3>
         </div>
         <img class="card-img-top" src="images/mapping-rebellions-in-the-americas.png" alt="Mapping Rebellions in the Americas">
         <div class="card-body">
@@ -785,7 +853,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Mapping the Republic of Letters
+          <h3 class="h5 mb-0">Mapping the Republic of Letters</h3>
         </div>
         <img class="card-img-top" src="images/mapping-the-republic-of-letters.jpeg" alt="Mapping the Republic of Letters">
         <div class="card-body">
@@ -798,7 +866,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Mapping Vice in Early Twentieth-Century Philadephia
+          <h3 class="h5 mb-0">Mapping Vice in Early Twentieth-Century Philadephia</h3>
         </div>
         <img class="card-img-top" src="images/mapping-vice-in-early-twentieth-century-philadephia.png" alt="Mapping Vice in Early Twentieth-Century Philadephia">
         <div class="card-body">
@@ -811,7 +879,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Microhistory of the Great Migration
+          <h3 class="h5 mb-0">Microhistory of the Great Migration</h3>
         </div>
         <img class="card-img-top" src="images/microhistory-of-the-great-migration.png" alt="Microhistory of the Great Migration">
         <div class="card-body">
@@ -824,7 +892,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Micromegas
+          <h3 class="h5 mb-0">Micromegas</h3>
         </div>
         <img class="card-img-top" src="images/micromegas.jpeg" alt="Micromegas">
         <div class="card-body">
@@ -837,7 +905,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Modeling Dramatic Networks
+          <h3 class="h5 mb-0">Modeling Dramatic Networks</h3>
         </div>
         <img class="card-img-top" src="images/modeling-dramatic-networks.png" alt="Modeling Dramatic Networks">
         <div class="card-body">
@@ -850,7 +918,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Networks of the DLCL
+          <h3 class="h5 mb-0">Networks of the DLCL</h3>
         </div>
         <img class="card-img-top" src="images/networks-of-the-dlcl.png" alt="Networks of the DLCL">
         <div class="card-body">
@@ -863,7 +931,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Nineteenth-Century Crowdsourcing
+          <h3 class="h5 mb-0">Nineteenth-Century Crowdsourcing</h3>
         </div>
         <img class="card-img-top" src="images/nineteenth-century-crowdsourcing.png" alt="Nineteenth-Century Crowdsourcing">
         <div class="card-body">
@@ -876,7 +944,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Noh as Intermedia
+          <h3 class="h5 mb-0">Noh as Intermedia</h3>
         </div>
         <img class="card-img-top" src="images/noh-as-intermedia.jpeg" alt="Noh as Intermedia">
         <div class="card-body">
@@ -889,7 +957,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Non-State-Based Atlas of Economic and Social Development
+          <h3 class="h5 mb-0">Non-State-Based Atlas of Economic and Social Development</h3>
         </div>
         <img class="card-img-top" src="images/non-state-based-atlas-of-economic-and-social-development.png" alt="Non-State-Based Atlas of Economic and Social Development">
         <div class="card-body">
@@ -902,7 +970,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          ORBIS
+          <h3 class="h5 mb-0">ORBIS</h3>
         </div>
         <img class="card-img-top" src="images/orbis.png" alt="ORBIS">
         <div class="card-body">
@@ -915,7 +983,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Palladio
+          <h3 class="h5 mb-0">Palladio</h3>
         </div>
         <img class="card-img-top" src="images/palladio.png" alt="Palladio">
         <div class="card-body">
@@ -928,7 +996,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Performing Trobar
+          <h3 class="h5 mb-0">Performing Trobar</h3>
         </div>
         <img class="card-img-top" src="images/performing-trobar.png" alt="Performing Trobar">
         <div class="card-body">
@@ -941,7 +1009,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Poetic Thinking
+          <h3 class="h5 mb-0">Poetic Thinking</h3>
         </div>
         <img class="card-img-top" src="images/poetic-thinking.png" alt="Poetic Thinking">
         <div class="card-body">
@@ -954,7 +1022,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Project Steel Beta
+          <h3 class="h5 mb-0">Project Steel Beta</h3>
         </div>
         <img class="card-img-top" src="images/project-steel-beta.png" alt="Project Steel Beta">
         <div class="card-body">
@@ -967,7 +1035,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Rebooting History
+          <h3 class="h5 mb-0">Rebooting History</h3>
         </div>
         <img class="card-img-top" src="images/rebooting-history.png" alt="Rebooting History">
         <div class="card-body">
@@ -980,7 +1048,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          REVS
+          <h3 class="h5 mb-0">REVS</h3>
         </div>
         <img class="card-img-top" src="images/revs.png" alt="REVS">
         <div class="card-body">
@@ -992,7 +1060,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Richard Pryor&#39;s Peoria
+          <h3 class="h5 mb-0">Richard Pryor&#39;s Peoria</h3>
         </div>
         <img class="card-img-top" src="images/richard-pryor-s-peoria.png" alt="Richard Pryor&#39;s Peoria">
         <div class="card-body">
@@ -1005,7 +1073,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Shaping the West
+          <h3 class="h5 mb-0">Shaping the West</h3>
         </div>
         <img class="card-img-top" src="images/shaping-the-west.png" alt="Shaping the West">
         <div class="card-body">
@@ -1018,7 +1086,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Spaces of Mexican Migration
+          <h3 class="h5 mb-0">Spaces of Mexican Migration</h3>
         </div>
         <img class="card-img-top" src="images/spaces-of-mexican-migration.jpeg" alt="Spaces of Mexican Migration">
         <div class="card-body">
@@ -1031,7 +1099,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Spatial History and Genealogy of Desert Ant Colonies
+          <h3 class="h5 mb-0">Spatial History and Genealogy of Desert Ant Colonies</h3>
         </div>
         <img class="card-img-top" src="images/spatial-history-and-genealogy-of-desert-ant-colonies.jpeg" alt="Spatial History and Genealogy of Desert Ant Colonies">
         <div class="card-body">
@@ -1044,7 +1112,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Spiritual Networks 1890-1930
+          <h3 class="h5 mb-0">Spiritual Networks 1890-1930</h3>
         </div>
         <img class="card-img-top" src="images/spiritual-networks-1890-1930.png" alt="Spiritual Networks 1890-1930">
         <div class="card-body">
@@ -1057,7 +1125,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Suspense: Language, Narrative, Affect
+          <h3 class="h5 mb-0">Suspense: Language, Narrative, Affect</h3>
         </div>
         <img class="card-img-top" src="images/suspense-language-narrative-affect.jpeg" alt="Suspense: Language, Narrative, Affect">
         <div class="card-body">
@@ -1070,7 +1138,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Taxonomy of Titles in the 18th Century Marketplace
+          <h3 class="h5 mb-0">Taxonomy of Titles in the 18th Century Marketplace</h3>
         </div>
         <img class="card-img-top" src="images/taxonomy-of-titles-in-the-18th-century-marketplace.jpeg" alt="Taxonomy of Titles in the 18th Century Marketplace">
         <div class="card-body">
@@ -1083,7 +1151,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Terrain of History
+          <h3 class="h5 mb-0">Terrain of History</h3>
         </div>
         <img class="card-img-top" src="images/terrain-of-history.png" alt="Terrain of History">
         <div class="card-body">
@@ -1096,7 +1164,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          The African Archives
+          <h3 class="h5 mb-0">The African Archives</h3>
         </div>
         <img class="card-img-top" src="images/the-african-archives.png" alt="The African Archives">
         <div class="card-body">
@@ -1109,7 +1177,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          The Law of the Antebellum Frontier
+          <h3 class="h5 mb-0">The Law of the Antebellum Frontier</h3>
         </div>
         <img class="card-img-top" src="images/the-law-of-the-antebellum-frontier.jpeg" alt="The Law of the Antebellum Frontier">
         <div class="card-body">
@@ -1122,7 +1190,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          The World According to the Bank: The Language of World Bank Reports, 1946-2010
+          <h3 class="h5 mb-0">The World According to the Bank: The Language of World Bank Reports, 1946-2010</h3>
         </div>
         <img class="card-img-top" src="images/the-world-according-to-the-bank-the-language-of-world-bank-reports-1946-2010.jpeg" alt="The World According to the Bank: The Language of World Bank Reports, 1946-2010">
         <div class="card-body">
@@ -1135,7 +1203,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Tracing the Arctic Regions
+          <h3 class="h5 mb-0">Tracing the Arctic Regions</h3>
         </div>
         <img class="card-img-top" src="images/tracing-the-arctic-regions.png" alt="Tracing the Arctic Regions">
         <div class="card-body">
@@ -1148,7 +1216,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Trans-Historical Poetry Project
+          <h3 class="h5 mb-0">Trans-Historical Poetry Project</h3>
         </div>
         <img class="card-img-top" src="images/trans-historical-poetry-project.jpeg" alt="Trans-Historical Poetry Project">
         <div class="card-body">
@@ -1161,7 +1229,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Transnational 9/11 Memorials and Geographies of Global Anti-Terrorism
+          <h3 class="h5 mb-0">Transnational 9/11 Memorials and Geographies of Global Anti-Terrorism</h3>
         </div>
         <img class="card-img-top" src="images/transnational-9-11-memorials-and-geographies-of-global-anti-terrorism.png" alt="Transnational 9/11 Memorials and Geographies of Global Anti-Terrorism">
         <div class="card-body">
@@ -1174,7 +1242,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          U.S. Deportation Trains
+          <h3 class="h5 mb-0">U.S. Deportation Trains</h3>
         </div>
         <img class="card-img-top" src="images/u-s-deportation-trains.jpeg" alt="U.S. Deportation Trains">
         <div class="card-body">
@@ -1187,7 +1255,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Vulnerabitlity in Production
+          <h3 class="h5 mb-0">Vulnerabitlity in Production</h3>
         </div>
         <img class="card-img-top" src="images/vulnerabitlity-in-production.png" alt="Vulnerabitlity in Production">
         <div class="card-body">
@@ -1200,7 +1268,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Western Railroads
+          <h3 class="h5 mb-0">Western Railroads</h3>
         </div>
         <img class="card-img-top" src="images/western-railroads.png" alt="Western Railroads">
         <div class="card-body">
@@ -1212,7 +1280,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Writing Rights
+          <h3 class="h5 mb-0">Writing Rights</h3>
         </div>
         <img class="card-img-top" src="images/writing-rights.jpeg" alt="Writing Rights">
         <div class="card-body">
@@ -1225,7 +1293,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Year of the Bay
+          <h3 class="h5 mb-0">Year of the Bay</h3>
         </div>
         <img class="card-img-top" src="images/year-of-the-bay.png" alt="Year of the Bay">
         <div class="card-body">
@@ -1237,7 +1305,7 @@
     <div class="col-auto mb-3">
       <div class="card">
         <div class="card-header">
-          Çatalhöyük Living Archive
+          <h3 class="h5 mb-0">Çatalhöyük Living Archive</h3>
         </div>
         <img class="card-img-top" src="images/çatalhöyük-living-archive.png" alt="Çatalhöyük Living Archive">
         <div class="card-body">
@@ -1252,7 +1320,7 @@
 
   </main>
 
-  <script src="/assets/js/theme.js" "></script>
+  <script src="/assets/js/theme.js"></script>
 
     <!-- Footer -->
     <footer class=" bg-white border-top p-3 text-muted small">
@@ -1266,7 +1334,7 @@
           <div>
             <span>Copyright © 2022.</span>
 
-            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank">
+            <a class="text-dark ml-1" href="https://github.com/dh-stanford/dh-stanford.github.io/" target="_blank" rel="noopener noreferrer" aria-label="View site source on GitHub (opens in a new tab)">
               <i class="fab fa-github"></i>
               Site Source
             </a>
