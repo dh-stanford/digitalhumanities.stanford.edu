@@ -38,16 +38,45 @@
     .navbar { left: calc(100vw - 100%); }
   </style>
 
-{% if page.data.post_images !='' %}
-  <meta property="og:title" content="{{title}}" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="{{page.url | url}}" />
-<meta property="og:site_name" content="Digital Humanities at Stanford" />
-<meta property="og:description" content="" />
-<meta property="og:image" content="{{ data.post_images }}" />
-<meta property="og:image:alt" content="Post image" />
-<meta name="description" content="" />
-{% endif %}
+  {# Social preview metadata (Open Graph + Twitter) #}
+  {% set socialTitle = title or 'Digital Humanities @ Stanford' %}
+  {% set socialDescription = description or '' %}
+  {% set socialType = 'website' if page.url == '/' else 'article' %}
+  {% set socialUrl = page.url | url %}
+
+  {% set socialImageUrl = null %}
+  {% if post_images and (post_images | length) %}
+    {% set socialImageUrl = (post_images[0] | url) %}
+  {% elseif site and site.defaultImage %}
+    {% set socialImageUrl = site.defaultImage %}
+  {% endif %}
+
+  {# Prefer absolute URLs for social cards #}
+  {% set absolutePageUrl = (socialUrl | absoluteUrl(site.url)) if site and site.url else socialUrl %}
+  {% set absoluteImageUrl = (socialImageUrl | absoluteUrl(site.url)) if socialImageUrl and site and site.url else socialImageUrl %}
+
+  <link rel="canonical" href="{{ absolutePageUrl }}">
+  <meta name="description" content="{{ socialDescription }}" />
+
+  <meta property="og:title" content="{{ socialTitle }}" />
+  <meta property="og:type" content="{{ socialType }}" />
+  <meta property="og:url" content="{{ absolutePageUrl }}" />
+  <meta property="og:site_name" content="{{ site.name or 'Digital Humanities @ Stanford' }}" />
+  <meta property="og:description" content="{{ socialDescription }}" />
+  {% if absoluteImageUrl %}
+    <meta property="og:image" content="{{ absoluteImageUrl }}" />
+    <meta property="og:image:alt" content="{{ socialTitle }}" />
+  {% endif %}
+
+  <meta name="twitter:card" content="{{ 'summary_large_image' if absoluteImageUrl else 'summary' }}" />
+  <meta name="twitter:title" content="{{ socialTitle }}" />
+  <meta name="twitter:description" content="{{ socialDescription }}" />
+  {% if site and site.twitterHandle %}
+    <meta name="twitter:site" content="{{ site.twitterHandle }}" />
+  {% endif %}
+  {% if absoluteImageUrl %}
+    <meta name="twitter:image" content="{{ absoluteImageUrl }}" />
+  {% endif %}
 
 
   <style>
