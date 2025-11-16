@@ -17,8 +17,8 @@ pagination:
     {% assign article = articles[0] %}
     <div class="col-md-6">
       <div class="card border-0 mb-4 box-shadow">
-        <a href="{{ article.url | url }}">
-          <div class="topfirstimage" style="background-image: url({{ article.data.post_images[0] | url }});
+        <a href="{{ article.url | url }}" aria-label="{{ article.data.title }}">
+          <div class="topfirstimage" aria-hidden="true" style="background-image: url({{ article.data.post_images[0] | url }});
                       min-height: 200px; aspect-ratio: 1.65; background-size: cover; background-repeat: no-repeat;">
           </div>
         </a>
@@ -125,6 +125,7 @@ pagination:
       <div class="mt-5">
         <!-- Pagination links -->
         {% if pagination.pages.length > 1 %}
+        <nav aria-label="Pagination">
         <ul class="pagination">
           {% if pagination.page.previous %}
           <li class="page-item">
@@ -163,6 +164,7 @@ pagination:
           </li>
           {% endif %}
         </ul>
+        </nav>
         {% endif %}
       </div>
     </div>

@@ -27,9 +27,11 @@ document.addEventListener("scroll", () => {
   }
 });
 
-// nav toggle
+// nav toggle + aria-expanded updates
 document.querySelectorAll("[data-toggle='collapse']").forEach((el) => {
-  el.addEventListener("click", () =>
-    document.querySelector(el.dataset.target).classList.toggle("show"),
-  );
+  el.addEventListener("click", () => {
+    const target = document.querySelector(el.dataset.target);
+    const isOpen = target.classList.toggle("show");
+    el.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
 });

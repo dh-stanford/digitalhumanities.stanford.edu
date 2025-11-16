@@ -48,6 +48,28 @@ Content in **markdown** goes here :)
    yarn gh-deploy
    ```
 
+## Accessibility
+
+This site follows WCAG 2 AA guidelines and includes:
+
+- Skip link for keyboard navigation
+- Semantic landmarks and ARIA labels
+- Focus management in search modal
+- Screen reader-friendly forms and navigation
+- Visible focus indicators
+- Accessible color contrast
+
+### Testing Accessibility
+
+Run automated accessibility tests with:
+
+```sh
+npm run a11y        # Test key pages (home, about, projects)
+npm run a11y:full   # Test first 20 pages
+```
+
+Tests use @axe-core/cli to check WCAG 2 A, AA, and WCAG 2.1 AA compliance. Note that automated testing catches only 20-50% of accessibility issues - manual testing with screen readers and keyboard navigation is always required.
+
 
 ## Development Notes
 
