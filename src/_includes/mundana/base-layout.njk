@@ -40,7 +40,7 @@
 
   {# Social preview metadata (Open Graph + Twitter) #}
   {% set socialTitle = title or 'Digital Humanities @ Stanford' %}
-  {% set socialDescription = description or '' %}
+  {% set socialDescription = description or site.name or 'Digital Humanities @ Stanford' %}
   {% set socialType = 'website' if page.url == '/' else 'article' %}
   {% set socialUrl = page.url | url %}
 
@@ -76,6 +76,7 @@
   {% endif %}
   {% if absoluteImageUrl %}
     <meta name="twitter:image" content="{{ absoluteImageUrl }}" />
+    <meta name="twitter:image:alt" content="{{ socialTitle }}" />
   {% endif %}
 
 

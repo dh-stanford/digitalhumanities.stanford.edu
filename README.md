@@ -5,7 +5,7 @@
 
 **Articles** are found in the [`src/`](src/) folder; they are in markdown format and can be edited directly in that folder using the GitHub interface if desired.  New posts/pages can also be created there.
 
-**Images** should be placed in the [`post-images/`](post-images/) folder.  Multiple images can be added per article and used in the main content; at least one should be listed in the `post_images` section of the frontmatter -- the first of these will be used on collection pages (others may or may not be used in future).
+**Images** should be placed in the [`post-images/`](post-images/) folder.  Multiple images can be added per article and used in the main content; at least one should be listed in the `post_images` section of the frontmatter -- the first of these will be used on collection pages and for social preview cards (Open Graph/Twitter).
 
 **Frontmatter** (in YAML) should follow the form:
 
